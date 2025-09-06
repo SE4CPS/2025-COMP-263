@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgricultureDB • IndexedDB Demo</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Cantarell,\"Noto Sans\",sans-serif}
+    body{margin:24px;line-height:1.4}
+    button{padding:8px 12px;margin:4px;border:1px solid #ccc;border-radius:10px;cursor:pointer}
+    button:disabled{opacity:.5;cursor:not-allowed}
+    #log{white-space:pre-wrap;background:#f7f7f9;border:1px solid #eee;padding:12px;border-radius:8px;max-height:220px;overflow:auto}
+    table{border-collapse:collapse;width:100%;margin-top:8px}
+    th,td{border:1px solid #ddd;padding:6px 8px;font-size:13px}
+    th{background:#fafafa;text-align:left}
+    .row{display:flex;gap:8px;flex-wrap:wrap}
+    .card{border:1px solid #e5e5e5;border-radius:12px;padding:12px}
+    .ok{color:#0a7a0a}
+    .warn{color:#b46900}
+    .err{color:#b00020}
+    code{background:#fff3;border:1px solid #eee;padding:1px 4px;border-radius:6px}
+  </style>
+</head>
+<body>
+  <h1>AgricultureDB – IndexedDB Demo</h1>
+  <p>This single-file app creates <code>AgricultureDB</code> with an object store <code>FarmData</code> (auto-increment key) and can insert <strong>10,000</strong> random entries containing: <em>sensorReadings (Array), cropPhoto (local image Data URL), farmerNote (String), gpsCoordinates (Number), timestamp (Date ISO)</em>. It also shows a live count & a sample table.</p>
+
+  <div class="row">
+    <div class="card">
+      <h3>1) Database</h3>
+      <button id="btnOpen">Create/Open DB</button>
+      <button id="btnWipe">Wipe FarmData</button>
+      <div id="dbStatus">DB not opened.</div>
+    </div>
+
+    <div class="card">
+      <h3>2) Insert 10,000</h3>
+      <button id="btnSeed" disabled>Insert 10,000 entries</button>
+      <div id="progress" class="warn">Idle</div>
+    </div>
+
+    <div class="card">
+      <h3>3) Inspect</h3>
+      <button id="btnCount" disabled>Show Count</button>
+      <button id="btnSample" disabled>Show 50 Sample Rows</button>
+      <div id="count"></div>
+    </div>
+  </div>
+
+  <div id="log" aria-label="Log"></div>
+  <div id="sample"></div>
+
+  <hr />
+  <details>
+    <summary><strong>How to capture the IndexedDB screenshot for your quiz</strong></summary>
+    <ol>
+      <li>Open the page in Chrome.</li>
+      <li>Right‑click → <em>Inspect</em> → open the <em>Application</em> panel.</li>
+      <li>Left sidebar → <em>IndexedDB</em> → expand <code>AgricultureDB</code> → <code>FarmData</code>.</li>
+      <li>Click <em>FarmData</em> to see rows. Take the screenshot showing keys & values.</li>
+    </ol>
+  </details>
+
+  <script>
+    // --- Utilities ---
+    const logEl = document.getElementById('log');
+    function log(msg, cls=''){
+      const div = document.createElement('div');
+      if(cls) div.className = cls;
+      div.textContent = msg; logEl.appendChild(div); logEl.scrollTop = logEl.scrollHeight;
+    }
+
+    // Tiny 1x1 PNG data URL (acts as a "local image URL")
+    // Generated once and reused to avoid blob URL lifetime issues.
+    const tinyGreenPNG =
+      'data:image/png;base64,'+
+      'iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAQAAAC1HAwCAAAAC0lEQVR4nGNgYAAAAAMAASsJTYQAAAAASUVORK5CYII=';
+
+    // Random helpers
+    const crops = ['wheat','rice','maize','cotton','soybean','barley','sorghum','millet'];
+    const notes = [
+      'Irrigation scheduled tomorrow','Pest observed on leaves','Fertilizer applied','Soil looks dry','Weeding done','Harvest planned','Check pH','Replace sensor battery'
+    ];
+    function randItem(a){ return a[Math.floor(Math.random()*a.length)]; }
+    function randFloat(min,max,dec=2){ return parseFloat((Math.random()*(max-min)+min).toFixed(dec)); }
+
+    // IndexedDB setup
+    const DB_NAME = 'AgricultureDB';
+    const STORE = 'FarmData';
+    const DB_VERSION = 1;
+
+    let db = null;
+
+    function openDB(){
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open(DB_NAME, DB_VERSION);
+        req.onupgradeneeded = (e) => {
+          const dbUp = req.result;
+          if(!dbUp.objectStoreNames.contains(STORE)){
+            const os = dbUp.createObjectStore(STORE, { keyPath: 'id', autoIncrement: true });
+            // Basic indexes (optional for this quiz)
+            os.createIndex('timestamp', 'timestamp');
+            os.createIndex('gpsCoordinates', 'gpsCoordinates');
+          }
+        };
+        req.onsuccess = () => { db = req.result; resolve(db); };
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    function wipeStore(){
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, 'readwrite');
+        const store = tx.objectStore(STORE);
+        const clearReq = store.clear();
+        clearReq.onsuccess = () => resolve();
+        clearReq.onerror = () => reject(clearReq.error);
+      });
+    }
+
+    function addBatch(records){
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, 'readwrite');
+        const store = tx.objectStore(STORE);
+        for(const rec of records){ store.add(rec); }
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(tx.error);
+        tx.onabort = () => reject(tx.error || new Error('Transaction aborted'));
+      });
+    }
+
+    function countAll(){
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, 'readonly');
+        const store = tx.objectStore(STORE);
+        const req = store.count();
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    async function getSample(limit=50){
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, 'readonly');
+        const store = tx.objectStore(STORE);
+        const req = store.openCursor();
+        const out = [];
+        req.onsuccess = (e) => {
+          const cursor = e.target.result;
+          if(cursor && out.length < limit){
+            out.push(cursor.value);
+            cursor.continue();
+          } else {
+            resolve(out);
+          }
+        };
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    // Generate a single random record that meets the quiz schema
+    function makeRecord(){
+      const readingCount = 3 + Math.floor(Math.random()*5); // 3-7 readings
+      const sensorReadings = Array.from({length: readingCount}, () => randFloat(10, 90, 2));
+      return {
+        sensorReadings, // Array
+        cropPhoto: tinyGreenPNG, // local Data URL (image)
+        farmerNote: `${randItem(notes)} for ${randItem(crops)} field`, // String
+        gpsCoordinates: randFloat(-90, 90, 6), // Number (latitude for simplicity)
+        timestamp: new Date().toISOString(), // Date ISO
+      };
+    }
+
+    // Insert 10,000 with chunked transactions to stay responsive
+    async function seedTenK(){
+      const TOTAL = 10000;
+      const CHUNK = 500; // 20 transactions
+      let inserted = 0;
+      const t0 = performance.now();
+      for(let i=0;i<TOTAL;i+=CHUNK){
+        const batch = Array.from({length: Math.min(CHUNK, TOTAL - i)}, makeRecord);
+        await addBatch(batch);
+        inserted += batch.length;
+        document.getElementById('progress').textContent = `Inserted ${inserted}/${TOTAL}…`;
+      }
+      const ms = Math.round(performance.now()-t0);
+      log(`Inserted ${TOTAL} records in ${ms} ms.`, 'ok');
+      document.getElementById('progress').textContent = `Done: ${TOTAL} records.`;
+    }
+
+    function renderSample(rows){
+      if(!rows.length){ document.getElementById('sample').innerHTML = '<em>No rows.</em>'; return; }
+      const headers = ['id','sensorReadings','farmerNote','gpsCoordinates','timestamp','cropPhoto'];
+      let html = '<table><thead><tr>' + headers.map(h=>`<th>${h}</th>`).join('') + '</tr></thead><tbody>'; 
+      for(const r of rows){
+        html += '<tr>' +
+          `<td>${r.id ?? ''}</td>`+
+          `<td>[${r.sensorReadings.join(', ')}]</td>`+
+          `<td>${r.farmerNote}</td>`+
+          `<td>${r.gpsCoordinates}</td>`+
+          `<td>${r.timestamp}</td>`+
+          `<td><img src="${r.cropPhoto}" alt="crop" width="14" height="14"/></td>`+
+        '</tr>';
+      }
+      html += '</tbody></table>';
+      document.getElementById('sample').innerHTML = html;
+    }
+
+    // --- Wire up UI ---
+    const $ = (id) => document.getElementById(id);
+    $('#btnOpen').onclick = async () => {
+      try{
+        await openDB();
+        $('#dbStatus').innerHTML = '<span class="ok">DB ready:</span> <code>AgricultureDB</code> / <code>FarmData</code>';
+        $('#btnSeed').disabled = false;
+        $('#btnCount').disabled = false;
+        $('#btnSample').disabled = false;
+        log('Opened database successfully.', 'ok');
+      }catch(err){
+        log('Failed to open DB: '+err.message, 'err');
+      }
+    };
+
+    $('#btnWipe').onclick = async () => {
+      if(!db){ log('Open the DB first.', 'warn'); return; }
+      await wipeStore();
+      $('#count').textContent = '';
+      $('#sample').innerHTML = '';
+      log('FarmData cleared.', 'warn');
+    };
+
+    $('#btnSeed').onclick = async () => {
+      if(!db){ log('Open the DB first.', 'warn'); return; }
+      $('#btnSeed').disabled = true;
+      $('#progress').textContent = 'Working… this may take a few seconds.';
+      try{
+        await seedTenK();
+      }catch(err){
+        log('Insert error: '+err.message, 'err');
+      }finally{
+        $('#btnSeed').disabled = false;
+      }
+    };
+
+    $('#btnCount').onclick = async () => {
+      if(!db){ log('Open the DB first.', 'warn'); return; }
+      const c = await countAll();
+      $('#count').textContent = `Row count in FarmData: ${c}`;
+    };
+
+    $('#btnSample').onclick = async () => {
+      if(!db){ log('Open the DB first.', 'warn'); return; }
+      const rows = await getSample(50);
+      renderSample(rows);
+    };
+  </script>
+</body>
+</html>

@@ -1,0 +1,215 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>AgricultureDB Seeder + Verifier</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
+    h1 { margin-bottom: 0.25rem; }
+    p { margin: 0.25rem 0 1rem; }
+    button { padding: 0.6rem 1rem; border-radius: 10px; border: 1px solid #ccc; cursor: pointer; margin-right: 0.5rem; }
+    #log { white-space: pre-wrap; border: 1px solid #ddd; padding: 1rem; border-radius: 10px; margin-top: 1rem; height: 240px; overflow:auto; }
+    .muted { color: #555; }
+    code { background: #f6f7f8; padding: 0.05rem 0.3rem; border-radius: 6px; }
+  </style>
+</head>
+<body>
+  <h1>AgricultureDB Seeder + Verifier</h1>
+  <p class="muted">Creates <code>AgricultureDB</code> → <code>FarmData</code> (auto-increment), inserts <strong>10,000</strong> entries, and provides a verification tool that reads & logs records to the browser console with accurate data types.</p>
+  <div>
+    <button id="seed">Seed 10,000 entries</button>
+    <button id="count">Count records</button>
+    <button id="verify">Verify & log 20 records</button>
+  </div>
+  <pre id="log"></pre>
+
+<script>
+/** Small promise helpers for IDB **/
+function reqToPromise(req) {
+  return new Promise((resolve, reject) => {
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+}
+function txDone(tx) {
+  return new Promise((resolve, reject) => {
+    tx.oncomplete = () => resolve();
+    tx.onerror = () => reject(tx.error);
+    tx.onabort = () => reject(tx.error || new Error('Transaction aborted'));
+  });
+}
+
+/** Open (or create) the DB and store */
+function openDB() {
+  return new Promise((resolve, reject) => {
+    const openReq = indexedDB.open('AgricultureDB', 1);
+    openReq.onupgradeneeded = () => {
+      const db = openReq.result;
+      if (!db.objectStoreNames.contains('FarmData')) {
+        const store = db.createObjectStore('FarmData', { keyPath: 'id', autoIncrement: true });
+        store.createIndex('by_timestamp', 'timestamp');
+      }
+    };
+    openReq.onsuccess = () => resolve(openReq.result);
+    openReq.onerror = () => reject(openReq.error);
+  });
+}
+
+/** Random data generators **/
+function randomSensorReadings(n = 5) {
+  return [
+    +(Math.random() * 100).toFixed(2),     // moisture
+    +(15 + Math.random() * 20).toFixed(2), // temp °C
+    +(30 + Math.random() * 50).toFixed(2), // humidity
+    Math.floor(100 + Math.random() * 9000),// light
+    +(5 + Math.random() * 3).toFixed(2)    // soil pH-ish
+  ].slice(0, n);
+}
+function randomCropPhoto() {
+  const crops = ['corn', 'wheat', 'rice', 'soy', 'tomato'];
+  const c = crops[Math.floor(Math.random() * crops.length)];
+  return `./images/${c}.jpg`;
+}
+function randomFarmerNote(i) {
+  const notes = [
+    'Irrigated this morning.',
+    'Observed mild pest activity.',
+    'Fertilizer applied yesterday.',
+    'Soil looks dry; monitor closely.',
+    'Weeds removed; growth looks good.'
+  ];
+  return `${notes[i % notes.length]} (#${i})`;
+}
+function randomGPSNumber() { return +(32 + Math.random() * 10).toFixed(6); }
+function randomTimestamp() {
+  const now = Date.now();
+  const past = now - 30 * 24 * 60 * 60 * 1000;
+  return new Date(past + Math.random() * (now - past));
+}
+
+/** Seed function: adds N entries in chunks for performance */
+async function seedFarmData(total = 10000, chunkSize = 500) {
+  const db = await openDB();
+  const storeName = 'FarmData';
+  let added = 0;
+
+  while (added < total) {
+    const thisChunk = Math.min(chunkSize, total - added);
+    const tx = db.transaction(storeName, 'readwrite');
+    const store = tx.objectStore(storeName);
+
+    for (let i = 0; i < thisChunk; i++) {
+      const idx = added + i + 1;
+      const entry = {
+        sensorReadings: randomSensorReadings(5), // Array
+        cropPhoto: randomCropPhoto(),            // local image URL (string)
+        farmerNote: randomFarmerNote(idx),       // String
+        gpsCoordinates: randomGPSNumber(),       // Number (latitude)
+        timestamp: randomTimestamp()             // Date
+      };
+      store.add(entry);
+    }
+    await txDone(tx);
+    added += thisChunk;
+    log(`Inserted ${added}/${total}…`);
+  }
+
+  db.close();
+  log('✅ Done seeding!');
+}
+
+/** Count records */
+async function countRecords() {
+  const db = await openDB();
+  const tx = db.transaction('FarmData', 'readonly');
+  const store = tx.objectStore('FarmData');
+  const count = await reqToPromise(store.count());
+  db.close();
+  log(`Total records in FarmData: ${count}`);
+  return count;
+}
+
+/** Retrieve and log N records with accurate formatting to the console */
+async function retrieveAndLog(limit = 20) {
+  const db = await openDB();
+  const tx = db.transaction('FarmData', 'readonly');
+  const store = tx.objectStore('FarmData');
+
+  const out = [];
+  let cursorReq = store.openCursor();
+  await new Promise((resolve, reject) => {
+    cursorReq.onsuccess = (e) => {
+      const cursor = e.target.result;
+      if (!cursor || out.length >= limit) return resolve();
+      const v = cursor.value;
+
+      // Ensure proper types and formatting
+      const formatted = {
+        id: v.id,
+        sensorReadings: Array.isArray(v.sensorReadings) ? v.sensorReadings : [v.sensorReadings],
+        cropPhoto: typeof v.cropPhoto === 'string' ? v.cropPhoto : String(v.cropPhoto),
+        farmerNote: typeof v.farmerNote === 'string' ? v.farmerNote : JSON.stringify(v.farmerNote),
+        gpsCoordinates: typeof v.gpsCoordinates === 'number' ? v.gpsCoordinates : Number(v.gpsCoordinates),
+        timestamp: (v.timestamp instanceof Date) ? v.timestamp : new Date(v.timestamp),
+        timestampISO: (v.timestamp instanceof Date) ? v.timestamp.toISOString() : new Date(v.timestamp).toISOString(),
+        types: {
+          sensorReadings: Array.isArray(v.sensorReadings) ? 'Array' : typeof v.sensorReadings,
+          cropPhoto: typeof v.cropPhoto,
+          farmerNote: typeof v.farmerNote,
+          gpsCoordinates: typeof v.gpsCoordinates,
+          timestamp: (v.timestamp instanceof Date) ? 'Date' : typeof v.timestamp
+        }
+      };
+
+      out.push(formatted);
+      cursor.continue();
+    };
+    cursorReq.onerror = () => reject(cursorReq.error);
+  });
+
+  const total = await countRecords();
+
+  // Log to console clearly
+  console.group('IndexedDB Verification: FarmData sample');
+  console.log('Total records (expect 10000):', total);
+  console.log('First %d formatted records with types:', out.length);
+  console.table(out.map(r => ({
+    id: r.id,
+    'sensorReadings (Array)': JSON.stringify(r.sensorReadings),
+    'cropPhoto (String)': r.cropPhoto,
+    'farmerNote (String)': r.farmerNote,
+    'gpsCoordinates (Number)': r.gpsCoordinates,
+    'timestamp (Date)': r.timestampISO
+  })));
+  console.groupEnd();
+
+  db.close();
+  log(`Verification complete. Open Console to view ${out.length} records and total count.`);
+}
+
+/** UI hooks **/
+const logEl = document.getElementById('log');
+function log(msg) { logEl.textContent += msg + '\n'; }
+
+document.getElementById('seed').addEventListener('click', async () => {
+  try {
+    log('Opening DB and seeding 10,000 entries…');
+    await seedFarmData(10000, 500);
+    await countRecords();
+  } catch (e) {
+    console.error(e);
+    log('❌ Error: ' + (e && e.message ? e.message : e));
+  }
+});
+
+document.getElementById('count').addEventListener('click', async () => {
+  try { await countRecords(); } catch (e) { log('❌ Error: ' + e.message); }
+});
+
+document.getElementById('verify').addEventListener('click', async () => {
+  try { await retrieveAndLog(20); } catch (e) { console.error(e); log('❌ Error: ' + e.message); }
+});
+</script>
+</body>
+</html>

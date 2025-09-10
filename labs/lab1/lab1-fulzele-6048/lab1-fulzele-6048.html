@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>lab1-fulzele-6048</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:900px;margin:2rem auto;padding:0 1rem;line-height:1.5}
+    h1,h2,h3{margin:1.25rem 0 .25rem}
+    code,kbd,pre{background:#f6f7f8;border-radius:6px;padding:.1rem .25rem}
+    pre{padding:1rem;overflow:auto}
+    .muted{color:#666}
+    li{margin:.25rem 0}
+  </style>
+</head>
+<body>
+  <h1>Lab 1 — IndexedDB (AgricultureDB)</h1>
+  <p class="muted">File: <strong>lab1-fulzele-6048.html</strong></p>
+
+  <h2>Overview</h2>
+  <p>This lab creates an IndexedDB database named <code>AgricultureDB</code> with an object store <code>FarmData</code> (auto-increment key) and inserts exactly 10,000 records. Each record contains:
+    <code>sensorReadings:Array&lt;number&gt;</code>, <code>cropPhoto:string</code>, <code>farmerNote:string</code>, <code>gpsCoordinates:number</code>, and <code>timestamp:Date</code>.
+  </p>
+
+  <h2>Files included</h2>
+  <ul>
+    <li><code>AgricultureDB_Seeder.html</code></li>
+    <li><code>AgricultureDB_Seeder_Verify.html</code></li>
+    <li><code>AgricultureDB_Unit_Tests.html</code></li>
+    <li><code>lab1-fulzele-6048.html</code> — this explanation file</li>
+  </ul>
+
+  <h2>How to run</h2>
+  <ol>
+    <li>Open in Chrome/Edge/Firefox.</li>
+    <li>Open DevTools: <kbd>Cmd+Option+I</kbd> / <kbd>Ctrl+Shift+I</kbd>.</li>
+    <li>Seed 10,000; Verify (console shows sample + total 10,000).</li>
+    <li>For tests, run the unit test page; all <code>console.assert</code> checks should pass.</li>
+  </ol>
+
+  <h2>Git</h2>
+  <pre><code>git checkout -b lab1-fulzele-6048
+mkdir -p labs/lab1
+# add the four files above into labs/lab1
+git add labs/lab1
+git commit -m "Lab1 IndexedDB (Fulzele 6048)"
+git push -u origin lab1-fulzele-6048</code></pre>
+
+  <h2>Commit</h2>
+  <p>Commit SHA: <code>&lt;fill after push&gt;</code></p>
+
+  <h2>Screenshots for submission</h2>
+  <ul>
+    <li>IndexedDB → AgricultureDB → FarmData view</li>
+    <li>Console sample + total count 10,000</li>
+    <li>Console unit tests → “All 5 tests passed ✅”</li>
+    <li>GitHub page showing files and latest commit</li>
+  </ul>
+
+  <p class="muted">Generated: 2025-09-10</p>
+</body>
+</html>

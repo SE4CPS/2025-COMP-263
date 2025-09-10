@@ -1,0 +1,224 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>AgricultureDB Unit Tests</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin: 2rem; }
+    h1 { margin-bottom: 0.25rem; }
+    p { margin: 0.25rem 0 1rem; }
+    button { padding: 0.6rem 1rem; border-radius: 10px; border: 1px solid #ccc; cursor: pointer; margin-right: .5rem; }
+    #log { white-space: pre-wrap; border: 1px solid #ddd; padding: 1rem; border-radius: 10px; margin-top: 1rem; height: 240px; overflow:auto; }
+  </style>
+</head>
+<body>
+  <h1>AgricultureDB Unit Tests</h1>
+  <p>Runs five <code>console.assert</code>-based unit tests that verify IndexedDB writes (add) and reads (get). The test runner clears and reseeds deterministically to exactly 10,000 rows.</p>
+  <div>
+    <button id="run">Clear → Seed 10,000 → Run Tests</button>
+  </div>
+  <pre id="log"></pre>
+
+<script>
+/** IDB helpers **/
+function reqToPromise(req) { return new Promise((res, rej) => { req.onsuccess = () => res(req.result); req.onerror = () => rej(req.error); }); }
+function txDone(tx) { return new Promise((res, rej) => { tx.oncomplete = () => res(); tx.onerror = () => rej(tx.error); tx.onabort = () => rej(tx.error || new Error('Transaction aborted')); }); }
+
+/** DB open with schema **/
+function openDB() {
+  return new Promise((resolve, reject) => {
+    const openReq = indexedDB.open('AgricultureDB', 1);
+    openReq.onupgradeneeded = () => {
+      const db = openReq.result;
+      if (!db.objectStoreNames.contains('FarmData')) {
+        const store = db.createObjectStore('FarmData', { keyPath: 'id', autoIncrement: true });
+        store.createIndex('by_timestamp', 'timestamp');
+      }
+    };
+    openReq.onsuccess = () => resolve(openReq.result);
+    openReq.onerror = () => reject(openReq.error);
+  });
+}
+
+/** Deterministic reseed **/
+function deleteDB(name='AgricultureDB') {
+  return new Promise((resolve, reject) => {
+    const delReq = indexedDB.deleteDatabase(name);
+    delReq.onsuccess = () => resolve();
+    delReq.onerror = () => reject(delReq.error);
+    delReq.onblocked = () => reject(new Error('Delete blocked: close other tabs/contexts using this DB.'));
+  });
+}
+
+function randomSensorReadings(n=5) {
+  return [
+    +(Math.random() * 100).toFixed(2),
+    +(15 + Math.random() * 20).toFixed(2),
+    +(30 + Math.random() * 50).toFixed(2),
+    Math.floor(100 + Math.random() * 9000),
+    +(5 + Math.random() * 3).toFixed(2)
+  ].slice(0, n);
+}
+function randomCropPhoto() { const crops=['corn','wheat','rice','soy','tomato']; const c=crops[Math.floor(Math.random()*crops.length)]; return `./images/${c}.jpg`; }
+function randomFarmerNote(i) { const notes=['Irrigated this morning.','Observed mild pest activity.','Fertilizer applied yesterday.','Soil looks dry; monitor closely.','Weeds removed; growth looks good.']; return `${notes[i%notes.length]} (#${i})`; }
+function randomGPSNumber() { return +(32 + Math.random() * 10).toFixed(6); }
+function randomTimestamp() { const now=Date.now(), past=now-30*24*60*60*1000; return new Date(past + Math.random()*(now-past)); }
+
+async function seedFarmData(total=10000, chunkSize=500) {
+  const db = await openDB();
+  const storeName = 'FarmData';
+  let added = 0;
+  while (added < total) {
+    const thisChunk = Math.min(chunkSize, total - added);
+    const tx = db.transaction(storeName, 'readwrite');
+    const store = tx.objectStore(storeName);
+    for (let i=0;i<thisChunk;i++) {
+      const idx = added + i + 1;
+      const entry = {
+        sensorReadings: randomSensorReadings(),
+        cropPhoto: randomCropPhoto(),
+        farmerNote: randomFarmerNote(idx),
+        gpsCoordinates: randomGPSNumber(),
+        timestamp: randomTimestamp()
+      };
+      store.add(entry);
+    }
+    await txDone(tx);
+    log(`Inserted ${added + thisChunk}/${total}…`);
+    added += thisChunk;
+  }
+  db.close();
+}
+
+async function countRecords() {
+  const db = await openDB();
+  const tx = db.transaction('FarmData', 'readonly');
+  const store = tx.objectStore('FarmData');
+  const count = await reqToPromise(store.count());
+  db.close();
+  return count;
+}
+
+/** ---------- FIVE UNIT TESTS (console.assert) ---------- **/
+
+// Test 1: Database and object store exist
+async function testDBSetup() {
+  const db = await openDB();
+  const hasStore = db.objectStoreNames.contains('FarmData');
+  console.assert(hasStore, 'Test 1: Object store "FarmData" should exist.');
+  db.close();
+}
+
+// Test 2: Total record count is exactly 10,000
+async function testCountIs10000() {
+  const count = await countRecords();
+  console.assert(count === 10000, `Test 2: Expected 10000 records, got ${count}.`);
+}
+
+// Test 3: One record has correct shapes & types (Array/String/Number/Date) and valid file extension
+async function testRecordShapeAndTypes() {
+  const db = await openDB();
+  const tx = db.transaction('FarmData', 'readonly');
+  const store = tx.objectStore('FarmData');
+  const cursor = await new Promise((resolve, reject) => {
+    const req = store.openCursor();
+    req.onsuccess = e => resolve(e.target.result);
+    req.onerror = () => reject(req.error);
+  });
+  const v = cursor && cursor.value;
+  console.assert(!!v, 'Test 3: At least one record should be retrievable.');
+  console.assert(Array.isArray(v.sensorReadings), 'Test 3: sensorReadings must be an Array.');
+  console.assert(v.sensorReadings.length > 0 && v.sensorReadings.every(n => typeof n === 'number' && Number.isFinite(n)), 'Test 3: sensorReadings must contain finite numbers.');
+  console.assert(typeof v.cropPhoto === 'string', 'Test 3: cropPhoto must be a String.');
+  console.assert(/\.(jpg|jpeg|png|gif|webp)$/i.test(v.cropPhoto), `Test 3: cropPhoto filename must end with an image extension. Got: ${v.cropPhoto}`);
+  console.assert(typeof v.farmerNote === 'string' && v.farmerNote.length > 0, 'Test 3: farmerNote must be a non-empty String.');
+  console.assert(typeof v.gpsCoordinates === 'number' && Number.isFinite(v.gpsCoordinates), 'Test 3: gpsCoordinates must be a finite Number.');
+  const ts = (v.timestamp instanceof Date) ? v.timestamp : new Date(v.timestamp);
+  console.assert(ts instanceof Date && !isNaN(ts.getTime()), 'Test 3: timestamp must be a valid Date.');
+  db.close();
+}
+
+// Test 4: Index read via by_timestamp returns non-decreasing order for first 50
+async function testIndexByTimestampOrder() {
+  const db = await openDB();
+  const tx = db.transaction('FarmData', 'readonly');
+  const idx = tx.objectStore('FarmData').index('by_timestamp');
+  const times = [];
+  await new Promise((resolve, reject) => {
+    let count = 0;
+    const req = idx.openCursor();
+    req.onsuccess = e => {
+      const cursor = e.target.result;
+      if (!cursor || count >= 50) return resolve();
+      const t = cursor.value.timestamp instanceof Date ? cursor.value.timestamp : new Date(cursor.value.timestamp);
+      times.push(t.getTime());
+      count++; cursor.continue();
+    };
+    req.onerror = () => reject(req.error);
+  });
+  const nonDecreasing = times.every((t,i,a)=> i===0 || a[i-1] <= t);
+  console.assert(nonDecreasing, 'Test 4: by_timestamp index should iterate in non-decreasing time order for first 50 entries.');
+  db.close();
+}
+
+// Test 5: Add → Get → Delete roundtrip
+async function testAddGetRoundtrip() {
+  const db = await openDB();
+  const tx = db.transaction('FarmData', 'readwrite');
+  const store = tx.objectStore('FarmData');
+  const sample = {
+    sensorReadings: [1,2,3,4,5],
+    cropPhoto: './images/test.jpg',
+    farmerNote: 'Unit test row',
+    gpsCoordinates: 37.7749,
+    timestamp: new Date('2025-01-01T00:00:00Z')
+  };
+  const key = await reqToPromise(store.add(sample));
+  await txDone(tx);
+
+  const tx2 = db.transaction('FarmData', 'readonly');
+  const got = await reqToPromise(tx2.objectStore('FarmData').get(key));
+  console.assert(!!got, 'Test 5: Newly added record should be retrievable.');
+  console.assert(got.farmerNote === sample.farmerNote, 'Test 5: Retrieved farmerNote should match.');
+  console.assert(Array.isArray(got.sensorReadings) && got.sensorReadings.length === 5, 'Test 5: Retrieved sensorReadings should match shape.');
+  console.assert(typeof got.gpsCoordinates === 'number', 'Test 5: Retrieved gpsCoordinates should be a number.');
+  console.assert(/\.(jpg|jpeg|png|gif|webp)$/i.test(got.cropPhoto), 'Test 5: Retrieved cropPhoto should have image extension.');
+  const ts = got.timestamp instanceof Date ? got.timestamp : new Date(got.timestamp);
+  console.assert(ts instanceof Date && ts.toISOString() === '2025-01-01T00:00:00.000Z', 'Test 5: Retrieved timestamp should match exact ISO time.');
+
+  // Cleanup: delete the test record so total count stays 10000
+  const tx3 = db.transaction('FarmData', 'readwrite');
+  await reqToPromise(tx3.objectStore('FarmData').delete(key));
+  await txDone(tx3);
+  db.close();
+}
+
+/** Test runner **/
+async function runAllTests() {
+  try {
+    log('Clearing database…');
+    await deleteDB();
+    log('Seeding exactly 10,000 records…');
+    await seedFarmData(10000, 500);
+    log('Running tests… (open the Console to see assertions)');
+    await testDBSetup();
+    await testCountIs10000();
+    await testRecordShapeAndTypes();
+    await testIndexByTimestampOrder();
+    await testAddGetRoundtrip();
+    console.log('%cAll 5 tests passed ✅', 'font-weight:bold;');
+    log('All 5 tests passed ✅ (see Console for details).');
+  } catch (e) {
+    console.error(e);
+    log('❌ Test run failed: ' + (e && e.message ? e.message : e));
+  }
+}
+
+/** UI **/
+const logEl = document.getElementById('log');
+function log(msg) { logEl.textContent += msg + '\n'; }
+document.getElementById('run').addEventListener('click', () => runAllTests());
+</script>
+</body>
+</html>

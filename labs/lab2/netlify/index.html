@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>IndexedDB (IDs 1..10)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    
+:root{
+  --bg:#f6f7fb; --fg:#111; --muted:#666; --line:#e5e7ef; --card:#fff;
+  --accent:#4f46e5; --accent-2:#7c3aed; --ok:#0a7a0a; --err:#b00020;
+}
+
+@media (prefers-color-scheme: dark){
+  :root{
+    --bg:#0f1116; --fg:#e8e9ee; --muted:#a5a6ad; --line:#1f2330; --card:#161a23;
+    --accent:#8b8df6; --accent-2:#b58cff; --ok:#5bd27a; --err:#ff6b7a;
+  }
+}
+
+*{ box-sizing:border-box }
+html,body{ height:100% }
+body{
+  margin:0; padding:24px;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji";
+  background:var(--bg); color:var(--fg);
+}
+
+h1{ margin:0 0 8px; letter-spacing:.2px }
+h3{ margin:0 0 10px }
+
+.card{
+  background:var(--card);
+  border:1px solid var(--line);
+  border-radius:14px; padding:14px;
+  box-shadow: 0 1px 2px rgba(0,0,0,.06), 0 8px 32px rgba(2,6,23,.06);
+}
+
+.row{ display:grid; gap:12px; grid-template-columns: 1fr 1fr; }
+.grid-3{ display:grid; gap:10px; grid-template-columns: repeat(3,1fr); }
+.grid-4{ display:grid; gap:10px; grid-template-columns: repeat(4,1fr); }
+
+label{ display:block; font-size:12px; color:var(--muted); margin:0 0 6px 2px }
+
+input, select, textarea, button{
+  font: inherit;
+  border-radius:10px;
+  border:1px solid var(--line);
+  background: var(--card);
+  color: var(--fg);
+  padding:10px 12px;
+  outline: none;
+  transition: box-shadow .15s ease, border-color .15s ease, transform .04s ease;
+}
+
+input:focus, select:focus, textarea:focus{
+  border-color: color-mix(in srgb, var(--accent) 60%, var(--line));
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+button{
+  background: linear-gradient(180deg, var(--accent), var(--accent-2));
+  color: white; border: none; font-weight:600;
+}
+button:hover{ transform: translateY(-1px) }
+button:active{ transform: translateY(0) }
+
+.btns{ display:flex; gap:10px; flex-wrap:wrap }
+.btns button{
+  padding:10px 14px; letter-spacing:.2px;
+  box-shadow: 0 6px 20px rgba(79,70,229,.18);
+}
+
+.status{ margin-top:8px; font-size:13px }
+.ok{ color: var(--ok) }
+.err{ color: var(--err) }
+
+table{
+  width:100%; border-collapse: separate; border-spacing:0;
+  margin-top:12px; background:var(--card);
+  border:1px solid var(--line); border-radius:12px; overflow:hidden;
+}
+thead th{
+  position: sticky; top:0; z-index:1;
+  background: linear-gradient(180deg, color-mix(in srgb, var(--card) 85%, white), var(--card));
+  text-align:left; font-weight:700; padding:10px 12px; border-bottom:1px solid var(--line);
+}
+tbody td{ padding:10px 12px; border-top:1px solid var(--line) }
+
+tbody tr:nth-child(2n){
+  background: color-mix(in srgb, var(--card) 95%, var(--bg));
+}
+tbody tr:hover{
+  background: color-mix(in srgb, var(--accent) 6%, var(--card));
+}
+
+.mono{ font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; font-size:12px }
+
+/* responsive */
+@media (max-width: 900px){
+  .row{ grid-template-columns: 1fr }
+  .grid-4{ grid-template-columns: repeat(2,1fr) }
+}
+.kw {
+  font-weight: 700;
+  color: var(--accent);
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+  padding: 2px 6px;
+  border-radius: 6px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 13px;
+}
+
+h1 {
+  color: rgb(226, 184, 238);
+  font-size: 3em;
+  font-family: "Baskerville Old Face", serif;
+  font-weight: bold;
+  margin: 0 0 12px;
+}
+
+
+</style>
+</head>
+<body>
+  <h1> Farm Sensors Database 
+</h1>
+  
+ <p>
+  Seeds IDs <code>1..10</code>. Use filters, sorting, updates, and export.  
+  All data ops use 
+
+  <span class="kw">map</span> / 
+  <span class="kw">filter</span> / 
+  <span class="kw">reduce</span> / 
+  <span class="kw">sort</span> only.
+
+</p>
+
+
+  <div class="row">
+    <div class="card">
+      <h3>Controls</h3>
+      <div class="btns">
+        <button id="seed">Seed / Reseed</button>
+        <button id="randomize">Randomize Readings</button>
+        <button id="refresh">Refresh</button>
+        <button id="reset">Reset DB</button>
+        <button id="export">Export JSON</button>
+      </div>
+      <div class="status" id="status"></div>
+    </div>
+
+    <div class="card">
+      <h3>Update One Record</h3>
+      <div class="grid-3">
+        <div><label for="upd-id">id</label><input id="upd-id" type="number" min="1" max="10" placeholder="1..10" /></div>
+        <div><label for="upd-reading">reading</label><input id="upd-reading" type="number" step="0.01" placeholder="e.g. 42.75" /></div>
+        <div><label for="upd-notes">notes</label><input id="upd-notes" type="text" placeholder="New note..." /></div>
+      </div>
+      <div style="margin-top:8px"><button id="apply-update">Apply Update</button></div>
+      <p class="mono" style="opacity:.75;margin-top:8px">Hint: click a row to prefill form.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:10px">
+    <h3>Filter & Sort</h3>
+    <div class="grid-4">
+      <div>
+        <label for="f-sensor">sensorId</label>
+        <select id="f-sensor">
+          <option value="all">all</option>
+          <option value="sensor-1">sensor-1</option>
+          <option value="sensor-2">sensor-2</option>
+          <option value="sensor-3">sensor-3</option>
+        </select>
+      </div>
+      <div><label for="f-min">min reading</label><input id="f-min" type="number" step="0.01" placeholder="min" /></div>
+      <div><label for="f-max">max reading</label><input id="f-max" type="number" step="0.01" placeholder="max" /></div>
+      <div><label for="f-notes">notes contains</label><input id="f-notes" type="text" placeholder="search notes" /></div>
+    </div>
+
+    <div class="grid-4" style="margin-top:10px">
+      <div>
+        <label for="sort-key">sort by</label>
+        <select id="sort-key">
+          <option value="id">id</option>
+          <option value="sensorId">sensorId</option>
+          <option value="reading">reading</option>
+          <option value="timestamp">timestamp</option>
+          <option value="notes">notes</option>
+        </select>
+      </div>
+      <div>
+        <label for="sort-dir">direction</label>
+        <select id="sort-dir">
+          <option value="asc">asc</option>
+          <option value="desc">desc</option>
+        </select>
+      </div>
+      <div></div><div></div>
+    </div>
+  </div>
+
+
+  <!-- ⬇️ Paste the NEW Prepare-for-MongoDB card RIGHT HERE ⬇️ -->
+  <div class="card" style="margin-top:10px">
+    <h3>MongoDB Payload (Metadata + UTC)</h3>
+    <div class="btns">
+      <button id="prep-mongo">Prepare for MongoDB</button>
+      <button id="download-mongo">Download JSON</button>
+      <button id="copy-mongo">Copy to Clipboard</button>
+    </div>
+    <p class="mono" style="opacity:.8;margin-top:8px">
+      Payload includes <code>metadata</code> and <code>data</code>. All timestamps converted to UTC ISO.
+    </p>
+    <details style="margin-top:8px">
+      <summary>Preview: Full Payload</summary>
+      <pre id="mongo-payload" class="mono" style="white-space:pre-wrap; word-break:break-word;"></pre>
+    </details>
+
+    <h4 style="margin-top:12px">Preview: One Prepared Object + Metadata</h4>
+    <pre id="one-object" class="mono" style="white-space:pre-wrap; word-break:break-word;"></pre>
+  </div>
+  <!-- ⬆️ New card ends here ⬆️ -->
+
+  <table id="tbl">
+    <thead>
+      <tr>
+        <th>id</th><th>sensorId</th><th>reading</th><th>timestamp</th><th>notes</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script>
+
+    const DB_NAME='FarmSensorsDB', STORE='readings', VERSION=1;
+
+    const openDB = () => new Promise((resolve,reject)=>{
+      const req = indexedDB.open(DB_NAME, VERSION);
+      req.onupgradeneeded = e => {
+        const db = e.target.result;
+        try { db.createObjectStore(STORE, { keyPath:'id' }); } catch(_) {}
+      };
+      req.onsuccess = ()=>resolve(req.result);
+      req.onerror = ()=>reject(req.error);
+    });
+
+    const setStatus = (msg, ok=true)=>{
+      const s=document.getElementById('status'); s.textContent=msg; s.className = ok?'status ok':'status err';
+    };
+
+    const withTx = (db, mode, fn)=> new Promise((resolve,reject)=>{
+      const tx=db.transaction(STORE, mode);
+      fn(tx.objectStore(STORE), tx);
+      tx.oncomplete = ()=>resolve();
+      tx.onerror = ()=>reject(tx.error);
+    });
+
+    const ids = Array.from({length:10},(_,i)=>i+1);
+    const makeTenObjects = () =>
+      ids.map(id => ({
+        id,
+        sensorId: `sensor-${((id % 3) + 1)}`,
+        reading: Number((Math.random()*100).toFixed(2)),
+        timestamp: new Date(Date.now() + id*1000).toISOString(),
+        notes: `Reading #${id}`
+      }));
+
+    const readAll = async () => {
+      const db = await openDB();
+      const rows = await new Promise((resolve,reject)=>{
+        const tx=db.transaction(STORE,'readonly');
+        const req=tx.objectStore(STORE).getAll();
+        req.onsuccess = ()=>resolve(req.result||[]);
+        req.onerror = ()=>reject(req.error);
+      });
+      db.close();
+      return rows;
+    };
+
+    const renderRows = rows => {
+      const tbody=document.querySelector('#tbl tbody');
+      tbody.innerHTML = rows
+        .map(r=>`<tr data-id="${r.id}">
+          <td>${r.id}</td>
+          <td>${r.sensorId}</td>
+          <td>${r.reading}</td>
+          <td class="mono">${r.timestamp}</td>
+          <td>${r.notes}</td>
+        </tr>`).join('');
+    };
+
+    const currentSort = ()=>({
+      key: document.getElementById('sort-key').value,
+      dir: document.getElementById('sort-dir').value
+    });
+
+    const applyFilterSort = async ()=>{
+      const [sensor, minS, maxS, q] = [
+        document.getElementById('f-sensor').value,
+        document.getElementById('f-min').value,
+        document.getElementById('f-max').value,
+        document.getElementById('f-notes').value.trim().toLowerCase()
+      ];
+
+      const asNum = s => s === '' ? null : Number(s);
+      const min = asNum(minS), max = asNum(maxS);
+
+      const rows = await readAll();
+
+      const filtered = rows
+        .filter(x => sensor==='all' || x.sensorId===sensor)
+        .filter(x => (min===null || x.reading>=min))
+        .filter(x => (max===null || x.reading<=max))
+        .filter(x => (q==='' || String(x.notes).toLowerCase().includes(q)));
+
+      const {key,dir} = currentSort();
+      const factor = ({asc:1, desc:-1})[dir];
+      const val = v => (v===null || v===undefined) ? '' : v;
+      const sorted = filtered.slice().sort((a,b)=>{
+        const av = val(a[key]), bv = val(b[key]);
+        return (av>bv) ? factor : (av<bv ? -factor : 0);
+      });
+
+      renderRows(sorted);
+      setStatus(`Showing ${sorted.length} of ${rows.length}`);
+    };
+
+  const seed = async ()=>{
+  const db = await openDB();
+  const base = makeTenObjects();        // your existing function
+  const md = makeMetadata();            // snapshot for this seed run
+
+  // embed metadata into every object using map (no loops/ifs)
+  const dataWithMd = base.map(o => Object.assign({}, o, { metadata: md }));
+
+  await withTx(db,'readwrite',store=> dataWithMd.map(o=>store.put(o)));
+  db.close();
+  setStatus('Seeded 10 records with embedded metadata.');
+  await applyFilterSort();
+};
+
+
+   const randomizeReadings = async ()=>{
+  const db = await openDB();
+  const rows = await readAll();
+  const randomized = rows.map(r => Object.assign({}, r, {
+    reading: Number((Math.random()*100).toFixed(2)),
+    // keep user metadata as-is (embedded already)
+    metadata: r.metadata
+  }));
+  await withTx(db,'readwrite',store=> randomized.map(o=>store.put(o)));
+  db.close();
+  setStatus('Randomized readings (metadata preserved).');
+  await applyFilterSort();
+};
+
+    const resetDB = async ()=>{
+      const req = indexedDB.deleteDatabase(DB_NAME);
+      await new Promise((res,rej)=>{
+        req.onsuccess=res; req.onerror=()=>rej(req.error); req.onblocked=res;
+      });
+      renderRows([]); setStatus('Database deleted.');
+    };
+
+    const updateOne = async (id, reading, notes)=>{
+  const db = await openDB();
+  const store = db.transaction(STORE,'readwrite').objectStore(STORE);
+
+  const current = await new Promise((res,rej)=>{
+    const g=store.get(id); g.onsuccess=()=>res(g.result); g.onerror=()=>rej(g.error);
+  });
+
+  // Build new object with map-like merging (no conditionals)
+  const updated = Object.assign({}, current||{}, {
+    id: id,
+    reading: isNaN(reading) ? (current?current.reading:null) : reading,
+    notes: (notes==='' ? (current?current.notes:'') : notes),
+    timestamp: new Date((current && current.timestamp) || Date.now()).toISOString(), // ensure UTC again
+    metadata: (current && current.metadata) || makeMetadata()
+  });
+
+  await new Promise((res,rej)=>{
+    const p=store.put(updated); p.onsuccess=res; p.onerror=()=>rej(p.error);
+  });
+  db.close();
+  setStatus(`Updated id ${id} (metadata preserved).`);
+  await applyFilterSort();
+};
+
+
+    // --- Wire UI
+    document.getElementById('seed').addEventListener('click', seed);
+    document.getElementById('randomize').addEventListener('click', randomizeReadings);
+    document.getElementById('refresh').addEventListener('click', applyFilterSort);
+    document.getElementById('reset').addEventListener('click', resetDB);
+    document.getElementById('export').addEventListener('click', async ()=>{
+  
+        const json = JSON.stringify(await readAll(), null, 2);
+      const blob = new Blob([json], {type:'application/json'});
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href=url; a.download='FarmSensorsDB-readings.json';
+      document.body.appendChild(a); a.click();
+      a.remove(); URL.revokeObjectURL(url);
+    });
+
+    // filter/sort triggers
+    ['f-sensor','f-min','f-max','f-notes','sort-key','sort-dir']
+      .map(id=>document.getElementById(id).addEventListener('input', applyFilterSort));
+
+    // prefill update form on row click (no ifs; rely on dataset)
+    document.querySelector('#tbl tbody').addEventListener('click', e=>{
+      const tr = e.target.closest('tr');
+      tr && [ ['upd-id', tr.dataset.id],
+              ['upd-reading', tr.children[2].textContent],
+              ['upd-notes', tr.children[4].textContent] ]
+           .map(([id,val])=> (document.getElementById(id).value = val));
+    });
+
+    document.getElementById('apply-update').addEventListener('click', async ()=>{
+      const id = Number(document.getElementById('upd-id').value);
+      const readingStr = document.getElementById('upd-reading').value;
+      const notes = document.getElementById('upd-notes').value;
+      const reading = readingStr==='' ? NaN : Number(readingStr);
+      // always attempt put (no conditionals); store.put upserts
+      await updateOne(id, reading, notes);
+    });
+
+    // initial
+    seed();
+
+  // ---- MongoDB payload helpers (no loops/ifs in data transforms)
+const authorName = "Farheen Shabbir Shaikh"; // <-- your full name
+
+const makeMetadata = () => ({
+  author: authorName,
+  last_sync: new Date().toISOString(),         // UTC now
+  uuid_source: (crypto && crypto.randomUUID) ? crypto.randomUUID() : String(Math.random()).slice(2)
+});
+
+  
+  
+  const buildMongoPayload = async () => {
+    const rows = await readAll();
+    const utcRows = rows
+      .map(o => Object.assign({}, o, {
+        timestamp: new Date(o.timestamp).toISOString()
+      }))
+      .filter(o => [1,2,3,4,5,6,7,8,9,10].reduce((acc, id) => acc || (o.id === id), false))
+      .reduce((acc, x) => acc.concat([x]), []);
+
+    const metadata = {
+      author: "Farheen Shabbir Shaikh",
+      last_sync: new Date().toISOString(),
+      uuid_source: crypto.randomUUID()
+    };
+
+    return { metadata, data: utcRows };
+  };
+
+  // 👇 Then your event listeners (download, copy, etc.)
+  document.getElementById('download-mongo').addEventListener('click', async () => {
+    const payload = await buildMongoPayload();
+    const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url; a.download = 'FarmSensorsDB-mongo-payload.json';
+    document.body.appendChild(a); a.click();
+    a.remove(); URL.revokeObjectURL(url);
+    setStatus('Downloaded MongoDB payload JSON.');
+  });
+
+  document.getElementById('copy-mongo').addEventListener('click', async () => {
+    const payload = await buildMongoPayload();
+    await navigator.clipboard.writeText(JSON.stringify(payload, null, 2));
+    setStatus('Copied MongoDB payload to clipboard.');
+  });
+  
+  
+  // ---- Existing event listeners
+  document.getElementById('seed').addEventListener('click', seed);
+  document.getElementById('randomize').addEventListener('click', randomizeReadings);
+  document.getElementById('refresh').addEventListener('click', applyFilterSort);
+  document.getElementById('reset').addEventListener('click', resetDB);
+
+  // ---- NEW MongoDB event listeners (wire up the card’s buttons)
+  document.getElementById('prep-mongo').addEventListener('click', async () => {
+    const payload = await buildMongoPayload();
+    const text = JSON.stringify(payload, null, 2);
+    document.getElementById('mongo-payload').textContent = text;
+
+    const one = { metadata: payload.metadata, object: payload.data[0] };
+    document.getElementById('one-object').textContent = JSON.stringify(one, null, 2);
+    setStatus('MongoDB payload prepared (metadata + UTC).');
+  });
+
+
+
+  document.getElementById('copy-mongo').addEventListener('click', async () => {
+    const payload = await buildMongoPayload();
+    await navigator.clipboard.writeText(JSON.stringify(payload, null, 2));
+    setStatus('Copied MongoDB payload to clipboard.');
+  });
+const embedMetadataIntoExisting = async ()=>{
+  const db = await openDB();
+  const rows = await readAll();
+  const md = makeMetadata();
+
+  const patched = rows.map(r => Object.assign({}, r, {
+    timestamp: new Date(r.timestamp).toISOString(), // force UTC
+    metadata: r.metadata || md
+  }));
+
+  await withTx(db,'readwrite', store => patched.map(o => store.put(o)));
+  db.close();
+  setStatus('Embedded metadata into existing rows.');
+  await applyFilterSort();
+};
+
+  </script>
+</body>
+</html>

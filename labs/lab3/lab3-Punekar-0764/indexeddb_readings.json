@@ -1,0 +1,192 @@
+[
+  {
+    "sourceDB": "IndexedDB",
+    "ingestedAt": "2025-10-15T07:25:55.598Z",
+    "tags": [
+      "tablet",
+      "lab2"
+    ],
+    "author": "Omkar",
+    "id": 1,
+    "sensorId": "sensor-2",
+    "reading": 37.08,
+    "timestamp": "2025-10-15T07:24:54.069Z",
+    "notes": "Reading #1",
+    "metadata": {
+      "author": "Omkar Prathamesh",
+      "last_sync": "2025-10-15T07:25:54.069Z",
+      "uuid_source": "31cc8001-87b1-4a7e-9c32-06cb63762df7"
+    }
+  },
+  {
+    "sourceDB": "IndexedDB",
+    "ingestedAt": "2025-10-15T07:25:55.598Z",
+    "tags": [
+      "tablet",
+      "lab2"
+    ],
+    "author": "Omkar",
+    "id": 2,
+    "sensorId": "sensor-3",
+    "reading": 13.05,
+    "timestamp": "2025-10-15T07:23:54.069Z",
+    "notes": "Reading #2",
+    "metadata": {
+      "author": "Omkar Prathamesh",
+      "last_sync": "2025-10-15T07:25:54.069Z",
+      "uuid_source": "31cc8001-87b1-4a7e-9c32-06cb63762df7"
+    }
+  },
+  {
+    "sourceDB": "IndexedDB",
+    "ingestedAt": "2025-10-15T07:25:55.598Z",
+    "tags": [
+      "tablet",
+      "lab2"
+    ],
+    "author": "Omkar",
+    "id": 3,
+    "sensorId": "sensor-1",
+    "reading": 54.93,
+    "timestamp": "2025-10-15T07:22:54.069Z",
+    "notes": "Reading #3",
+    "metadata": {
+      "author": "Omkar Prathamesh",
+      "last_sync": "2025-10-15T07:25:54.069Z",
+      "uuid_source": "31cc8001-87b1-4a7e-9c32-06cb63762df7"
+    }
+  },
+  {
+    "sourceDB": "IndexedDB",
+    "ingestedAt": "2025-10-15T07:25:55.598Z",
+    "tags": [
+      "tablet",
+      "lab2"
+    ],
+    "author": "Omkar",
+    "id": 4,
+    "sensorId": "sensor-2",
+    "reading": 40.38,
+    "timestamp": "2025-10-15T07:21:54.069Z",
+    "notes": "Reading #4",
+    "metadata": {
+      "author": "Omkar Prathamesh",
+      "last_sync": "2025-10-15T07:25:54.069Z",
+      "uuid_source": "31cc8001-87b1-4a7e-9c32-06cb63762df7"
+    }
+  },
+  {
+    "sourceDB": "IndexedDB",
+    "ingestedAt": "2025-10-15T07:25:55.598Z",
+    "tags": [
+      "tablet",
+      "lab2"
+    ],
+    "author": "Omkar",
+    "id": 5,
+    "sensorId": "sensor-3",
+    "reading": 64.61,
+    "timestamp": "2025-10-15T07:20:54.069Z",
+    "notes": "Reading #5",
+    "metadata": {
+      "author": "Omkar Prathamesh",
+      "last_sync": "2025-10-15T07:25:54.069Z",
+      "uuid_source": "31cc8001-87b1-4a7e-9c32-06cb63762df7"
+    }
+  },
+  {
+    "sourceDB": "IndexedDB",
+    "ingestedAt": "2025-10-15T07:25:55.598Z",
+    "tags": [
+      "tablet",
+      "lab2"
+    ],
+    "author": "Omkar",
+    "id": 6,
+    "sensorId": "sensor-1",
+    "reading": 72.69,
+    "timestamp": "2025-10-15T07:19:54.069Z",
+    "notes": "Reading #6",
+    "metadata": {
+      "author": "Omkar Prathamesh",
+      "last_sync": "2025-10-15T07:25:54.069Z",
+      "uuid_source": "31cc8001-87b1-4a7e-9c32-06cb63762df7"
+    }
+  },
+  {
+    "sourceDB": "IndexedDB",
+    "ingestedAt": "2025-10-15T07:25:55.598Z",
+    "tags": [
+      "tablet",
+      "lab2"
+    ],
+    "author": "Omkar",
+    "id": 7,
+    "sensorId": "sensor-2",
+    "reading": 37.28,
+    "timestamp": "2025-10-15T07:18:54.069Z",
+    "notes": "Reading #7",
+    "metadata": {
+      "author": "Omkar Prathamesh",
+      "last_sync": "2025-10-15T07:25:54.069Z",
+      "uuid_source": "31cc8001-87b1-4a7e-9c32-06cb63762df7"
+    }
+  },
+  {
+    "sourceDB": "IndexedDB",
+    "ingestedAt": "2025-10-15T07:25:55.598Z",
+    "tags": [
+      "tablet",
+      "lab2"
+    ],
+    "author": "Omkar",
+    "id": 8,
+    "sensorId": "sensor-3",
+    "reading": 14.1,
+    "timestamp": "2025-10-15T07:17:54.069Z",
+    "notes": "Reading #8",
+    "metadata": {
+      "author": "Omkar Prathamesh",
+      "last_sync": "2025-10-15T07:25:54.069Z",
+      "uuid_source": "31cc8001-87b1-4a7e-9c32-06cb63762df7"
+    }
+  },
+  {
+    "sourceDB": "IndexedDB",
+    "ingestedAt": "2025-10-15T07:25:55.598Z",
+    "tags": [
+      "tablet",
+      "lab2"
+    ],
+    "author": "Omkar",
+    "id": 9,
+    "sensorId": "sensor-1",
+    "reading": 51.84,
+    "timestamp": "2025-10-15T07:16:54.069Z",
+    "notes": "Reading #9",
+    "metadata": {
+      "author": "Omkar Prathamesh",
+      "last_sync": "2025-10-15T07:25:54.069Z",
+      "uuid_source": "31cc8001-87b1-4a7e-9c32-06cb63762df7"
+    }
+  },
+  {
+    "sourceDB": "IndexedDB",
+    "ingestedAt": "2025-10-15T07:25:55.598Z",
+    "tags": [
+      "tablet",
+      "lab2"
+    ],
+    "author": "Omkar",
+    "id": 10,
+    "sensorId": "sensor-2",
+    "reading": 30.11,
+    "timestamp": "2025-10-15T07:15:54.069Z",
+    "notes": "Reading #10",
+    "metadata": {
+      "author": "Omkar Prathamesh",
+      "last_sync": "2025-10-15T07:25:54.069Z",
+      "uuid_source": "31cc8001-87b1-4a7e-9c32-06cb63762df7"
+    }
+  }
+]

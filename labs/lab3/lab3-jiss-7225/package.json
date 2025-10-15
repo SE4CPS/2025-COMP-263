@@ -1,0 +1,24 @@
+{
+  "name": "lab3-data-lake",
+  "version": "1.0.0",
+  "description": "Lab 3 - IndexedDB + Neo4j → MongoDB Lake",
+  "main": "lab3Pipeline.js",
+  "scripts": {
+    "start": "node lab3Pipeline.js",
+    "neo4j": "node agricultureGraphQuery.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "mongodb",
+    "neo4j",
+    "indexeddb",
+    "data-lake"
+  ],
+  "author": "Manu Mathew Jiss",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "mongodb": "^6.20.0",
+    "neo4j-driver": "^6.0.0"
+  }
+}

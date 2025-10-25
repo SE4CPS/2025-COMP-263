@@ -1,0 +1,22 @@
+{
+  "name": "project1-manne-9856",
+  "version": "1.0.0",
+  "description": "MongoDB IoT Readings API (Sai)",
+  "main": "app.js",
+  "scripts": {
+    "seed": "node seed_readings.js",
+    "start": "node app.js",
+    "setup": "node apply_rules.js"
+  },
+  "keywords": [
+    "mongodb",
+    "express",
+    "iot"
+  ],
+  "author": "Sai Manne",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.21.2",
+    "mongodb": "^6.20.0"
+  }
+}

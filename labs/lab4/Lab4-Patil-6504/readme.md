@@ -2,6 +2,6 @@
 
 ![Demo GIF](./lab4-demo1.gif)
 
-![Demo GIF](./lab4-demo2.gif)
+![Demo2 GIF](./lab4-demo2.gif)
 
-![Demo GIF](./lab4-demo3.gif)
+![Demo3 GIF](./lab4-demo3.gif)

@@ -1,0 +1,27 @@
+{
+  "name": "lab4-Srinivas-caching",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "caching",
+    "redis",
+    "mongodb",
+    "cache-aside",
+    "read-through",
+    "ttl"
+  ],
+  "author": "Srinivas tarun Sai",
+  "license": "ISC",
+  "description": "Demonstration of caching patterns using Redis and MongoDB",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "redis": "^5.9.0"
+  }
+}

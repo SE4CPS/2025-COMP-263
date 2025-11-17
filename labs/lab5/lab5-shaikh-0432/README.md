@@ -14,13 +14,13 @@ This lab simulates a real-world data engineering task where SQL-style relational
 
 ##  Files Included
 
-| File | Purpose |
-|------|---------|
-| **lab5_starter.js** | Main script containing SQL → JSON migration, metadata enrichment, and sharding logic using map(), reduce(), filter() |
-| **sql_sensors.js** | Mock dataset representing the SQL `sensors` table |
-| **sql_readings.js** | Mock dataset representing the SQL `readings` table |
+| File                    | Purpose 
+|------|----------------------------------------------------------
+| **lab5_starter.js**    | Main script containing SQL → JSON migration, metadata enrichment, and sharding logic using map(), reduce(), filter() |
+| **sql_sensors.js**     | Mock dataset representing the SQL `sensors` table |
+| **sql_readings.js**    | Mock dataset representing the SQL `readings` table |
 | **lessons_learned.md** | Summary of key concepts learned in Lab 5 |
-| **README.md** | You are reading this file |
+| **README.md**          | You are reading this file |
 
 ---
 

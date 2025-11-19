@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lab 3 — IndexedDB + Neo4j → MongoDB Lake</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #0f172a;
+      color: #e2e8f0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      color: #22c55e;
+    }
+    button {
+      background-color: #22c55e;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #16a34a;
+    }
+    pre {
+      background: #1e293b;
+      color: #e2e8f0;
+      padding: 12px;
+      width: 80%;
+      border-radius: 6px;
+      overflow-x: auto;
+      max-height: 300px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Lab 3: IndexedDB + Neo4j → MongoDB Lake</h1>
+  <p>Click below to trigger data ingestion from both sources.</p>
+
+  <button id="runPipeline">Run Ingestion Pipeline</button>
+  <pre id="output">Waiting for pipeline execution...</pre>
+
+  <script>
+    const button = document.getElementById('runPipeline');
+    const output = document.getElementById('output');
+
+    button.addEventListener('click', async () => {
+      output.textContent = "⏳ Running ingestion pipeline...";
+      try {
+        // Assuming your Node backend exposes an API route
+        // Example: Express route /api/runPipeline triggers Neo4j→Mongo ingestion
+        const response = await fetch('/api/runPipeline');
+        const data = await response.text();
+        output.textContent = "✅ Pipeline executed successfully:\n\n" + data;
+      } catch (err) {
+        output.textContent = "❌ Error running pipeline:\n" + err;
+      }
+    });
+  </script>
+</body>
+</html>

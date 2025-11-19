@@ -1,0 +1,203 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AgricultureDB IndexedDB Lab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, sans-serif; max-width: 900px; margin: 2rem auto; line-height: 1.4; }
+    button { padding: 0.6rem 1rem; margin-right: 0.5rem; margin-bottom: 0.5rem; }
+    #log { background:#111; color:#eee; padding:1rem; border-radius:8px; min-height: 140px; white-space: pre-wrap; overflow-x: auto; }
+    .ok { color: #00e676; }
+    .err { color: #ff6e6e; }
+  </style>
+</head>
+<body>
+  <h1>AgricultureDB IndexedDB Lab</h1>
+  <p>Create <code>AgricultureDB</code> and object store <code>FarmData</code>. Seed 10,000 records, read samples, and run unit tests.</p>
+
+  <div>
+    <button id="seedBtn">Seed 10,000 Records</button>
+    <button id="readBtn">Read Sample + Count</button>
+    <button id="testsBtn">Run Unit Tests</button>
+    <button id="clearBtn">Clear Store</button>
+  </div>
+
+  <h3>Status</h3>
+  <div id="log"></div>
+
+  <script>
+    const DB_NAME = 'AgricultureDB';
+    const STORE = 'FarmData';
+    const DB_VERSION = 1;
+    let db;
+
+    const log = (msg, cls='') => {
+      const el = document.getElementById('log');
+      const div = document.createElement('div');
+      if (cls) div.className = cls;
+      div.textContent = typeof msg === 'string' ? msg : JSON.stringify(msg, null, 2);
+      el.appendChild(div);
+      el.scrollTop = el.scrollHeight;
+      console.log(msg);
+    };
+
+    function openDB() {
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open(DB_NAME, DB_VERSION);
+        req.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains(STORE)) {
+            const os = db.createObjectStore(STORE, { keyPath: 'id', autoIncrement: true });
+            os.createIndex('timestamp_idx', 'timestamp');
+          }
+        };
+        req.onsuccess = () => { db = req.result; resolve(db); };
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    function addMany(records) {
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, 'readwrite');
+        const store = tx.objectStore(STORE);
+        for (const r of records) store.add(r);
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(tx.error);
+      });
+    }
+
+    function clearStore() {
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, 'readwrite');
+        tx.objectStore(STORE).clear();
+        tx.oncomplete = () => resolve();
+        tx.onerror = () => reject(tx.error);
+      });
+    }
+
+    function countStore() {
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, 'readonly');
+        const req = tx.objectStore(STORE).count();
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    function getSome(limit=5) {
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, 'readonly');
+        const store = tx.objectStore(STORE);
+        const out = [];
+        const req = store.openCursor();
+        req.onsuccess = (e) => {
+          const c = e.target.result;
+          if (c && out.length < limit) { out.push(c.value); c.continue(); }
+          else resolve(out);
+        };
+        req.onerror = () => reject(req.error);
+      });
+    }
+
+    const PHOTO_EXTS = ['.jpg', '.png', '.jpeg', '.webp'];
+    const pick = arr => arr[Math.floor(Math.random()*arr.length)];
+
+    function makeRecord(i) {
+      return {
+        sensorReadings: Array.from({length:5},()=>Number((Math.random()*100).toFixed(2))),
+        cropPhoto: `img/crop_${i}${pick(PHOTO_EXTS)}`,
+        farmerNote: `Plot ${1 + (i % 50)} ok; seq=${i}`,
+        gpsCoordinates: {
+          lat: Number((Math.random() * 180 - 90).toFixed(6)),
+          lng: Number((Math.random() * 360 - 180).toFixed(6))
+        },
+        timestamp: new Date(Date.now() - Math.floor(Math.random()*30)*86400000)
+      };
+    }
+
+    function makeBatch(n) { return Array.from({length:n},(_,i)=>makeRecord(i+1)); }
+
+    async function seedTenK() {
+      try {
+        await openDB();
+        const existing = await countStore();
+        log(`Existing records: ${existing}`);
+        if (existing > 0 && existing < 10000) { log('Clearing partial data…'); await clearStore(); }
+        if (existing >= 10000) { log('Already has 10,000+ rows; skipping', 'ok'); return; }
+
+        log('Generating 10,000 records…');
+        const batch = makeBatch(10000);
+        const t0 = performance.now();
+        await addMany(batch);
+        const t1 = performance.now();
+        const after = await countStore();
+        log(`Inserted. New total: ${after} (took ${(t1-t0).toFixed(0)} ms)`, 'ok');
+      } catch(e) { log(`Error: ${e}`, 'err'); }
+    }
+
+    async function readAndLog() {
+      await openDB();
+      const total = await countStore();
+      const sample = await getSome(5);
+      log(`Total rows: ${total}`, 'ok');
+      sample.forEach((r,i)=>log({i, ...r}));
+    }
+
+    async function runTests() {
+      await openDB();
+      const total = await countStore();
+      const sample = await getSome(5);
+
+      log('🧪 Running unit tests on 5 sample records...\n');
+
+      sample.forEach((item,index)=>{
+        log(`📌 Testing Record #${index+1}`);
+        const assertTest = (cond, passMsg, failMsg)=>{
+          if(cond) log(`✅ PASS: ${passMsg}`, 'ok');
+          else log(`❌ FAIL: ${failMsg}`, 'err');
+        };
+
+        assertTest(Array.isArray(item.sensorReadings) && item.sensorReadings.length===5 && item.sensorReadings.every(n=>typeof n==='number'),
+                  'sensorReadings is an array of 5 numbers',
+                  'sensorReadings invalid');
+
+        assertTest(typeof item.cropPhoto==='string' && /\.(jpg|jpeg|png|webp)$/i.test(item.cropPhoto),
+                  'cropPhoto is valid image URL',
+                  `cropPhoto invalid: ${item.cropPhoto}`);
+
+        assertTest(typeof item.farmerNote==='string' && item.farmerNote.trim().length>0,
+                  'farmerNote is a non-empty string',
+                  'farmerNote invalid');
+
+        assertTest(typeof item.gpsCoordinates==='object' &&
+                   typeof item.gpsCoordinates.lat === 'number' &&
+                   typeof item.gpsCoordinates.lng === 'number' &&
+                   item.gpsCoordinates.lat >= -90 && item.gpsCoordinates.lat <= 90 &&
+                   item.gpsCoordinates.lng >= -180 && item.gpsCoordinates.lng <= 180,
+                  'gpsCoordinates are valid latitude/longitude',
+                  `gpsCoordinates invalid: ${JSON.stringify(item.gpsCoordinates)}`);
+
+        assertTest(item.timestamp instanceof Date || !isNaN(Date.parse(item.timestamp)),
+                  'timestamp is a valid Date',
+                  `timestamp invalid: ${item.timestamp}`);
+
+        log('------------------------------------------------------');
+      });
+    }
+
+    async function clearAll() {
+      await openDB();
+      await clearStore();
+      log('Store cleared.', 'ok');
+    }
+
+    document.getElementById('seedBtn').onclick  = seedTenK;
+    document.getElementById('readBtn').onclick  = readAndLog;
+    document.getElementById('testsBtn').onclick = runTests;
+    document.getElementById('clearBtn').onclick = clearAll;
+
+    openDB().then(()=>log('DB ready. Use the buttons above.', 'ok')).catch(e=>log(`Error opening DB: ${e}`,'err'));
+  </script>
+</body>
+</html>

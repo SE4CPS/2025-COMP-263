@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+<body>
+<h1>Lab2 – IndexedDB</h1>
+<script>
+  const DB_NAME="Lab2", STORE="Agriculture", VERSION=1;
+  const INGEST_URL = "http://localhost:4000/ingest/indexeddb";
+
+  const openDB = () => new Promise((res, rej) => {
+    const req = indexedDB.open(DB_NAME, VERSION);
+    req.onupgradeneeded = e => {
+      const db = e.target.result;
+      db.objectStoreNames.contains(STORE) || db.createObjectStore(STORE, { keyPath: "id" });
+    };
+    req.onsuccess = () => res(req.result);
+    req.onerror = () => rej(req.error);
+  });
+
+  const nowLocal = new Date().toString();
+  const rows10 = Array.from({length:10}, (_,i)=>i+1).map(id=>({
+    id,
+    sensorId:`sensor ${String(id).padStart(2,"0")}`,
+    reading:Number((Math.random()*100).toFixed(2)),
+    timestamp: nowLocal,
+    notes:`sample ${id}`
+  }));
+
+  const addAll = (db, rows) => new Promise((res, rej) => {
+    const tx = db.transaction(STORE, "readwrite");
+    const st = tx.objectStore(STORE);
+    rows
+      .map(row => () => new Promise((r, j) => {
+        const x = st.put(row); x.onsuccess = () => r(); x.onerror = () => j(x.error);
+      }))
+      .reduce((p, step) => p.then(step), Promise.resolve());
+    tx.oncomplete = () => res(rows.length);
+    tx.onerror = () => rej(tx.error);
+  });
+
+  const getAll = (db) => new Promise((res, rej) => {
+    const tx = db.transaction(STORE, "readonly");
+    const st = tx.objectStore(STORE);
+    const q = st.getAll();
+    q.onsuccess = () => res(q.result || []);
+    q.onerror = () => rej(q.error);
+  });
+
+  async function syncToLake(rows){
+    const resp = await fetch(INGEST_URL, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ rows })
+    });
+    const json = await resp.json();
+    console.log("IndexedDB → Lake:", json);
+    if (!json.ok) throw new Error(json.error || "Ingest failed");
+    alert(`Synced ${json.inserted || 0} docs to lake`);
+  }
+
+  openDB()
+    .then(db => addAll(db, rows10).then(() => db))
+    .then(db => getAll(db))
+    .then(rows => syncToLake(rows))
+    .then(() => console.log("Done"))
+    .catch(err => { console.error(err); alert(err); });
+</script>
+</body>
+</html>
+
+

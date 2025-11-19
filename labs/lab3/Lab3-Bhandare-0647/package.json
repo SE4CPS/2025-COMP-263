@@ -1,0 +1,16 @@
+{
+  "name": "lab3-bhandare-0647",
+  "version": "1.0.0",
+  "main": "queryAgricultureGraph.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "neo4j-driver": "^6.0.0",
+    "node-fetch": "^2.7.0"
+  },
+  "description": ""
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Agriculture IndexedDB</title>
+</head>
+<body>
+<script>
+const request = indexedDB.open("AgricultureDB2", 1);
+
+request.onupgradeneeded = event => {
+  const db = event.target.result;
+  if (!db.objectStoreNames.contains("sensors2")) {
+    db.createObjectStore("sensors2", { keyPath: "id" });
+  }
+};
+
+request.onsuccess = event => {
+  const db = event.target.result;
+  const tx = db.transaction("sensors2", "readwrite");
+  const store = tx.objectStore("sensors2");
+
+  const metadata = {
+    author: "Jupalli Bhavanand",
+    last_sync: new Date().toISOString(),
+    uuid_source: crypto.randomUUID()
+  };
+
+  const objects = Array(10).fill(null).map((_, i) => ({
+    id: i + 1,
+    sensorId: `sensor-${i + 1}`,
+    reading: Math.floor(Math.random() * 100),
+    timestamp: new Date().toISOString(),
+    notes: `Reading ${i + 1}`,
+    ...metadata 
+  }));
+
+  objects.map(obj => store.put(obj));
+
+  tx.oncomplete = () => {
+    console.log("✅ 10 objects with metadata inserted:", objects);
+  };
+};
+</script>
+</body>
+</html>

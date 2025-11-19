@@ -1,0 +1,141 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lab 3 — IndexedDB + Neo4j → MongoDB Lake</title>
+<style>
+  :root {
+    --bg: #0f172a;        /* slate-900 */
+    --panel: #111827;     /* gray-900 */
+    --accent: #22c55e;    /* green-500 */
+    --muted: #94a3b8;     /* slate-400 */
+    --text: #e5e7eb;      /* gray-200 */
+  }
+  html, body { margin: 0; padding: 0; background: var(--bg); color: var(--text); font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Inter, Helvetica, Arial, sans-serif; }
+  .deck { max-width: 1060px; margin: 0 auto; padding: 40px 24px; }
+  .slide { background: linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.00));
+           border: 1px solid rgba(255,255,255,0.08);
+           border-radius: 18px; padding: 28px; margin: 28px 0; box-shadow: 0 10px 30px rgba(0,0,0,0.25); }
+  h1, h2 { margin: 0 0 12px; }
+  h1 { font-size: 28px; letter-spacing: 0.2px; }
+  h2 { font-size: 22px; color: var(--accent); }
+  p, li { line-height: 1.6; font-size: 16px; color: var(--text); }
+  .meta { color: var(--muted); font-size: 14px; margin-bottom: 10px; }
+  ul { margin: 10px 0 0 22px; }
+  .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+  .badge { display:inline-block; padding: 4px 10px; background: rgba(34,197,94,0.15); color: #bbf7d0; border: 1px solid rgba(34,197,94,0.35); border-radius: 999px; font-size: 12px; margin-left: 8px;}
+  .diagram { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); border-radius: 14px; padding: 12px; }
+  .footer { text-align: center; color: var(--muted); font-size: 12px; margin-top: 6px; }
+  .print-note { color: var(--muted); font-size: 12px; margin-top: 4px; }
+  @media print {
+    body { background: white; color: black; }
+    .slide { break-inside: avoid; box-shadow: none; border-color: #ddd; }
+    .footer, .print-note { color: #666; }
+  }
+</style>
+</head>
+<body>
+  <div class="deck">
+    <div class="slide">
+      <div class="meta">Lab 3 • Data Integration</div>
+      <h1>Architecture & Data Flow <span class="badge">IndexedDB + Neo4j → MongoDB Lake</span></h1>
+      <div class="diagram">
+        <svg width="100%" height="260" viewBox="0 0 980 260" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <style>
+              .box { fill: #111827; stroke: #2e3445; stroke-width: 1.5; rx: 12; }
+              .text { fill: #e5e7eb; font: 14px/1.4 sans-serif; }
+              .caption { fill: #94a3b8; font: 12px/1.4 sans-serif; }
+              .arrow { stroke: #22c55e; stroke-width: 2.5; marker-end: url(#arrow); }
+            </style>
+            <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+              <path d="M0,0 L6,3 L0,6 Z" fill="#22c55e" />
+            </marker>
+          </defs>
+
+          <!-- IndexedDB -->
+          <rect class="box" x="20" y="44" width="250" height="170" />
+          <text class="text" x="45" y="85">IndexedDB (Browser)</text>
+          <text class="caption" x="45" y="110">• Client-side sensor cache</text>
+          <text class="caption" x="45" y="130">• Example: moisture, temp</text>
+
+          <!-- Neo4j -->
+          <rect class="box" x="300" y="44" width="250" height="170" />
+          <text class="text" x="325" y="85">Neo4j (Graph)</text>
+          <text class="caption" x="325" y="110">• Farm–Device–Reading</text>
+          <text class="caption" x="325" y="130">• Cypher MATCH/RETURN</text>
+
+          <!-- Node.js -->
+          <rect class="box" x="580" y="20" width="160" height="60" />
+          <text class="text" x="600" y="55">Node.js Ingestion</text>
+
+          <!-- Mongo Lake -->
+          <rect class="box" x="780" y="44" width="180" height="170" />
+          <text class="text" x="800" y="85">MongoDB Lake</text>
+          <text class="caption" x="800" y="110">• sourceDB</text>
+          <text class="caption" x="800" y="130">• ingestedAt (UTC)</text>
+          <text class="caption" x="800" y="150">• tags</text>
+
+          <!-- arrows -->
+          <line class="arrow" x1="270" y1="130" x2="590" y2="50"/>
+          <line class="arrow" x1="550" y1="130" x2="590" y2="50"/>
+          <line class="arrow" x1="660" y1="80" x2="780" y2="120"/>
+        </svg>
+      </div>
+      <ul>
+        <li>Both sources ingested via Node.js scripts.</li>
+        <li>Lake documents include metadata: <b>sourceDB</b>, <b>ingestedAt</b> (UTC), <b>tags</b>.</li>
+      </ul>
+      <div class="print-note">Tip: File → Print (Save as PDF) to submit.</div>
+    </div>
+
+    <div class="slide">
+      <h2>Lessons Learned</h2>
+      <div class="grid">
+        <div>
+          <p><b>What Worked Well</b></p>
+          <ul>
+            <li>Unified two heterogeneous stores (browser IndexedDB + graph Neo4j).</li>
+            <li>MongoDB Atlas handled flexible schema for mixed records.</li>
+            <li>Cypher + official drivers made graph traversal straightforward.</li>
+            <li>Metadata + UUIDs improved lineage and traceability.</li>
+          </ul>
+        </div>
+        <div>
+          <p><b>New Skills</b></p>
+          <ul>
+            <li>Multi-driver Node.js ingestion pattern.</li>
+            <li>Batch inserts with <code>insertMany()</code>.</li>
+            <li>Compass filters: <code>{}</code>, <code>{ "sourceDB": "Neo4j" }</code>.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="slide">
+      <h2>Challenges & Reflections</h2>
+      <div class="grid">
+        <div>
+          <p><b>Challenges</b></p>
+          <ul>
+            <li>Starting/stabilizing local services; handling <code>ECONNREFUSED</code>.</li>
+            <li>Browser-only IndexedDB → needed mock/export for Node.</li>
+            <li>Managing async control flow and proper session cleanup.</li>
+          </ul>
+        </div>
+        <div>
+          <p><b>Future Improvements</b></p>
+          <ul>
+            <li>Replace mock with real IndexedDB → API bridge.</li>
+            <li>Validation & structured logging; retry/backoff.</li>
+            <li>Scheduled jobs (cron) and richer <code>tags</code> for analytics.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer">Anusha K N • Lab 3 — IndexedDB + Neo4j → MongoDB Lake</div>
+    </div>
+  </div>
+</body>
+</html>

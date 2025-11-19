@@ -1,0 +1,19 @@
+{
+    "name": "lab2-agriculture-app",
+    "version": "1.0.0",
+    "description": "Simple Node.js app with Express and MongoDB for Lab2 Agriculture collection",
+    "main": "app.js",
+    "scripts": {
+        "start": "node app.js",
+        "dev": "nodemon app.js"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5",
+        "express": "^4.19.2",
+        "mongodb": "^4.17.2"
+    },
+    "devDependencies": {
+        "nodemon": "^3.1.0"
+    },
+    "license": "MIT"
+}

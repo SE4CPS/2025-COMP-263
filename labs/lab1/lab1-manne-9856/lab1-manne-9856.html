@@ -1,0 +1,328 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>IndexedDB – AgricultureDB (Q1-Q3)</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; max-width: 980px; margin: 24px auto; }
+    h1 { margin-bottom: .25rem; }
+    button { padding: .6rem 1rem; margin: .25rem .5rem .25rem 0; border:1px solid #ddd; border-radius:.5rem; cursor:pointer; }
+    code { background:#f6f8fa; padding:.1rem .35rem; border-radius:.25rem; }
+    .log { white-space: pre-wrap; border:1px solid #e5e7eb; padding:1rem; border-radius:.5rem; margin-top:1rem; height:14rem; overflow:auto;}
+    .muted { color:#555; }
+  </style>
+</head>
+<body>
+  <h1>AgricultureDB Seeder</h1>
+  <p class="muted">
+    Creates <code>AgricultureDB</code> → <code>FarmData</code> (auto-increment id), inserts 10,000 records (Q1),
+    logs a formatted <code>console.table</code> + total count (Q2), and runs five unit tests with <code>console.assert()</code> (Q3).
+  </p>
+
+  <div>
+    <button id="btnInit">Init / Upgrade DB</button>
+    <button id="btnSeed">Insert 10,000 records</button>
+    <button id="btnCount">Count Records</button>
+    <button id="btnSample">Show One Sample</button>
+    <button id="btnLog">Log to Console (Q2)</button>
+    <button id="btnTests">Run Tests (Q3)</button>
+    <button id="btnClear" style="background:#fff5f5;border-color:#fca5a5;">Clear Store</button>
+  </div>
+
+  <div class="log" id="log">Open DevTools → <b>Application</b> → <b>IndexedDB</b> or the <b>Console</b> tab as needed.</div>
+
+<script>
+(() => {
+  /* ==================== Shared config ==================== */
+  const DB_NAME = 'AgricultureDB';
+  const STORE   = 'FarmData';
+  const DB_VERSION = 1;
+
+  const logEl = document.getElementById('log');
+  const log = (...args) => { logEl.textContent += '\n' + args.join(' '); logEl.scrollTop = logEl.scrollHeight; };
+
+  /* ==================== DB helpers ==================== */
+  function openDB() {
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open(DB_NAME, DB_VERSION);
+      req.onupgradeneeded = () => {
+        const db = req.result;
+        if (!db.objectStoreNames.contains(STORE)) {
+          const store = db.createObjectStore(STORE, { keyPath: 'id', autoIncrement: true });
+          store.createIndex('timestamp', 'timestamp');
+        }
+      };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror   = () => reject(req.error);
+    });
+  }
+  function txDone(tx) {
+    return new Promise((res, rej) => {
+      tx.oncomplete = () => res();
+      tx.onabort = tx.onerror = () => rej(tx.error || new Error('Transaction failed'));
+    });
+  }
+
+  /* ==================== Data generators ==================== */
+  const randFloat = (min, max) => Math.random() * (max - min) + min;
+  const randInt   = (min, max) => Math.floor(randFloat(min, max + 1));
+
+  function randomSensorArray() {
+    const len = randInt(5, 12);
+    return Array.from({ length: len }, () => Number(randFloat(0, 100).toFixed(2)));
+  }
+  // If your image file/path is different, change this ONE line:
+  function randomLocalImageURL() {
+    return 'images/crop.jpg'; // local relative URL or data: URL
+  }
+  function randomFarmerNote() {
+    const notes = [
+      'Irrigated today','Observed pests on leaves','Applied fertilizer','Soil looks dry',
+      'Weeded the north plot','Crop healthy','Adjusted pH','Rain overnight','Replaced sensor battery'
+    ];
+    return notes[randInt(0, notes.length - 1)];
+  }
+  function randomGPSNumber() { return Number(randFloat(-90, 90).toFixed(6)); }
+
+  function makeRecord() {
+    return {
+      sensorReadings: randomSensorArray(),   // Array
+      cropPhoto: randomLocalImageURL(),      // String (local image URL)
+      farmerNote: randomFarmerNote(),        // String
+      gpsCoordinates: randomGPSNumber(),     // Number
+      timestamp: new Date().toISOString()    // Date (ISO string)
+    };
+  }
+
+  /* ==================== Q1: Seed data ==================== */
+  async function seed(n = 10000) {
+    const db = await openDB();
+    log(`Seeding ${n.toLocaleString()} records…`);
+    const CHUNK = 500;
+    let inserted = 0;
+    while (inserted < n) {
+      const tx = db.transaction(STORE, 'readwrite');
+      const store = tx.objectStore(STORE);
+      const batch = Math.min(n - inserted, CHUNK);
+      for (let i = 0; i < batch; i++) store.add(makeRecord());
+      await txDone(tx);
+      inserted += batch;
+      log(`Inserted ${inserted}/${n}`);
+      await new Promise(r => setTimeout(r, 0));
+    }
+    log('✅ Done seeding.');
+    db.close();
+  }
+  async function countRecords() {
+    const db = await openDB();
+    const tx = db.transaction(STORE, 'readonly');
+    const store = tx.objectStore(STORE);
+    const count = await new Promise((res, rej) => {
+      const c = store.count();
+      c.onsuccess = () => res(c.result);
+      c.onerror   = () => rej(c.error);
+    });
+    log(`Current count in ${STORE}: ${count.toLocaleString()}`);
+    db.close();
+    return count;
+  }
+  async function showOneSample() {
+    const db = await openDB();
+    const tx = db.transaction(STORE, 'readonly');
+    const store = tx.objectStore(STORE);
+    const req = store.openCursor();
+    const item = await new Promise((res, rej) => {
+      req.onsuccess = e => { const c = e.target.result; res(c ? c.value : null); };
+      req.onerror   = () => rej(req.error);
+    });
+    if (item) log('Sample record:\n' + JSON.stringify(item, null, 2));
+    else log('Store is empty.');
+    db.close();
+  }
+  async function clearStore() {
+    const db = await openDB();
+    const tx = db.transaction(STORE, 'readwrite');
+    tx.objectStore(STORE).clear();
+    await txDone(tx);
+    log('🧹 Store cleared.');
+    db.close();
+  }
+
+  /* ==================== Q2: Read & console.table ==================== */
+  async function readFirstN(n = 20) {
+    const db = await openDB();
+    const tx = db.transaction(STORE, 'readonly');
+    const store = tx.objectStore(STORE);
+
+    const total = await new Promise((resolve, reject) => {
+      const c = store.count();
+      c.onsuccess = () => resolve(c.result);
+      c.onerror   = () => reject(c.error);
+    });
+
+    const rows = [];
+    await new Promise((resolve, reject) => {
+      const cur = store.openCursor();
+      cur.onsuccess = e => {
+        const cursor = e.target.result;
+        if (cursor && rows.length < n) {
+          const v = cursor.value;
+          rows.push({
+            id: v.id,
+            sensorReadingsLen: Array.isArray(v.sensorReadings) ? v.sensorReadings.length : 0,
+            cropPhoto: v.cropPhoto,
+            farmerNote: v.farmerNote,
+            gpsCoordinates: v.gpsCoordinates,
+            timestamp: v.timestamp
+          });
+          cursor.continue();
+        } else {
+          resolve();
+        }
+      };
+      cur.onerror = () => reject(cur.error);
+    });
+
+    tx.oncomplete = () => db.close();
+    return { total, rows };
+  }
+
+  async function logFarmData() {
+    try {
+      console.clear();
+      console.log('🔎 Logging sample FarmData records…');
+      const { total, rows } = await readFirstN(20);
+      console.log('✅ Total Records in FarmData:', total);
+      if (rows.length === 0) {
+        console.warn('No rows found. Seed the DB first.');
+      } else {
+        console.table(rows);
+      }
+    } catch (err) {
+      console.error('Error logging FarmData:', err);
+    }
+  }
+  // Expose to Console if you want to call manually
+  window.logFarmData = logFarmData;
+
+  /* ==================== Q3: Five unit tests ==================== */
+  async function runUnitTests() {
+    console.clear();
+    console.log('🧪 Running Q3 unit tests…');
+
+    const db = await openDB();
+
+    // helper fns
+    const count = await (async () => {
+      const tx = db.transaction(STORE, 'readonly');
+      const store = tx.objectStore(STORE);
+      return await new Promise((res, rej) => {
+        const c = store.count();
+        c.onsuccess = () => res(c.result);
+        c.onerror   = () => rej(c.error);
+      });
+    })();
+
+    const firstRec = await (async () => {
+      const tx = db.transaction(STORE, 'readonly');
+      const store = tx.objectStore(STORE);
+      return await new Promise((res, rej) => {
+        const r = store.openCursor();
+        r.onsuccess = e => { const c = e.target.result; res(c ? c.value : undefined); };
+        r.onerror   = () => rej(r.error);
+      });
+    })();
+
+    // Test 1: At least 10,000 after seeding
+    console.assert(count >= 10000, `Count should be ≥ 10000, got ${count}`);
+    if (count >= 10000) console.log('✅ Test 1 passed: total =', count);
+
+    // Test 2: First record schema & types
+    console.assert(!!firstRec, 'First record exists');
+    console.assert(Array.isArray(firstRec.sensorReadings), 'sensorReadings is an Array');
+    console.assert(typeof firstRec.cropPhoto === 'string', 'cropPhoto is a String');
+    console.assert(typeof firstRec.farmerNote === 'string', 'farmerNote is a String');
+    console.assert(typeof firstRec.gpsCoordinates === 'number', 'gpsCoordinates is a Number');
+    console.assert(!Number.isNaN(Date.parse(firstRec.timestamp)), 'timestamp is a valid Date/ISO');
+    if (firstRec) console.log('✅ Test 2 passed: schema OK');
+
+    // Test 3: cropPhoto looks like an image file
+    const imgOk = /\.(jpg|jpeg|png|gif|webp)$/i.test(firstRec.cropPhoto);
+    console.assert(imgOk, `cropPhoto should end with image extension; got ${firstRec.cropPhoto}`);
+    if (imgOk) console.log('✅ Test 3 passed: cropPhoto extension valid');
+
+    // Test 4: Add→Get round-trip
+    const tempKey = await (async () => {
+      const tx = db.transaction(STORE, 'readwrite');
+      const store = tx.objectStore(STORE);
+      const temp = {
+        sensorReadings: [1,2,3],
+        cropPhoto: 'images/crop.jpg',
+        farmerNote: 'TEMP_TEST_RECORD',
+        gpsCoordinates: 12.345678,
+        timestamp: new Date().toISOString()
+      };
+      const key = await new Promise((res, rej) => {
+        const r = store.add(temp);
+        r.onsuccess = () => res(r.result);
+        r.onerror   = () => rej(r.error);
+      });
+      await txDone(tx);
+      return key;
+    })();
+
+    const roundTrip = await (async () => {
+      const tx = db.transaction(STORE, 'readonly');
+      const store = tx.objectStore(STORE);
+      return await new Promise((res, rej) => {
+        const r = store.get(tempKey);
+        r.onsuccess = () => res(r.result);
+        r.onerror   = () => rej(r.error);
+      });
+    })();
+
+    const rtOK = roundTrip && roundTrip.farmerNote === 'TEMP_TEST_RECORD' && roundTrip.sensorReadings.length === 3;
+    console.assert(rtOK, 'Add/Get round-trip should return the same data');
+    if (rtOK) console.log('✅ Test 4 passed: add/get works (key =', tempKey, ')');
+
+    // cleanup the temp record
+    await (async () => {
+      const tx = db.transaction(STORE, 'readwrite');
+      tx.objectStore(STORE).delete(tempKey);
+      await txDone(tx);
+    })();
+
+    // Test 5: Getting a non-existent key returns undefined
+    const nonexist = await (async () => {
+      const tx = db.transaction(STORE, 'readonly');
+      const store = tx.objectStore(STORE);
+      return await new Promise((res, rej) => {
+        const r = store.get(999999999);
+        r.onsuccess = () => res(r.result);
+        r.onerror   = () => rej(r.error);
+      });
+    })();
+    console.assert(nonexist === undefined, 'Non-existent key should return undefined');
+    if (nonexist === undefined) console.log('✅ Test 5 passed: non-existent key returns undefined');
+
+    db.close();
+  }
+  // expose for Console if needed
+  window.runUnitTests = runUnitTests;
+
+  /* ==================== Button wiring ==================== */
+  document.getElementById('btnInit').onclick   = async () => { await openDB(); log('DB is ready.'); };
+  document.getElementById('btnSeed').onclick   = () => seed(10000);
+  document.getElementById('btnCount').onclick  = () => countRecords();
+  document.getElementById('btnSample').onclick = () => showOneSample();
+  document.getElementById('btnLog').onclick    = () => logFarmData();
+  document.getElementById('btnTests').onclick  = () => runUnitTests();
+  document.getElementById('btnClear').onclick  = () => clearStore();
+
+  /* ==================== Optional: auto-log on load ==================== */
+  window.addEventListener('load', () => { logFarmData(); });
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "name": "neo4j-express-api",
+  "version": "1.0.0",
+  "description": "Minimal Node.js Express server to query Neo4j nodes and relationships (DBMS2)",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js"
+  },
+  "keywords": [
+    "neo4j",
+    "express",
+    "api",
+    "graph",
+    "dbms2"
+  ],
+  "author": "Your Name",
+  "license": "MIT",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "neo4j-driver": "^5.23.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}

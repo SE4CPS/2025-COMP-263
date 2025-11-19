@@ -1,0 +1,19 @@
+{
+  "name": "lab4-tran-5805",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "redis": "^5.9.0"
+  }
+}

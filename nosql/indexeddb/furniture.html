@@ -1,0 +1,73 @@
+<!doctype html>
+<meta charset="utf-8">
+<title>IndexedDB Furniture Demo</title>
+<script>
+const dbOpen = indexedDB.open("furnitureDB", 1);
+
+// Create store on first run
+dbOpen.onupgradeneeded = function (e) {
+  e.target.result.createObjectStore("items", { keyPath: "id", autoIncrement: true });
+};
+
+dbOpen.onsuccess = async function (e) {
+  const db = e.target.result;
+
+  // Helper: read/write transaction
+  function rw(fn) {
+    return new Promise(function (ok, er) {
+      const tx = db.transaction("items", "readwrite");
+      fn(tx.objectStore("items"));
+      tx.oncomplete = ok;
+      tx.onerror = function () { er(tx.error); };
+    });
+  }
+
+  // Helper: get all items
+  function all() {
+    return new Promise(function (ok) {
+      const out = [];
+      const cur = db.transaction("items").objectStore("items").openCursor();
+
+      cur.onsuccess = function () {
+        let c = cur.result;
+        if (c) {
+          out.push(c.value);
+          c.continue();
+        } else {
+          console.log("ALL:", out);
+          ok(out);
+        }
+      };
+    });
+  }
+
+  // --- CRUD demo ---
+  await rw(function (s) {
+    s.add({ name: "Chair", price: 49, stock: 10 });
+    s.add({ name: "Table", price: 129, stock: 5 });
+    s.add({ name: "Sofa",  price: 499, stock: 2 });
+  });
+
+  let items = await all();              // READ
+
+  items[0].price = 59;                  // UPDATE first item
+  await rw(function (s) {
+    s.put(items[0]);
+  });
+
+  await rw(function (s) {
+    s.delete(items[1].id);
+  });                                   // DELETE second item
+
+  await rw(function (s) {
+    s.add({ name: "Lamp", price: 35, stock: 20 });
+  });                                   // CREATE new item
+
+  await all();                          // Final state
+  console.log("CRUD demo complete.");
+};
+
+dbOpen.onerror = function (e) {
+  console.error("DB open error:", e.target.error);
+};
+</script>

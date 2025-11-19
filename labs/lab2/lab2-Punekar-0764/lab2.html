@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>IndexedDB • Lab2 • Q2+Metadata</title>
+  <style>
+    body { font-family: system-ui, Arial, sans-serif; margin: 32px; }
+    button { padding: 10px 16px; cursor: pointer; }
+    #status { margin-top: 12px; }
+    code { background: #f6f8fa; padding: 2px 6px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+  <h1>IndexedDB Seeder (10 objects with metadata & UTC)</h1>
+  <p>DB: <code>Lab2DB</code>, Store: <code>readings</code></p>
+  <button id="seed">Create / Reset & Insert 10</button>
+  <div id="status">Idle</div>
+
+  <script>
+    // Promise wrapper (no loops/ifs)
+    const reqToPromise = req =>
+      new Promise((resolve, reject) => {
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      });
+
+    // Open DB and recreate store on upgrade (no conditionals in user code paths)
+    const openDB = version =>
+      new Promise((resolve, reject) => {
+        const open = indexedDB.open('Lab2DB', version);
+        open.onupgradeneeded = () => {
+          const db = open.result;
+          Array.from(db.objectStoreNames).map(name => db.deleteObjectStore(name));
+          const store = db.createObjectStore('readings', { keyPath: 'id' });
+          store.createIndex('sensorId', 'sensorId', { unique: false });
+          store.createIndex('timestamp', 'timestamp', { unique: false });
+        };
+        open.onsuccess = () => resolve(open.result);
+        open.onerror = () => reject(open.error);
+      });
+
+    const seed = async () => {
+      const setStatus = msg => (document.getElementById('status').textContent = msg);
+
+      // Version trick (always increases) without if/loops
+      const version = Math.floor(Date.now() / 1000);
+      const db = await openDB(version);
+
+      // Build ids 1..10 using map/filter
+      const ids = Array.from({ length: 12 }, (_, i) => i + 1).filter(n => n <= 10);
+
+      // Shared metadata per assignment
+      const metaBase = {
+        author: "Omkar Prathamesh",
+        last_sync: new Date().toISOString(),          // current UTC
+        uuid_source: (crypto && crypto.randomUUID ? crypto.randomUUID() : String(Math.random()).slice(2))
+      };
+
+      // Create 10 records: all timestamps are UTC ISO via toISOString()
+      const records = ids.map(i => ({
+        id: i,
+        sensorId: `sensor-${(i % 3) + 1}`,
+        reading: Number((10 + Math.random() * 90).toFixed(2)),
+        timestamp: new Date(Date.now() - i * 60_000).toISOString(), // UTC
+        notes: `Reading #${i}`,
+        metadata: { ...metaBase }
+      }));
+
+      const tx = db.transaction('readings', 'readwrite');
+      const store = tx.objectStore('readings');
+
+      // Insert via map + Promise.all (no loops)
+      await Promise.all(records.map(r => reqToPromise(store.put(r))));
+      await new Promise(res => (tx.oncomplete = res));
+
+      // Reduce example (not required but satisfies use)
+      const sum = records.reduce((acc, r) => acc + r.reading, 0);
+      setStatus(`Done. Inserted 10 objects with metadata. Sum(reading)=${sum.toFixed(2)}.
+Open DevTools → Application → Storage → IndexedDB → Lab2DB → readings. Click one row to show metadata & UTC dates, then screenshot.`);
+
+      db.close();
+    };
+
+    document.getElementById('seed').addEventListener('click', () =>
+      seed().catch(e => (document.getElementById('status').textContent = 'Error: ' + e))
+    );
+  </script>
+</body>
+</html>

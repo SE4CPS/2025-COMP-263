@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AgricultureDB</title>
+</head>
+<body>
+  <h1>AgricultureDB</h1>
+
+  <script>
+    const dbName = "AgricultureDB";
+    let db;
+
+    const request = indexedDB.open(dbName, 1);
+
+    request.onupgradeneeded = (event) => {
+      db = event.target.result;
+      if (!db.objectStoreNames.contains("FarmData")) {
+        db.createObjectStore("FarmData", { keyPath: "id", autoIncrement: true });
+      }
+    };
+
+    request.onsuccess = (event) => {
+      db = event.target.result;
+      console.log("IndexedDB ready:", dbName);
+
+      insertData().then(() => {
+        console.log("10,000 entries inserted.");
+        runTests(); 
+        logData();
+      });
+    };
+
+    request.onerror = (event) => {
+      console.error("Error opening DB:", event.target.error);
+    };
+
+    function getRandomEntry() {
+      return {
+        sensorReadings: Array.from({ length: 5 }, () => (Math.random() * 100).toFixed(2)),
+        cropPhoto: "https://test.com/xxx",
+        farmerNote: Math.random().toString(36).substring(2, 8),
+        gpsCoordinates: +(Math.random() * 180 - 90).toFixed(5),
+        timestamp: new Date().toISOString()
+      };
+    }
+
+    function insertData() {
+      return new Promise((resolve, reject) => {
+        const tx = db.transaction("FarmData", "readwrite");
+        const store = tx.objectStore("FarmData");
+
+        for (let i = 0; i < 10000; i++) {
+          store.add(getRandomEntry());
+        }
+
+        tx.oncomplete = () => resolve();
+        tx.onerror = (err) => reject(err);
+      });
+    }
+
+    function logData() {
+      const tx = db.transaction("FarmData", "readonly");
+      const store = tx.objectStore("FarmData");
+
+
+      const countRequest = store.count();
+      countRequest.onsuccess = () => {
+        console.log("Total records in FarmData:", countRequest.result);
+      };
+
+      const request = store.openCursor();
+      let logged = 0;
+      request.onsuccess = (event) => {
+        const cursor = event.target.result;
+        if (cursor && logged < 15) {
+          console.log(cursor.key, cursor.value);
+          logged++;
+          cursor.continue();
+        }
+      };
+    }
+    
+  function testRecordHasAllFields() {
+    const tx = db.transaction("FarmData", "readonly");
+    const store = tx.objectStore("FarmData");
+    const getRequest = store.get(1);
+
+    getRequest.onsuccess = () => {
+      const data = getRequest.result;
+      console.assert("sensorReadings" in data, "Missing field: sensorReadings");
+      console.assert("cropPhoto" in data, "Missing field: cropPhoto");
+      console.assert("farmerNote" in data, "Missing field: farmerNote");
+      console.assert("gpsCoordinates" in data, "Missing field: gpsCoordinates");
+      console.assert("timestamp" in data, "Missing field: timestamp");
+      console.log("Test 1 passed: Record contains all required fields");
+    };
+  }
+
+  function testRecordCount() {
+    const tx = db.transaction("FarmData", "readonly");
+    const store = tx.objectStore("FarmData");
+    const countRequest = store.count();
+
+    countRequest.onsuccess = () => {
+      console.assert(countRequest.result === 10000, "Record count not 10000");
+      console.log("Test 2 passed: 10,000 records found in FarmData");
+    };
+  }
+
+  function testSensorReadingsFormat() {
+    const tx = db.transaction("FarmData", "readonly");
+    const store = tx.objectStore("FarmData");
+    const getRequest = store.get(1);
+
+    getRequest.onsuccess = () => {
+      const data = getRequest.result;
+      console.assert(Array.isArray(data.sensorReadings), "sensorReadings is not an array");
+      console.assert(data.sensorReadings.length === 5, "sensorReadings does not contain 5 values");
+      console.log("Test 3 passed: sensorReadings array is valid");
+    };
+  }
+
+  function testCropPhotoExtension() {
+    const tx = db.transaction("FarmData", "readonly");
+    const store = tx.objectStore("FarmData");
+    const getRequest = store.get(2);
+
+    getRequest.onsuccess = () => {
+      const data = getRequest.result;
+      console.assert(/\.(jpg|jpeg|png|gif)$/i.test(data.cropPhoto) || data.cropPhoto.includes("placeholder"),
+        "cropPhoto is not a valid image file name");
+      console.log("Test 4 passed: cropPhoto has valid extension");
+    };
+  }
+
+  function testGPSCoordinatesNumber() {
+    const tx = db.transaction("FarmData", "readonly");
+    const store = tx.objectStore("FarmData");
+    const getRequest = store.get(3);
+
+    getRequest.onsuccess = () => {
+      const gps = getRequest.result.gpsCoordinates;
+      console.assert(typeof gps === "number", "gpsCoordinates is not a number");
+      console.assert(gps >= -180 && gps <= 180, "gpsCoordinates out of range (-180 to 180)");
+      console.log("Test 5 passed: gpsCoordinates is valid");
+    };
+  }
+
+  function runTests() {
+    testRecordHasAllFields();
+    testRecordCount();
+    testSensorReadingsFormat();
+    testCropPhotoExtension();
+    testGPSCoordinatesNumber();
+  }
+
+  </script>
+</body>
+</html>

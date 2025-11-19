@@ -1,0 +1,20 @@
+
+{
+  "name": "comp263-lab3-generic",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "neo4j:connect": "node Neo4jConnection.js",
+    "neo4j:read": "node readFromNeo4j.js",
+    "neo4j:toMongo": "node writeFromNeo4jToMongo.js",
+    "server": "node indexeddb_ingest_server.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "neo4j-driver": "^5.22.0"
+  }
+}

@@ -1,0 +1,7 @@
+db.books.insertMany([
+  {bookId: 1, title: "Clean Code", author: "Robert C. Martin", publisher: "Pearson"},
+  {bookId: 2, title: "MongoDB Basics", author: "Adam Smith", publisher: "OReilly Media"},
+  {bookId: 3, title: "Distributed Systems", author: "Andrew S. Tanenbaum", publisher: "Pearson"}
+]);
+
+db.books.find({publisher: "Pearson"});

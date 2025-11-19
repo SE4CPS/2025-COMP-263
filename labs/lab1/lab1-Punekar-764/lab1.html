@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>AgricultureDB — IndexedDB Seeder, Reader & Tests</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji"; }
+    body { margin: 24px; line-height: 1.45; }
+    h1 { margin: 0 0 8px; }
+    .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px 18px; max-width: 980px; box-shadow: 0 1px 6px rgba(0,0,0,.05); }
+    button { padding: 10px 14px; border-radius: 10px; border: 1px solid #ddd; cursor: pointer; }
+    button:disabled { opacity: .6; cursor: not-allowed; }
+    .row { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .muted { color: #666; }
+    code, kbd { background: #f6f6f8; border: 1px solid #e6e6eb; border-radius: 6px; padding: 2px 6px; }
+    progress { width: 260px; height: 16px; }
+    .log { white-space: pre-wrap; background: #0f172a; color: #e2e8f0; padding: 10px 12px; border-radius: 8px; max-height: 240px; overflow: auto; }
+    .ok { color: #047857; }
+    .err { color: #b91c1c; }
+    .kv { display: grid; grid-template-columns: 220px 1fr; gap: 8px 14px; margin-top: 8px; }
+    .kv div { padding: 4px 0; }
+  </style>
+</head>
+<body>
+  <h1>IndexedDB: <em>AgricultureDB</em></h1>
+  <p class="muted">Creates <code>AgricultureDB</code> → store <code>FarmData</code> (auto-increment). Inserts <strong>10,000</strong> random records, reads them back, and runs <strong>5 unit tests</strong> with <code>console.assert</code>.</p>
+
+  <div class="card">
+    <div class="row" style="margin-bottom:10px">
+      <button id="initBtn">Init DB</button>
+      <button id="seedBtn" disabled>Insert 10,000</button>
+      <button id="readBtn" disabled>Retrieve & Log</button>
+      <button id="countBtn" disabled>Count</button>
+      <button id="testBtn" disabled>Run Tests</button>
+      <button id="clearBtn" disabled>Clear Store</button>
+      <progress id="prog" max="100" value="0" style="display:none"></progress>
+      <span id="status" class="muted"></span>
+    </div>
+
+    <div class="kv">
+      <div>DB Name:</div><div><code>AgricultureDB</code></div>
+      <div>Object Store:</div><div><code>FarmData</code> (key auto-increments)</div>
+      <div>Record shape:</div>
+      <div><code>{ sensorReadings: number[], cropPhoto: string, farmerNote: string, gpsCoordinates: number, timestamp: Date }</code></div>
+    </div>
+  </div>
+
+  <h3>How to verify</h3>
+  <ol>
+    <li>Click <strong>Init DB</strong>, then <strong>Insert 10,000</strong>.</li>
+    <li>DevTools → <strong>Application/Storage → IndexedDB → AgricultureDB → FarmData</strong> to view the entries.</li>
+    <li>Console → click <strong>Retrieve & Log</strong> for total count and sample records.</li>
+    <li>Click <strong>Run Tests</strong> to run 5 <code>console.assert</code> tests and see the summary.</li>
+  </ol>
+
+  <div id="log" class="log" aria-live="polite"></div>
+
+<script>
+(() => {
+  const DB_NAME = "AgricultureDB";
+  const STORE = "FarmData";
+  const VERSION = 1;
+
+  const initBtn = document.getElementById('initBtn');
+  const seedBtn = document.getElementById('seedBtn');
+  const readBtn = document.getElementById('readBtn');
+  const countBtn = document.getElementById('countBtn');
+  const testBtn = document.getElementById('testBtn');
+  const clearBtn = document.getElementById('clearBtn');
+  const prog = document.getElementById('prog');
+  const status = document.getElementById('status');
+  const logEl = document.getElementById('log');
+
+  let db = null;
+
+  function log(msg, cls) {
+    const line = document.createElement('div');
+    if (cls) line.className = cls;
+    line.textContent = msg;
+    logEl.appendChild(line);
+    logEl.scrollTop = logEl.scrollHeight;
+  }
+
+  function openDB() {
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open(DB_NAME, VERSION);
+      req.onupgradeneeded = () => {
+        const db = req.result;
+        if (!db.objectStoreNames.contains(STORE)) {
+          db.createObjectStore(STORE, { keyPath: 'id', autoIncrement: true });
+        }
+      };
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  function randomSensorArray() {
+    return Array.from({length: 5}, () => Number((Math.random()*100).toFixed(2)));
+  }
+  function randomFarmerNote(i) {
+    const notes = [
+      "Irrigated field early morning.",
+      "Observed pests near the west fence.",
+      "Soil looks dry; scheduling drip.",
+      "Cloudy afternoon; good for transplant.",
+      "Fertilizer applied as per schedule."
+    ];
+    return notes[i % notes.length] + " Batch " + (i+1);
+  }
+  function randomCropPhoto(i) {
+    const photos = ["images/corn.jpg", "images/wheat.jpg", "images/rice.jpg", "images/tomato.jpg"];
+    return photos[i % photos.length];
+  }
+  function randomGpsNumber() {
+    const lat = -90 + Math.random()*180;
+    const lon = -180 + Math.random()*360;
+    return Number(((lon * 1000) + lat).toFixed(5));
+  }
+
+  // --- basic ops ---
+  async function countRecords() {
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE, 'readonly');
+      const store = tx.objectStore(STORE);
+      const req = store.count();
+      req.onsuccess = () => resolve(req.result);
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  async function clearStore() {
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE, 'readwrite');
+      const store = tx.objectStore(STORE);
+      const req = store.clear();
+      req.onsuccess = () => resolve(true);
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  async function bulkInsert(n = 10000) {
+    const BATCH = 500;
+    let inserted = 0;
+    prog.style.display = 'inline-block';
+    prog.max = n; 
+    prog.value = 0;
+    status.textContent = "Seeding…";
+
+    while (inserted < n) {
+      const tx = db.transaction(STORE, 'readwrite');
+      const store = tx.objectStore(STORE);
+      const upper = Math.min(inserted + BATCH, n);
+      for (let i = inserted; i < upper; i++) {
+        const rec = {
+          sensorReadings: randomSensorArray(),
+          cropPhoto: randomCropPhoto(i),
+          farmerNote: randomFarmerNote(i),
+          gpsCoordinates: randomGpsNumber(),
+          timestamp: new Date(Date.now() - Math.floor(Math.random()*365)*24*3600*1000)
+        };
+        store.add(rec);
+      }
+      await new Promise((resolve, reject) => {
+        tx.oncomplete = resolve;
+        tx.onerror = () => reject(tx.error);
+        tx.onabort = () => reject(tx.error);
+      });
+      inserted = upper;
+      prog.value = inserted;
+      status.textContent = `Inserted ${inserted} / ${n}`;
+    }
+    status.textContent = "Done ✔";
+    status.className = "ok";
+    log("Inserted " + n + " records.", "ok");
+    prog.style.display = 'none';
+  }
+
+  // --- read helpers ---
+  async function getFirstN(n = 5) {
+    const rows = [];
+    return new Promise((resolve, reject) => {
+      const tx = db.transaction(STORE, "readonly");
+      const store = tx.objectStore(STORE);
+      const req = store.openCursor();
+      req.onsuccess = (e) => {
+        const cursor = e.target.result;
+        if (cursor && rows.length < n) {
+          rows.push(cursor.value);
+          cursor.continue();
+        } else {
+          resolve(rows);
+        }
+      };
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  // --- UI handlers ---
+  initBtn.onclick = async () => {
+    try {
+      db = await openDB();
+      log("Opened DB '" + DB_NAME + "' (v" + db.version + ") with store '" + STORE + "'.", "ok");
+      seedBtn.disabled = false;
+      countBtn.disabled = false;
+      clearBtn.disabled = false;
+      readBtn.disabled = false;
+      testBtn.disabled = false;
+      status.textContent = "Ready";
+    } catch (e) {
+      log("Failed to open DB: " + e, "err");
+      status.textContent = "Error opening DB";
+    }
+  };
+
+  seedBtn.onclick = async () => {
+    seedBtn.disabled = true;
+    try {
+      await bulkInsert(10000);
+    } catch (e) {
+      log("Insert error: " + e, "err");
+      status.textContent = "Insert failed";
+    } finally {
+      seedBtn.disabled = false;
+    }
+  };
+
+  countBtn.onclick = async () => {
+    try {
+      const c = await countRecords();
+      log("Current record count: " + c);
+      status.textContent = "Count: " + c;
+    } catch (e) {
+      log("Count error: " + e, "err");
+    }
+  };
+
+  readBtn.onclick = async () => {
+    try {
+      const total = await countRecords();
+      console.log("✅ Total entries in FarmData:", total);
+      const sample = await getFirstN(5);
+      console.log("📦 Sample records (first 5):", sample);
+
+      if (sample[0]) {
+        console.log("Record types:", {
+          sensorReadings_type: Array.isArray(sample[0].sensorReadings) ? "Array" : typeof sample[0].sensorReadings,
+          cropPhoto_type: typeof sample[0].cropPhoto,
+          farmerNote_type: typeof sample[0].farmerNote,
+          gpsCoordinates_type: typeof sample[0].gpsCoordinates,
+          timestamp_type: sample[0].timestamp instanceof Date ? "Date" : typeof sample[0].timestamp,
+        });
+        console.log("First record formatted:", {
+          sensorReadings: sample[0].sensorReadings.join(", "),
+          cropPhoto: sample[0].cropPhoto,
+          farmerNote: sample[0].farmerNote,
+          gpsCoordinates: sample[0].gpsCoordinates.toFixed(5),
+          timestamp_iso: sample[0].timestamp instanceof Date ? sample[0].timestamp.toISOString() : String(sample[0].timestamp)
+        });
+      }
+      log("Console now shows total count + samples.", "ok");
+    } catch (e) {
+      console.error("Read error:", e);
+      log("Read error: " + e, "err");
+    }
+  };
+
+  clearBtn.onclick = async () => {
+    if (!confirm("Clear all records from FarmData?")) return;
+    try {
+      await clearStore();
+      log("Store cleared.", "ok");
+      status.textContent = "Cleared";
+    } catch (e) {
+      log("Clear error: " + e, "err");
+    }
+  };
+
+  // --- Unit Tests (console.assert) ---
+  testBtn.onclick = async () => {
+    if (!db) { console.warn("Init DB first."); return; }
+
+    const results = [];
+    const assert = (cond, msg) => {
+      console.assert(cond, msg);
+      results.push({ pass: !!cond, msg });
+      if (cond) console.log("PASS:", msg);
+    };
+
+    // TEST 1: Count is at least 10000
+    const totalBefore = await countRecords();
+    assert(totalBefore >= 10000, `Store has at least 10000 entries (got ${totalBefore})`);
+
+    // TEST 2: Schema & types on a sample record
+    const [sample] = await getFirstN(1);
+    assert(Array.isArray(sample.sensorReadings), "sensorReadings is Array");
+    assert(typeof sample.cropPhoto === "string", "cropPhoto is String (URL)");
+    assert(typeof sample.farmerNote === "string", "farmerNote is String");
+    assert(typeof sample.gpsCoordinates === "number" && Number.isFinite(sample.gpsCoordinates), "gpsCoordinates is finite Number");
+    assert(sample.timestamp instanceof Date, "timestamp is Date");
+
+    // TEST 3: cropPhoto uses a common image extension
+    const imgOk = /\.(png|jpe?g|gif|webp)$/i.test(sample.cropPhoto);
+    assert(imgOk, `cropPhoto ends with common image extension (${sample.cropPhoto})`);
+
+    // TEST 4: Write–read round trip
+    const newRec = {
+      sensorReadings: [1.11, 2.22, 3.33, 4.44, 5.55],
+      cropPhoto: "images/test.jpg",
+      farmerNote: "Unit-test insert",
+      gpsCoordinates: 12.34567,
+      timestamp: new Date()
+    };
+    const newKey = await new Promise((res, rej) => {
+      const tx = db.transaction(STORE, "readwrite");
+      tx.onerror = () => rej(tx.error);
+      const st = tx.objectStore(STORE);
+      const req = st.add(newRec);
+      req.onsuccess = () => res(req.result);
+      req.onerror = () => rej(req.error);
+    });
+    const fetched = await new Promise((res, rej) => {
+      const tx = db.transaction(STORE, "readonly");
+      const st = tx.objectStore(STORE);
+      const req = st.get(newKey);
+      req.onsuccess = () => res(req.result);
+      req.onerror = () => rej(req.error);
+    });
+    assert(!!fetched, "Round-trip: fetched record exists");
+    assert(fetched.farmerNote === newRec.farmerNote, "Round-trip: string field preserved");
+    assert(Array.isArray(fetched.sensorReadings) && fetched.sensorReadings.length === 5, "Round-trip: array length preserved");
+    assert(fetched.timestamp instanceof Date, "Round-trip: Date preserved");
+
+    // TEST 5: Sensor readings shape & bounds
+    const allNums = sample.sensorReadings.every((x) => typeof x === "number" && Number.isFinite(x));
+    const inRange = sample.sensorReadings.every((x) => x >= 0 && x <= 100);
+    assert(allNums, "sensorReadings: all entries are numbers");
+    assert(inRange, "sensorReadings: all values within 0–100");
+
+    const passed = results.filter(r => r.pass).length;
+    const failed = results.length - passed;
+    console.log(`\n=== Unit Test Summary ===\nTotal: ${results.length}  Passed: ${passed}  Failed: ${failed}`);
+    log("Tests finished — check Console for PASS lines and summary.", "ok");
+  };
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,126 @@
+const express = require("express");
+const { MongoClient } = require("mongodb");
+const cors = require("cors");
+require("dotenv").config();
+
+const app = express();
+
+// --- Fix CORS ---
+app.use(cors({ origin: true, methods: ["GET", "POST", "OPTIONS"], allowedHeaders: ["Content-Type"] }));
+app.options("*", cors());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") return res.sendStatus(204);
+  next();
+});
+
+app.use(express.json({ limit: "10mb" }));
+const express = require("express");
+const { MongoClient } = require("mongodb");
+const cors = require("cors");
+require("dotenv").config();
+
+const app = express();
+
+// --- Fix CORS ---
+app.use(cors({ origin: true, methods: ["GET", "POST", "OPTIONS"], allowedHeaders: ["Content-Type"] }));
+app.options("*", cors());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") return res.sendStatus(204);
+  next();
+});
+
+app.use(express.json({ limit: "10mb" }));
+const express = require("express");
+const { MongoClient } = require("mongodb");
+const cors = require("cors");
+require("dotenv").config();
+
+const app = express();
+
+// --- Fix CORS ---
+app.use(cors({ origin: true, methods: ["GET", "POST", "OPTIONS"], allowedHeaders: ["Content-Type"] }));
+app.options("*", cors());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") return res.sendStatus(204);
+  next();
+});
+
+app.use(express.json({ limit: "10mb" }));
+const express = require("express");
+const { MongoClient } = require("mongodb");
+const cors = require("cors");
+require("dotenv").config();
+
+const app = express();
+
+// --- Fix CORS ---
+app.use(cors({ origin: true, methods: ["GET", "POST", "OPTIONS"], allowedHeaders: ["Content-Type"] }));
+app.options("*", cors());
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  if (req.method === "OPTIONS") return res.sendStatus(204);
+  next();
+});
+
+app.use(express.json({ limit: "10mb" }));const express = require("express");
+const { MongoClient } = require("mongodb");
+require("dotenv").config();
+
+
+const app = express();
+app.use(express.json({ limit: "10mb" }));
+
+const {
+  MONGODB_URI, MONGO_DB, MONGO_COLLECTION, PORT = 4000
+} = process.env;
+
+let coll;
+
+(async () => {
+  const client = new MongoClient(MONGODB_URI);
+  await client.connect();
+  coll = client.db(MONGO_DB).collection(MONGO_COLLECTION);
+  app.listen(PORT, () => console.log(`Ingest API running on http://localhost:${PORT}`));
+})().catch(err => {
+  console.error("Failed to start:", err);
+  process.exit(1);
+});
+
+// POST /ingest
+// body: { sourceDB: "IndexedDB"|"Neo4j", data: [ ...objects... ], tags?: string[] }
+app.post("/ingest", async (req, res) => {
+  try {
+    const { sourceDB, data, tags = [] } = req.body || {};
+    if (!sourceDB || !Array.isArray(data)) {
+      return res.status(400).json({ error: "sourceDB and data[] are required" });
+    }
+
+    const now = new Date().toISOString(); // UTC
+    const docs = data.map(d => ({
+      ...d,
+      _lake: {                      // keep metadata in a namespaced sub-doc
+        sourceDB,
+        ingestedAt: now,
+        tags
+      }
+    }));
+
+    if (!docs.length) return res.json({ inserted: 0 });
+
+    const result = await coll.insertMany(docs, { ordered: false });
+    res.json({ inserted: result.insertedCount });
+  } catch (e) {
+    res.status(500).json({ error: e.message });
+  }
+});

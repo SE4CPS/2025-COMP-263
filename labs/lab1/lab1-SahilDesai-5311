@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>AgricultureDB • IndexedDB Demo</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <style>
+    body{font-family:system-ui,Arial,sans-serif;margin:24px;line-height:1.35}
+    h1{margin:0 0 8px}
+    .badge{display:inline-block;padding:2px 8px;border-radius:12px;background:#eef;border:1px solid #99f}
+    .ok{color:#049e2f} .muted{color:#666}
+    #status{white-space:pre-wrap;background:#0a0a0a;color:#d6ffd6;padding:12px;border-radius:8px}
+    #grid{margin-top:16px;display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:12px}
+    .card{border:1px solid #e5e7eb;border-radius:12px;padding:12px}
+    .small{font-size:.9rem}
+  </style>
+</head>
+<body>
+  <h1>Farm Data Collector <span class="badge">IndexedDB</span></h1>
+  <div class="muted small">Stores sensor readings, notes, GPS, timestamps & a crop photo path.</div>
+
+  <p class="small">Open <b>DevTools → Application → IndexedDB → AgricultureDB → FarmData</b> to see the records. The Console shows the unit tests.</p>
+
+  <h3>Status</h3>
+  <div id="status">Initializing…</div>
+
+  <div id="grid"></div>
+
+<script>
+(async () => {
+  // ---------- tiny helpers ----------
+  const log = (...a)=>console.log(...a);
+  const ok = (name)=>console.log("%c\u2705 " + name + " passed","color:#10b981");
+  const info = (msg)=>console.log("%c" + msg,"color:#60a5fa");
+  const stat = (msg)=>document.getElementById('status').textContent = msg;
+
+  //  open / upgrade DB 
+  const DB_NAME = "AgricultureDB";
+  const STORE = "FarmData";
+  const db = await new Promise((resolve, reject) => {
+    const req = indexedDB.open(DB_NAME, 1);
+    req.onupgradeneeded = (e) => {
+      const db = e.target.result;
+      if (!db.objectStoreNames.contains(STORE)) {
+        const os = db.createObjectStore(STORE, { keyPath: "id", autoIncrement: true });
+        os.createIndex("timeIdx", "timestamp");
+      }
+    };
+    req.onsuccess = () => resolve(req.result);
+    req.onerror = () => reject(req.error);
+  });
+  stat("Database opened successfully");
+
+  //  basic IDB ops
+  const t = (mode="readonly") => db.transaction(STORE, mode).objectStore(STORE);
+  const count = () => new Promise((res,rej)=>{ const r=t().count(); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); });
+  const addMany = (rows) => new Promise((res,rej)=>{
+    const tx = db.transaction(STORE,"readwrite"); const os = tx.objectStore(STORE);
+    rows.forEach(r=>os.add(r));
+    tx.oncomplete=()=>res(); tx.onerror=()=>rej(tx.error);
+  });
+  const get = (id) => new Promise((res,rej)=>{ const r=t().get(id); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); });
+  const firstN = (n=6) => new Promise((res,rej)=>{
+    const r = t().openCursor(); const out=[]; r.onsuccess = (e)=>{
+      const c = e.target.result; if (!c || out.length>=n) return res(out);
+      out.push(c.value); c.continue();
+    }; r.onerror=()=>rej(r.error);
+  });
+
+  //  seed data (up to 10,000) 
+  function rand(n){return Math.random()*n}
+  function sensorPacket(){
+    // 5 numeric readings
+    return [+(20+rand(10)).toFixed(2), +(50+rand(10)).toFixed(2), +(800+rand(50)).toFixed(1), +(6+rand(1)).toFixed(2), +(30+rand(5)).toFixed(2)];
+  }
+  function makeRow(i){
+    return {
+      // id autoincremented by store
+      sensorReadings: sensorPacket(),                 // Array(5)
+      cropPhoto: `images/Crop${(i%9)+1}.jpg`,         
+      farmerNote: `Plot ${i%25}: irrigation ok.`,
+      gps: { lat: +(36 + rand(3)).toFixed(6), lon: +(-121 + rand(3)).toFixed(6) },
+      timestamp: Date.now() - Math.floor(rand(1000*60*60*24*30)) // within ~30 days
+    };
+  }
+
+  let n = await count();
+  if (n >= 10000) {
+    stat("Already have ≥ 10,000 rows. Skip insert.");
+  } else {
+    const target = 10000;
+    const batch = 1000;
+    while (n < target) {
+      const rows = Array.from({length: Math.min(batch, target-n)}, (_,k)=>makeRow(n+k+1));
+      await addMany(rows);
+      n += rows.length;
+      stat(`Seeding… ${n}/${target}`);
+    }
+    stat("Seeding complete: 10,000 rows inserted.");
+  }
+
+  //  “unit tests” 
+  info("Running IndexedDB unit tests…");
+
+  // 1) add & get round-trip
+  const sample = makeRow(99999);
+  const id1 = await new Promise((res,rej)=>{
+    const tx = db.transaction(STORE,"readwrite");
+    const r = tx.objectStore(STORE).add(sample);
+    r.onsuccess=()=>res(r.result); tx.onerror=()=>rej(tx.error);
+  });
+  const back = await get(id1);
+  if (back && back.cropPhoto === sample.cropPhoto) ok("testAddAndGetRoundTrip");
+
+  // 2) image extension
+  if (/^images\/Crop\d+\.jpg$/i.test(back.cropPhoto)) ok("testImageExtension");
+
+  // 3) sensor readings numeric Array(5)
+  const arr = back.sensorReadings;
+  if (Array.isArray(arr) && arr.length===5 && arr.every(x=>typeof x==="number"||(!isNaN(parseFloat(x))))) ok("testSensorReadingsAreNumericArray");
+
+  // 4) GPS range sanity
+  const {lat,lon} = back.gps;
+  if (lat>=-90 && lat<=90 && lon>=-180 && lon<=180) ok("testGPSRange");
+
+  // 5) count after bulk insert
+  const total = await count();
+  if (total >= 10000) ok("testCountAfterBulkInsert");
+
+  console.log("%cAll tests finished ✅","color:#22c55e;font-weight:600");
+
+  //  tiny on-page preview 
+  const items = await firstN(6);
+  const grid = document.getElementById('grid');
+  grid.innerHTML = items.map(r => `
+    <div class="card small">
+      <div><b>ID:</b> ${r.id ?? "auto"}</div>
+      <div><b>Photo:</b> ${r.cropPhoto}</div>
+      <div><b>Sensor:</b> [${r.sensorReadings.join(", ")}]</div>
+      <div><b>GPS:</b> ${r.gps.lat}, ${r.gps.lon}</div>
+      <div><b>Time:</b> ${new Date(r.timestamp).toLocaleString()}</div>
+      <div><b>Note:</b> ${r.farmerNote}</div>
+    </div>
+  `).join("");
+})();
+</script>
+</body>
+</html>

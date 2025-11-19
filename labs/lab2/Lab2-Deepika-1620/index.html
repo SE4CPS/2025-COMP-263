@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Lab 2 – IndexedDB → MongoDB (Client)</title>
+  <style>
+    body {
+      font-family: system-ui, Arial, sans-serif;
+      padding: 16px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    button {
+      margin: 6px 8px 6px 0;
+      padding: 8px 12px;
+    }
+
+    pre,
+    code {
+      background: #f6f8fa;
+      padding: 10px;
+      border-radius: 6px;
+      overflow: auto;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 100%;
+      margin-top: 10px;
+    }
+
+    th,
+    td {
+      border: 1px solid #ddd;
+      padding: 6px;
+      font-size: 14px;
+    }
+
+    th {
+      background: #fafafa;
+    }
+
+    .ok {
+      color: #1b7f3b;
+      font-weight: 600
+    }
+
+    .err {
+      color: #b00020;
+      font-weight: 600
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Lab 2 — IndexedDB → MongoDB (Client)</h1>
+  <p>
+    <strong>Buttons (run top to bottom):</strong>
+  </p>
+  <ol>
+    <li>Initialize IndexedDB</li>
+    <li>Generate &amp; Save 10 objects (IDs 1–10) with UTC timestamps using <em>map/filter/reduce</em></li>
+    <li>Preview first 10 + metadata</li>
+    <li>Send to server (which will insert into MongoDB Atlas)</li>
+  </ol>
+  <button id="btnInit">1) Init IndexedDB</button>
+  <button id="btnSeed">2) Save 10 Objects</button>
+  <button id="btnPreview">3) Preview (first 10 + metadata)</button>
+  <button id="btnSend">4) Send to Server</button>
+  <p id="status"></p>
+  <h3>Preview</h3>
+  <pre id="preview"></pre>
+  <h3>Table</h3>
+  <table id="tbl" style="display:none">
+    <thead>
+      <tr>
+        <th>sensorId</th>
+        <th>reading</th>
+        <th>timestamp (UTC)</th>
+        <th>notes</th>
+      </tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+  <script>
+    // ---------- Helpers ----------
+    const utcNow = () => new Date().toISOString(); // ISO-8601 UTC with 'Z'
+    const setStatus = (msg, ok = true) => {
+      const el = document.getElementById('status');
+      el.className = ok ? 'ok' : 'err';
+      el.textContent = msg;
+    };
+    // ---------- IndexedDB setup ----------
+    const DB_NAME = 'Agriculture';
+    const STORE = 'readings';
+    let db;
+    function openDB() {
+      return new Promise((resolve, reject) => {
+        const req = indexedDB.open(DB_NAME, 1);
+        req.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          if (!db.objectStoreNames.contains(STORE)) {
+            const store = db.createObjectStore(STORE, { keyPath: 'sensorId' });
+            store.createIndex('sensorId', 'sensorId', { unique: true });
+          }
+        };
+        req.onsuccess = () => resolve(req.result);
+        req.onerror = () => reject(req.error);
+      });
+    }
+    const putAllWithReduce = (items) =>
+      new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, 'readwrite');
+        const store = tx.objectStore(STORE);
+        // Chain adds with reduce (no explicit for/while)
+        items.reduce((p, item) => {
+          return p.then(() => new Promise((res, rej) => {
+            const r = store.put(item);
+            r.onsuccess = () => res();
+            r.onerror = () => rej(r.error);
+          }));
+        }, Promise.resolve())
+          .then(() => tx.commit?.()) // commit for modern browsers
+          .then(resolve)
+          .catch(reject);
+      });
+    const getAll = () =>
+      new Promise((resolve, reject) => {
+        const tx = db.transaction(STORE, 'readonly');
+        const store = tx.objectStore(STORE);
+        const r = store.getAll();
+        r.onsuccess = () => resolve(r.result);
+        r.onerror = () => reject(r.error);
+      });
+    // ---------- Step 1: Init ----------
+    document.getElementById('btnInit').onclick = async () => {
+      try {
+        db = await openDB();
+        setStatus('IndexedDB initialized.', true);
+      } catch (e) {
+        setStatus('Failed to open IndexedDB: ' + e, false);
+      }
+    };
+    // ---------- Step 2: Seed 10 using map/filter/reduce ----------
+    document.getElementById('btnSeed').onclick = async () => {
+      try {
+        if (!db) db = await openDB();
+        // Create 10 items (IDs 1..10) using Array.from + map; ensure UTC timestamps
+        const base = Array.from({ length: 10 }, (_, i) => i + 1);
+        const items = base
+          .map(id => ({
+            sensorId: id,
+            reading: Number((Math.random() * 100).toFixed(2)),
+            timestamp: utcNow(), // already UTC
+            notes: `Auto-generated sample #${id}`
+          }))
+          // (example of filter – keep all valid readings >= 0)
+          .filter(o => o.reading >= 0);
+        await putAllWithReduce(items);
+        setStatus('Saved 10 objects to IndexedDB.', true);
+      } catch (e) {
+        setStatus('Seeding failed: ' + e, false);
+      }
+    };
+    // ---------- Step 3: Preview first 10 + metadata ----------
+    document.getElementById('btnPreview').onclick = async () => {
+      try {
+        if (!db) db = await openDB();
+        const all = await getAll();
+        // take only the first 10 (strict)
+        const first10 = all.slice(0, 10);
+        // metadata (student fills their real name in UI or code)
+        const metadata = {
+          author: 'Deepika Jakati',
+          last_sync: utcNow()
+        };
+        const payload = { metadata, docs: first10 };
+        // Render JSON
+        document.getElementById('preview').textContent =
+          JSON.stringify(payload, null, 2);
+        // Render table
+        const tbl = document.getElementById('tbl');
+        const tbody = tbl.querySelector('tbody');
+        tbody.innerHTML = first10
+          .map(o => `<tr>
+<td>${o.sensorId}</td>
+<td>${o.reading}</td>
+<td>${o.timestamp}</td>
+<td>${o.notes}</td>
+</tr>`).join('');
+        tbl.style.display = 'table';
+        setStatus('Preview ready (first 10 + metadata).', true);
+      } catch (e) {
+        setStatus('Preview failed: ' + e, false);
+      }
+    };
+    // ---------- Step 4: Send to server (which inserts into Atlas) ----------
+    document.getElementById('btnSend').onclick = async () => {
+      try {
+        const payload = JSON.parse(document.getElementById('preview').textContent || '{}');
+        if (!payload.docs || payload.docs.length !== 10) {
+          setStatus('Please create & preview exactly 10 docs first.', false);
+          return;
+        }
+        const res = await fetch('http://localhost:3000/sync', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(payload)
+        });
+        const out = await res.json();
+        if (res.ok) {
+          setStatus('Server OK: ' + out.message, true);
+        } else {
+          setStatus('Server error: ' + (out.error || res.statusText), false);
+        }
+      } catch (e) {
+        setStatus('Send failed: ' + e, false);
+      }
+    };
+  </script>
+</body>
+
+</html>

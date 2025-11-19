@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lab2 → Lab3 Sync (IndexedDB + Metadata + UTC)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      :root {
+        --bg: #0f172a;
+        --panel: #111827;
+        --muted: #9ca3af;
+        --text: #e5e7eb;
+        --accent: #a78bfa;
+        --accent-2: #34d399;
+        --border: #1f2937;
+        --chip: #0b2f2a;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: system-ui, Segoe UI, Arial, sans-serif;
+        background: linear-gradient(135deg, #0b1220 0%, #0f172a 100%);
+        color: var(--text);
+        max-width: 980px;
+        margin: 32px auto;
+        padding: 0 16px;
+      }
+      h1 {
+        margin: 0 0 12px;
+        font-weight: 700;
+        letter-spacing: 0.2px;
+      }
+      h1 span {
+        color: var(--accent);
+      }
+      h3 {
+        margin: 20px 0 8px;
+        color: var(--accent-2);
+        font-weight: 600;
+      }
+      .chip {
+        display: inline-block;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: var(--chip);
+        color: #a7f3d0;
+        border: 1px solid #115e59;
+        font-weight: 600;
+      }
+      .muted {
+        color: var(--muted);
+      }
+      .panel {
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 14px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25),
+          inset 0 1px 0 rgba(255, 255, 255, 0.02);
+      }
+      table {
+        width: 100%;
+        border-collapse: separate;
+        border-spacing: 0;
+        margin: 16px 0;
+        background: var(--panel);
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      thead th {
+        background: #181f35;
+        color: #c7d2fe;
+        text-align: left;
+        padding: 10px 12px;
+        font-weight: 700;
+        border-bottom: 1px solid var(--border);
+      }
+      tbody td {
+        padding: 10px 12px;
+        border-bottom: 1px solid var(--border);
+        color: var(--text);
+      }
+      tbody tr:last-child td {
+        border-bottom: none;
+      }
+      code,
+      pre {
+        background: #0c1222;
+        border: 1px solid var(--border);
+        color: #dbeafe;
+        border-radius: 12px;
+        padding: 12px;
+        overflow: auto;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+      #where code {
+        color: #fbcfe8;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 14px;
+        border-radius: 10px;
+        border: 1px solid var(--border);
+        background: #1f2937;
+        color: #fde68a;
+        text-decoration: none;
+        font-weight: 700;
+        cursor: pointer;
+      }
+      .btn[disabled] {
+        opacity: 0.6;
+        cursor: not-allowed;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .small {
+        font-size: 13px;
+      }
+      .ok {
+        color: #34d399;
+      }
+      .err {
+        color: #fca5a5;
+      }
+    </style>
+  </head>
+  <body>
+    <h1><span>Q2</span> ✓ + <span>Q3</span> → Lab-3 Sync to Lake</h1>
+    <p class="chip" id="state">Starting…</p>
+
+    <div class="panel" style="margin-top: 14px">
+      <div class="muted small" style="margin-bottom: 8px">IndexedDB view</div>
+      <div id="where" class="small" style="margin-bottom: 8px"></div>
+      <table id="view" hidden>
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>sensorId</th>
+            <th>reading</th>
+            <th>timestamp</th>
+            <th>notes</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+
+    <div class="panel" style="margin-top: 16px">
+      <h3>Prepared data (for metadata & UTC)</h3>
+      <div class="grid">
+        <div>
+          <strong>Metadata</strong>
+          <pre id="meta"></pre>
+        </div>
+        <div>
+          <strong>One prepared object</strong>
+          <pre id="one"></pre>
+        </div>
+        <div>
+          <strong>Payload (metadata + 10)</strong>
+          <pre id="all"></pre>
+        </div>
+      </div>
+    </div>
+
+    <div class="panel" style="margin-top: 16px">
+      <h3>Lab-3: Sync IndexedDB → MongoDB Lake</h3>
+      <div class="row" style="margin: 8px 0 10px">
+        <span class="small muted">POST target:</span>
+        <code id="srv">http://localhost:4000/ingest/indexeddb</code>
+      </div>
+      <div class="row">
+        <button id="btnSyncLake" class="btn">Sync to Lake</button>
+        <span id="syncStatus" class="small muted">Waiting…</span>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        const DB = "Lab2";
+        const STORE = "Agriculture";
+        const V = 1;
+
+        const ids = Array.from({ length: 10 }, (_, i) => i + 1).filter(
+          (v, i, a) => a.indexOf(v) === i
+        );
+        const rows = ids.map((n) => ({
+          id: n,
+          sensorId: `SN-${String(n).padStart(2, "0")}`,
+          reading: +(18 + n * 1.5 + (n % 3) / 100).toFixed(2),
+          timestamp: new Date(
+            Date.UTC(2025, 8, 1, 9, (n * 3) % 60, 30)
+          ).toISOString(),
+          notes: `Record ${n}`,
+        }));
+
+        const open = () =>
+          new Promise((res, rej) => {
+            const r = indexedDB.open(DB, V);
+            r.onupgradeneeded = (e) => {
+              const db = e.target.result;
+              const s = db.createObjectStore(STORE, { keyPath: "id" });
+              s.createIndex("sensorId", "sensorId", { unique: false });
+              s.createIndex("timestamp", "timestamp", { unique: false });
+            };
+            r.onsuccess = () => res(r.result);
+            r.onerror = () => rej(r.error);
+          });
+
+        const reset = (db) =>
+          new Promise((res, rej) => {
+            const tx = db.transaction(STORE, "readwrite");
+            tx.objectStore(STORE).clear();
+            tx.oncomplete = res;
+            tx.onerror = () => rej(tx.error);
+          });
+
+        const upsert = (db, doc) =>
+          new Promise((res, rej) => {
+            const tx = db.transaction(STORE, "readwrite");
+            tx.objectStore(STORE).put(doc);
+            tx.oncomplete = res;
+            tx.onerror = () => rej(tx.error);
+          });
+
+        const readAll = (db) =>
+          new Promise((res, rej) => {
+            const tx = db.transaction(STORE, "readonly");
+            const req = tx.objectStore(STORE).getAll();
+            req.onsuccess = () => res(req.result);
+            req.onerror = () => rej(req.error);
+          });
+
+        const nowUTC = () => new Date().toISOString();
+        const uuid = () =>
+          "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
+            const r = (Math.random() * 16) | 0,
+              v = c === "x" ? r : (r & 0x3) | 0x8;
+            return v.toString(16);
+          });
+
+        const meta = {
+          author: "Sai Manne",
+          last_sync: nowUTC(),
+          uuid_source: uuid(),
+        };
+
+        const prepared = rows.map((r) => ({
+          ...r,
+          timestamp: new Date(r.timestamp).toISOString(),
+        }));
+        const payload = { metadata: meta, objects: prepared };
+
+        open()
+          .then((db) => reset(db).then(() => db))
+          .then((db) =>
+            rows
+              .reduce((p, d) => p.then(() => upsert(db, d)), Promise.resolve())
+              .then(() => db)
+          )
+          .then((db) => readAll(db))
+          .then((list) => {
+            document.getElementById(
+              "state"
+            ).textContent = `OK — inserted ${list.length} objects`;
+            document.getElementById(
+              "where"
+            ).innerHTML = `Database: <code>${DB}</code> • Store: <code>${STORE}</code>`;
+            const tb = document.querySelector("#view tbody");
+            tb.innerHTML = list
+              .map(
+                (x) =>
+                  `<tr><td>${x.id}</td><td>${x.sensorId}</td><td>${x.reading}</td><td>${x.timestamp}</td><td>${x.notes}</td></tr>`
+              )
+              .join("");
+            document.getElementById("view").hidden = false;
+
+            const J = (v) => JSON.stringify(v, null, 2);
+            document.getElementById("meta").textContent = J(meta);
+            document.getElementById("one").textContent = J(prepared[0]);
+            document.getElementById("all").textContent = J(payload);
+            console.log("Q2 – IndexedDB objects (IDs 1..10):");
+            console.table(list);
+          });
+
+        const SERVER_URL = "http://localhost:4000/ingest/indexeddb";
+        const $btn = document.getElementById("btnSyncLake");
+        const $status = document.getElementById("syncStatus");
+
+        function dumpAllFromStore(dbName, storeName) {
+          return new Promise((resolve, reject) => {
+            const req = indexedDB.open(dbName);
+            req.onsuccess = () => {
+              const db = req.result;
+              const tx = db.transaction(storeName, "readonly");
+              const st = tx.objectStore(storeName);
+              const getAll = st.getAll();
+              getAll.onsuccess = () => resolve(getAll.result || []);
+              getAll.onerror = () => reject(getAll.error);
+            };
+            req.onerror = () => reject(req.error);
+          });
+        }
+
+        async function syncToLake() {
+          try {
+            $btn.disabled = true;
+            $status.textContent = "Reading IndexedDB…";
+            const rows = await dumpAllFromStore(DB, STORE);
+            if (!rows.length) {
+              $status.innerHTML = '<span class="err">Store is empty.</span>';
+              $btn.disabled = false;
+              return;
+            }
+            const now = new Date().toISOString();
+            const items = rows.map((x) => ({
+              // The server stamps author/sourceDB; we still include helpful tags.
+              indexedDb: x,
+              ingestedAt: now,
+              tags: ["indexeddb", "sensor", "author:Sai Manne"],
+            }));
+
+            $status.textContent = "Posting to lake server…";
+            const res = await fetch(SERVER_URL, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ items }),
+            });
+            if (!res.ok) throw new Error(`${res.status} ${res.statusText}`);
+            const data = await res.json();
+            $status.innerHTML = `<span class="ok">Synced ${data.inserted} document(s) for Sai Manne.</span>`;
+          } catch (e) {
+            console.error(e);
+            $status.innerHTML = `<span class="err">Sync failed: ${
+              e && e.message ? e.message : e
+            }</span>`;
+          } finally {
+            $btn.disabled = false;
+          }
+        }
+
+        document
+          .getElementById("btnSyncLake")
+          .addEventListener("click", syncToLake);
+      })();
+    </script>
+  </body>
+</html>

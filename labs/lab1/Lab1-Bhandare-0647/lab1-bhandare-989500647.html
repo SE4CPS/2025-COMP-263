@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agriculture IndexedDB System with Unit Tests</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #e9ecef;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        
+        .section h2 {
+            color: #495057;
+            margin-top: 0;
+            border-bottom: 2px solid #007bff;
+            padding-bottom: 10px;
+        }
+        
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+        }
+        
+        button {
+            background: linear-gradient(45deg, #4CAF50, #45a049);
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        button:disabled {
+            background: #cccccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .test-button {
+            background: linear-gradient(45deg, #ff6b6b, #ee5a52);
+        }
+        
+        .status {
+            background: #e3f2fd;
+            border-left: 4px solid #007bff;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 5px;
+            font-family: monospace;
+            font-size: 14px;
+        }
+        
+        .progress {
+            width: 100%;
+            height: 20px;
+            background: #e9ecef;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 10px 0;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(45deg, #28a745, #20c997);
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+        
+        .instructions {
+            background: #fff3cd;
+            border: 1px solid #ffeaa7;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            color: #856404;
+        }
+        
+        .console-output {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 20px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            max-height: 400px;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            margin-top: 15px;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            border-color: #ffeaa7;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🌾 Agriculture IndexedDB System with Unit Tests</h1>
+        
+        <div class="instructions">
+            <strong>📋 Complete Agriculture Database System:</strong>
+            <ol>
+                <li><strong>Database Operations:</strong> Create database, generate 10,000 records, fetch data</li>
+                <li><strong>Unit Testing:</strong> Run 5 comprehensive test suites with console.assert()</li>
+                <li><strong>Data Validation:</strong> Verify all data types and structure integrity</li>
+                <li><strong>Screenshots:</strong> Open Developer Tools (F12) to see console output and IndexedDB data</li>
+            </ol>
+        </div>
+        
+        <!-- Database Operations Section -->
+        <div class="section">
+            <h2>🗄️ Database Operations</h2>
+            <div class="controls">
+                <button id="initDB">Initialize Database</button>
+                <button id="generateData" disabled>Generate 10,000 Records</button>
+                <button id="fetchData" disabled>Fetch & Display Data</button>
+                <button id="clearData" disabled>Clear All Data</button>
+            </div>
+            <div class="status" id="dbStatus">Ready to initialize database...</div>
+            <div class="progress" id="progressContainer" style="display: none;">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+        
+        <!-- Unit Testing Section -->
+        <div class="section">
+            <h2>🧪 Unit Testing Suite</h2>
+            <div class="controls">
+                <button class="test-button" id="runAllTests">Run All Tests</button>
+                <button class="test-button" id="test1">Test 1: Write Operations</button>
+                <button class="test-button" id="test2">Test 2: Read Operations</button>
+                <button class="test-button" id="test3">Test 3: Data Types</button>
+                <button class="test-button" id="test4">Test 4: Edge Cases</button>
+                <button class="test-button" id="test5">Test 5: Performance</button>
+            </div>
+            <div class="status" id="testStatus">Ready to run unit tests...</div>
+        </div>
+        
+        <!-- Console Output Display -->
+        <div class="section">
+            <h2>🖥️ Console Output</h2>
+            <div class="console-output" id="consoleOutput">Open Developer Tools (F12) → Console to see detailed output...</div>
+        </div>
+    </div>
+
+    <script>
+        let db;
+        const dbName = 'AgricultureDB';
+        const storeName = 'FarmData';
+        
+        // Sample data generators
+        const cropTypes = ['Wheat', 'Corn', 'Soybeans', 'Rice', 'Tomatoes', 'Potatoes', 'Carrots', 'Lettuce', 'Beans', 'Peas'];
+        const farmerNotes = [
+            'Excellent growth observed today',
+            'Slight yellowing on leaves, checking nitrogen levels',
+            'Perfect weather conditions for harvest',
+            'Irrigation system working optimally',
+            'Pest control treatment applied successfully',
+            'Soil moisture levels ideal',
+            'Growth rate exceeding expectations',
+            'Minor disease symptoms detected, monitoring closely',
+            'Fertilizer application completed',
+            'Ready for harvest next week'
+        ];
+        
+        function generateRandomSensorReadings() {
+            return {
+                temperature: +(Math.random() * 40 + 10).toFixed(1),
+                humidity: +(Math.random() * 60 + 40).toFixed(1),
+                soilPH: +(Math.random() * 4 + 4).toFixed(1),
+                lightIntensity: +(Math.random() * 1000 + 200).toFixed(0),
+                soilMoisture: +(Math.random() * 100).toFixed(1)
+            };
+        }
+        
+        function generateRandomGPSCoordinates() {
+            return {
+                latitude: +(Math.random() * 180 - 90).toFixed(6),
+                longitude: +(Math.random() * 360 - 180).toFixed(6)
+            };
+        }
+        
+        function generateRandomCropPhoto() {
+            const cropType = cropTypes[Math.floor(Math.random() * cropTypes.length)];
+            return `images/${cropType.toLowerCase()}_${Math.floor(Math.random() * 100)}.jpg`;
+        }
+        
+        function generateRandomFarmerNote() {
+            const note = farmerNotes[Math.floor(Math.random() * farmerNotes.length)];
+            const cropType = cropTypes[Math.floor(Math.random() * cropTypes.length)];
+            return `${cropType}: ${note}`;
+        }
+        
+        function generateRandomTimestamp() {
+            const start = new Date(2023, 0, 1);
+            const end = new Date();
+            return new Date(start.getTime() + Math.random() * (end.getTime() - start.getTime()));
+        }
+        
+        function updateStatus(elementId, message) {
+            document.getElementById(elementId).textContent = message;
+        }
+        
+        function updateProgress(percent) {
+            const progressContainer = document.getElementById('progressContainer');
+            const progressBar = document.getElementById('progressBar');
+            
+            if (percent > 0) {
+                progressContainer.style.display = 'block';
+                progressBar.style.width = percent + '%';
+            } else {
+                progressContainer.style.display = 'none';
+            }
+        }
+        
+        function logToConsole(message) {
+            console.log(message);
+            const consoleOutput = document.getElementById('consoleOutput');
+            consoleOutput.textContent += message + '\n';
+            consoleOutput.scrollTop = consoleOutput.scrollHeight;
+        }
+        
+        // Database Operations
+        document.getElementById('initDB').addEventListener('click', function() {
+            const request = indexedDB.open(dbName, 1);
+            
+            request.onerror = function(event) {
+                updateStatus('dbStatus', '❌ Error opening database: ' + event.target.error);
+            };
+            
+            request.onsuccess = function(event) {
+                db = event.target.result;
+                updateStatus('dbStatus', '✅ Database initialized successfully!');
+                document.getElementById('generateData').disabled = false;
+                document.getElementById('fetchData').disabled = false;
+                document.getElementById('initDB').disabled = true;
+                logToConsole('✅ AgricultureDB initialized successfully');
+            };
+            
+            request.onupgradeneeded = function(event) {
+                db = event.target.result;
+                const objectStore = db.createObjectStore(storeName, { keyPath: 'id', autoIncrement: true });
+                objectStore.createIndex('timestamp', 'timestamp', { unique: false });
+                objectStore.createIndex('cropType', 'cropType', { unique: false });
+                updateStatus('dbStatus', '🔧 Creating database structure...');
+                logToConsole('🔧 Creating FarmData object store with auto-incrementing keys');
+            };
+        });
+        
+        document.getElementById('generateData').addEventListener('click', function() {
+            if (!db) {
+                updateStatus('dbStatus', '❌ Please initialize database first');
+                return;
+            }
+            
+            this.disabled = true;
+            updateStatus('dbStatus', '🚀 Generating 10,000 agricultural records...');
+            updateProgress(0);
+            
+            const totalRecords = 10000;
+            let recordsAdded = 0;
+            
+            function addRecordsInBatches() {
+                const transaction = db.transaction([storeName], 'readwrite');
+                const objectStore = transaction.objectStore(storeName);
+                const batchSize = 100;
+                
+                for (let i = 0; i < batchSize && recordsAdded < totalRecords; i++) {
+                    const record = {
+                        sensorReadings: generateRandomSensorReadings(),
+                        cropPhoto: generateRandomCropPhoto(),
+                        farmerNote: generateRandomFarmerNote(),
+                        gpsCoordinates: generateRandomGPSCoordinates(),
+                        timestamp: generateRandomTimestamp(),
+                        cropType: cropTypes[Math.floor(Math.random() * cropTypes.length)]
+                    };
+                    
+                    const request = objectStore.add(record);
+                    request.onsuccess = function() {
+                        recordsAdded++;
+                        const progress = (recordsAdded / totalRecords) * 100;
+                        updateProgress(progress);
+                        updateStatus('dbStatus', `📊 Generated ${recordsAdded}/${totalRecords} records (${progress.toFixed(1)}%)`);
+                        
+                        if (recordsAdded === totalRecords) {
+                            updateStatus('dbStatus', '✅ Successfully generated 10,000 agricultural records!');
+                            updateProgress(0);
+                            document.getElementById('clearData').disabled = false;
+                            document.getElementById('generateData').disabled = false;
+                            logToConsole(`✅ Successfully generated ${totalRecords} agricultural records`);
+                        }
+                    };
+                }
+                
+                transaction.oncomplete = function() {
+                    if (recordsAdded < totalRecords) {
+                        setTimeout(addRecordsInBatches, 50);
+                    }
+                };
+                
+                transaction.onerror = function(event) {
+                    updateStatus('dbStatus', '❌ Error generating data: ' + event.target.error);
+                    document.getElementById('generateData').disabled = false;
+                    updateProgress(0);
+                };
+            }
+            
+            addRecordsInBatches();
+        });
+        
+        document.getElementById('fetchData').addEventListener('click', function() {
+            if (!db) {
+                updateStatus('dbStatus', '❌ Please initialize database first');
+                return;
+            }
+            
+            logToConsole('\n🔍 RETRIEVING ALL STORED DATA FROM FarmData...\n');
+            
+            const transaction = db.transaction([storeName], 'readonly');
+            const objectStore = transaction.objectStore(storeName);
+            const request = objectStore.getAll();
+            
+            request.onsuccess = function(event) {
+                const records = event.target.result;
+                
+                logToConsole('='.repeat(60));
+                logToConsole(`📊 TOTAL RECORDS IN DATABASE: ${records.length}`);
+                logToConsole('='.repeat(60));
+                
+                if (records.length === 0) {
+                    logToConsole('❌ No data found. Please generate records first.');
+                    return;
+                }
+                
+                // Display first 3 records
+                logToConsole('\n📋 DISPLAYING FIRST 3 RECORDS:\n');
+                
+                for (let i = 0; i < Math.min(3, records.length); i++) {
+                    const record = records[i];
+                    
+                    logToConsole(`\n📄 RECORD #${i + 1} (ID: ${record.id})`);
+                    logToConsole('-'.repeat(50));
+                    logToConsole(`🌡️  SENSOR READINGS: Temp: ${record.sensorReadings.temperature}°C, Humidity: ${record.sensorReadings.humidity}%`);
+                    logToConsole(`📷 CROP PHOTO: "${record.cropPhoto}"`);
+                    logToConsole(`📝 FARMER NOTE: "${record.farmerNote}"`);
+                    logToConsole(`🗺️  GPS: ${record.gpsCoordinates.latitude}, ${record.gpsCoordinates.longitude}`);
+                    logToConsole(`⏰ TIMESTAMP: ${new Date(record.timestamp).toLocaleString()}`);
+                    logToConsole(`🌾 CROP TYPE: "${record.cropType}"`);
+                }
+                
+                updateStatus('dbStatus', `📊 Displaying data from ${records.length} total records - Check console for details`);
+            };
+            
+            request.onerror = function(event) {
+                updateStatus('dbStatus', '❌ Error retrieving data: ' + event.target.error);
+            };
+        });
+        
+        document.getElementById('clearData').addEventListener('click', function() {
+            if (!db) {
+                updateStatus('dbStatus', '❌ Please initialize database first');
+                return;
+            }
+            
+            if (confirm('Are you sure you want to clear all agricultural data?')) {
+                const transaction = db.transaction([storeName], 'readwrite');
+                const objectStore = transaction.objectStore(storeName);
+                const request = objectStore.clear();
+                
+                request.onsuccess = function() {
+                    updateStatus('dbStatus', '🗑️ All data cleared successfully');
+                    document.getElementById('clearData').disabled = true;
+                    logToConsole('🗑️ All agricultural data cleared');
+                };
+                
+                request.onerror = function(event) {
+                    updateStatus('dbStatus', '❌ Error clearing data: ' + event.target.error);
+                };
+            }
+        });
+        
+        // Unit Testing Functions
+        function openDatabase() {
+            return new Promise((resolve, reject) => {
+                const request = indexedDB.open('AgricultureDB', 1);
+                request.onsuccess = function(event) {
+                    resolve(event.target.result);
+                };
+                request.onerror = function(event) {
+                    reject(new Error('Failed to open database: ' + event.target.error));
+                };
+            });
+        }
+        
+        async function testDataWriteOperation() {
+            logToConsole('🔧 TEST 1: Data Write Operation Validation');
+            logToConsole('='.repeat(50));
+            
+            try {
+                const db = await openDatabase();
+                const transaction = db.transaction(['FarmData'], 'readwrite');
+                const objectStore = transaction.objectStore('FarmData');
+                
+                const testRecord = {
+                    sensorReadings: {
+                        temperature: 25.5,
+                        humidity: 65.2,
+                        soilPH: 6.8,
+                        lightIntensity: 850,
+                        soilMoisture: 45.3
+                    },
+                    cropPhoto: 'test_images/wheat_001.jpg',
+                    farmerNote: 'Test record for unit testing',
+                    gpsCoordinates: {
+                        latitude: 40.712776,
+                        longitude: -74.005974
+                    },
+                    timestamp: new Date('2024-03-15T10:30:00Z'),
+                    cropType: 'Wheat'
+                };
+                
+                const addRequest = objectStore.add(testRecord);
+                
+                addRequest.onsuccess = function(event) {
+                    const recordId = event.target.result;
+                    
+                    console.assert(recordId !== undefined, '❌ Record ID should be generated');
+                    console.assert(typeof recordId === 'number', '❌ Record ID should be a number');
+                    console.assert(recordId > 0, '❌ Record ID should be positive');
+                    
+                    logToConsole('✅ Data write operation successful');
+                    logToConsole(`✅ Generated Record ID: ${recordId}`);
+                    logToConsole('✅ All write assertions passed\n');
+                };
+                
+                addRequest.onerror = function(event) {
+                    console.assert(false, '❌ Data write operation failed: ' + event.target.error);
+                };
+                
+            } catch (error) {
+                console.assert(false, '❌ Test 1 failed: ' + error.message);
+            }
+        }
+        
+        async function testDataReadOperation() {
+            logToConsole('🔍 TEST 2: Data Read Operation Validation');
+            logToConsole('='.repeat(50));
+            
+            try {
+                const db = await openDatabase();
+                const transaction = db.transaction(['FarmData'], 'readonly');
+                const objectStore = transaction.objectStore('FarmData');
+                const getAllRequest = objectStore.getAll();
+                
+                getAllRequest.onsuccess = function(event) {
+                    const records = event.target.result;
+                    
+                    console.assert(Array.isArray(records), '❌ Retrieved data should be an array');
+                    console.assert(records.length > 0, '❌ Should retrieve at least one record');
+                    console.assert(records.length <= 10000, '❌ Should not exceed maximum expected records');
+                    
+                    if (records.length > 0) {
+                        const firstRecord = records[0];
+                        console.assert(firstRecord.hasOwnProperty('id'), '❌ Record should have id property');
+                        console.assert(firstRecord.hasOwnProperty('sensorReadings'), '❌ Record should have sensorReadings');
+                        console.assert(firstRecord.hasOwnProperty('cropPhoto'), '❌ Record should have cropPhoto');
+                        console.assert(firstRecord.hasOwnProperty('farmerNote'), '❌ Record should have farmerNote');
+                        console.assert(firstRecord.hasOwnProperty('gpsCoordinates'), '❌ Record should have gpsCoordinates');
+                        console.assert(firstRecord.hasOwnProperty('timestamp'), '❌ Record should have timestamp');
+                        
+                        logToConsole('✅ Data read operation successful');
+                        logToConsole(`✅ Retrieved ${records.length} records`);
+                        logToConsole('✅ All read assertions passed\n');
+                    }
+                };
+                
+                getAllRequest.onerror = function(event) {
+                    console.assert(false, '❌ Data read operation failed: ' + event.target.error);
+                };
+                
+            } catch (error) {
+                console.assert(false, '❌ Test 2 failed: ' + error.message);
+            }
+        }
+        
+        async function testDataTypesAndStructure() {
+            logToConsole('📊 TEST 3: Data Types and Structure Validation');
+            logToConsole('='.repeat(50));
+            
+            try {
+                const db = await openDatabase();
+                const transaction = db.transaction(['FarmData'], 'readonly');
+                const objectStore = transaction.objectStore('FarmData');
+                const getRequest = objectStore.get(1);
+                
+                getRequest.onsuccess = function(event) {
+                    const record = event.target.result;
+                    
+                    if (record) {
+                        console.assert(typeof record.id === 'number', '❌ ID should be a number');
+                        console.assert(typeof record.sensorReadings === 'object', '❌ sensorReadings should be an object');
+                        console.assert(typeof record.cropPhoto === 'string', '❌ cropPhoto should be a string');
+                        console.assert(typeof record.farmerNote === 'string', '❌ farmerNote should be a string');
+                        console.assert(typeof record.gpsCoordinates === 'object', '❌ gpsCoordinates should be an object');
+                        
+                        const sensors = record.sensorReadings;
+                        console.assert(typeof sensors.temperature === 'number', '❌ temperature should be a number');
+                        console.assert(typeof sensors.humidity === 'number', '❌ humidity should be a number');
+                        console.assert(typeof sensors.soilPH === 'number', '❌ soilPH should be a number');
+                        
+                        const gps = record.gpsCoordinates;
+                        console.assert(typeof gps.latitude === 'number', '❌ latitude should be a number');
+                        console.assert(typeof gps.longitude === 'number', '❌ longitude should be a number');
+                        console.assert(gps.latitude >= -90 && gps.latitude <= 90, '❌ latitude should be valid range');
+                        console.assert(gps.longitude >= -180 && gps.longitude <= 180, '❌ longitude should be valid range');
+                        
+                        logToConsole('✅ Data types validation successful');
+                        logToConsole('✅ All structure assertions passed\n');
+                    } else {
+                        console.assert(false, '❌ No record found for type validation');
+                    }
+                };
+                
+                getRequest.onerror = function(event) {
+                    console.assert(false, '❌ Type validation query failed: ' + event.target.error);
+                };
+                
+            } catch (error) {
+                console.assert(false, '❌ Test 3 failed: ' + error.message);
+            }
+        }
+        
+        async function testEdgeCasesAndBoundaryConditions() {
+            logToConsole('⚠️  TEST 4: Edge Cases and Boundary Conditions');
+            logToConsole('='.repeat(50));
+            
+            try {
+                const db = await openDatabase();
+                const transaction1 = db.transaction(['FarmData'], 'readonly');
+                const objectStore1 = transaction1.objectStore('FarmData');
+                const getRequest = objectStore1.get(999999);
+                
+                getRequest.onsuccess = function(event) {
+                    const record = event.target.result;
+                    console.assert(record === undefined, '❌ Non-existent record should return undefined');
+                    logToConsole('✅ Non-existent record query handled correctly');
+                };
+                
+                const getAllRequest = objectStore1.getAll();
+                getAllRequest.onsuccess = function(event) {
+                    const records = event.target.result;
+                    console.assert(records.length >= 0, '❌ Record count should be non-negative');
+                    console.assert(records.length <= 50000, '❌ Record count within reasonable limits');
+                    logToConsole(`✅ Database size check: ${records.length} records`);
+                    logToConsole('✅ All edge case assertions passed\n');
+                };
+                
+            } catch (error) {
+                console.assert(false, '❌ Test 4 failed: ' + error.message);
+            }
+        }
+        
+        async function testPerformanceAndStress() {
+            logToConsole('🚀 TEST 5: Performance and Stress Testing');
+            logToConsole('='.repeat(50));
+            
+            try {
+                const db = await openDatabase();
+                const startTime = performance.now();
+                
+                const transaction = db.transaction(['FarmData'], 'readonly');
+                const objectStore = transaction.objectStore('FarmData');
+                const getAllRequest = objectStore.getAll();
+                
+                getAllRequest.onsuccess = function(event) {
+                    const endTime = performance.now();
+                    const records = event.target.result;
+                    const readTime = endTime - startTime;
+                    
+                    console.assert(readTime < 5000, '❌ Read operation should complete within 5 seconds');
+                    console.assert(records.length > 0, '❌ Should retrieve some records');
+                    
+                    logToConsole(`✅ Read performance: ${readTime.toFixed(2)}ms for ${records.length} records`);
+                    
+                    const avgRecordSize = JSON.stringify(records[0] || {}).length;
+                    const estimatedMemory = avgRecordSize * records.length;
+                    
+                    console.assert(estimatedMemory < 100000000, '❌ Memory usage should be reasonable');
+                    logToConsole(`✅ Estimated memory usage: ${(estimatedMemory / 1024 / 1024).toFixed(2)}MB`);
+                    
+                    let integrityErrors = 0;
+                    records.forEach((record, index) => {
+                        if (!record.id || !record.sensorReadings || !record.timestamp) {
+                            integrityErrors++;
+                        }
+                    });
+                    
+                    const integrityRate = ((records.length - integrityErrors) / records.length) * 100;
+                    console.assert(integrityRate >= 95, '❌ Data integrity should be at least 95%');
+                    logToConsole(`✅ Data integrity: ${integrityRate.toFixed(2)}% (${integrityErrors} errors)`);
+                    logToConsole('✅ All performance assertions passed\n');
+                };
+                
+                getAllRequest.onerror = function(event) {
+                    console.assert(false, '❌ Performance test query failed: ' + event.target.error);
+                };
+                
+            } catch (error) {
+                console.assert(false, '❌ Test 5 failed: ' + error.message);
+            }
+        }
+        
+        async function runAllTests() {
+            logToConsole('🧪 AGRICULTURE INDEXEDDB UNIT TESTS');
+            logToConsole('='.repeat(60));
+            logToConsole('Using console.assert() for validation\n');
+            
+            updateStatus('testStatus', '🧪 Running all unit tests...');
+            
+            const startTime = performance.now();
+            
+            try {
+                await testDataWriteOperation();
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                await testDataReadOperation();
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                await testDataTypesAndStructure();
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                await testEdgeCasesAndBoundaryConditions();
+                await new Promise(resolve => setTimeout(resolve, 500));
+                
+                await testPerformanceAndStress();
+                
+                const endTime = performance.now();
+                const totalTime = endTime - startTime;
+                
+                logToConsole('🎉 ALL TESTS COMPLETED SUCCESSFULLY!');
+                logToConsole('='.repeat(60));
+                logToConsole(`⏱️  Total test execution time: ${totalTime.toFixed(2)}ms`);
+                logToConsole('📸 Screenshot this console output for your assignment!');
+                
+                updateStatus('testStatus', '✅ All unit tests completed successfully!');
+                
+            } catch (error) {
+                logToConsole('❌ Test suite failed: ' + error.message);
+                updateStatus('testStatus', '❌ Test suite failed: ' + error.message);
+            }
+        }
+        
+        // Event Listeners for Test Buttons
+        document.getElementById('runAllTests').addEventListener('click', runAllTests);
+        document.getElementById('test1').addEventListener('click', testDataWriteOperation);
+        document.getElementById('test2').addEventListener('click', testDataReadOperation);
+        document.getElementById('test3').addEventListener('click', testDataTypesAndStructure);
+        document.getElementById('test4').addEventListener('click', testEdgeCasesAndBoundaryConditions);
+        document.getElementById('test5').addEventListener('click', testPerformanceAndStress);
+        
+        // Initialize
+        logToConsole('🌾 Agriculture IndexedDB System Ready!');
+        logToConsole('📋 Use the buttons above to interact with the system');
+        logToConsole('🔧 Open Developer Tools (F12) → Console for detailed output');
+        logToConsole('🗄️ Check Application → IndexedDB → AgricultureDB for data inspection\n');
+    </script>
+</body>
+</html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Lab2 – Q2 & Q3 (IndexedDB + Metadata + UTC)</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        max-width: 920px;
+        margin: 32px auto;
+        padding: 0 12px;
+      }
+      h1,
+      h2 {
+        margin: 0 0 8px;
+      }
+      .ok {
+        display: inline-block;
+        padding: 6px 10px;
+        border-radius: 8px;
+        background: #e6ffed;
+      }
+      table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 16px 0;
+      }
+      th,
+      td {
+        border: 1px solid #ddd;
+        padding: 8px;
+        font-size: 14px;
+      }
+      th {
+        background: #f6f6f6;
+        text-align: left;
+      }
+      code,
+      pre {
+        background: #f6f8fa;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 8px;
+      }
+      pre {
+        overflow: auto;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 14px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Question 2 + Question 3 ➜ Add Metadata & UTC</h1>
+    <p class="ok" id="status">Initializing…</p>
+
+    <h2>IndexedDB View</h2>
+    <div id="info"></div>
+    <table id="tbl" hidden>
+      <thead>
+        <tr>
+          <th>id</th>
+          <th>sensorId</th>
+          <th>reading</th>
+          <th>timestamp</th>
+          <th>notes</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+
+    <h2>Prepared Payload for Q3 (metadata + UTC)</h2>
+    <div class="grid">
+      <div>
+        <strong>Metadata</strong>
+        <pre id="metaBox"></pre>
+      </div>
+      <div>
+        <strong>One prepared object (example)</strong>
+        <pre id="oneObj"></pre>
+      </div>
+      <div>
+        <strong>Full prepared payload (metadata + 10 objects)</strong>
+        <pre id="payload"></pre>
+      </div>
+    </div>
+
+    <script>
+      (() => {
+        const DB_NAME = "Lab2";
+        const STORE = "Agriculture";
+        const VERSION = 1;
+
+        const ids = Array.from({ length: 10 }, (_, i) => i + 1).filter(
+          (v, i, a) => a.indexOf(v) === i
+        );
+        const docs = ids.map((id) => ({
+          id,
+          sensorId: `S-${String(id).padStart(2, "0")}`,
+          reading: 20 + id + id / 100,
+          timestamp: new Date(Date.UTC(2025, 8, 1, 10, id, 0)).toISOString(),
+          notes: `Seeded sample #${id}`,
+        }));
+
+        const openDB = () =>
+          new Promise((resolve, reject) => {
+            const req = indexedDB.open(DB_NAME, VERSION);
+            req.onupgradeneeded = (e) => {
+              const db = e.target.result;
+              const store = db.createObjectStore(STORE, { keyPath: "id" });
+              store.createIndex("sensorId", "sensorId", { unique: false });
+              store.createIndex("timestamp", "timestamp", { unique: false });
+            };
+            req.onsuccess = () => resolve(req.result);
+            req.onerror = () => reject(req.error);
+          });
+
+        const addDoc = (db, doc) =>
+          new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE, "readwrite");
+            tx.objectStore(STORE).add(doc);
+            tx.oncomplete = resolve;
+            tx.onerror = () => reject(tx.error);
+          });
+
+        const getAll = (db) =>
+          new Promise((resolve, reject) => {
+            const tx = db.transaction(STORE, "readonly");
+            const req = tx.objectStore(STORE).getAll();
+            req.onsuccess = () => resolve(req.result);
+            req.onerror = () => reject(req.error);
+          });
+
+        const setStatus = (msg) =>
+          (document.getElementById("status").textContent = msg);
+
+        const nowUTC = () => new Date(Date.now()).toISOString();
+        const uuidv4 = () =>
+          "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx"
+            .split("")
+            .map((c) =>
+              c === "x" || c === "y"
+                ? c === "x"
+                  ? ((Math.random() * 16) | 0).toString(16)
+                  : ((((Math.random() * 16) | 0) & 0x3) | 0x8).toString(16)
+                : c
+            )
+            .join("");
+
+        const metadata = {
+          author: "Ram Mallineni",
+          last_sync: nowUTC(),
+          uuid_source: uuidv4(),
+        };
+
+        const preparedObjects = docs.map((d) =>
+          Object.assign({}, d, {
+            timestamp: new Date(d.timestamp).toISOString(),
+          })
+        );
+
+        const preparedPayload = {
+          metadata,
+          objects: preparedObjects,
+        };
+
+        openDB()
+          .then((db) =>
+            docs
+              .reduce(
+                (p, doc) => p.then(() => addDoc(db, doc)),
+                Promise.resolve()
+              )
+              .then(() => db)
+          )
+          .then((db) => getAll(db))
+          .then((rows) => {
+            setStatus(
+              `IndexedDB OK: inserted ${rows.length} objects. Metadata prepared for Q3.`
+            );
+            const tbody = document.querySelector("#tbl tbody");
+            tbody.innerHTML = rows
+              .map(
+                (r) =>
+                  `<tr><td>${r.id}</td><td>${r.sensorId}</td><td>${r.reading}</td><td>${r.timestamp}</td><td>${r.notes}</td></tr>`
+              )
+              .reduce((a, b) => a + b, "");
+            document.getElementById("tbl").hidden = false;
+            document.getElementById(
+              "info"
+            ).innerHTML = `Database: <code>${DB_NAME}</code> | Store: <code>${STORE}</code>`;
+            const j = (v) => JSON.stringify(v, null, 2);
+            document.getElementById("metaBox").textContent = j(metadata);
+            document.getElementById("oneObj").textContent = j(
+              preparedObjects[0]
+            );
+            document.getElementById("payload").textContent = j(preparedPayload);
+          })
+          .catch((err) =>
+            setStatus(`Error: ${err && err.message ? err.message : err}`)
+          );
+      })();
+    </script>
+  </body>
+</html>

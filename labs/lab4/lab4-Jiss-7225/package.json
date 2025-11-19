@@ -1,0 +1,23 @@
+{
+  "name": "lab4-redis-mongo",
+  "version": "1.0.0",
+  "description": "Lab 4 - Redis and MongoDB Caching Implementation",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "seed": "node seed.js"
+  },
+  "keywords": ["redis", "mongodb", "caching", "nodejs"],
+  "author": "Manu Mathew Jiss",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "express": "^5.1.0",
+    "mongodb": "^6.20.0",
+    "mongoose": "^8.19.3",
+    "redis": "^5.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.10"
+  }
+}

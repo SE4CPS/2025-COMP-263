@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AgricultureDB → MongoDB Demo</title>
+</head>
+<body>
+  <h2>AgricultureDB IndexedDB + MongoDB Example</h2>
+
+  <button id="insertData">Insert 10 Records</button>
+  <button id="syncData">Send Data to MongoDB</button>
+
+  <script>
+    let db;
+
+    // -----------------------
+    // Open IndexedDB
+    // -----------------------
+    const request = indexedDB.open("AgricultureDB", 1);
+
+    request.onupgradeneeded = function(event) {
+      db = event.target.result;
+      if (!db.objectStoreNames.contains("FarmData")) {
+        db.createObjectStore("FarmData", { keyPath: "id" });
+      }
+    };
+
+    request.onsuccess = function(event) {
+      db = event.target.result;
+      console.log("✅ Database opened successfully");
+    };
+
+    request.onerror = function(event) {
+      console.error("❌ Database error:", event.target.errorCode);
+    };
+
+    // -----------------------
+    // Part 1: Insert 10 Records
+    // -----------------------
+    document.getElementById("insertData").onclick = function() {
+      if (!db) {
+        alert("Database not ready yet, try again.");
+        return;
+      }
+
+      const transaction = db.transaction("FarmData", "readwrite");
+      const store = transaction.objectStore("FarmData");
+
+      let data = []
+
+    //   Initializing the data with IDs so that we can transform it using map-filter-reduce later.
+      for (let i = 1; i <= 10; i++) {
+        data.push(
+            {
+                id: i,
+            }
+        )
+      }
+      
+      data = data.map((d, key) => {
+        return {
+            id: d.id,
+            sensorId: "sensor-" + d.id,
+            reading: (Math.random() * 100).toFixed(2),
+            timestamp: new Date().toISOString(),
+            notes: "Reading #" + d.id,
+            metadata: {
+                author: "Ravi Pareshbhai Kakadia",
+                last_sync: new Date().toISOString(),
+                uuid_source: crypto.randomUUID()
+            }
+        }
+      });
+
+      data.forEach((d, key) => {
+        store.add(d);
+      })
+
+      transaction.oncomplete = () => {
+        console.log("✅ 10 records inserted successfully!");
+        alert("10 records inserted into IndexedDB.");
+      };
+
+      transaction.onerror = (e) => {
+        console.error("Transaction error:", e.target.error);
+      };
+    };
+
+    // -----------------------
+    // Part 2: Send Data to MongoDB
+    // -----------------------
+    document.getElementById("syncData").onclick = function() {
+      if (!db) {
+        alert("Database not ready yet, try again.");
+        return;
+      }
+
+      const transaction = db.transaction("FarmData", "readonly");
+      const store = transaction.objectStore("FarmData");
+      const allRecords = [];
+
+      store.openCursor().onsuccess = function(event) {
+        const cursor = event.target.result;
+        if (cursor) {
+          allRecords.push(cursor.value);
+          cursor.continue();
+        } else {
+          console.log("📦 Ready to sync records:", allRecords);
+
+          // Send records to MongoDB via POST
+          fetch("http://localhost:3000/farmData", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(allRecords),
+          })
+          .then(res => res.json())
+          .then(data => {
+            console.log("✅ Data synced to MongoDB:", data);
+            alert("Data synced successfully!");
+          })
+          .catch(err => {
+            console.error("❌ Sync error:", err);
+          });
+        }
+      };
+    };
+  </script>
+</body>
+</html>
+
+

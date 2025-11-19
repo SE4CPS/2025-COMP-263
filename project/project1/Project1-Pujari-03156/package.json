@@ -1,0 +1,18 @@
+{
+  "name": "comp263-project1-pujari",
+  "version": "1.0.0",
+  "description": "COMP-263 Project 1 for Shradha Pujari (03156): MongoDB IoT ingestion + validation + API",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "seed": "node seed.js",
+    "apply:validation": "node applyValidation.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongodb": "^6.8.0",
+    "morgan": "^1.10.0"
+  }
+}

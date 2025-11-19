@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>AgricultureDB IndexedDB Demo</title>
+</head>
+<body>
+  <h2>AgricultureDB IndexedDB Example</h2>
+
+  <button id="loadData">Insert 10,000 Records</button>
+  <button id="readData">Retrieve and Log Data</button>
+  <button id="runTests">Run Unit Tests (First 5 Records)</button>
+
+  <script>
+    let db;
+
+    // -----------------------
+    // Open IndexedDB
+    // -----------------------
+    const request = indexedDB.open("AgricultureDB", 1);
+
+    request.onupgradeneeded = function(event) {
+      db = event.target.result;
+      if (!db.objectStoreNames.contains("FarmData")) {
+        db.createObjectStore("FarmData", { keyPath: "id" });
+      }
+    };
+
+    request.onsuccess = function(event) {
+      db = event.target.result;
+      console.log("✅ Database opened successfully");
+    };
+
+    request.onerror = function(event) {
+      console.error("❌ Database error:", event.target.errorCode);
+    };
+
+    // -----------------------
+    // Part 1: Insert 10,000 Records
+    // -----------------------
+    document.getElementById("loadData").onclick = function() {
+      if (!db) {
+        alert("Database not ready yet, try again.");
+        return;
+      }
+
+      const transaction = db.transaction("FarmData", "readwrite");
+      const store = transaction.objectStore("FarmData");
+
+      for (let i = 0; i < 10000; i++) {
+        const data = {
+          id: crypto.randomUUID(),
+          sensorReadings: Array.from({length: 5}, () => Math.random() * 100),
+          cropPhoto: "https://upload.wikimedia.org/wikipedia/commons/3/36/Wheat_close-up.JPG",
+          farmerNote: "Farmer note number " + i,
+          gpsCoordinates: {
+            lat: (Math.random() * 180 - 90).toFixed(6),
+            lon: (Math.random() * 360 - 180).toFixed(6)
+          },
+          timestamp: new Date().toISOString()
+        };
+        store.add(data);
+      }
+
+      transaction.oncomplete = () => {
+        console.log("✅ 10,000 records inserted successfully!");
+        alert("10,000 records inserted into IndexedDB.");
+      };
+
+      transaction.onerror = (e) => {
+        console.error("Transaction error:", e.target.error);
+      };
+    };
+
+    // -----------------------
+    // Part 2: Retrieve and Log Data
+    // -----------------------
+    document.getElementById("readData").onclick = function() {
+      if (!db) {
+        alert("Database not ready yet, try again.");
+        return;
+      }
+
+      const transaction = db.transaction("FarmData", "readonly");
+      const store = transaction.objectStore("FarmData");
+      const allRecords = [];
+
+      store.openCursor().onsuccess = function(event) {
+        const cursor = event.target.result;
+        if (cursor) {
+          allRecords.push(cursor.value);
+          cursor.continue();
+        } else {
+          console.log(`✅ Total records: ${allRecords.length}`);
+          console.log("Sample records (first 5):", allRecords.slice(0, 5));
+        }
+      };
+
+      store.openCursor().onerror = function(e) {
+        console.error("Cursor error:", e.target.error);
+      };
+    };
+
+    // -----------------------
+    // Part 3: Unit Tests on First 5 Records
+    // -----------------------
+    document.getElementById("runTests").onclick = function() {
+      if (!db) {
+        alert("Database not ready yet, try again.");
+        return;
+      }
+
+      const transaction = db.transaction("FarmData", "readonly");
+      const store = transaction.objectStore("FarmData");
+      const firstFiveRecords = [];
+      let count = 0;
+
+      store.openCursor().onsuccess = function(event) {
+        const cursor = event.target.result;
+        if (cursor && count < 5) {
+          firstFiveRecords.push(cursor.value);
+          count++;
+          cursor.continue();
+        } else {
+          console.log(`✅ Retrieved ${firstFiveRecords.length} records for unit testing`);
+
+          firstFiveRecords.forEach((record, index) => {
+            console.log(`\nTesting record #${index + 1}:`, record);
+
+            // Test 1: sensorReadings should be an array of numbers
+            if (Array.isArray(record.sensorReadings) &&
+                record.sensorReadings.every(n => typeof n === 'number')) {
+              console.log("%cTest 1 Passed: sensorReadings is a valid array of numbers ✅", "color: green");
+            } else {
+              console.assert(false, "Test 1 Failed: sensorReadings must be an array of numbers");
+            }
+
+            // Test 2: cropPhoto should be a valid URL ending with .jpg, .png, or .jpeg
+            if (typeof record.cropPhoto === 'string' &&
+                (record.cropPhoto.endsWith('.jpg') ||
+                 record.cropPhoto.endsWith('.png') ||
+                 record.cropPhoto.endsWith('.JPG') ||
+                 record.cropPhoto.endsWith('.jpeg'))) {
+              console.log("%cTest 2 Passed: cropPhoto URL is valid ✅", "color: green");
+            } else {
+              console.assert(false, "Test 2 Failed: cropPhoto must be a URL ending with .jpg, .png, or .jpeg");
+            }
+
+            // Test 3: farmerNote should be a non-empty string
+            if (typeof record.farmerNote === 'string' &&
+                record.farmerNote.trim().length > 0) {
+              console.log("%cTest 3 Passed: farmerNote is non-empty ✅", "color: green");
+            } else {
+              console.assert(false, "Test 3 Failed: farmerNote must be a non-empty string");
+            }
+
+            // Test 4: gpsCoordinates should contain numeric lat and lon within valid ranges
+            if (record.gpsCoordinates &&
+                !isNaN(parseFloat(record.gpsCoordinates.lat)) &&
+                parseFloat(record.gpsCoordinates.lat) >= -90 &&
+                parseFloat(record.gpsCoordinates.lat) <= 90 &&
+                !isNaN(parseFloat(record.gpsCoordinates.lon)) &&
+                parseFloat(record.gpsCoordinates.lon) >= -180 &&
+                parseFloat(record.gpsCoordinates.lon) <= 180) {
+              console.log("%cTest 4 Passed: gpsCoordinates are valid ✅", "color: green");
+            } else {
+              console.assert(false, "Test 4 Failed: gpsCoordinates must have valid lat and lon numbers");
+            }
+
+            // Test 5: timestamp should be a valid ISO date string
+            if (!isNaN(Date.parse(record.timestamp))) {
+              console.log("%cTest 5 Passed: timestamp is a valid date ✅", "color: green");
+            } else {
+              console.assert(false, "Test 5 Failed: timestamp must be a valid date string");
+            }
+          });
+
+          console.log("✅ Unit tests completed for first 5 records.");
+        }
+      };
+
+      store.openCursor().onerror = function(e) {
+        console.error("Cursor error:", e.target.error);
+      };
+    };
+  </script>
+</body>
+</html>

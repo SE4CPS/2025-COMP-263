@@ -1,0 +1,129 @@
+{
+  "metadata": {
+    "author": "Farheen Shabbir Shaikh",
+    "last_sync": "2025-09-23T06:21:38.280Z",
+    "uuid_source": "6157b28d-ef62-43b5-8a6a-537ffd540c5c"
+  },
+  "data": [
+    {
+      "id": 1,
+      "sensorId": "sensor-2",
+      "reading": 59.27,
+      "timestamp": "2025-09-23T06:21:37.665Z",
+      "notes": "Reading #1",
+      "metadata": {
+        "author": "Farheen Shabbir Shaikh",
+        "last_sync": "2025-09-23T06:21:36.665Z",
+        "uuid_source": "22368472-8533-45ed-a9c3-14da55ed6a54"
+      }
+    },
+    {
+      "id": 2,
+      "sensorId": "sensor-3",
+      "reading": 25.6,
+      "timestamp": "2025-09-23T06:21:38.665Z",
+      "notes": "Reading #2",
+      "metadata": {
+        "author": "Farheen Shabbir Shaikh",
+        "last_sync": "2025-09-23T06:21:36.665Z",
+        "uuid_source": "22368472-8533-45ed-a9c3-14da55ed6a54"
+      }
+    },
+    {
+      "id": 3,
+      "sensorId": "sensor-1",
+      "reading": 14.96,
+      "timestamp": "2025-09-23T06:21:39.665Z",
+      "notes": "Reading #3",
+      "metadata": {
+        "author": "Farheen Shabbir Shaikh",
+        "last_sync": "2025-09-23T06:21:36.665Z",
+        "uuid_source": "22368472-8533-45ed-a9c3-14da55ed6a54"
+      }
+    },
+    {
+      "id": 4,
+      "sensorId": "sensor-2",
+      "reading": 14.5,
+      "timestamp": "2025-09-23T06:21:40.665Z",
+      "notes": "Reading #4",
+      "metadata": {
+        "author": "Farheen Shabbir Shaikh",
+        "last_sync": "2025-09-23T06:21:36.665Z",
+        "uuid_source": "22368472-8533-45ed-a9c3-14da55ed6a54"
+      }
+    },
+    {
+      "id": 5,
+      "sensorId": "sensor-3",
+      "reading": 69.25,
+      "timestamp": "2025-09-23T06:21:41.665Z",
+      "notes": "Reading #5",
+      "metadata": {
+        "author": "Farheen Shabbir Shaikh",
+        "last_sync": "2025-09-23T06:21:36.665Z",
+        "uuid_source": "22368472-8533-45ed-a9c3-14da55ed6a54"
+      }
+    },
+    {
+      "id": 6,
+      "sensorId": "sensor-1",
+      "reading": 15.24,
+      "timestamp": "2025-09-23T06:21:42.665Z",
+      "notes": "Reading #6",
+      "metadata": {
+        "author": "Farheen Shabbir Shaikh",
+        "last_sync": "2025-09-23T06:21:36.665Z",
+        "uuid_source": "22368472-8533-45ed-a9c3-14da55ed6a54"
+      }
+    },
+    {
+      "id": 7,
+      "sensorId": "sensor-2",
+      "reading": 13.07,
+      "timestamp": "2025-09-23T06:21:43.665Z",
+      "notes": "Reading #7",
+      "metadata": {
+        "author": "Farheen Shabbir Shaikh",
+        "last_sync": "2025-09-23T06:21:36.665Z",
+        "uuid_source": "22368472-8533-45ed-a9c3-14da55ed6a54"
+      }
+    },
+    {
+      "id": 8,
+      "sensorId": "sensor-3",
+      "reading": 3.79,
+      "timestamp": "2025-09-23T06:21:44.665Z",
+      "notes": "Reading #8",
+      "metadata": {
+        "author": "Farheen Shabbir Shaikh",
+        "last_sync": "2025-09-23T06:21:36.665Z",
+        "uuid_source": "22368472-8533-45ed-a9c3-14da55ed6a54"
+      }
+    },
+    {
+      "id": 9,
+      "sensorId": "sensor-1",
+      "reading": 31.29,
+      "timestamp": "2025-09-23T06:21:45.665Z",
+      "notes": "Reading #9",
+      "metadata": {
+        "author": "Farheen Shabbir Shaikh",
+        "last_sync": "2025-09-23T06:21:36.665Z",
+        "uuid_source": "22368472-8533-45ed-a9c3-14da55ed6a54"
+      }
+    },
+    {
+      "id": 10,
+      "sensorId": "sensor-2",
+      "reading": 32.69,
+      "timestamp": "2025-09-23T06:21:46.665Z",
+      "notes": "Reading #10",
+      "metadata": {
+        "author": "Farheen Shabbir Shaikh",
+        "last_sync": "2025-09-23T06:21:36.665Z",
+        "uuid_source": "22368472-8533-45ed-a9c3-14da55ed6a54"
+      }
+    }
+  ]
+}

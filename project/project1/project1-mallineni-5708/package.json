@@ -1,0 +1,18 @@
+{
+  "name": "project1-mallineni-5708",
+  "version": "1.0.0",
+  "description": "MongoDB IoT Readings API",
+  "main": "server.js",
+  "scripts": {
+    "seed": "node seed-data.js",
+    "start": "node server.js",
+    "setup": "node setup-validation-indexes.js"
+  },
+  "keywords": [],
+  "author": "Ram Mallineni",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2",
+    "mongodb": "^6.3.0"
+  }
+}

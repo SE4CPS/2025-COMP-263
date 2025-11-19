@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>lab1-shaikh-0432 — Explanation</title>
+  <style>
+    body { font-family: system-ui, sans-serif; margin: 2rem; max-width: 900px; line-height: 1.6; }
+    h1, h2 { color: #2d6a4f; }
+    code, pre { background: #f6f8fa; border-radius: 6px; padding: 0.2rem 0.4rem; }
+    pre { padding: 1rem; overflow-x: auto; }
+    .screenshot { border: 1px dashed #bbb; padding: 1rem; margin: 1rem 0; background:#fafafa; }
+    .small { font-size: 0.9rem; color:#555; }
+  </style>
+</head>
+<body>
+  <h1>Lab 1 — IndexedDB Agriculture App</h1>
+  <p><b>Name:</b> Shaikh</p>
+  <p><b>Student ID:</b> 989500432</p>
+
+  <h2>1. Summary</h2>
+  <p>
+    This lab implements a browser-based agriculture data dashboard using
+    <b>IndexedDB</b>. The app can insert up to 10,000 records containing:
+    sensor readings, crop photos, farmer notes, GPS coordinates, and timestamps.
+    The first 10 records can be displayed in the browser. Unit tests using
+    <code>console.assert()</code> validate correctness and constraints.
+  </p>
+
+  <h2>2. Files Included</h2>
+  <ul>
+    <li><code>index.html</code> — main webpage with UI and buttons</li>
+    <li><code>script.js</code> — IndexedDB logic, insert/display, and tests</li>
+    <li><code>lab1-shaikh-0432.html</code> — this explanation file</li>
+    <li><code>images/</code> — crop photos and placeholder image</li>
+  </ul>
+
+  <h2>3. How to Run</h2>
+  <ol>
+    <li>Open <code>index.html</code> in a modern browser, or run a local server:
+      <pre><code>python -m http.server 8000
+# Visit http://localhost:8000/labs/lab1/index.html</code></pre>
+    </li>
+    <li>Use the buttons to insert records, display data, run tests, or reset the DB.</li>
+    <li>Check <b>DevTools → Console</b> for test results and logs.</li>
+  </ol>
+
+  <h2>4. Database Schema</h2>
+  <pre><code>Database: AgricultureDB
+Object store: FarmData (auto-increment id)
+Fields:
+- sensorReadings: Array&lt;number&gt;
+- cropPhoto: string (URL to local image)
+- farmerNote: string
+- gpsCoordinates: { lat: number, lon: number }
+- timestamp: ISO string</code></pre>
+
+  <h2>5. Key Code Features</h2>
+  <ul>
+    <li>Batch insert up to 10,000 records</li>
+    <li>Display first 10 records with images</li>
+    <li>Unit tests for add/get, image extension, numeric arrays, GPS ranges, counts</li>
+    <li>Reset function to clear the DB</li>
+  </ul>
+
+  <h2>6. Screenshots</h2>
+<div class="screenshot">
+  <p><b>Screenshot 1 — IndexedDB Records in DevTools:</b></p>
+<img src="images/Screeshot1.png" 
+     alt="IndexedDB FarmData records in Chrome DevTools" 
+     width="800"/>
+
+
+  <h2>7. GitHub Steps Used</h2>
+  <pre><code>git clone https://github.com/SE4CPS/2025-COMP-263.git
+cd 2025-COMP-263
+git checkout -b lab1-shaikh-0432
+mkdir -p labs/lab1
+# add index.html, script.js, images, lab1-shaikh-0432.html
+git add labs/lab1
+git commit -m "Add lab1 (IndexedDB agriculture app)"
+git push origin lab1-shaikh-0432</code></pre>
+
+  <hr/>
+  <p class="small">Note: Replace screenshots above before submitting.</p>
+</body>
+</html>

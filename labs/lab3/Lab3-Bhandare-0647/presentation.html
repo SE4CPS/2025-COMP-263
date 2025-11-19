@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lab 3: Data Lake Integration</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #1a1a2e;
+            color: #fff;
+        }
+        
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            page-break-after: always;
+        }
+        
+        .slide:nth-child(2) {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+        
+        .slide:nth-child(3) {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        .slide-number {
+            position: absolute;
+            bottom: 30px;
+            right: 40px;
+            font-size: 18px;
+            opacity: 0.7;
+        }
+        
+        h1 {
+            font-size: 48px;
+            margin-bottom: 40px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        h2 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+        
+        .architecture {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            margin: 40px 0;
+        }
+        
+        .database-box {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+            min-width: 180px;
+        }
+        
+        .database-icon {
+            font-size: 48px;
+            margin-bottom: 15px;
+        }
+        
+        .database-name {
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        
+        .database-detail {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+        
+        .arrow {
+            font-size: 48px;
+            color: rgba(255,255,255,0.9);
+            margin: 0 20px;
+        }
+        
+        .metadata-box {
+            background: rgba(255,255,255,0.15);
+            padding: 25px;
+            border-radius: 10px;
+            margin-top: 30px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .metadata-title {
+            font-size: 22px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .metadata-items {
+            display: flex;
+            gap: 30px;
+            flex-wrap: wrap;
+        }
+        
+        .metadata-item {
+            flex: 1;
+            min-width: 200px;
+        }
+        
+        .metadata-field {
+            font-weight: bold;
+            color: #ffd700;
+            margin-bottom: 5px;
+        }
+        
+        .content-section {
+            margin: 30px 0;
+        }
+        
+        .two-column {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+        
+        .column {
+            background: rgba(255,255,255,0.15);
+            padding: 30px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255,255,255,0.3);
+        }
+        
+        .column h3 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid rgba(255,255,255,0.4);
+            padding-bottom: 10px;
+        }
+        
+        ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+        
+        li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        
+        li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #ffd700;
+            font-weight: bold;
+            font-size: 20px;
+        }
+        
+        .challenge-icon {
+            display: inline-block;
+            margin-right: 10px;
+            font-size: 20px;
+        }
+        
+        .success {
+            color: #4ade80;
+        }
+        
+        .warning {
+            color: #fbbf24;
+        }
+        
+        @media print {
+            .slide {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Slide 1: Architecture & Data Flow -->
+    <div class="slide">
+        <h1>🏗️ Architecture & Data Flow</h1>
+        <h2>Multi-Source Data Lake Integration</h2>
+        
+        <div class="architecture">
+            <div class="database-box">
+                <div class="database-icon">💾</div>
+                <div class="database-name">IndexedDB</div>
+                <div class="database-detail">Browser Storage</div>
+                <div class="database-detail">Farm Records</div>
+            </div>
+            
+            <div class="arrow">→</div>
+            
+            <div class="database-box">
+                <div class="database-icon">🔄</div>
+                <div class="database-name">Go API</div>
+                <div class="database-detail">Integration Layer</div>
+                <div class="database-detail">Port 8081</div>
+            </div>
+            
+            <div class="arrow">→</div>
+            
+            <div class="database-box">
+                <div class="database-icon">🗄️</div>
+                <div class="database-name">MongoDB</div>
+                <div class="database-detail">Data Lake</div>
+                <div class="database-detail">Project1.lake</div>
+            </div>
+        </div>
+        
+        <div class="architecture" style="margin-top: 20px;">
+            <div class="database-box">
+                <div class="database-icon">🕸️</div>
+                <div class="database-name">Neo4j</div>
+                <div class="database-detail">Graph Database</div>
+                <div class="database-detail">Farm-Device-Reading</div>
+            </div>
+            
+            <div class="arrow">→</div>
+            
+            <div class="database-box" style="background: rgba(255,255,255,0.25);">
+                <div class="database-icon">🔄</div>
+                <div class="database-name">Go API</div>
+                <div class="database-detail">Integration Layer</div>
+            </div>
+            
+            <div class="arrow">→</div>
+            
+            <div class="database-box" style="background: rgba(255,255,255,0.25);">
+                <div class="database-icon">🗄️</div>
+                <div class="database-name">MongoDB</div>
+                <div class="database-detail">Data Lake</div>
+            </div>
+        </div>
+        
+        <div class="metadata-box">
+            <div class="metadata-title">📋 Metadata Standardization</div>
+            <div class="metadata-items">
+                <div class="metadata-item">
+                    <div class="metadata-field">sourceDB</div>
+                    <div>Origin database identifier</div>
+                </div>
+                <div class="metadata-item">
+                    <div class="metadata-field">ingestedAt</div>
+                    <div>UTC timestamp of ingestion</div>
+                </div>
+                <div class="metadata-item">
+                    <div class="metadata-field">tags</div>
+                    <div>Descriptive keywords array</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="slide-number">Slide 1 of 3</div>
+    </div>
+
+    <!-- Slide 2: Lessons Learned -->
+    <div class="slide">
+        <h1>📚 Lessons Learned</h1>
+        <h2>Extending the Data Pipeline</h2>
+        
+        <div class="content-section">
+            <div class="column" style="background: rgba(255,255,255,0.15); backdrop-filter: blur(10px); border: 2px solid rgba(255,255,255,0.3);">
+                <ul>
+                    <li><strong>API-Driven Integration</strong><br>
+                        Centralized Go API simplified data ingestion from multiple heterogeneous sources</li>
+                    
+                    <li><strong>Metadata is Critical</strong><br>
+                        Standardized metadata fields (sourceDB, ingestedAt, tags) enable data lineage tracking and source identification</li>
+                    
+                    <li><strong>Schema Flexibility</strong><br>
+                        MongoDB's document model accommodated diverse data structures from graph and relational sources</li>
+                    
+                    <li><strong>Data Transformation</strong><br>
+                        Converting graph relationships (Neo4j) to nested documents required careful structure planning</li>
+                    
+                    <li><strong>Multi-Database Management</strong><br>
+                        Managing connections to Lab 2 MongoDB, Data Lake MongoDB, and Neo4j required proper resource handling</li>
+                    
+                    <li><strong>Cross-Platform Integration</strong><br>
+                        Browser-based IndexedDB and server-side databases successfully integrated through RESTful endpoints</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="slide-number">Slide 2 of 3</div>
+    </div>
+
+    <!-- Slide 3: Challenges -->
+    <div class="slide">
+        <h1>⚖️ Challenges & Outcomes</h1>
+        
+        <div class="two-column">
+            <div class="column">
+                <h3><span class="success">✓</span> What Worked Well</h3>
+                <ul>
+                    <li><span class="challenge-icon success">🎯</span>
+                        <strong>Go API as Integration Hub</strong><br>
+                        Single endpoint for both IndexedDB and Neo4j data ingestion</li>
+                    
+                    <li><span class="challenge-icon success">🔐</span>
+                        <strong>Connection Management</strong><br>
+                        Successfully maintained concurrent connections to multiple MongoDB clusters</li>
+                    
+                    <li><span class="challenge-icon success">📊</span>
+                        <strong>Metadata Automation</strong><br>
+                        Automatic timestamp and source tagging ensured consistency</li>
+                    
+                    <li><span class="challenge-icon success">🔄</span>
+                        <strong>RESTful Design</strong><br>
+                        Clear API endpoints made testing and debugging straightforward</li>
+                    
+                    <li><span class="challenge-icon success">🎨</span>
+                        <strong>Browser Interface</strong><br>
+                        HTML interface simplified IndexedDB data visualization and push operations</li>
+                </ul>
+            </div>
+            
+            <div class="column">
+                <h3><span class="warning">⚠</span> Challenges Faced</h3>
+                <ul>
+                    <li><span class="challenge-icon warning">🔧</span>
+                        <strong>Data Model Transformation</strong><br>
+                        Converting Neo4j's graph structure to document format required nested object design</li>
+                    
+                    <li><span class="challenge-icon warning">🐛</span>
+                        <strong>Cross-System Debugging</strong><br>
+                        Errors could originate from browser, API, Neo4j, or MongoDB - required systematic troubleshooting</li>
+                    
+                    <li><span class="challenge-icon warning">⏱️</span>
+                        <strong>Timing Dependencies</strong><br>
+                        API must be running before data push scripts execute</li>
+                    
+                    <li><span class="challenge-icon warning">🔌</span>
+                        <strong>Network Configuration</strong><br>
+                        CORS setup and multiple cluster connections needed careful configuration</li>
+                    
+                    <li><span class="challenge-icon warning">💾</span>
+                        <strong>IndexedDB Limitations</strong><br>
+                        Browser storage required manual data seeding for testing purposes</li>
+                </ul>
+            </div>
+        </div>
+        
+        <div class="slide-number">Slide 3 of 3</div>
+    </div>
+
+    <script>
+        // Print instructions
+        console.log('To convert to PDF:');
+        console.log('1. Press Ctrl/Cmd + P');
+        console.log('2. Select "Save as PDF"');
+        console.log('3. Set margins to "None"');
+        console.log('4. Enable "Background graphics"');
+        console.log('5. Save as Lab3_Presentation.pdf');
+    </script>
+</body>
+</html>

@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Auto POST to Server</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <!-- Injected by server.js from your .env -->
+    <script src="/env.js"></script>
+    <style>
+      body { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; padding: 24px; line-height: 1.4; }
+      h1 { font-size: 20px; margin: 0 0 12px; }
+      .card { border: 1px solid #ddd; border-radius: 12px; padding: 16px; margin: 12px 0; }
+      pre { white-space: pre-wrap; word-break: break-word; background: #f8f8f8; padding: 12px; border-radius: 8px; }
+      button { padding: 10px 14px; border-radius: 10px; border: 1px solid #ccc; background: #fff; cursor: pointer; }
+      button:disabled { opacity: 0.6; cursor: not-allowed; }
+    </style>
+  </head>
+  <body>
+    <h1>IndexedDB → Payload → POST</h1>
+
+    <div class="card">
+      <button id="runBtn">Run pipeline and POST</button>
+      <span id="status" style="margin-left:12px;"></span>
+    </div>
+
+    <div class="card">
+      <strong>Request payload</strong>
+      <pre id="reqBox">Waiting…</pre>
+    </div>
+
+    <div class="card">
+      <strong>Server response</strong>
+      <pre id="resBox">Waiting…</pre>
+    </div>
+
+    <script>
+      const set = (id, text) => document.getElementById(id).textContent = text;
+      const btn = document.getElementById("runBtn");
+      const statusEl = document.getElementById("status");
+
+      // Run immediately on load, and also when user clicks the button
+      const run = () => {
+        btn.disabled = true;
+        statusEl.textContent = "Running…";
+
+        // Fresh DB version so upgrade always fires
+        const openReq = indexedDB.open("sensorsDB", Date.now());
+
+        openReq.onupgradeneeded = (e) => {
+          const db = e.target.result;
+          try { db.deleteObjectStore("readings"); } catch (_) {}
+          try { db.deleteObjectStore("sync_meta"); } catch (_) {}
+          db.createObjectStore("readings", { keyPath: "id" });
+          db.createObjectStore("sync_meta", { keyPath: "key" });
+        };
+
+        openReq.onsuccess = (e) => {
+          const db = e.target.result;
+          const nowUTC = new Date().toISOString();
+          const baseMs = Date.now();
+
+          // Build exactly 1..10 readings with UTC timestamps
+          const readings = Array.from({ length: 10 }, (_, i) => i + 1)
+            .map((id) => ({
+              id,
+              sensorId: `sensor-${id}`,
+              reading: Number((Math.random() * 100).toFixed(2)),
+              timestamp: new Date(baseMs + id * 1000).toISOString(),
+              notes: `Reading #${id}`
+            }))
+            .filter((o) => o.id >= 1 && o.id <= 10);
+
+          // Metadata from env.js (populated by server.js from .env)
+          const metadata = {
+            author: (window.ENV && window.ENV.AUTHOR) || "Unknown",
+            last_sync: nowUTC,
+            uuid_source: (window.ENV && window.ENV.UUID_SOURCE) || "unknown"
+          };
+
+          const tx = db.transaction(["readings", "sync_meta"], "readwrite");
+          const readingsStore = tx.objectStore("readings");
+          const metaStore = tx.objectStore("sync_meta");
+
+          readings
+            .reduce(
+              (p, obj) =>
+                p.then(
+                  () =>
+                    new Promise((resolve, reject) => {
+                      const r = readingsStore.put(obj);
+                      r.onsuccess = resolve;
+                      r.onerror = () => reject(r.error);
+                    })
+                ),
+              Promise.resolve()
+            )
+            .then(
+              () =>
+                new Promise((resolve, reject) => {
+                  const r = metaStore.put({ key: "metadata", ...metadata });
+                  r.onsuccess = resolve;
+                  r.onerror = () => reject(r.error);
+                })
+            )
+            .then(
+              () =>
+                Promise.all([
+                  new Promise((resolve, reject) => {
+                    const r = readingsStore.getAll();
+                    r.onsuccess = () => resolve(r.result);
+                    r.onerror = () => reject(r.error);
+                  }),
+                  new Promise((resolve, reject) => {
+                    const r = metaStore.get("metadata");
+                    r.onsuccess = () => resolve(r.result);
+                    r.onerror = () => reject(r.error);
+                  })
+                ])
+            )
+            .then(([rows, metaRow]) => {
+              const payload = {
+                metadata: {
+                  author: metaRow.author,
+                  last_sync: metaRow.last_sync,
+                  uuid_source: metaRow.uuid_source
+                },
+                readings: rows
+              };
+
+              set("reqBox", JSON.stringify(payload, null, 2));
+
+              return fetch((window.ENV && window.ENV.API_URL) || "/ingest", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(payload)
+              })
+              .then(r => r.json())
+              .then(json => {
+                set("resBox", JSON.stringify(json, null, 2));
+                statusEl.textContent = "Done";
+              });
+            })
+            .catch((err) => {
+              set("resBox", String(err));
+              statusEl.textContent = "Error";
+            })
+            .finally(() => { btn.disabled = false; });
+        };
+
+        openReq.onerror = () => {
+          set("resBox", "DB open error: " + openReq.error);
+          statusEl.textContent = "DB error";
+          btn.disabled = false;
+        };
+      };
+
+      // Auto-run on load
+      run();
+      // Allow re-run manually
+      btn.addEventListener("click", run);
+    </script>
+  </body>
+</html>

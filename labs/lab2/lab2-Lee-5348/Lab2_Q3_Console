@@ -1,0 +1,25 @@
+(() => {
+  const metadata = {
+    author: "Yu-Tai Lee",
+    last_sync: new Date().toISOString(),
+    uuid_source: (crypto.randomUUID && crypto.randomUUID()) ||
+                 `uuid-${Math.random().toString(16).slice(2)}${Math.random().toString(16).slice(2)}`
+  };
+
+  const openDB = () => new Promise((res, rej) => {
+    const r = indexedDB.open("Lab2");
+    r.onsuccess = () => res(r.result);
+    r.onerror   = () => rej(r.error);
+  });
+
+  openDB()
+    .then(db => new Promise((res, rej) => {
+      const tx = db.transaction("Agriculture", "readonly");
+      const st = tx.objectStore("Agriculture");
+      const g = st.get(1);
+      g.onsuccess = () => res({ ...g.result, metadata });
+      g.onerror   = () => rej(g.error);
+    }))
+    .then(console.log)
+    .catch(console.error);
+})(); 

@@ -1,0 +1,21 @@
+{
+  "name": "lab3-manne-9856",
+  "version": "1.0.0",
+  "private": true,
+  "type": "commonjs",
+  "scripts": {
+    "neo:check": "node sampleNeo4jConnection.js",
+    "neo:seed": "node seedAgriGraph.js",
+    "neo:read": "node readAgriGraph.js",
+    "lake:neo4j": "node ingestNeo4jToLake.js",
+    "lake:server": "node lakeServer.js",
+    "lake:verify": "node verifyLakeByAuthor.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.18.3",
+    "mongodb": "^6.8.0",
+    "neo4j-driver": "^5.25.0"
+  }
+}

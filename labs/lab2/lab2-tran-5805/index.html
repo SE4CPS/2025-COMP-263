@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agriculture</title>
+</head>
+<body>
+  <h1>Sync Agriculture Data to MongoDB Atlas</h1>
+  <button id="syncBtn">Create & Sync</button>
+  <div id="status"></div>
+
+  <script>
+    document.getElementById("syncBtn").addEventListener("click", () => {
+      const status = document.getElementById("status");
+      status.textContent = "⏳ Creating IndexedDB and syncing data...";
+
+      const request = indexedDB.open("Agriculture", 1);
+
+      request.onupgradeneeded = function(event) {
+        const db = event.target.result;
+        db.createObjectStore("Sensors", { keyPath: "id" });
+      };
+
+      request.onsuccess = function(event) {
+        const db = event.target.result;
+        const transaction = db.transaction("Sensors", "readwrite");
+        const store = transaction.objectStore("Sensors");
+
+        const metadata = {
+          author: "Khoa Thai Dang Tran",
+          last_sync: new Date().toISOString(),
+          uuid_source: "asdf-sdfas-1234-xyz"
+        };
+
+        const sensors = Array(10).fill(null).map((_, i) => ({
+          id: i + 1,
+          sensorId: `sensor-${i + 1}`,
+          reading: Math.round(Math.random() * 100),
+          timestamp: new Date(Date.now() - i * 60000).toISOString(),
+          notes: `Sensor ${i + 1} reading stored`
+        }));
+
+        const completeSensors = sensors.filter(obj =>
+          Object.values(obj).reduce((acc, val) => acc && val !== undefined, true)
+        );
+
+        completeSensors.reduce((_, obj) => {
+          store.put(obj);
+          return null;
+        }, null);
+
+        const getAllRequest = store.getAll();
+
+        getAllRequest.onsuccess = function() {
+          const updatedItems = getAllRequest.result
+            .map(obj => ({
+              ...obj,
+              timestamp: new Date(obj.timestamp).toISOString(),
+              metadata
+            }))
+            .filter(obj =>
+              Object.values(obj).reduce((acc, val) => acc && val !== undefined, true)
+            );
+
+          updatedItems.reduce((_, obj) => {
+            store.put(obj);
+            return null;
+          }, null);
+          
+          //console.log("Prepared items for sync:", updatedItems);
+
+          fetch("http://localhost:3000/agriculture/insert", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify(updatedItems)
+          })
+          .then(res => res.json())
+          .then(data => {
+            status.textContent = `✅ Successfully inserted ${data.inserted} documents.`;
+          })
+          .catch(err => {
+            status.textContent = `❌ Sync error: ${err.message || err}`;
+          });
+        };
+      };
+    });
+  </script>
+</body>
+</html>

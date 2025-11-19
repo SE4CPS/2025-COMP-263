@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>lab2</title>
+</head>
+<body>
+  <h2>IndexedDB with Metadata</h2>
+  <button id="insertBtn">Insert 10 objects with metadata</button>
+
+<script>
+let db;
+const request = indexedDB.open("MyDB", 1);
+
+request.onupgradeneeded = (e) => {
+  e.target.result.createObjectStore("sensors", { keyPath: "id" });
+};
+
+request.onsuccess = (e) => {
+  db = e.target.result;
+
+  document.getElementById("insertBtn").onclick = () => {
+    const tx = db.transaction("sensors", "readwrite");
+    const store = tx.objectStore("sensors");
+
+    store.clear().onsuccess = () => {
+      const metadata = {
+        author: "Chung Han Chung",
+        last_sync: new Date().toISOString(),
+        uuid_source: crypto.randomUUID(),
+      };
+
+      const docs = Array.from({ length: 10 }, (_, i) => i + 1)
+        .map((id) => ({
+          id,
+          sensorId: `S-${id}`,
+          reading: Math.floor(Math.random() * 100),
+          timestamp: new Date(Date.now() + id).toISOString(),
+          notes: `Test data #${id}`,
+          metadata,
+        }));
+
+      docs.reduce((acc, obj) => (store.add(obj), acc), null);
+
+      tx.oncomplete = () => {
+        alert("Inserted 10 objects with metadata!");
+        console.log(docs);
+
+      fetch('http://localhost:3000/agriculture', {
+        method: 'POST',
+        headers: {
+        'Content-Type': 'application/json',
+      },
+
+      body: JSON.stringify(docs),
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        return response.json();
+        })
+        .then(data => {
+        console.log('Success:', data);
+        })
+        .catch(error => {
+        console.error('Fetch error:', error);
+        });
+      };
+    };
+  };
+};
+
+request.onerror = (e) => console.error("Failed to open DB:", e.target.error);
+request.onblocked = () => alert("Database upgrade is blocked by another tab.");
+</script>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<title>IndexedDB Minimal Read/Write</title>
+
+<h1>Offline Library (Minimal)</h1>
+
+<div>
+  <div>ID (leave empty for auto)</div>
+  <input id="id" />
+  <div>Title</div>
+  <input id="title" />
+  <div>Author</div>
+  <input id="author" />
+  <div>Borrower</div>
+  <input id="borrower" />
+  <div>Borrowed At (datetime-local)</div>
+  <input id="borrowedAt" type="datetime-local" />
+  <div>Due At (datetime-local)</div>
+  <input id="dueAt" type="datetime-local" />
+</div>
+
+<p>
+  <button id="saveBtn">Save</button>
+  <button id="loadBtn">Load All</button>
+</p>
+
+<pre id="out"></pre>
+
+<script>
+  // very small helper
+  const $ = (id) => document.getElementById(id);
+
+  // open DB
+  let db;
+  const DB_NAME = "libraryDB_min";
+  const STORE = "books";
+
+  function openDB() {
+    return new Promise((resolve, reject) => {
+      const req = indexedDB.open(DB_NAME, 1);
+      req.onupgradeneeded = () => {
+        const db = req.result;
+        if (!db.objectStoreNames.contains(STORE)) {
+          db.createObjectStore(STORE, { keyPath: "id" });
+        }
+      };
+      req.onsuccess = () => { db = req.result; resolve(); };
+      req.onerror = () => reject(req.error);
+    });
+  }
+
+  function store(mode = "readonly") {
+    return db.transaction(STORE, mode).objectStore(STORE);
+  }
+
+  function put(record) {
+    return new Promise((resolve, reject) => {
+      const q = store("readwrite").put(record);
+      q.onsuccess = () => resolve();
+      q.onerror = () => reject(q.error);
+    });
+  }
+
+  function getAll() {
+    return new Promise((resolve, reject) => {
+      const q = store().getAll();
+      q.onsuccess = () => resolve(q.result || []);
+      q.onerror = () => reject(q.error);
+    });
+  }
+
+  function toISO(local) {
+    return local ? new Date(local).toISOString() : null;
+  }
+
+  async function save() {
+    const record = {
+      id: $("id").value.trim() || (crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(16).slice(2)),
+      title: $("title").value,
+      author: $("author").value,
+      borrower: $("borrower").value,
+      borrowedAt: toISO($("borrowedAt").value),
+      dueAt: toISO($("dueAt").value)
+    };
+    await put(record);
+    $("out").textContent = "Saved:\n" + JSON.stringify(record, null, 2);
+  }
+
+  async function loadAll() {
+    const rows = await getAll();
+    $("out").textContent = JSON.stringify(rows, null, 2);
+  }
+
+  (async function init() {
+    await openDB();
+    $("saveBtn").onclick = save;
+    $("loadBtn").onclick = loadAll;
+  })();
+</script>
+</html>

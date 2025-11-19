@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Agriculture Data App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body { font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif; background:#f3f9f1; margin:0; padding:20px; }
+    h2 { text-align:center; color:#2d6a4f; margin-top:0; }
+    .buttons { text-align:center; margin-bottom:20px; display:flex; gap:10px; justify-content:center; flex-wrap:wrap; }
+    button { background:#40916c; color:#fff; border:0; padding:12px 16px; border-radius:8px; font-size:15px; cursor:pointer; }
+    button:hover { background:#1b4332; }
+    #output { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:14px; }
+    .entry { background:#fff; border-radius:12px; padding:12px; box-shadow:0 4px 10px rgba(0,0,0,.08); }
+    .entry img { width:200px; height:150px; object-fit:cover; border-radius:8px; display:block; margin-top:8px; }
+    .muted { color:#666; font-size:13px; }
+  </style>
+</head>
+<body>
+  <h2>🌾 Agriculture Data Dashboard</h2>
+
+  <div class="buttons">
+    <button id="insertBtn">🌱 Insert 10,000 Records</button>
+    <button id="displayBtn">📸 Display Data</button>
+    <button id="runTestsBtn">🧪 Run All Tests</button>
+    <button id="resetBtn" title="Deletes the DB; reload to recreate">🗑️ Reset DB</button>
+  </div>
+
+  <div id="output"></div>
+  <p class="muted" style="text-align:center">Open DevTools → Console for logs and tests.</p>
+
+  <!-- Load once, at the end -->
+  <script src="script.js"></script>
+</body>
+</html>

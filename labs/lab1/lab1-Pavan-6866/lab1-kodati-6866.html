@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="utf-8" />
+<title>AgricultureDB</title>
+
+<h1>First 05 Real Images + 9,995 Auto</h1>
+
+<div>
+  <h3>Upload First 05 Crop Photos</h3>
+  <div>Sensor Readings (comma separated)</div>
+  <input id="sensorReadings" placeholder="e.g. 45,67,89" />
+
+  <div>Farmer Note</div>
+  <textarea id="note"></textarea>
+
+  <div>GPS Coordinates</div>
+  <input id="gps" type="number" step="0.000001" />
+
+  <div>Crop Photo</div>
+  <input id="photo" type="file" accept="image/*" />
+</div>
+
+<p>
+  <button id="saveBtn">Save Record (first 05)</button>
+  <button id="seedBtn">Seed Remaining Records</button>
+  <button id="fetchBtn">Fetch & Show First 05 in Console</button>
+  <button id="testBtn">Run Unit Tests</button>
+</p>
+
+<pre id="out"></pre>
+
+<script>
+const $ = id => document.getElementById(id);
+
+let db;
+const DB_NAME = "AgricultureDB";
+const STORE = "FarmData";
+
+// Open or create IndexedDB
+const request = indexedDB.open(DB_NAME, 1);
+request.onupgradeneeded = event => {
+  db = event.target.result;
+  if(!db.objectStoreNames.contains(STORE)) {
+    db.createObjectStore(STORE, { keyPath: "id", autoIncrement: true });
+  }
+  console.log("DB setup complete");
+};
+request.onsuccess = event => { db = event.target.result; console.log("DB opened successfully"); };
+request.onerror = event => console.error("Error opening DB:", event.target.error);
+
+function store(mode="readonly") { return db.transaction(STORE, mode).objectStore(STORE); }
+
+// Convert file to Base64
+function fileToBase64(file) {
+  return new Promise((resolve,reject)=>{
+    const reader = new FileReader();
+    reader.onload = () => resolve(reader.result);
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+// Save one of the first 05 manual records
+async function saveRecord() {
+  const file = $("photo").files[0];
+  if(!file) { alert("Please upload a photo for the first 05 records"); return; }
+  const imageData = await fileToBase64(file);
+  const readings = $("sensorReadings").value
+      .split(",").map(v=>v.trim()).filter(v=>v).map(Number);
+
+  const record = {
+    id: crypto.randomUUID ? crypto.randomUUID() : Math.random().toString(16).slice(2),
+    sensorReadings: readings,
+    farmerNote: $("note").value,
+    gpsCoordinates: parseFloat($("gps").value) || null,
+    cropPhoto: imageData,
+    timestamp: new Date().toISOString()
+  };
+
+  const transaction = db.transaction(STORE,"readwrite");
+  transaction.objectStore(STORE).add(record);
+  transaction.oncomplete = () => {
+    console.log("Saved first 05 record:", record);
+    $("out").textContent = "Saved record:\n"+JSON.stringify(record,null,2);
+  };
+  transaction.onerror = e => console.error("Error saving record:", e.target.error);
+}
+
+// Generate random record
+function generateRecord() {
+  const sensorReadings = Array.from({length:5},()=>Math.floor(Math.random()*100));
+  const farmerNote = `Auto-generated note`;
+  const gpsCoordinates = (Math.random()*180-90).toFixed(6);
+  const timestamp = new Date().toISOString();
+  const cropPhoto = "images/placeholder.jpg";
+  return { sensorReadings, farmerNote, gpsCoordinates, cropPhoto, timestamp };
+}
+
+// Seed remaining records up to 10,000
+function seedRemainingRecords() {
+  const transaction = db.transaction(STORE,"readwrite");
+  const storeObj = transaction.objectStore(STORE);
+
+  let countRequest = storeObj.count();
+  countRequest.onsuccess = () => {
+    let existingCount = countRequest.result;
+    const toAdd = 10000 - existingCount;
+    for(let i=0;i<toAdd;i++){
+      storeObj.add(generateRecord());
+    }
+    transaction.oncomplete = () => console.log(`Seeded remaining ${toAdd} records, total should be 10,000`);
+  };
+  countRequest.onerror = e => console.error("Error counting records:", e.target.error);
+}
+
+
+function fetchFirst05() {
+  const transaction = db.transaction(STORE,"readonly");
+  const storeObj = transaction.objectStore(STORE);
+
+  let cursorReq = storeObj.openCursor();
+  let shown = 0;
+  cursorReq.onsuccess = e => {
+    let cursor = e.target.result;
+    if(cursor && shown<5){
+      console.log(`Record ${shown+1}:`, cursor.value);
+      shown++;
+      cursor.continue();
+    }
+  };
+
+  storeObj.count().onsuccess = e => console.log("Total records:", e.target.result);
+}
+
+// --------------------- UNIT TESTS ---------------------
+
+async function testAddRecord() {
+    const record = {
+        id: crypto.randomUUID(),
+        sensorReadings: [10, 20, 30],
+        farmerNote: "Unit test note",
+        gpsCoordinates: 12.345678,
+        cropPhoto: "images/test.jpg",
+        timestamp: new Date().toISOString()
+    };
+    await new Promise((resolve,reject)=>{
+        const tx = db.transaction(STORE,"readwrite");
+        const storeObj = tx.objectStore(STORE);
+        const req = storeObj.add(record);
+        req.onsuccess = resolve;
+        req.onerror = reject;
+    });
+    console.log("testAddRecord passed");
+}
+
+async function testGetRecord() {
+    const storeObj = db.transaction(STORE,"readonly").objectStore(STORE);
+    const firstRecord = await new Promise((resolve)=>{
+        const req = storeObj.openCursor();
+        req.onsuccess = e => {
+            const cursor = e.target.result;
+            if(cursor) resolve(cursor.value);
+            else resolve(null);
+        };
+    });
+    console.assert(firstRecord !== null, "testGetRecord failed: No record found");
+    console.assert(typeof firstRecord.farmerNote==="string", "farmerNote should be string");
+    console.assert(Array.isArray(firstRecord.sensorReadings), "sensorReadings should be array");
+    console.log("testGetRecord passed");
+}
+
+async function testSensorReadingsArray() {
+    const storeObj = db.transaction(STORE,"readonly").objectStore(STORE);
+    const record = await new Promise((resolve)=>{
+        const req = storeObj.openCursor();
+        req.onsuccess = e => resolve(e.target.result.value);
+    });
+    console.assert(record.sensorReadings.every(n=>typeof n==="number"), "sensorReadings must be numbers");
+    console.log("testSensorReadingsArray passed");
+}
+
+async function testTimestampFormat() {
+    const storeObj = db.transaction(STORE,"readonly").objectStore(STORE);
+    const record = await new Promise((resolve)=>{
+        const req = storeObj.openCursor();
+        req.onsuccess = e => resolve(e.target.result.value);
+    });
+    const date = new Date(record.timestamp);
+    console.assert(!isNaN(date.getTime()), "timestamp should be valid ISO date");
+    console.log("testTimestampFormat passed");
+}
+
+async function testCropPhoto() {
+    const storeObj = db.transaction(STORE,"readonly").objectStore(STORE);
+    const record = await new Promise((resolve)=>{
+        const req = storeObj.openCursor();
+        req.onsuccess = e => resolve(e.target.result.value);
+    });
+    console.assert(record.cropPhoto!==undefined, "cropPhoto should exist");
+    console.log("testCropPhoto passed");
+}
+
+// Run all tests
+async function runUnitTests() {
+    console.log("Running unit tests...");
+    await testAddRecord();
+    await testGetRecord();
+    await testSensorReadingsArray();
+    await testTimestampFormat();
+    await testCropPhoto();
+    console.log("All unit tests finished");
+}
+
+
+window.onload = ()=>{
+  $("saveBtn").onclick = saveRecord;
+  $("seedBtn").onclick = seedRemainingRecords;
+  $("fetchBtn").onclick = fetchFirst05;
+  $("testBtn").onclick = runUnitTests;
+};
+</script>
+</html>

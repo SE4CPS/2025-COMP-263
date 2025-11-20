@@ -1,0 +1,107 @@
+[
+  {
+    "_id": "bc3bd2ff-1e43-4010-af66-56d524e02d38",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T06:13:00Z",
+    "soil_moisture": 41.09,
+    "temp_c": 29.14,
+    "battery_v": 3.53,
+    "metadata": {
+      "uuid": "bc3bd2ff-1e43-4010-af66-56d524e02d38",
+      "author": "Deepika Jakati",
+      "sync_time_utc": "2025-11-20T01:35:01.649Z",
+      "source_db": "lab5-sql-json-sim",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "batch_1763602501674",
+      "lineage": "SNS-1003/1",
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "C",
+        "battery_v": "V"
+      },
+      "quality_flags": [],
+      "checksum_md5": "a3ac45ac7617d1746a12c6ada00941f0",
+      "record_source": "lab5_sql_to_nosql",
+      "transform_status": "merged"
+    }
+  },
+  {
+    "_id": "7ddc63bf-a81d-4d45-aa82-79c3f7683fa2",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T06:26:00Z",
+    "soil_moisture": 25.7,
+    "temp_c": 21.29,
+    "battery_v": 3.79,
+    "metadata": {
+      "uuid": "7ddc63bf-a81d-4d45-aa82-79c3f7683fa2",
+      "author": "Deepika Jakati",
+      "sync_time_utc": "2025-11-20T01:35:01.675Z",
+      "source_db": "lab5-sql-json-sim",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "batch_1763602501675",
+      "lineage": "SNS-1003/2",
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "C",
+        "battery_v": "V"
+      },
+      "quality_flags": [],
+      "checksum_md5": "69d1dc459c647eb8f7508376f3d7d86a",
+      "record_source": "lab5_sql_to_nosql",
+      "transform_status": "merged"
+    }
+  },
+  {
+    "_id": "1f9cfa7c-ade7-4ead-bf69-9cb5c003eb71",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T06:39:00Z",
+    "soil_moisture": 11.66,
+    "temp_c": 24.65,
+    "battery_v": 3.5,
+    "metadata": {
+      "uuid": "1f9cfa7c-ade7-4ead-bf69-9cb5c003eb71",
+      "author": "Deepika Jakati",
+      "sync_time_utc": "2025-11-20T01:35:01.675Z",
+      "source_db": "lab5-sql-json-sim",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "batch_1763602501675",
+      "lineage": "SNS-1005/3",
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "C",
+        "battery_v": "V"
+      },
+      "quality_flags": [],
+      "checksum_md5": "c57b69fb20c98e7274faa2168e694f48",
+      "record_source": "lab5_sql_to_nosql",
+      "transform_status": "merged"
+    }
+  }
+]

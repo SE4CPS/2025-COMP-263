@@ -40,7 +40,7 @@ async function transfer() {
         "soil_moisture": doc.data.soil_moisture
     }));
 
-    console.log(rows[0].time);
+    const start = Date.now();
 
     await clickhouse.insert({
       table: "weather_hourly",
@@ -48,7 +48,24 @@ async function transfer() {
       format: "JSONEachRow",
     });
 
+    const end = Date.now();
+
+    const loadTimeMs = end-start;
+
     console.log("Data successfully inserted into ClickHouse.");
+    console.log(`Data inserted into ClickHouse in ${loadTimeMs} ms.`);
+
+    const updateResult = await col.updateMany(
+      { "metadata.author": "Team RRPB" },
+      {
+        $set: {
+          "metadata.warehouse_load_time": loadTimeMs,
+          "metadata.load_mode": "incremental"
+        }
+      }
+    );
+    
+    console.log(`Updated ${updateResult.modifiedCount} MongoDB docs with load metadata.`);
   } catch (err) {
     console.error("Error:", err);
   } finally {

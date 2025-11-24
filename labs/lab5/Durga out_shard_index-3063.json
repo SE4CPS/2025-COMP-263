@@ -1,0 +1,26 @@
+[
+  {
+    "shard": "readings_FARM-001_2025-11-01",
+    "count": 27
+  },
+  {
+    "shard": "readings_FARM-001_2025-11-02",
+    "count": 8
+  },
+  {
+    "shard": "readings_FARM-002_2025-11-01",
+    "count": 32
+  },
+  {
+    "shard": "readings_FARM-002_2025-11-02",
+    "count": 2
+  },
+  {
+    "shard": "readings_FARM-003_2025-11-01",
+    "count": 24
+  },
+  {
+    "shard": "readings_FARM-003_2025-11-02",
+    "count": 7
+  }
+]

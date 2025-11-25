@@ -1,0 +1,67 @@
+
+[
+    {
+      "sensor_id": 1,
+      "device_id": "SNS-1001",
+      "farm_id": "FARM-001",
+      "crop": "Almond",
+      "lat": 37.958883,
+      "lon": -121.305032,
+      "model": "FieldSense-X"
+    },
+    {
+      "sensor_id": 2,
+      "device_id": "SNS-1002",
+      "farm_id": "FARM-002",
+      "crop": "Tomato",
+      "lat": 38.042468,
+      "lon": -121.412433,
+      "model": "FieldSense-X"
+    },
+    {
+      "sensor_id": 3,
+      "device_id": "SNS-1003",
+      "farm_id": "FARM-003",
+      "crop": "Grape",
+      "lat": 37.896825,
+      "lon": -121.258034,
+      "model": "HydraTemp-5"
+    },
+    {
+      "sensor_id": 4,
+      "device_id": "SNS-1004",
+      "farm_id": "FARM-001",
+      "crop": "Almond",
+      "lat": 37.968177,
+      "lon": -121.308711,
+      "model": "HydraTemp-5"
+    },
+    {
+      "sensor_id": 5,
+      "device_id": "SNS-1005",
+      "farm_id": "FARM-002",
+      "crop": "Tomato",
+      "lat": 38.032389,
+      "lon": -121.403287,
+      "model": "FieldSense-X"
+    },
+    {
+      "sensor_id": 6,
+      "device_id": "SNS-1006",
+      "farm_id": "FARM-003",
+      "crop": "Grape",
+      "lat": 37.912033,
+      "lon": -121.232221,
+      "model": "FieldSense-X"
+    },
+    {
+      "sensor_id": 7,
+      "device_id": "SNS-1007",
+      "farm_id": "FARM-001",
+      "crop": "Almond",
+      "lat": 37.941821,
+      "lon": -121.305587,
+      "model": "AcmeSoil-200"
+    }
+  ]
+  

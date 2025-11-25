@@ -1,0 +1,3708 @@
+{
+  "readings_FARM-003_Grape": [
+    {
+      "_id": "336e90b1-fefe-4bba-8633-bd891924c519",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T06:13:00Z",
+      "soil_moisture": 41.09,
+      "temp_c": 29.14,
+      "battery_v": 3.53,
+      "metadata": {
+        "uuid": "336e90b1-fefe-4bba-8633-bd891924c519",
+        "checksum_md5": "a3ac45ac7617d1746a12c6ada00941f0",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.657Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T06:13:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "f4a92d55-5fdc-4e09-ae18-8499d1e36b02",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T06:26:00Z",
+      "soil_moisture": 25.7,
+      "temp_c": 21.29,
+      "battery_v": 3.79,
+      "metadata": {
+        "uuid": "f4a92d55-5fdc-4e09-ae18-8499d1e36b02",
+        "checksum_md5": "69d1dc459c647eb8f7508376f3d7d86a",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T06:26:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "1420d030-d743-4b4d-9c14-dc0550f7a51d",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T07:44:00Z",
+      "soil_moisture": 43.96,
+      "temp_c": 26.56,
+      "battery_v": 4.18,
+      "metadata": {
+        "uuid": "1420d030-d743-4b4d-9c14-dc0550f7a51d",
+        "checksum_md5": "3c2d486c5a0217affa7fb9000eea4d95",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T07:44:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "b556e017-5d7b-4681-98d6-8cf1bb2615d9",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T07:57:00Z",
+      "soil_moisture": 31.15,
+      "temp_c": 28.07,
+      "battery_v": 4.1,
+      "metadata": {
+        "uuid": "b556e017-5d7b-4681-98d6-8cf1bb2615d9",
+        "checksum_md5": "b836feccd3c1f4fb2ff2f4214d5484c3",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T07:57:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "7fd13c9b-f13d-460b-904f-8f898150187f",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T08:10:00Z",
+      "soil_moisture": 10.68,
+      "temp_c": 8.2,
+      "battery_v": 3.51,
+      "metadata": {
+        "uuid": "7fd13c9b-f13d-460b-904f-8f898150187f",
+        "checksum_md5": "12ea531467697e32ed84e754a137ca14",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T08:10:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "704808db-87b2-447f-b0a1-d9cdf5eb8724",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T08:23:00Z",
+      "soil_moisture": 41.57,
+      "temp_c": 30.19,
+      "battery_v": 3.96,
+      "metadata": {
+        "uuid": "704808db-87b2-447f-b0a1-d9cdf5eb8724",
+        "checksum_md5": "5e1169ac2198ac7e732561fcd0121a80",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T08:23:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "c6f9d9dd-8caf-4a0a-a16f-f982868d745e",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T09:41:00Z",
+      "soil_moisture": 25.2,
+      "temp_c": 14.2,
+      "battery_v": 4.19,
+      "metadata": {
+        "uuid": "c6f9d9dd-8caf-4a0a-a16f-f982868d745e",
+        "checksum_md5": "8a10f8c812d88df0e24ff7f2b44bbbef",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T09:41:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "7e13c501-8059-4c5b-a2a4-4f39441b6798",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T09:54:00Z",
+      "soil_moisture": 38.9,
+      "temp_c": 32.95,
+      "battery_v": 4.16,
+      "metadata": {
+        "uuid": "7e13c501-8059-4c5b-a2a4-4f39441b6798",
+        "checksum_md5": "0c1191399789d80fab0a0297b7596c6f",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T09:54:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "00fbb77f-54f9-41c5-8bb1-014258f1b9b6",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T11:12:00Z",
+      "soil_moisture": 25.99,
+      "temp_c": 17.22,
+      "battery_v": 3.78,
+      "metadata": {
+        "uuid": "00fbb77f-54f9-41c5-8bb1-014258f1b9b6",
+        "checksum_md5": "6f18e1fe552a997ee5b911b6fe67f61e",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T11:12:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "10a02eee-60fa-4fd3-90c0-c8045fa1a78c",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T11:38:00Z",
+      "soil_moisture": 25.64,
+      "temp_c": 14.92,
+      "battery_v": 3.54,
+      "metadata": {
+        "uuid": "10a02eee-60fa-4fd3-90c0-c8045fa1a78c",
+        "checksum_md5": "f2da18a471de67c41ce0781e18751595",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T11:38:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "737c69b4-4965-4df1-8f0c-49e76795567a",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T13:09:00Z",
+      "soil_moisture": 40.81,
+      "temp_c": 14.85,
+      "battery_v": 4.15,
+      "metadata": {
+        "uuid": "737c69b4-4965-4df1-8f0c-49e76795567a",
+        "checksum_md5": "b4f4fe731143d6649aa114e67b5a3208",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T13:09:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "bcbbb1d3-dcc6-4094-ab5e-c1466ac99e08",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T13:22:00Z",
+      "soil_moisture": 32.72,
+      "temp_c": 31.27,
+      "battery_v": 3.74,
+      "metadata": {
+        "uuid": "bcbbb1d3-dcc6-4094-ab5e-c1466ac99e08",
+        "checksum_md5": "16de692aac307f8a9f9c872d90a2e260",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T13:22:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "9a030df1-e917-47c7-9c05-e1bb45503feb",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T13:35:00Z",
+      "soil_moisture": 33.67,
+      "temp_c": 22.5,
+      "battery_v": 4.15,
+      "metadata": {
+        "uuid": "9a030df1-e917-47c7-9c05-e1bb45503feb",
+        "checksum_md5": "b2f43a0ba8a20f458f971ba319df6e28",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T13:35:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "30abdd3b-2c22-4477-b418-fb896f46145a",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T13:48:00Z",
+      "soil_moisture": 26.26,
+      "temp_c": 12.64,
+      "battery_v": 4.15,
+      "metadata": {
+        "uuid": "30abdd3b-2c22-4477-b418-fb896f46145a",
+        "checksum_md5": "27c1c4357144b6effe5dc82c7809d5f6",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T13:48:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "bc972682-3af8-42ca-88e3-e46a96e3ad00",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T14:27:00Z",
+      "soil_moisture": 37.62,
+      "temp_c": 28.86,
+      "battery_v": 3.75,
+      "metadata": {
+        "uuid": "bc972682-3af8-42ca-88e3-e46a96e3ad00",
+        "checksum_md5": "5c7caf25533444925794b22cf7635898",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T14:27:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "f67070ac-ab50-4c07-87e3-046af2e0ff60",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T15:06:00Z",
+      "soil_moisture": 27.46,
+      "temp_c": 18.36,
+      "battery_v": 4.07,
+      "metadata": {
+        "uuid": "f67070ac-ab50-4c07-87e3-046af2e0ff60",
+        "checksum_md5": "5ec5b605f4ef655c872db937ac1639be",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T15:06:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "3c7e5776-9c30-4317-9dca-e37a91353782",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T15:45:00Z",
+      "soil_moisture": 44.38,
+      "temp_c": 32.37,
+      "battery_v": 3.95,
+      "metadata": {
+        "uuid": "3c7e5776-9c30-4317-9dca-e37a91353782",
+        "checksum_md5": "eb6f6f6b7a53da944e5f36de1063da32",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T15:45:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "78b65e9d-0df4-46fe-b55d-8873b4053b22",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T16:37:00Z",
+      "soil_moisture": 26.54,
+      "temp_c": 27.04,
+      "battery_v": 3.56,
+      "metadata": {
+        "uuid": "78b65e9d-0df4-46fe-b55d-8873b4053b22",
+        "checksum_md5": "e1daa8b017437b6970f9a4d211c7848e",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T16:37:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "e6e875e8-2f15-45da-bbbd-e17cbc2d04ac",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T17:03:00Z",
+      "soil_moisture": 26.82,
+      "temp_c": 18.31,
+      "battery_v": 4,
+      "metadata": {
+        "uuid": "e6e875e8-2f15-45da-bbbd-e17cbc2d04ac",
+        "checksum_md5": "2729f5f0ab253eec63d304c0a4845d84",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T17:03:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "58c2b852-2558-4ba6-8867-895628d13fb1",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T18:08:00Z",
+      "soil_moisture": 40.3,
+      "temp_c": 8.68,
+      "battery_v": 3.69,
+      "metadata": {
+        "uuid": "58c2b852-2558-4ba6-8867-895628d13fb1",
+        "checksum_md5": "a710031cfea8656223245bb626af2afd",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T18:08:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "6fc56982-51b8-4152-9634-b767e12368e6",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T20:44:00Z",
+      "soil_moisture": 36.99,
+      "temp_c": 30.79,
+      "battery_v": 4.13,
+      "metadata": {
+        "uuid": "6fc56982-51b8-4152-9634-b767e12368e6",
+        "checksum_md5": "12784eb13a9b1a63cfe6f80de74d1678",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T20:44:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "d9a9a84c-d174-406d-b287-dbad5bca4e8a",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T21:36:00Z",
+      "soil_moisture": 20.8,
+      "temp_c": 17.5,
+      "battery_v": 3.62,
+      "metadata": {
+        "uuid": "d9a9a84c-d174-406d-b287-dbad5bca4e8a",
+        "checksum_md5": "e65d5aeb4d74fcb9c7bc5c6ac649513f",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T21:36:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "f009e7e5-7a48-4db6-9152-284b75eff4b6",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-01T22:41:00Z",
+      "soil_moisture": 11.78,
+      "temp_c": 14.04,
+      "battery_v": 3.57,
+      "metadata": {
+        "uuid": "f009e7e5-7a48-4db6-9152-284b75eff4b6",
+        "checksum_md5": "b75bb9f8317a64f2b980de1d7d3d08bf",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-01T22:41:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "0aebc753-4b30-4687-a79e-ca8f73a4bda0",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-01T23:33:00Z",
+      "soil_moisture": 31.1,
+      "temp_c": 20.16,
+      "battery_v": 3.82,
+      "metadata": {
+        "uuid": "0aebc753-4b30-4687-a79e-ca8f73a4bda0",
+        "checksum_md5": "412421f6a4c37786c3eb963fd49ad14a",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-01T23:33:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "6d8d1502-b4a7-46fd-bc8e-bdcc969c8e72",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-02T00:12:00Z",
+      "soil_moisture": 44.82,
+      "temp_c": 9.56,
+      "battery_v": 4,
+      "metadata": {
+        "uuid": "6d8d1502-b4a7-46fd-bc8e-bdcc969c8e72",
+        "checksum_md5": "5c8581543626f8bb00c128c46632d888",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-02T00:12:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "65719cb9-5e18-4b89-8bc8-fc40136e8a3f",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-02T00:51:00Z",
+      "soil_moisture": 17.14,
+      "temp_c": 34.32,
+      "battery_v": 4.17,
+      "metadata": {
+        "uuid": "65719cb9-5e18-4b89-8bc8-fc40136e8a3f",
+        "checksum_md5": "49688797cd2ad8c285b50a9fbbd363c8",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-02T00:51:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "40da4783-2cd6-4083-92d7-24d26f1c4c46",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-02T01:17:00Z",
+      "soil_moisture": 18.58,
+      "temp_c": 21.32,
+      "battery_v": 3.89,
+      "metadata": {
+        "uuid": "40da4783-2cd6-4083-92d7-24d26f1c4c46",
+        "checksum_md5": "0baa7bceca0757d771be1c6741468d90",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-02T01:17:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "0d377fc9-dac9-43d4-a70d-80465adca7c0",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1006",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.912033,
+        "lon": -121.232221
+      },
+      "ts_utc": "2025-11-02T01:43:00Z",
+      "soil_moisture": 24.69,
+      "temp_c": 25.65,
+      "battery_v": 3.6,
+      "metadata": {
+        "uuid": "0d377fc9-dac9-43d4-a70d-80465adca7c0",
+        "checksum_md5": "ed480d93aedc3d9fe494debd6b24759b",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1006/2025-11-02T01:43:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "960e38c8-1d7d-4235-9e0f-1987316e903e",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-02T03:01:00Z",
+      "soil_moisture": 42.37,
+      "temp_c": 36.73,
+      "battery_v": 3.65,
+      "metadata": {
+        "uuid": "960e38c8-1d7d-4235-9e0f-1987316e903e",
+        "checksum_md5": "e5020de2f2551d15223ba55a5a6bd0f8",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-02T03:01:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "d9c3dedc-8e33-4cd5-bdec-984114352aa7",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-02T03:27:00Z",
+      "soil_moisture": 38.69,
+      "temp_c": 18.67,
+      "battery_v": 3.62,
+      "metadata": {
+        "uuid": "d9c3dedc-8e33-4cd5-bdec-984114352aa7",
+        "checksum_md5": "b26ff3bdbf9d571fa3de93a87a902be8",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-02T03:27:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "dcc12abf-45ee-47b4-8483-b71454349376",
+      "farmId": "FARM-003",
+      "deviceId": "SNS-1003",
+      "crop": "Grape",
+      "gps": {
+        "lat": 37.896825,
+        "lon": -121.258034
+      },
+      "ts_utc": "2025-11-02T03:40:00Z",
+      "soil_moisture": 15.01,
+      "temp_c": 14.13,
+      "battery_v": 3.79,
+      "metadata": {
+        "uuid": "dcc12abf-45ee-47b4-8483-b71454349376",
+        "checksum_md5": "d28d55c6668b5636a7ee1eae039b3d2a",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1003/2025-11-02T03:40:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    }
+  ],
+  "readings_FARM-002_Tomato": [
+    {
+      "_id": "2f208c05-b13d-4155-bd3c-11a65669f8a6",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T06:39:00Z",
+      "soil_moisture": 11.66,
+      "temp_c": 24.65,
+      "battery_v": 3.5,
+      "metadata": {
+        "uuid": "2f208c05-b13d-4155-bd3c-11a65669f8a6",
+        "checksum_md5": "c57b69fb20c98e7274faa2168e694f48",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T06:39:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "ec46cad7-7770-47cb-aeb6-8c76db3e80cb",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T07:05:00Z",
+      "soil_moisture": 28.99,
+      "temp_c": 14.49,
+      "battery_v": 3.73,
+      "metadata": {
+        "uuid": "ec46cad7-7770-47cb-aeb6-8c76db3e80cb",
+        "checksum_md5": "b51124907f236ca4f51eb5ba2ef94b0f",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T07:05:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "4cfe4536-180a-4f7b-b4bd-dd6fd717ea51",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T07:18:00Z",
+      "soil_moisture": 12.36,
+      "temp_c": 18.7,
+      "battery_v": 3.82,
+      "metadata": {
+        "uuid": "4cfe4536-180a-4f7b-b4bd-dd6fd717ea51",
+        "checksum_md5": "77e6a82cbefaa6b0d40bb227b4b982db",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T07:18:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "bbbde5d0-b362-4fb8-8c39-025a52f58992",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T08:36:00Z",
+      "soil_moisture": 21.03,
+      "temp_c": 27.84,
+      "battery_v": 4.06,
+      "metadata": {
+        "uuid": "bbbde5d0-b362-4fb8-8c39-025a52f58992",
+        "checksum_md5": "bf59453d0573bd9ffc02fca37ddfb5ce",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T08:36:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "99545779-cea6-4a89-8dc9-549c6f862e59",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T09:02:00Z",
+      "soil_moisture": 22.44,
+      "temp_c": 30.8,
+      "battery_v": 4.08,
+      "metadata": {
+        "uuid": "99545779-cea6-4a89-8dc9-549c6f862e59",
+        "checksum_md5": "6c6899e5f1acd244c84feb13d9f09b93",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T09:02:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "377e2350-aa46-453e-bf63-bc6784e5a4c7",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T09:28:00Z",
+      "soil_moisture": 11.49,
+      "temp_c": 10.86,
+      "battery_v": 4.15,
+      "metadata": {
+        "uuid": "377e2350-aa46-453e-bf63-bc6784e5a4c7",
+        "checksum_md5": "a6e4c7df002ac5d1fc03a4eee98a90e6",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T09:28:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "6c073ceb-e34c-45e1-b9c4-510c1008350b",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T10:07:00Z",
+      "soil_moisture": 20.7,
+      "temp_c": 11.29,
+      "battery_v": 3.8,
+      "metadata": {
+        "uuid": "6c073ceb-e34c-45e1-b9c4-510c1008350b",
+        "checksum_md5": "7cd0be5d86197ea47fa7d214200792c4",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T10:07:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "dcc522be-51a0-49d5-a3a0-f73e598cfe6c",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T10:20:00Z",
+      "soil_moisture": 21.7,
+      "temp_c": 15.15,
+      "battery_v": 3.99,
+      "metadata": {
+        "uuid": "dcc522be-51a0-49d5-a3a0-f73e598cfe6c",
+        "checksum_md5": "ab46f8c6c5b3a7a39248df2057a5d246",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T10:20:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "f6793312-387e-4840-8bd8-b04069cfa3fa",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T12:17:00Z",
+      "soil_moisture": 15.46,
+      "temp_c": 26.15,
+      "battery_v": 4.09,
+      "metadata": {
+        "uuid": "f6793312-387e-4840-8bd8-b04069cfa3fa",
+        "checksum_md5": "ea30b92320d23c867d56d67e6bf958ec",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T12:17:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "5d035a6a-7bb5-4bee-bf92-9b96f41836c5",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T12:30:00Z",
+      "soil_moisture": 36.51,
+      "temp_c": 27.52,
+      "battery_v": 3.94,
+      "metadata": {
+        "uuid": "5d035a6a-7bb5-4bee-bf92-9b96f41836c5",
+        "checksum_md5": "049c6d48e400d176d34e9a5ccb2f3b1b",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T12:30:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "d29a9c10-3bce-4eca-91fa-93e80c201fb3",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T12:43:00Z",
+      "soil_moisture": 38.36,
+      "temp_c": 10.25,
+      "battery_v": 3.7,
+      "metadata": {
+        "uuid": "d29a9c10-3bce-4eca-91fa-93e80c201fb3",
+        "checksum_md5": "952e9c602af9619a9180758add672357",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T12:43:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "628a06f2-0564-4f50-88b8-71054521d51b",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T12:56:00Z",
+      "soil_moisture": 13.08,
+      "temp_c": 23.15,
+      "battery_v": 3.84,
+      "metadata": {
+        "uuid": "628a06f2-0564-4f50-88b8-71054521d51b",
+        "checksum_md5": "4ccefaff39ca73842d56779add94ff5b",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T12:56:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "fa0a9be1-f67e-4e18-a7af-0cc9f2a9f121",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T14:14:00Z",
+      "soil_moisture": 40.26,
+      "temp_c": 16.74,
+      "battery_v": 3.58,
+      "metadata": {
+        "uuid": "fa0a9be1-f67e-4e18-a7af-0cc9f2a9f121",
+        "checksum_md5": "8b05eb9d2ea71ddab1a7092b0a64ec17",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T14:14:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "26c14d85-4eb6-40aa-a718-578f2be7ca82",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T14:40:00Z",
+      "soil_moisture": 32.17,
+      "temp_c": 19.87,
+      "battery_v": 3.63,
+      "metadata": {
+        "uuid": "26c14d85-4eb6-40aa-a718-578f2be7ca82",
+        "checksum_md5": "c0ebe7db326cb141597c664cc310e5fa",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T14:40:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "dc9ec7f3-39c3-465a-a275-bd07b64df9c6",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T15:19:00Z",
+      "soil_moisture": 26.73,
+      "temp_c": 18.08,
+      "battery_v": 3.87,
+      "metadata": {
+        "uuid": "dc9ec7f3-39c3-465a-a275-bd07b64df9c6",
+        "checksum_md5": "4a303f72d9898b3a922fc29f46ad46a4",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T15:19:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "8bfd3571-656d-4d04-8198-28d435574fac",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T16:11:00Z",
+      "soil_moisture": 16.55,
+      "temp_c": 22.26,
+      "battery_v": 3.98,
+      "metadata": {
+        "uuid": "8bfd3571-656d-4d04-8198-28d435574fac",
+        "checksum_md5": "dfb179ff2b4a02fe4e4da38b2474de79",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T16:11:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "f204decb-0880-4dec-adaa-ebfc9288ea68",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T16:24:00Z",
+      "soil_moisture": 28.46,
+      "temp_c": 11.44,
+      "battery_v": 4.04,
+      "metadata": {
+        "uuid": "f204decb-0880-4dec-adaa-ebfc9288ea68",
+        "checksum_md5": "35c2afc6a04a1fbdf9b419690f987399",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T16:24:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "20d4eec9-4946-4fba-a000-f68679a6d937",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T16:50:00Z",
+      "soil_moisture": 44.69,
+      "temp_c": 22.13,
+      "battery_v": 3.92,
+      "metadata": {
+        "uuid": "20d4eec9-4946-4fba-a000-f68679a6d937",
+        "checksum_md5": "b0e5b4f8977033b434f1a9180aa2d538",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T16:50:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "323ce549-e98f-4d6c-8e60-b60507c1bf6c",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T17:29:00Z",
+      "soil_moisture": 21.32,
+      "temp_c": 12.33,
+      "battery_v": 3.72,
+      "metadata": {
+        "uuid": "323ce549-e98f-4d6c-8e60-b60507c1bf6c",
+        "checksum_md5": "add8b848e65e7a6f17bcadcbc4108a0b",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T17:29:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "187108db-a761-4765-ba8e-bc711af70a10",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T17:55:00Z",
+      "soil_moisture": 24.99,
+      "temp_c": 24.61,
+      "battery_v": 4.05,
+      "metadata": {
+        "uuid": "187108db-a761-4765-ba8e-bc711af70a10",
+        "checksum_md5": "a918b331546cfb455c8c94084cc39147",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T17:55:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "3acad2bb-5564-457d-a254-474ce532d2c8",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T18:21:00Z",
+      "soil_moisture": 15.92,
+      "temp_c": 23.08,
+      "battery_v": 3.55,
+      "metadata": {
+        "uuid": "3acad2bb-5564-457d-a254-474ce532d2c8",
+        "checksum_md5": "07ecab95decc989ab66a80ce05ef28c9",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T18:21:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "afa6ec56-d43a-4aa6-b1fa-8f00528d45b6",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T18:34:00Z",
+      "soil_moisture": 32.62,
+      "temp_c": 33.16,
+      "battery_v": 4.15,
+      "metadata": {
+        "uuid": "afa6ec56-d43a-4aa6-b1fa-8f00528d45b6",
+        "checksum_md5": "bd475fff8cd378bfb0b96a90e45bcbe9",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T18:34:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "17cf354d-f874-43fb-ad5a-1be88b813c1a",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T18:47:00Z",
+      "soil_moisture": 44.59,
+      "temp_c": 37.76,
+      "battery_v": 3.54,
+      "metadata": {
+        "uuid": "17cf354d-f874-43fb-ad5a-1be88b813c1a",
+        "checksum_md5": "69bababe2ca5aa179a7bc724f33c2d11",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T18:47:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "61dfd0f2-91ef-430f-a97b-343c24e42a4a",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T19:13:00Z",
+      "soil_moisture": 11.59,
+      "temp_c": 14.14,
+      "battery_v": 3.77,
+      "metadata": {
+        "uuid": "61dfd0f2-91ef-430f-a97b-343c24e42a4a",
+        "checksum_md5": "6c14dd5a055a7cdb47ff62bbd5baff37",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T19:13:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "ced4f65a-ac55-4e05-bc9e-76878859324c",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T19:26:00Z",
+      "soil_moisture": 20.4,
+      "temp_c": 31.52,
+      "battery_v": 3.76,
+      "metadata": {
+        "uuid": "ced4f65a-ac55-4e05-bc9e-76878859324c",
+        "checksum_md5": "9199e886e6440258ba51ad26b31956d2",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T19:26:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "c3235f85-f5c6-44ae-9c7a-abafa2f83827",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T19:39:00Z",
+      "soil_moisture": 36.34,
+      "temp_c": 32.45,
+      "battery_v": 3.88,
+      "metadata": {
+        "uuid": "c3235f85-f5c6-44ae-9c7a-abafa2f83827",
+        "checksum_md5": "f118d53ea54c0bde68ba3db12a125ced",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T19:39:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "4414d051-143e-4496-9efd-216a3d955cda",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T20:18:00Z",
+      "soil_moisture": 39.31,
+      "temp_c": 23.64,
+      "battery_v": 3.83,
+      "metadata": {
+        "uuid": "4414d051-143e-4496-9efd-216a3d955cda",
+        "checksum_md5": "02e3f670923b8a4fd6c3b730a5d08ecf",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T20:18:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "e7b96904-2372-4f66-b8df-6bfc86855c6e",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-01T20:31:00Z",
+      "soil_moisture": 26.87,
+      "temp_c": 21.86,
+      "battery_v": 3.66,
+      "metadata": {
+        "uuid": "e7b96904-2372-4f66-b8df-6bfc86855c6e",
+        "checksum_md5": "09964d21352b44055fa4f7a5476a6bfd",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-01T20:31:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "ffb59509-5634-479d-aaee-c4902550e283",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T20:57:00Z",
+      "soil_moisture": 40.94,
+      "temp_c": 18.22,
+      "battery_v": 3.93,
+      "metadata": {
+        "uuid": "ffb59509-5634-479d-aaee-c4902550e283",
+        "checksum_md5": "db356b281b98d776a4a2de7491486269",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T20:57:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "816a46cf-ed8a-4f11-b1e2-8dc6cbcc45ee",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T21:10:00Z",
+      "soil_moisture": 26.67,
+      "temp_c": 36.9,
+      "battery_v": 3.66,
+      "metadata": {
+        "uuid": "816a46cf-ed8a-4f11-b1e2-8dc6cbcc45ee",
+        "checksum_md5": "67463efad024f801e99e98715993df83",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T21:10:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "3dd3e9cf-bf06-4a1f-b233-11f68f6bd497",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T21:49:00Z",
+      "soil_moisture": 13.52,
+      "temp_c": 36.46,
+      "battery_v": 3.96,
+      "metadata": {
+        "uuid": "3dd3e9cf-bf06-4a1f-b233-11f68f6bd497",
+        "checksum_md5": "b26a6eaa5041857ec838ff99b835aa55",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T21:49:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "2bf0c01c-7c33-4807-afb3-c0f3a271ad2a",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-01T23:20:00Z",
+      "soil_moisture": 12.37,
+      "temp_c": 22.43,
+      "battery_v": 3.58,
+      "metadata": {
+        "uuid": "2bf0c01c-7c33-4807-afb3-c0f3a271ad2a",
+        "checksum_md5": "6ec1ec6ace0166bccc5ca1d3c30483f6",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-01T23:20:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "da8408dd-7968-4a08-9e5f-23c4642632ab",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1005",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.032389,
+        "lon": -121.403287
+      },
+      "ts_utc": "2025-11-02T02:35:00Z",
+      "soil_moisture": 33.03,
+      "temp_c": 20.17,
+      "battery_v": 3.56,
+      "metadata": {
+        "uuid": "da8408dd-7968-4a08-9e5f-23c4642632ab",
+        "checksum_md5": "e8c47eb96c1fb07f424e5e821947e533",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1005/2025-11-02T02:35:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "3a5c2c09-5fcb-479c-a8f1-208264fb34b3",
+      "farmId": "FARM-002",
+      "deviceId": "SNS-1002",
+      "crop": "Tomato",
+      "gps": {
+        "lat": 38.042468,
+        "lon": -121.412433
+      },
+      "ts_utc": "2025-11-02T02:48:00Z",
+      "soil_moisture": 42.31,
+      "temp_c": 15.6,
+      "battery_v": 4.01,
+      "metadata": {
+        "uuid": "3a5c2c09-5fcb-479c-a8f1-208264fb34b3",
+        "checksum_md5": "4e970b9d7d55dbcded5bbc348fcd6fa8",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1002/2025-11-02T02:48:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    }
+  ],
+  "readings_FARM-001_Almond": [
+    {
+      "_id": "8b5e734d-62e0-4352-9abc-09fcddcad3d5",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-01T06:52:00Z",
+      "soil_moisture": 36.95,
+      "temp_c": 25.47,
+      "battery_v": 3.53,
+      "metadata": {
+        "uuid": "8b5e734d-62e0-4352-9abc-09fcddcad3d5",
+        "checksum_md5": "afd29ed0e4d67170ffc5db0cd06b35fe",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-01T06:52:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "10927520-af76-45c0-9ad0-25c3eb58a1ce",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-01T07:31:00Z",
+      "soil_moisture": 11.95,
+      "temp_c": 38.63,
+      "battery_v": 3.66,
+      "metadata": {
+        "uuid": "10927520-af76-45c0-9ad0-25c3eb58a1ce",
+        "checksum_md5": "86ff166cd0131af608050049c8a82432",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-01T07:31:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "8444ebe9-3085-4369-bc14-6e7dad1b1956",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1001",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.958883,
+        "lon": -121.305032
+      },
+      "ts_utc": "2025-11-01T08:49:00Z",
+      "soil_moisture": 33.83,
+      "temp_c": 28.93,
+      "battery_v": 3.52,
+      "metadata": {
+        "uuid": "8444ebe9-3085-4369-bc14-6e7dad1b1956",
+        "checksum_md5": "0e5780c63ed89341cfb7b46a523287ad",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1001/2025-11-01T08:49:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "18bf3a8b-bdf1-4892-bf0f-df054a58e46d",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-01T09:15:00Z",
+      "soil_moisture": 12.7,
+      "temp_c": 16.46,
+      "battery_v": 4.15,
+      "metadata": {
+        "uuid": "18bf3a8b-bdf1-4892-bf0f-df054a58e46d",
+        "checksum_md5": "002df7308cbec15b98f086ded378afec",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-01T09:15:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "5b5077af-991e-49c9-8f5a-b3e63bce71a3",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-01T10:33:00Z",
+      "soil_moisture": 42.58,
+      "temp_c": 26.92,
+      "battery_v": 3.95,
+      "metadata": {
+        "uuid": "5b5077af-991e-49c9-8f5a-b3e63bce71a3",
+        "checksum_md5": "a4b04e2f82315af745780c1deaac5ef0",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-01T10:33:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "17fd5b92-a080-4ed1-ac7a-600c5c34b419",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1001",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.958883,
+        "lon": -121.305032
+      },
+      "ts_utc": "2025-11-01T10:46:00Z",
+      "soil_moisture": 11.6,
+      "temp_c": 16.95,
+      "battery_v": 3.6,
+      "metadata": {
+        "uuid": "17fd5b92-a080-4ed1-ac7a-600c5c34b419",
+        "checksum_md5": "347a095c30c623b448affae1f85c5788",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1001/2025-11-01T10:46:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "e636452c-fe90-4902-b381-2ccb479d4a7b",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-01T10:59:00Z",
+      "soil_moisture": 41.88,
+      "temp_c": 21.27,
+      "battery_v": 3.78,
+      "metadata": {
+        "uuid": "e636452c-fe90-4902-b381-2ccb479d4a7b",
+        "checksum_md5": "36c615044e5276e8ba4b5d76ce6d6ad2",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-01T10:59:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "6ea391e8-6305-46a6-9268-4aee80d8f06d",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-01T11:25:00Z",
+      "soil_moisture": 37.65,
+      "temp_c": 31.91,
+      "battery_v": 4.14,
+      "metadata": {
+        "uuid": "6ea391e8-6305-46a6-9268-4aee80d8f06d",
+        "checksum_md5": "8dbb17dba619f41840b8822df1c43891",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-01T11:25:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "9148b023-9571-46ec-88fb-46c516157a1f",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-01T11:51:00Z",
+      "soil_moisture": 34.96,
+      "temp_c": 9.23,
+      "battery_v": 4.11,
+      "metadata": {
+        "uuid": "9148b023-9571-46ec-88fb-46c516157a1f",
+        "checksum_md5": "09d7c3b3033c298c01bd24bb68b5af91",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-01T11:51:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "1c968b56-1edb-4a33-bfa9-f8fb1be62b82",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1001",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.958883,
+        "lon": -121.305032
+      },
+      "ts_utc": "2025-11-01T12:04:00Z",
+      "soil_moisture": 29.4,
+      "temp_c": 24.56,
+      "battery_v": 4.02,
+      "metadata": {
+        "uuid": "1c968b56-1edb-4a33-bfa9-f8fb1be62b82",
+        "checksum_md5": "ab7a6a322235f2c4f89088685fe07398",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.658Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1001/2025-11-01T12:04:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "a768b2a6-8961-490e-a7c2-5f1836fb91d8",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-01T14:01:00Z",
+      "soil_moisture": 16.97,
+      "temp_c": 21.98,
+      "battery_v": 3.7,
+      "metadata": {
+        "uuid": "a768b2a6-8961-490e-a7c2-5f1836fb91d8",
+        "checksum_md5": "f93f2e71f7c40e8ccdc156e9c9c4afe7",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-01T14:01:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "d8687523-e958-4889-97cc-e8f1ccc8eaa3",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1001",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.958883,
+        "lon": -121.305032
+      },
+      "ts_utc": "2025-11-01T14:53:00Z",
+      "soil_moisture": 25.76,
+      "temp_c": 32.02,
+      "battery_v": 4.17,
+      "metadata": {
+        "uuid": "d8687523-e958-4889-97cc-e8f1ccc8eaa3",
+        "checksum_md5": "f55f0b8bc9911e91872628e29acdb6b8",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1001/2025-11-01T14:53:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "45a11589-a08f-4781-ad00-ad4ad63160a4",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-01T15:32:00Z",
+      "soil_moisture": 21.82,
+      "temp_c": 27.63,
+      "battery_v": 3.64,
+      "metadata": {
+        "uuid": "45a11589-a08f-4781-ad00-ad4ad63160a4",
+        "checksum_md5": "bed596b2bc2dc581b07dfeac767bbc8d",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-01T15:32:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "d805a308-8570-43ba-8f03-abc25a8b2836",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-01T15:58:00Z",
+      "soil_moisture": 34.67,
+      "temp_c": 13.31,
+      "battery_v": 3.85,
+      "metadata": {
+        "uuid": "d805a308-8570-43ba-8f03-abc25a8b2836",
+        "checksum_md5": "f41d6d275e88bd5252c67712a4810c72",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-01T15:58:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "66a23cb2-43ad-4090-8f5d-e3439fff59bd",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-01T17:16:00Z",
+      "soil_moisture": 42.94,
+      "temp_c": 17.01,
+      "battery_v": 3.81,
+      "metadata": {
+        "uuid": "66a23cb2-43ad-4090-8f5d-e3439fff59bd",
+        "checksum_md5": "f8758bd784853af27540a95c8797bfc0",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-01T17:16:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "f4b7ac61-8dce-4dde-bfa0-fa985f802fbb",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-01T17:42:00Z",
+      "soil_moisture": 44.48,
+      "temp_c": 25.95,
+      "battery_v": 3.88,
+      "metadata": {
+        "uuid": "f4b7ac61-8dce-4dde-bfa0-fa985f802fbb",
+        "checksum_md5": "72a8186deba402e08def523ca1e17c4e",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-01T17:42:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "2c188fc3-186a-4211-92ea-863c9006faac",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1001",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.958883,
+        "lon": -121.305032
+      },
+      "ts_utc": "2025-11-01T19:00:00Z",
+      "soil_moisture": 40.05,
+      "temp_c": 28.64,
+      "battery_v": 3.75,
+      "metadata": {
+        "uuid": "2c188fc3-186a-4211-92ea-863c9006faac",
+        "checksum_md5": "80304b815f9f14190ef9cc670552b231",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1001/2025-11-01T19:00:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "27cf43c2-e4a4-41d0-aa91-ed9da9e820e4",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1001",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.958883,
+        "lon": -121.305032
+      },
+      "ts_utc": "2025-11-01T19:52:00Z",
+      "soil_moisture": 27.58,
+      "temp_c": 12.46,
+      "battery_v": 3.59,
+      "metadata": {
+        "uuid": "27cf43c2-e4a4-41d0-aa91-ed9da9e820e4",
+        "checksum_md5": "19f320ac5119e44ede97538598db7617",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1001/2025-11-01T19:52:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "17f83334-14cb-402e-b328-fdbc7d85540c",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-01T20:05:00Z",
+      "soil_moisture": 30.04,
+      "temp_c": 33.78,
+      "battery_v": 3.64,
+      "metadata": {
+        "uuid": "17f83334-14cb-402e-b328-fdbc7d85540c",
+        "checksum_md5": "0373c68eb322c6a723757efc5eccdced",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-01T20:05:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "6ea654b6-407f-41f4-bf11-17a3cb465164",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1001",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.958883,
+        "lon": -121.305032
+      },
+      "ts_utc": "2025-11-01T21:23:00Z",
+      "soil_moisture": 31.49,
+      "temp_c": 35.64,
+      "battery_v": 3.59,
+      "metadata": {
+        "uuid": "6ea654b6-407f-41f4-bf11-17a3cb465164",
+        "checksum_md5": "77f404d980afb1fcd4a52566f2f94a39",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1001/2025-11-01T21:23:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "562a4fe7-903a-4e20-870a-b31b0b030435",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-01T22:02:00Z",
+      "soil_moisture": 37.46,
+      "temp_c": 36.07,
+      "battery_v": 3.78,
+      "metadata": {
+        "uuid": "562a4fe7-903a-4e20-870a-b31b0b030435",
+        "checksum_md5": "092e8c95d84de6ab386e1b7f1116fc95",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-01T22:02:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "99878902-ca86-4f71-a8db-a109ded32cf3",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-01T22:15:00Z",
+      "soil_moisture": 33.85,
+      "temp_c": 14.88,
+      "battery_v": 3.5,
+      "metadata": {
+        "uuid": "99878902-ca86-4f71-a8db-a109ded32cf3",
+        "checksum_md5": "fae0ad81b9e451873c153f4961c1baff",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-01T22:15:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "f358d18d-3f6d-4c47-9c04-b29a74609d50",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-01T22:28:00Z",
+      "soil_moisture": 12.67,
+      "temp_c": 11.95,
+      "battery_v": 4.03,
+      "metadata": {
+        "uuid": "f358d18d-3f6d-4c47-9c04-b29a74609d50",
+        "checksum_md5": "059fad1e0b5c0e2a6101215db2c698bf",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-01T22:28:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "9a7aaf3b-dd7f-476a-b50e-9b0249fcf0c0",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-01T22:54:00Z",
+      "soil_moisture": 15.52,
+      "temp_c": 12.81,
+      "battery_v": 3.52,
+      "metadata": {
+        "uuid": "9a7aaf3b-dd7f-476a-b50e-9b0249fcf0c0",
+        "checksum_md5": "c2c2540c922208473a32bebfddec535a",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-01T22:54:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "d569cbcc-f45b-4170-96e1-844ac2bff84e",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-01T23:07:00Z",
+      "soil_moisture": 23.01,
+      "temp_c": 12.29,
+      "battery_v": 3.7,
+      "metadata": {
+        "uuid": "d569cbcc-f45b-4170-96e1-844ac2bff84e",
+        "checksum_md5": "64f8f68e2acd90f1bb9b1ad43c5ebe10",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-01T23:07:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "6fc45359-83d4-457a-95cc-9aaf1ebb992d",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-01T23:46:00Z",
+      "soil_moisture": 23.02,
+      "temp_c": 19.72,
+      "battery_v": 3.66,
+      "metadata": {
+        "uuid": "6fc45359-83d4-457a-95cc-9aaf1ebb992d",
+        "checksum_md5": "4130da865a6bd0a2f710f36b38deba3c",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-01T23:46:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "9606210e-fb03-4ab8-b58e-5b4d62c3f75f",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-01T23:59:00Z",
+      "soil_moisture": 37.93,
+      "temp_c": 27.66,
+      "battery_v": 3.81,
+      "metadata": {
+        "uuid": "9606210e-fb03-4ab8-b58e-5b4d62c3f75f",
+        "checksum_md5": "518fbc75a86f71b1768a03ca6c984efd",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-01T23:59:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "9b76ff60-2ecb-45ea-a7ce-1e69527e0833",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-02T00:25:00Z",
+      "soil_moisture": 13.25,
+      "temp_c": 21.91,
+      "battery_v": 4.2,
+      "metadata": {
+        "uuid": "9b76ff60-2ecb-45ea-a7ce-1e69527e0833",
+        "checksum_md5": "909bd2046e4b2a4d41502f5b10206f42",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-02T00:25:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "82c60cb3-a8b0-4b67-9318-34583099e61e",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-02T00:38:00Z",
+      "soil_moisture": 30.4,
+      "temp_c": 37.84,
+      "battery_v": 3.82,
+      "metadata": {
+        "uuid": "82c60cb3-a8b0-4b67-9318-34583099e61e",
+        "checksum_md5": "bc7977fbab74b81bf8c45a5d0b3f3c87",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-02T00:38:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "456fab26-205a-45ce-aa01-05d70dbcad8d",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-02T01:04:00Z",
+      "soil_moisture": 10.35,
+      "temp_c": 34.21,
+      "battery_v": 3.64,
+      "metadata": {
+        "uuid": "456fab26-205a-45ce-aa01-05d70dbcad8d",
+        "checksum_md5": "3fff86646cfad9713ba2c2d7625fa542",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-02T01:04:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "7e7704e8-6ad9-4891-8882-0460a8db0d13",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1001",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.958883,
+        "lon": -121.305032
+      },
+      "ts_utc": "2025-11-02T01:30:00Z",
+      "soil_moisture": 20.85,
+      "temp_c": 17.46,
+      "battery_v": 4.11,
+      "metadata": {
+        "uuid": "7e7704e8-6ad9-4891-8882-0460a8db0d13",
+        "checksum_md5": "df8fe5f4768914a317823b2d341d6375",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1001/2025-11-02T01:30:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "3597e7e9-0d8e-497a-ade7-a74d504224ab",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1004",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.968177,
+        "lon": -121.308711
+      },
+      "ts_utc": "2025-11-02T01:56:00Z",
+      "soil_moisture": 24.67,
+      "temp_c": 9.05,
+      "battery_v": 4.11,
+      "metadata": {
+        "uuid": "3597e7e9-0d8e-497a-ade7-a74d504224ab",
+        "checksum_md5": "07fe5d7afe37ae81ddd0cc039a382beb",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1004/2025-11-02T01:56:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "09563686-23b3-4bc5-baf2-c70ae912797d",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-02T02:09:00Z",
+      "soil_moisture": 13.99,
+      "temp_c": 35.9,
+      "battery_v": 4.08,
+      "metadata": {
+        "uuid": "09563686-23b3-4bc5-baf2-c70ae912797d",
+        "checksum_md5": "ffab4b8026560c2e549e7c3b4982481d",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-02T02:09:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "c24d31d9-4977-43f0-bdfc-c2fb644b940f",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1001",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.958883,
+        "lon": -121.305032
+      },
+      "ts_utc": "2025-11-02T02:22:00Z",
+      "soil_moisture": 14.57,
+      "temp_c": 20,
+      "battery_v": 3.95,
+      "metadata": {
+        "uuid": "c24d31d9-4977-43f0-bdfc-c2fb644b940f",
+        "checksum_md5": "7b14256ed8c37103722dc57f24501842",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1001/2025-11-02T02:22:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    },
+    {
+      "_id": "0b9f5a04-e8a9-4bca-9358-1fe1aa59000f",
+      "farmId": "FARM-001",
+      "deviceId": "SNS-1007",
+      "crop": "Almond",
+      "gps": {
+        "lat": 37.941821,
+        "lon": -121.305587
+      },
+      "ts_utc": "2025-11-02T03:14:00Z",
+      "soil_moisture": 35.3,
+      "temp_c": 19.21,
+      "battery_v": 3.83,
+      "metadata": {
+        "uuid": "0b9f5a04-e8a9-4bca-9358-1fe1aa59000f",
+        "checksum_md5": "13227e6fe8623c4aba962b8a56cfe5be",
+        "author": "Ravi Pareshbhai Kakadia",
+        "sync_time_utc": "2025-11-25T05:49:31.659Z",
+        "source_db": "sql_agriculture_db",
+        "source_tables": [
+          "sql_sensors",
+          "sql_readings"
+        ],
+        "ingest_batch_id": "BATCH function toDateString() { [native code] }",
+        "lineage": "SNS-1007/2025-11-02T03:14:00Z",
+        "units": {
+          "soil_moisture": "percentage",
+          "temp_c": "celsius",
+          "battery_v": "volts"
+        },
+        "quality_flags": {
+          "validated": true,
+          "complete": true,
+          "anomaly_detected": false
+        }
+      }
+    }
+  ]
+}

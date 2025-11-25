@@ -1,0 +1,3902 @@
+[
+  {
+    "_id": "42ed330b-7aa3-4b50-a47d-facbe00f9771",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T06:13:00Z",
+    "soil_moisture": 41.09,
+    "temp_c": 29.14,
+    "battery_v": 3.53,
+    "metadata": {
+      "uuid": "6bb4ce46-bd01-48a7-82be-71f128b35d44",
+      "checksum_md5": "538d33ec5b5c0b7f6f29e57ad75eb2b9",
+      "author": "Shreya Salimath",
+      "sync_time_utc": "2025-11-25T03:01:47.805Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0001",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 1
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "6fd4f2ca-229f-4fcf-b1b0-912038f953b3",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T06:26:00Z",
+    "soil_moisture": 25.7,
+    "temp_c": 21.29,
+    "battery_v": 3.79,
+    "metadata": {
+      "uuid": "ec8e0b70-2f8d-4a58-9df5-e2877470e09b",
+      "checksum_md5": "c1e4372fc4b39f7198875996c7413a97",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0002",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 2
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "377a1591-8642-48eb-a8bf-91f743d471bd",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T06:39:00Z",
+    "soil_moisture": 11.66,
+    "temp_c": 24.65,
+    "battery_v": 3.5,
+    "metadata": {
+      "uuid": "5d77bf14-da42-4822-a6b1-d4ab05f37b58",
+      "checksum_md5": "f475b2ecdbad11f3d3275bd440465473",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0003",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 3
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "c3d7950e-82f4-49ba-9a70-d725155ba9e1",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T06:52:00Z",
+    "soil_moisture": 36.95,
+    "temp_c": 25.47,
+    "battery_v": 3.53,
+    "metadata": {
+      "uuid": "5c23bd47-12f8-4e18-8c58-bf329f36ff1e",
+      "checksum_md5": "e5f72b3afdc9b4ac462a7abd5295323c",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0004",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 4
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "3f4e90b2-47d2-42f3-85fc-7aebd52633b2",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T07:05:00Z",
+    "soil_moisture": 28.99,
+    "temp_c": 14.49,
+    "battery_v": 3.73,
+    "metadata": {
+      "uuid": "21dbde19-4fd7-48f2-a9c9-380fc8b4c15c",
+      "checksum_md5": "d315ae95fa2cc44c406f81f142c41a6a",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0005",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 5
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "b4c8534b-523c-4326-8598-b6bcdff4840f",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T07:18:00Z",
+    "soil_moisture": 12.36,
+    "temp_c": 18.7,
+    "battery_v": 3.82,
+    "metadata": {
+      "uuid": "31e2a62b-eddc-4ffa-8ad3-0f2e24e1b7a4",
+      "checksum_md5": "de4066edd1f194ce8f020aa02ce481df",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0006",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 6
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "be8de15a-a172-4029-8299-f1c00ba8da1b",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T07:31:00Z",
+    "soil_moisture": 11.95,
+    "temp_c": 38.63,
+    "battery_v": 3.66,
+    "metadata": {
+      "uuid": "d3b4c712-3981-4894-a1e0-b332e17fad93",
+      "checksum_md5": "7dfa95d03afc3ee61e44caf3c73b289e",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0007",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 7
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "0ae9c35a-63bb-4319-9748-0cba3b0153a7",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T07:44:00Z",
+    "soil_moisture": 43.96,
+    "temp_c": 26.56,
+    "battery_v": 4.18,
+    "metadata": {
+      "uuid": "0258e3b6-c533-4c5b-999c-ad1d9efd919c",
+      "checksum_md5": "ccd380879365fbaf7d457c1593a45303",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0008",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 8
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "7721d9e6-282b-462a-b51e-6616eae8b4d8",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T07:57:00Z",
+    "soil_moisture": 31.15,
+    "temp_c": 28.07,
+    "battery_v": 4.1,
+    "metadata": {
+      "uuid": "6c7d7692-267f-4ef8-89bd-f03ea57ccfdd",
+      "checksum_md5": "9d3a8ce3fab107406c0f0cd74fcc8f9d",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0009",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 9
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "9bf10ac7-586c-40a4-afe9-4668b1c5d401",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T08:10:00Z",
+    "soil_moisture": 10.68,
+    "temp_c": 8.2,
+    "battery_v": 3.51,
+    "metadata": {
+      "uuid": "34301ef1-7e07-4145-84b4-d380b3f731c6",
+      "checksum_md5": "366df8447826bf1f04b16414a97d09e3",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0010",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 10
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "4d8df67e-40d5-4554-809c-98060b3d653f",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T08:23:00Z",
+    "soil_moisture": 41.57,
+    "temp_c": 30.19,
+    "battery_v": 3.96,
+    "metadata": {
+      "uuid": "57f70929-e042-4769-8f8a-38cb50dde102",
+      "checksum_md5": "87fed0692dff8fa1efe753139f49d634",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0011",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 11
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "89509f12-3d08-422e-9dfb-d13ea2051813",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T08:36:00Z",
+    "soil_moisture": 21.03,
+    "temp_c": 27.84,
+    "battery_v": 4.06,
+    "metadata": {
+      "uuid": "ab57923b-5833-42e7-a03b-b7a6a5b817d7",
+      "checksum_md5": "a4da45f9d30430596efe46b1ff2417c2",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0012",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 12
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "584ac539-6349-457e-92b7-26e68da5f929",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T08:49:00Z",
+    "soil_moisture": 33.83,
+    "temp_c": 28.93,
+    "battery_v": 3.52,
+    "metadata": {
+      "uuid": "ece2ccff-d0a3-49fb-bf29-e56e1d134082",
+      "checksum_md5": "4e3903297d469727c3fc11da8d7a42ad",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0013",
+      "lineage": {
+        "sensor_row_id": 1,
+        "reading_row_id": 13
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "552547fa-dee6-4cb0-8821-0747c60253db",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T09:02:00Z",
+    "soil_moisture": 22.44,
+    "temp_c": 30.8,
+    "battery_v": 4.08,
+    "metadata": {
+      "uuid": "e56ed98e-4a91-4e95-a28d-ad810f8f6be4",
+      "checksum_md5": "8ac972ca439a7e69ba724d6343d999d5",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0014",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 14
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "386e8e39-ba84-4df2-a2be-4b9052ce6a52",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T09:15:00Z",
+    "soil_moisture": 12.7,
+    "temp_c": 16.46,
+    "battery_v": 4.15,
+    "metadata": {
+      "uuid": "58fa43a4-1a19-4b96-bc03-f01185541c01",
+      "checksum_md5": "10f741eeb65ccd6d23b404f5c1d1a673",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0015",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 15
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "644ce9df-b762-43e9-af6b-c75ca536e246",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T09:28:00Z",
+    "soil_moisture": 11.49,
+    "temp_c": 10.86,
+    "battery_v": 4.15,
+    "metadata": {
+      "uuid": "edfc97c5-a555-466f-b3f6-88186c83956f",
+      "checksum_md5": "390e8972377b1a75c0847559d48012fa",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0016",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 16
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "8fdbb45b-035d-4526-aa92-7f64ce1e0dc2",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T09:41:00Z",
+    "soil_moisture": 25.2,
+    "temp_c": 14.2,
+    "battery_v": 4.19,
+    "metadata": {
+      "uuid": "4abf7b83-ce9b-4ef1-bdb9-89408e6ab6ca",
+      "checksum_md5": "53b22d86b38ca29743cd8c66b04f6aad",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0017",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 17
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "432b2434-0225-4f66-bd23-a2f54bb4655b",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T09:54:00Z",
+    "soil_moisture": 38.9,
+    "temp_c": 32.95,
+    "battery_v": 4.16,
+    "metadata": {
+      "uuid": "bef8ff41-2ec4-4789-a33a-19273490bc14",
+      "checksum_md5": "817869196446a719a7fea4f2b0e7f480",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0018",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 18
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "9e4fdee4-bf1d-4d4a-bc48-9a008c77817f",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T10:07:00Z",
+    "soil_moisture": 20.7,
+    "temp_c": 11.29,
+    "battery_v": 3.8,
+    "metadata": {
+      "uuid": "a1153cab-abfe-4e81-998b-a99a7bc8abe6",
+      "checksum_md5": "0e73188a2ff9ef12f1e67aaa91b13e00",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0019",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 19
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "ffb40510-fccc-41a3-b68d-20cb6de80a4e",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T10:20:00Z",
+    "soil_moisture": 21.7,
+    "temp_c": 15.15,
+    "battery_v": 3.99,
+    "metadata": {
+      "uuid": "bdf8bc45-b488-47a8-84fc-38d59ea66983",
+      "checksum_md5": "2e9adfb92437235f45c3d47d0f926d20",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0020",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 20
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "d24aaaa5-a6b6-409e-aaa9-db927cac6c09",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T10:33:00Z",
+    "soil_moisture": 42.58,
+    "temp_c": 26.92,
+    "battery_v": 3.95,
+    "metadata": {
+      "uuid": "96295007-f91a-4e06-9f00-a2ce83715e09",
+      "checksum_md5": "14842b7e9c73da661d7353a6e22f521b",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0021",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 21
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "86bb3d2f-80bb-450e-b2a8-a3e9af4cc0c6",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T10:46:00Z",
+    "soil_moisture": 11.6,
+    "temp_c": 16.95,
+    "battery_v": 3.6,
+    "metadata": {
+      "uuid": "e6526633-bcb9-4b47-b881-51d69cbe2ecd",
+      "checksum_md5": "5b594593df62995997228301c3c5f616",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0022",
+      "lineage": {
+        "sensor_row_id": 1,
+        "reading_row_id": 22
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "1fe1d952-4594-446a-a71b-bea1260bd759",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T10:59:00Z",
+    "soil_moisture": 41.88,
+    "temp_c": 21.27,
+    "battery_v": 3.78,
+    "metadata": {
+      "uuid": "819109ec-f2ab-4d7b-87ed-0198fad26b5e",
+      "checksum_md5": "a6c9b031494d002f730d1cbad1e07b83",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0023",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 23
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "441088cf-4677-42d9-96bb-2b4dfe7c7f60",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T11:12:00Z",
+    "soil_moisture": 25.99,
+    "temp_c": 17.22,
+    "battery_v": 3.78,
+    "metadata": {
+      "uuid": "3a518762-2439-44e3-b205-58437e1eff57",
+      "checksum_md5": "d867d099ad0b469a8780e8fc5c1aff43",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0024",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 24
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "1e4b7509-148e-4bc9-b74b-657988fb3b78",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T11:25:00Z",
+    "soil_moisture": 37.65,
+    "temp_c": 31.91,
+    "battery_v": 4.14,
+    "metadata": {
+      "uuid": "0a6f3c8b-b5f0-4d56-bd0f-9c60f3e70f1d",
+      "checksum_md5": "da14cf19d4af85fbaabc217519ba7647",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0025",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 25
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "76ad6fec-9382-480c-a9d3-526e51408306",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T11:38:00Z",
+    "soil_moisture": 25.64,
+    "temp_c": 14.92,
+    "battery_v": 3.54,
+    "metadata": {
+      "uuid": "bc00741e-e8b1-4ad8-b4f9-e0ed087a7079",
+      "checksum_md5": "03a938db04c648bf946c76bcbe7a490e",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0026",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 26
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "8d55ca61-939d-4cc1-91b8-1569b057afa4",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T11:51:00Z",
+    "soil_moisture": 34.96,
+    "temp_c": 9.23,
+    "battery_v": 4.11,
+    "metadata": {
+      "uuid": "3abb2bd5-1b7e-426d-9feb-c770faa83683",
+      "checksum_md5": "03a240a2f82be679c199d5cd7837d0f3",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0027",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 27
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "15f60a74-6ba1-4664-8812-531ac1ed736a",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T12:04:00Z",
+    "soil_moisture": 29.4,
+    "temp_c": 24.56,
+    "battery_v": 4.02,
+    "metadata": {
+      "uuid": "fc9679f1-6c78-4017-be56-e282405f8ac3",
+      "checksum_md5": "462a6ba71ea77084c3a4ff62f189bca4",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0028",
+      "lineage": {
+        "sensor_row_id": 1,
+        "reading_row_id": 28
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "d7991c81-8505-46aa-a5a1-d17b3f255c10",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T12:17:00Z",
+    "soil_moisture": 15.46,
+    "temp_c": 26.15,
+    "battery_v": 4.09,
+    "metadata": {
+      "uuid": "fed1d298-21de-4461-83c3-cf008df24d55",
+      "checksum_md5": "6bc74852f2366079604b14379709fb59",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0029",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 29
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "760c0e47-6e55-4f94-8101-91b67a0cbd2a",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T12:30:00Z",
+    "soil_moisture": 36.51,
+    "temp_c": 27.52,
+    "battery_v": 3.94,
+    "metadata": {
+      "uuid": "6003ac9e-8871-4d67-b902-9dfdc1c86c05",
+      "checksum_md5": "7772cd75610130e7e4fc259b1c74bee2",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0030",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 30
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "ac00ada6-4a49-41fe-8c90-161e3e173cf0",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T12:43:00Z",
+    "soil_moisture": 38.36,
+    "temp_c": 10.25,
+    "battery_v": 3.7,
+    "metadata": {
+      "uuid": "3dee748a-f59d-48f2-b481-98648175a6ee",
+      "checksum_md5": "b4e43ade90f6efc19ae279ecde2b81a7",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0031",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 31
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "419fd5a4-9a86-4130-883c-465c1ca4d192",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T12:56:00Z",
+    "soil_moisture": 13.08,
+    "temp_c": 23.15,
+    "battery_v": 3.84,
+    "metadata": {
+      "uuid": "8fcc2007-8e59-465c-b527-505e03239308",
+      "checksum_md5": "0cc53948b1812148aa6070538054099d",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0032",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 32
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "b8553435-8ece-425d-8869-193a58a7cc5b",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T13:09:00Z",
+    "soil_moisture": 40.81,
+    "temp_c": 14.85,
+    "battery_v": 4.15,
+    "metadata": {
+      "uuid": "bd7db7cd-c0d7-4bb7-a0f7-67ec5dd49084",
+      "checksum_md5": "a949380ae68fc112b7ba0bd6c1b6e590",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0033",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 33
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "97a39ea1-c933-413a-b8aa-2089a47a1e7b",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T13:22:00Z",
+    "soil_moisture": 32.72,
+    "temp_c": 31.27,
+    "battery_v": 3.74,
+    "metadata": {
+      "uuid": "e15e9c6b-e9cf-485c-b12d-d41079a63af5",
+      "checksum_md5": "a8596c5a1a1e52a3b38596b27ae887d3",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0034",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 34
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "1ea4dbc4-8cbd-47d0-9d51-5ca63c3dea18",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T13:35:00Z",
+    "soil_moisture": 33.67,
+    "temp_c": 22.5,
+    "battery_v": 4.15,
+    "metadata": {
+      "uuid": "3ccf9acb-570a-451d-99de-a4262bb3b47c",
+      "checksum_md5": "8eb86831be73d74388f4ae57a19c102d",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0035",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 35
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "952e626f-e1e8-4c9a-abb5-970d92f54cc6",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T13:48:00Z",
+    "soil_moisture": 26.26,
+    "temp_c": 12.64,
+    "battery_v": 4.15,
+    "metadata": {
+      "uuid": "49dca463-2a0c-46ee-bf5a-e939d25ec57c",
+      "checksum_md5": "c5de64d3aeac0fd0f778cc3ae7f93373",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0036",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 36
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "acbfced6-a61f-4829-b948-4a9239502dcf",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T14:01:00Z",
+    "soil_moisture": 16.97,
+    "temp_c": 21.98,
+    "battery_v": 3.7,
+    "metadata": {
+      "uuid": "8561a237-0eca-4c16-8244-0a4270f5baa9",
+      "checksum_md5": "33c3d6401d96a5df69b31787e8e803bc",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0037",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 37
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "6f5af07c-ccf1-482f-94e3-55514730d86f",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T14:14:00Z",
+    "soil_moisture": 40.26,
+    "temp_c": 16.74,
+    "battery_v": 3.58,
+    "metadata": {
+      "uuid": "27762faf-ad15-4bc2-aa31-49eee97bc0b1",
+      "checksum_md5": "38221a8dc026918a55f7f1653ffe4cc9",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0038",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 38
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "5188e740-33d6-4071-a3ce-3cc328951c56",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T14:27:00Z",
+    "soil_moisture": 37.62,
+    "temp_c": 28.86,
+    "battery_v": 3.75,
+    "metadata": {
+      "uuid": "e4460906-e206-4cfc-8955-ecdd3b19f0d3",
+      "checksum_md5": "c842832e4a146b3c105197dc2fb77998",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0039",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 39
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "60a0c4cb-862a-469e-891e-76dfa8d88503",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T14:40:00Z",
+    "soil_moisture": 32.17,
+    "temp_c": 19.87,
+    "battery_v": 3.63,
+    "metadata": {
+      "uuid": "4f21bc7f-695e-4a01-b444-c7bc27a66640",
+      "checksum_md5": "6c4a6a72f8b6c6153c65f1c1af98525c",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0040",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 40
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "cd9a8f44-e885-412f-a883-84334095a406",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T14:53:00Z",
+    "soil_moisture": 25.76,
+    "temp_c": 32.02,
+    "battery_v": 4.17,
+    "metadata": {
+      "uuid": "28ca0c81-90cf-4a3f-b703-d7a8f13eec9e",
+      "checksum_md5": "a16dd193b740f7691bd2b78fcec31ed8",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0041",
+      "lineage": {
+        "sensor_row_id": 1,
+        "reading_row_id": 41
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "2939583c-9b1f-4a9e-8663-d2723308d60e",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T15:06:00Z",
+    "soil_moisture": 27.46,
+    "temp_c": 18.36,
+    "battery_v": 4.07,
+    "metadata": {
+      "uuid": "770a1e6e-08e0-4c39-beb2-f77e3a52b1f1",
+      "checksum_md5": "1553df5905ecf4e0ed2c02bad219841d",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0042",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 42
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "424bdea1-50fb-405f-a617-18331bcce3dc",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T15:19:00Z",
+    "soil_moisture": 26.73,
+    "temp_c": 18.08,
+    "battery_v": 3.87,
+    "metadata": {
+      "uuid": "bf124e68-e8a0-4ede-8c41-64f72c74d9b8",
+      "checksum_md5": "c7f5c0a12a89236ed808b72072384f06",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0043",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 43
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "ed1d496b-4b9b-4710-a3d8-e51dc673d0c5",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T15:32:00Z",
+    "soil_moisture": 21.82,
+    "temp_c": 27.63,
+    "battery_v": 3.64,
+    "metadata": {
+      "uuid": "884e31f2-d064-4185-bf86-7332e958b355",
+      "checksum_md5": "fe6dc476168c31aab0111416d8fa7e61",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0044",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 44
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "818d778f-6c13-4c67-9643-a553f36a9110",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T15:45:00Z",
+    "soil_moisture": 44.38,
+    "temp_c": 32.37,
+    "battery_v": 3.95,
+    "metadata": {
+      "uuid": "cd961536-0df4-4cdf-8abe-95fa06a2283d",
+      "checksum_md5": "2bb74fc4c965a0f298d0b72948cd2070",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0045",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 45
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "aaa0897f-962c-4168-b39f-1cba38f16ead",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T15:58:00Z",
+    "soil_moisture": 34.67,
+    "temp_c": 13.31,
+    "battery_v": 3.85,
+    "metadata": {
+      "uuid": "75848fe8-3d84-4307-bb37-d1dfc86ca01f",
+      "checksum_md5": "0b5ecd75f9971a90c64c813b508b74bc",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0046",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 46
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "00ba4660-1abf-4bcd-a3c9-df7d4384edbc",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T16:11:00Z",
+    "soil_moisture": 16.55,
+    "temp_c": 22.26,
+    "battery_v": 3.98,
+    "metadata": {
+      "uuid": "77269d37-4f5e-49cf-b3eb-0f7950765fbe",
+      "checksum_md5": "508c201e64190880171b5d67f22cdd8c",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0047",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 47
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "da085024-5aca-472a-8dbc-4217096bfe3b",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T16:24:00Z",
+    "soil_moisture": 28.46,
+    "temp_c": 11.44,
+    "battery_v": 4.04,
+    "metadata": {
+      "uuid": "c0d7b7be-6d4a-4357-b09e-5acc836303ac",
+      "checksum_md5": "c905458e37cceeebbcfb2050d5208db8",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0048",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 48
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "4a73528c-e041-4acf-895d-bfa84f8a6c28",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T16:37:00Z",
+    "soil_moisture": 26.54,
+    "temp_c": 27.04,
+    "battery_v": 3.56,
+    "metadata": {
+      "uuid": "d3e4f50a-05aa-4064-b14b-8f08ad338e67",
+      "checksum_md5": "199add31671ad85062a31c1a6ad0a784",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0049",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 49
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "f840dc12-62fc-4e3a-b294-1f5e83016b40",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T16:50:00Z",
+    "soil_moisture": 44.69,
+    "temp_c": 22.13,
+    "battery_v": 3.92,
+    "metadata": {
+      "uuid": "b12ca9ad-a380-4518-bb3c-e59310bec8ae",
+      "checksum_md5": "0f9226c469ae29aa33f2f062ea96cdff",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0050",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 50
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "6a251d31-9f48-4658-9bdc-6b27e73fd6a1",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T17:03:00Z",
+    "soil_moisture": 26.82,
+    "temp_c": 18.31,
+    "battery_v": 4,
+    "metadata": {
+      "uuid": "170c52fc-36b2-459a-ac75-406f2e6afa1f",
+      "checksum_md5": "885d739de942deb6306a3e1828104b52",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0051",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 51
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "e63094e9-e685-409f-a99d-0e2bb3f04248",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T17:16:00Z",
+    "soil_moisture": 42.94,
+    "temp_c": 17.01,
+    "battery_v": 3.81,
+    "metadata": {
+      "uuid": "b0de9711-d0d4-4261-907c-3ddb4b8bb0f3",
+      "checksum_md5": "189458f899556f6e036926bbe09bae3e",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0052",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 52
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "1b8598c6-e112-49d0-8ed5-28777b962db2",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T17:29:00Z",
+    "soil_moisture": 21.32,
+    "temp_c": 12.33,
+    "battery_v": 3.72,
+    "metadata": {
+      "uuid": "1c0c5157-aa61-4285-8560-1f23e3a6d822",
+      "checksum_md5": "d0b7427ffbda47b81afca82b10b1ed8a",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0053",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 53
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "872fdcb7-164c-4128-824a-e42bc56bb694",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T17:42:00Z",
+    "soil_moisture": 44.48,
+    "temp_c": 25.95,
+    "battery_v": 3.88,
+    "metadata": {
+      "uuid": "19f0c6db-07c6-4340-9311-2d54b5fd7fd1",
+      "checksum_md5": "1b0a0df38a9e487adb3e85466c34015d",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0054",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 54
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "10242541-af3e-4a30-a58f-7efb900e5d43",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T17:55:00Z",
+    "soil_moisture": 24.99,
+    "temp_c": 24.61,
+    "battery_v": 4.05,
+    "metadata": {
+      "uuid": "8954624e-4a52-4e15-a938-2ff1bc0611ca",
+      "checksum_md5": "92c38ced4ef9ea3ec012d7a1dfd0a3ab",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0055",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 55
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "6feb9726-09a9-4d81-845d-f6863e7f796e",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T18:08:00Z",
+    "soil_moisture": 40.3,
+    "temp_c": 8.68,
+    "battery_v": 3.69,
+    "metadata": {
+      "uuid": "db0ae99b-15f1-4d7f-bad7-4ab25c290654",
+      "checksum_md5": "5719df9527d463c1c01119aaa8196600",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0056",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 56
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "66b0aceb-0699-4df3-9d9f-fee19d5e06ab",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T18:21:00Z",
+    "soil_moisture": 15.92,
+    "temp_c": 23.08,
+    "battery_v": 3.55,
+    "metadata": {
+      "uuid": "ba7b5004-59aa-41bb-8930-0c537949b533",
+      "checksum_md5": "ae0ad71f792c91a9621fd7a24fd8764a",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0057",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 57
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "4ceebab2-17c0-4886-ae15-6865bd09fd48",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T18:34:00Z",
+    "soil_moisture": 32.62,
+    "temp_c": 33.16,
+    "battery_v": 4.15,
+    "metadata": {
+      "uuid": "79fa5c7a-5f59-4071-977e-2921a8cb4c14",
+      "checksum_md5": "bbdce0832b622d0531673f653c78ceb6",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0058",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 58
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "a64d12da-ff0d-4cf3-8450-f506e8025a5e",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T18:47:00Z",
+    "soil_moisture": 44.59,
+    "temp_c": 37.76,
+    "battery_v": 3.54,
+    "metadata": {
+      "uuid": "88c44e60-03df-4434-a550-125d26786c7b",
+      "checksum_md5": "d9ea2cfa4a2be6489845771ffe33f098",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0059",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 59
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "bfeef010-a582-4119-a5b3-65cfb826785f",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T19:00:00Z",
+    "soil_moisture": 40.05,
+    "temp_c": 28.64,
+    "battery_v": 3.75,
+    "metadata": {
+      "uuid": "86ab3daf-54eb-4523-8972-f17a5e23a370",
+      "checksum_md5": "fa58ed5613ab91841b3c63877d3ebf54",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0060",
+      "lineage": {
+        "sensor_row_id": 1,
+        "reading_row_id": 60
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "6407d9f3-d6bf-41f5-b229-2d7f397435dd",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T19:13:00Z",
+    "soil_moisture": 11.59,
+    "temp_c": 14.14,
+    "battery_v": 3.77,
+    "metadata": {
+      "uuid": "052f2bcf-16c4-4e11-b9f9-03b033934e9f",
+      "checksum_md5": "e47b20652a001690c0e11ff39c88b113",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0061",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 61
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "ae947193-1cf4-4e60-920d-93acaac2df82",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T19:26:00Z",
+    "soil_moisture": 20.4,
+    "temp_c": 31.52,
+    "battery_v": 3.76,
+    "metadata": {
+      "uuid": "5b2f2800-3c87-44bd-9f3c-1fed0a16875e",
+      "checksum_md5": "672a9ccb61d96865619093e325289398",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0062",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 62
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "e23e7cf6-d312-4b49-ab99-6def70120b96",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T19:39:00Z",
+    "soil_moisture": 36.34,
+    "temp_c": 32.45,
+    "battery_v": 3.88,
+    "metadata": {
+      "uuid": "cfc3a72a-b0c8-4f77-b0de-512738b6898a",
+      "checksum_md5": "239769e47d0164f023a8e202b2ead872",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0063",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 63
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "ed791c86-4dea-46a8-ae89-61a10a53a4ed",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T19:52:00Z",
+    "soil_moisture": 27.58,
+    "temp_c": 12.46,
+    "battery_v": 3.59,
+    "metadata": {
+      "uuid": "faae186b-8d85-4273-8209-475dc4ee9e03",
+      "checksum_md5": "c8e875ac88a5004bfdabcacf4699b6fa",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0064",
+      "lineage": {
+        "sensor_row_id": 1,
+        "reading_row_id": 64
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "99aa9178-23a2-4d25-aeaf-683b7a8ccf88",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T20:05:00Z",
+    "soil_moisture": 30.04,
+    "temp_c": 33.78,
+    "battery_v": 3.64,
+    "metadata": {
+      "uuid": "e4164b34-343d-49bd-b36e-9c934c2781cf",
+      "checksum_md5": "e2f78ac7fee96d56a908a85a57c85b9b",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0065",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 65
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "5ea55061-ba0a-4cce-8a71-1b0b97cc1cf5",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T20:18:00Z",
+    "soil_moisture": 39.31,
+    "temp_c": 23.64,
+    "battery_v": 3.83,
+    "metadata": {
+      "uuid": "cb082844-88d0-4d50-a17d-7aaf9cdd96b4",
+      "checksum_md5": "0496c4808cb4f01933efeb5316aa9832",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0066",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 66
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "e052023c-24c1-443c-9921-bbe298f135c2",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T20:31:00Z",
+    "soil_moisture": 26.87,
+    "temp_c": 21.86,
+    "battery_v": 3.66,
+    "metadata": {
+      "uuid": "bb222397-9e2e-4e3d-8183-2ee9b5001618",
+      "checksum_md5": "41be65a0ca122a6b5abc8a32b92b6538",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0067",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 67
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "9c1a6dbb-34cf-4864-a38f-c597945e8039",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T20:44:00Z",
+    "soil_moisture": 36.99,
+    "temp_c": 30.79,
+    "battery_v": 4.13,
+    "metadata": {
+      "uuid": "12019ab2-2c19-4e19-ab94-5780d080e6ec",
+      "checksum_md5": "4987a9e9a14b5d2bb382f8a73adb0c60",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0068",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 68
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "cace0f0a-b67b-4874-95b9-32ba4237bf2b",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T20:57:00Z",
+    "soil_moisture": 40.94,
+    "temp_c": 18.22,
+    "battery_v": 3.93,
+    "metadata": {
+      "uuid": "7f1bcd98-e47a-4bc2-850f-0afb3691277f",
+      "checksum_md5": "88d9a89d9e4631cb1b49e69180f0c131",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0069",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 69
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "8a3080d9-03fa-48cc-882a-8010122caf9f",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T21:10:00Z",
+    "soil_moisture": 26.67,
+    "temp_c": 36.9,
+    "battery_v": 3.66,
+    "metadata": {
+      "uuid": "cbd7db62-1016-4bb5-8091-e698c08945c6",
+      "checksum_md5": "eae3380faf8144c29479f6cd23cd00a4",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0070",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 70
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "1b07eca9-d777-4f84-9059-9eb800ece927",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T21:23:00Z",
+    "soil_moisture": 31.49,
+    "temp_c": 35.64,
+    "battery_v": 3.59,
+    "metadata": {
+      "uuid": "f8b4bb0e-0c5c-4841-be31-93b4345e550a",
+      "checksum_md5": "06b5df189fac934f499429621999644c",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0071",
+      "lineage": {
+        "sensor_row_id": 1,
+        "reading_row_id": 71
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "bc739f0e-fe8d-45e6-9cae-7e77523babf2",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T21:36:00Z",
+    "soil_moisture": 20.8,
+    "temp_c": 17.5,
+    "battery_v": 3.62,
+    "metadata": {
+      "uuid": "a7dbf9ec-6c67-4f48-880a-b2fc77a5991c",
+      "checksum_md5": "6796227d11f12c959f2b278f44e8f0ec",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0072",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 72
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "c8130fb6-f4b5-4cfc-a410-f50ad90eda7d",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T21:49:00Z",
+    "soil_moisture": 13.52,
+    "temp_c": 36.46,
+    "battery_v": 3.96,
+    "metadata": {
+      "uuid": "e011bcc3-f2ec-4cfc-98bf-c58d83ad3d1d",
+      "checksum_md5": "bb2c377bdb8e6e29c2e435ceb09c5de2",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0073",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 73
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "b1b9e873-15fb-498f-8ab2-20f038b0fad4",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T22:02:00Z",
+    "soil_moisture": 37.46,
+    "temp_c": 36.07,
+    "battery_v": 3.78,
+    "metadata": {
+      "uuid": "c2688003-0bdd-4dca-a004-2b6fd413efcd",
+      "checksum_md5": "b034856923ac82e194ac790cf367dc90",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0074",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 74
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "7e00fbb5-b7b8-4b18-bba3-797711b1db2e",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T22:15:00Z",
+    "soil_moisture": 33.85,
+    "temp_c": 14.88,
+    "battery_v": 3.5,
+    "metadata": {
+      "uuid": "0d4814ee-b4dd-48f3-a106-2ae86bdea4b9",
+      "checksum_md5": "a85d223402f71a54bbdd728976bfabf2",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0075",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 75
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "620dcc52-2028-49e2-b387-598e37ca252e",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T22:28:00Z",
+    "soil_moisture": 12.67,
+    "temp_c": 11.95,
+    "battery_v": 4.03,
+    "metadata": {
+      "uuid": "c90212c8-d56a-468d-8928-54ac45347116",
+      "checksum_md5": "de7b51dcf996e053ce0f417d34489e95",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0076",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 76
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "a1fee4c3-5d80-4e29-9409-5b59ff30e23d",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T22:41:00Z",
+    "soil_moisture": 11.78,
+    "temp_c": 14.04,
+    "battery_v": 3.57,
+    "metadata": {
+      "uuid": "7cca5fd1-77b2-4ef8-9274-3a091d5af427",
+      "checksum_md5": "214487261ecaffebb98d41e6f3415103",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.809Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0077",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 77
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "b80c2482-d507-4f48-8096-ab35373b97a2",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T22:54:00Z",
+    "soil_moisture": 15.52,
+    "temp_c": 12.81,
+    "battery_v": 3.52,
+    "metadata": {
+      "uuid": "b91db724-080a-4da3-b009-1db3d110e535",
+      "checksum_md5": "20e4164ae1c77e56b7599aabcd994c49",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0078",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 78
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "49454ff3-c223-4e9d-aa22-f5b2e7c8d73b",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T23:07:00Z",
+    "soil_moisture": 23.01,
+    "temp_c": 12.29,
+    "battery_v": 3.7,
+    "metadata": {
+      "uuid": "842e2767-32f7-4dd6-a472-4c572f5621df",
+      "checksum_md5": "949482294fa0eedf2640a4dad2e8307f",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0079",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 79
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "1967c81b-522d-43ac-a957-4938f6390150",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T23:20:00Z",
+    "soil_moisture": 12.37,
+    "temp_c": 22.43,
+    "battery_v": 3.58,
+    "metadata": {
+      "uuid": "bd0dafcc-592e-4e5c-be81-1bfcfec12694",
+      "checksum_md5": "d5f1fa5ac9c63a766908176348c1f2d9",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0080",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 80
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "a6e7be09-bd26-4e80-a694-c706e6aff8ea",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T23:33:00Z",
+    "soil_moisture": 31.1,
+    "temp_c": 20.16,
+    "battery_v": 3.82,
+    "metadata": {
+      "uuid": "23240429-6be2-47aa-bc09-c2d51fc5f38f",
+      "checksum_md5": "1d3e41f6a2035f60f41dd39da5e61d31",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0081",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 81
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "ba4d53cb-7a4a-49fb-acaf-ebf174d54012",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T23:46:00Z",
+    "soil_moisture": 23.02,
+    "temp_c": 19.72,
+    "battery_v": 3.66,
+    "metadata": {
+      "uuid": "7459fec7-3016-4a8f-b13a-68bc430cc5ca",
+      "checksum_md5": "4ce3f0fbc321cd05a6be02d6ada01965",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0082",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 82
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "acc21a5f-3d08-473f-ad0d-670525f02730",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T23:59:00Z",
+    "soil_moisture": 37.93,
+    "temp_c": 27.66,
+    "battery_v": 3.81,
+    "metadata": {
+      "uuid": "1c8e8052-bbb8-425d-8de9-d5bb74ab7340",
+      "checksum_md5": "d5c79519c10fab67811e7f0a8ea3a8b6",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0083",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 83
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "5685c360-558b-4422-a40c-338142f64519",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-02T00:12:00Z",
+    "soil_moisture": 44.82,
+    "temp_c": 9.56,
+    "battery_v": 4,
+    "metadata": {
+      "uuid": "63f3e16c-66f9-4af0-ad02-5cfc12ae2ef7",
+      "checksum_md5": "eda0f94b1120cf71f1beb2a26f92a0e3",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0084",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 84
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "99b842b4-be44-49c9-9b13-b44595f77aa4",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-02T00:25:00Z",
+    "soil_moisture": 13.25,
+    "temp_c": 21.91,
+    "battery_v": 4.2,
+    "metadata": {
+      "uuid": "6fb0cd66-fd86-424e-ba13-fcb3e5d4d3e1",
+      "checksum_md5": "fee81626dd04941e91acc5c44c8e9bac",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0085",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 85
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "3d9f8112-cf8a-41fb-8da7-c4747196784c",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-02T00:38:00Z",
+    "soil_moisture": 30.4,
+    "temp_c": 37.84,
+    "battery_v": 3.82,
+    "metadata": {
+      "uuid": "5b48c087-5e32-4755-886d-4fff43a7a3ae",
+      "checksum_md5": "bfaefe14244132f64501d704b3b349ac",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0086",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 86
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "5a34856e-c96f-4ef9-9a8d-10835468f9f9",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-02T00:51:00Z",
+    "soil_moisture": 17.14,
+    "temp_c": 34.32,
+    "battery_v": 4.17,
+    "metadata": {
+      "uuid": "c5c6fdec-5445-4471-960f-377158076e3f",
+      "checksum_md5": "ffd31db360a80a028b76f2ac6b5ef471",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0087",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 87
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "722cc094-1458-48cb-bc7a-b48032c44316",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-02T01:04:00Z",
+    "soil_moisture": 10.35,
+    "temp_c": 34.21,
+    "battery_v": 3.64,
+    "metadata": {
+      "uuid": "6b8d5a80-5f90-455d-872c-52f1e6727ce1",
+      "checksum_md5": "128629ccfca1bf75563263b3bfd4a3e5",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0088",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 88
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "f40c5004-a313-429b-a562-79e31fcb0332",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-02T01:17:00Z",
+    "soil_moisture": 18.58,
+    "temp_c": 21.32,
+    "battery_v": 3.89,
+    "metadata": {
+      "uuid": "eb9ba83a-2e29-4213-9c06-20b86458bd93",
+      "checksum_md5": "b8b8129f830266ffb35540291e71cfec",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0089",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 89
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "4e9797f2-d9b1-4b8a-b377-15ab916dc1c0",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-02T01:30:00Z",
+    "soil_moisture": 20.85,
+    "temp_c": 17.46,
+    "battery_v": 4.11,
+    "metadata": {
+      "uuid": "c27ad46e-ec99-4d88-b07d-23148c7e1494",
+      "checksum_md5": "6bab25ef7ef4251ceee63a7024d382e4",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0090",
+      "lineage": {
+        "sensor_row_id": 1,
+        "reading_row_id": 90
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "a211519f-d744-48e8-ad23-7e4c998afcaa",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-02T01:43:00Z",
+    "soil_moisture": 24.69,
+    "temp_c": 25.65,
+    "battery_v": 3.6,
+    "metadata": {
+      "uuid": "3cfc3131-d810-480b-b791-5ecf7dadc734",
+      "checksum_md5": "907da4465deb6f0d985e9b2ec011f958",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0091",
+      "lineage": {
+        "sensor_row_id": 6,
+        "reading_row_id": 91
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "6663244d-8f72-4812-a21f-a2e1e1cb6e85",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-02T01:56:00Z",
+    "soil_moisture": 24.67,
+    "temp_c": 9.05,
+    "battery_v": 4.11,
+    "metadata": {
+      "uuid": "7662f37d-b473-410c-8a30-66447c372c7b",
+      "checksum_md5": "1da1f7cb8e6423afda13b5fd6eb40404",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0092",
+      "lineage": {
+        "sensor_row_id": 4,
+        "reading_row_id": 92
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "9f075973-3473-4bce-a755-b0c423976ec0",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-02T02:09:00Z",
+    "soil_moisture": 13.99,
+    "temp_c": 35.9,
+    "battery_v": 4.08,
+    "metadata": {
+      "uuid": "4a7fc474-09a8-4f23-b33f-307dbe202633",
+      "checksum_md5": "8711480e453422a3d14e4b495b357e45",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0093",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 93
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "77359024-74ca-4d9e-a0b1-a0a1c1e20a4b",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-02T02:22:00Z",
+    "soil_moisture": 14.57,
+    "temp_c": 20,
+    "battery_v": 3.95,
+    "metadata": {
+      "uuid": "ebe7fd94-7474-4395-9e76-07cdb4af5777",
+      "checksum_md5": "3733d7b2c73fec4b3efbaa2344b516b1",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0094",
+      "lineage": {
+        "sensor_row_id": 1,
+        "reading_row_id": 94
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "dc38ce4b-9145-4831-a92d-b8f89f0f1b9e",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-02T02:35:00Z",
+    "soil_moisture": 33.03,
+    "temp_c": 20.17,
+    "battery_v": 3.56,
+    "metadata": {
+      "uuid": "be2e209d-894b-4c50-b316-bdeca6e62d5e",
+      "checksum_md5": "b7836464e12d3374c9dc01cc5ee1d000",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0095",
+      "lineage": {
+        "sensor_row_id": 5,
+        "reading_row_id": 95
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "a5d7d5d8-425b-4382-ad8b-6257259dce49",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-02T02:48:00Z",
+    "soil_moisture": 42.31,
+    "temp_c": 15.6,
+    "battery_v": 4.01,
+    "metadata": {
+      "uuid": "10d3c2a9-8a38-472a-9d84-949debc438b0",
+      "checksum_md5": "e2dbe2903501c0df3018ee5b8a6e425a",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0096",
+      "lineage": {
+        "sensor_row_id": 2,
+        "reading_row_id": 96
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "4602405c-7f35-4ae2-b83d-86d548ecac98",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-02T03:01:00Z",
+    "soil_moisture": 42.37,
+    "temp_c": 36.73,
+    "battery_v": 3.65,
+    "metadata": {
+      "uuid": "dbc327b2-52ad-4feb-a1b1-81cf31e57fcf",
+      "checksum_md5": "950411c1102f6c538f4bc8cefb73cec4",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0097",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 97
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "aa20708a-2c75-4c93-8ab8-f602bbd19d3c",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-02T03:14:00Z",
+    "soil_moisture": 35.3,
+    "temp_c": 19.21,
+    "battery_v": 3.83,
+    "metadata": {
+      "uuid": "e9a35a64-5f4e-4d22-8377-b94ab79eda84",
+      "checksum_md5": "ccd70a26d7db7efd6dac20cd26b01925",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0098",
+      "lineage": {
+        "sensor_row_id": 7,
+        "reading_row_id": 98
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "50ab6afe-4a70-44a2-b03d-bfbc96d00d16",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-02T03:27:00Z",
+    "soil_moisture": 38.69,
+    "temp_c": 18.67,
+    "battery_v": 3.62,
+    "metadata": {
+      "uuid": "54166703-914a-471e-b41b-a6cc5a8c7ce8",
+      "checksum_md5": "167ec4210dbb8b880e88683feb86af59",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0099",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 99
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  },
+  {
+    "_id": "80171645-5b25-4113-8636-175f5299ad1a",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-02T03:40:00Z",
+    "soil_moisture": 15.01,
+    "temp_c": 14.13,
+    "battery_v": 3.79,
+    "metadata": {
+      "uuid": "315cf66a-2b45-470f-ac87-b529af7e0421",
+      "checksum_md5": "6db950e02ec558c72d196428c4830555",
+      "author": "Shreyas Alimath",
+      "sync_time_utc": "2025-11-25T03:01:47.810Z",
+      "source_db": "agri_prod_sql",
+      "source_tables": [
+        "sql_sensors",
+        "sql_readings_100rows"
+      ],
+      "ingest_batch_id": "BATCH-0100",
+      "lineage": {
+        "sensor_row_id": 3,
+        "reading_row_id": 100
+      },
+      "units": {
+        "soil_moisture": "%",
+        "temp_c": "°C",
+        "battery_v": "V"
+      },
+      "quality_flags": {
+        "completeness": "complete",
+        "sensor_status": "OK"
+      }
+    }
+  }
+]

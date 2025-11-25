@@ -1,0 +1,3214 @@
+{
+  "readings_FARM-003_2025-11-01": [
+    {
+      "_id": "3b2428d5-afb5-4e5e-ac82-d5451768fbf2",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T06:13:00Z",
+      "soil_moisture": 41.09,
+      "temp_c": 29.14,
+      "battery_v": 3.53,
+      "uuid": "3b2428d5-afb5-4e5e-ac82-d5451768fbf2",
+      "checksum_md5": "15530b174a5fcabec83807d8721ae024",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "d2c6b838-fe61-48bc-8c90-995b2384900e",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T06:26:00Z",
+      "soil_moisture": 25.7,
+      "temp_c": 21.29,
+      "battery_v": 3.79,
+      "uuid": "d2c6b838-fe61-48bc-8c90-995b2384900e",
+      "checksum_md5": "c61fd7dfb465ecedbe62d43162cb1b7f",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "c8463e74-b997-4f1f-ba99-87d4c26bd0c4",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T07:44:00Z",
+      "soil_moisture": 43.96,
+      "temp_c": 26.56,
+      "battery_v": 4.18,
+      "uuid": "c8463e74-b997-4f1f-ba99-87d4c26bd0c4",
+      "checksum_md5": "6cd6a91a9735bd81180958621692df7c",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "8099a6ed-3bc1-49f0-a3f8-700562950db7",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T07:57:00Z",
+      "soil_moisture": 31.15,
+      "temp_c": 28.07,
+      "battery_v": 4.1,
+      "uuid": "8099a6ed-3bc1-49f0-a3f8-700562950db7",
+      "checksum_md5": "b8c7bc12019076d1ec4de3024c7d53f3",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "ac8b09e3-702e-4a48-897d-2fda83e927b9",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T08:10:00Z",
+      "soil_moisture": 10.68,
+      "temp_c": 8.2,
+      "battery_v": 3.51,
+      "uuid": "ac8b09e3-702e-4a48-897d-2fda83e927b9",
+      "checksum_md5": "c0c1547762654de97b0b04ab88199f07",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "49c10ab9-0e49-4ee0-b5c8-5df6de816a93",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T08:23:00Z",
+      "soil_moisture": 41.57,
+      "temp_c": 30.19,
+      "battery_v": 3.96,
+      "uuid": "49c10ab9-0e49-4ee0-b5c8-5df6de816a93",
+      "checksum_md5": "38f8c875d3cb331ee87907d6d136612e",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "b76031ca-2b2b-477f-a721-a93c14224b94",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T09:41:00Z",
+      "soil_moisture": 25.2,
+      "temp_c": 14.2,
+      "battery_v": 4.19,
+      "uuid": "b76031ca-2b2b-477f-a721-a93c14224b94",
+      "checksum_md5": "03c1315e0f43999d3a21131e3dcff675",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "624713ed-2cbb-4a0e-ae7b-2ddfb29e36f7",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T09:54:00Z",
+      "soil_moisture": 38.9,
+      "temp_c": 32.95,
+      "battery_v": 4.16,
+      "uuid": "624713ed-2cbb-4a0e-ae7b-2ddfb29e36f7",
+      "checksum_md5": "33c8e6b2bf575dd6e2c3a28e3317cd0b",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "3992d8c4-31df-471b-b974-7f33ccb9b936",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T11:12:00Z",
+      "soil_moisture": 25.99,
+      "temp_c": 17.22,
+      "battery_v": 3.78,
+      "uuid": "3992d8c4-31df-471b-b974-7f33ccb9b936",
+      "checksum_md5": "93d0d9f1bd3b0d6757a657bd5a5f3c2a",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "a81ed44b-68c6-4c87-8afd-b4c305b65d8a",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T11:38:00Z",
+      "soil_moisture": 25.64,
+      "temp_c": 14.92,
+      "battery_v": 3.54,
+      "uuid": "a81ed44b-68c6-4c87-8afd-b4c305b65d8a",
+      "checksum_md5": "c94701aae2b59dfb6d11166d37d49902",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "678c1357-a2df-465e-868c-fae682766cef",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T13:09:00Z",
+      "soil_moisture": 40.81,
+      "temp_c": 14.85,
+      "battery_v": 4.15,
+      "uuid": "678c1357-a2df-465e-868c-fae682766cef",
+      "checksum_md5": "9ef84f1b16ddb8876742f91fbb1c88a0",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "1574ec2f-70a5-4acd-81bf-db5e3b0e4ebe",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T13:22:00Z",
+      "soil_moisture": 32.72,
+      "temp_c": 31.27,
+      "battery_v": 3.74,
+      "uuid": "1574ec2f-70a5-4acd-81bf-db5e3b0e4ebe",
+      "checksum_md5": "ac14e5f474ad58713f09e1f070c743d3",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "db58f101-3dfd-409e-b610-93ea095bbf4c",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T13:35:00Z",
+      "soil_moisture": 33.67,
+      "temp_c": 22.5,
+      "battery_v": 4.15,
+      "uuid": "db58f101-3dfd-409e-b610-93ea095bbf4c",
+      "checksum_md5": "4c0fed9c73dca7bc92cf5dbed30d1c45",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "c9132250-f2c0-40f4-a530-42308924f211",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T13:48:00Z",
+      "soil_moisture": 26.26,
+      "temp_c": 12.64,
+      "battery_v": 4.15,
+      "uuid": "c9132250-f2c0-40f4-a530-42308924f211",
+      "checksum_md5": "0a71cd8d972f7067f67e361a27341e18",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "a318c1e4-d734-463d-bd26-bd0a0fe69996",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T14:27:00Z",
+      "soil_moisture": 37.62,
+      "temp_c": 28.86,
+      "battery_v": 3.75,
+      "uuid": "a318c1e4-d734-463d-bd26-bd0a0fe69996",
+      "checksum_md5": "6aeb095cb0a6634a54668c6fd0c9bc06",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "b03e84a4-1287-4279-8b13-daa734f6338a",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T15:06:00Z",
+      "soil_moisture": 27.46,
+      "temp_c": 18.36,
+      "battery_v": 4.07,
+      "uuid": "b03e84a4-1287-4279-8b13-daa734f6338a",
+      "checksum_md5": "cccc180d4bb002eff6a7b60d0db95906",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "503ba2e8-cf0d-4099-b83c-8131dd551b5a",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T15:45:00Z",
+      "soil_moisture": 44.38,
+      "temp_c": 32.37,
+      "battery_v": 3.95,
+      "uuid": "503ba2e8-cf0d-4099-b83c-8131dd551b5a",
+      "checksum_md5": "82a8bdf7731e11041b02b3ad9cd675bf",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "608ba688-fe1b-4660-831b-2273f2d60613",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T16:37:00Z",
+      "soil_moisture": 26.54,
+      "temp_c": 27.04,
+      "battery_v": 3.56,
+      "uuid": "608ba688-fe1b-4660-831b-2273f2d60613",
+      "checksum_md5": "b75341534593816d53f2ecce9ad22d71",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "1155ea34-2b7d-4e8d-896d-17f428126900",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T17:03:00Z",
+      "soil_moisture": 26.82,
+      "temp_c": 18.31,
+      "battery_v": 4,
+      "uuid": "1155ea34-2b7d-4e8d-896d-17f428126900",
+      "checksum_md5": "208ee35ff5bfc065c2e58af789f34695",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "65bfdd05-a786-4c87-94db-f3e3017df6fd",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T18:08:00Z",
+      "soil_moisture": 40.3,
+      "temp_c": 8.68,
+      "battery_v": 3.69,
+      "uuid": "65bfdd05-a786-4c87-94db-f3e3017df6fd",
+      "checksum_md5": "005b9a98f643cc21cf0a0663138af076",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "e5aff91f-0bd2-4d99-81a1-5620d2efa387",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T20:44:00Z",
+      "soil_moisture": 36.99,
+      "temp_c": 30.79,
+      "battery_v": 4.13,
+      "uuid": "e5aff91f-0bd2-4d99-81a1-5620d2efa387",
+      "checksum_md5": "947fd087d3a92f5af0205b4879150d67",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "5f7a4889-36a6-43c9-b715-f7b516511dd9",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T21:36:00Z",
+      "soil_moisture": 20.8,
+      "temp_c": 17.5,
+      "battery_v": 3.62,
+      "uuid": "5f7a4889-36a6-43c9-b715-f7b516511dd9",
+      "checksum_md5": "27bf2b6a4ed0ef7885a1d900e2d5f633",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "61da2126-c88c-4d60-9bb6-2f6a5161635e",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T22:41:00Z",
+      "soil_moisture": 11.78,
+      "temp_c": 14.04,
+      "battery_v": 3.57,
+      "uuid": "61da2126-c88c-4d60-9bb6-2f6a5161635e",
+      "checksum_md5": "257fa64c13771f94d499b12a088f707d",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "08e1e796-652f-4e82-a043-45cac84f44a8",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-01T23:33:00Z",
+      "soil_moisture": 31.1,
+      "temp_c": 20.16,
+      "battery_v": 3.82,
+      "uuid": "08e1e796-652f-4e82-a043-45cac84f44a8",
+      "checksum_md5": "259f15073eab8b8d4766c248a2314b26",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    }
+  ],
+  "readings_FARM-002_2025-11-01": [
+    {
+      "_id": "deae8eb0-e355-4f0b-9c69-92b6da3fab6b",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T06:39:00Z",
+      "soil_moisture": 11.66,
+      "temp_c": 24.65,
+      "battery_v": 3.5,
+      "uuid": "deae8eb0-e355-4f0b-9c69-92b6da3fab6b",
+      "checksum_md5": "d6c5bc1386eb7cf1292ecc6ec5387a4f",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "4661ee1b-c497-4006-ab96-291026474870",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T07:05:00Z",
+      "soil_moisture": 28.99,
+      "temp_c": 14.49,
+      "battery_v": 3.73,
+      "uuid": "4661ee1b-c497-4006-ab96-291026474870",
+      "checksum_md5": "2466911d7beac0d0e7a2f020f7d5871c",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "bed09b00-04cb-48fd-ae5c-d2bd9b5d2334",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T07:18:00Z",
+      "soil_moisture": 12.36,
+      "temp_c": 18.7,
+      "battery_v": 3.82,
+      "uuid": "bed09b00-04cb-48fd-ae5c-d2bd9b5d2334",
+      "checksum_md5": "7335a76c45e6f02463a7687855a8ce80",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "c70256eb-deb5-43d2-8d35-322c29d1664c",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T08:36:00Z",
+      "soil_moisture": 21.03,
+      "temp_c": 27.84,
+      "battery_v": 4.06,
+      "uuid": "c70256eb-deb5-43d2-8d35-322c29d1664c",
+      "checksum_md5": "eacb6fc2aa18e3dbee7810587368f183",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "94c3e005-0aa8-43c7-9863-576df75e6a8e",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T09:02:00Z",
+      "soil_moisture": 22.44,
+      "temp_c": 30.8,
+      "battery_v": 4.08,
+      "uuid": "94c3e005-0aa8-43c7-9863-576df75e6a8e",
+      "checksum_md5": "b3889c1966fcb8553d2dc57ccba64921",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "30af87d8-fdc5-412f-823b-6d26ecd60f46",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T09:28:00Z",
+      "soil_moisture": 11.49,
+      "temp_c": 10.86,
+      "battery_v": 4.15,
+      "uuid": "30af87d8-fdc5-412f-823b-6d26ecd60f46",
+      "checksum_md5": "3cd895831c42338f7462c126ba7bbd77",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "e895c6e5-f25b-4ac7-a8e5-8e8ab546f208",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T10:07:00Z",
+      "soil_moisture": 20.7,
+      "temp_c": 11.29,
+      "battery_v": 3.8,
+      "uuid": "e895c6e5-f25b-4ac7-a8e5-8e8ab546f208",
+      "checksum_md5": "1eacbc49437442756f8e5a3f82931f57",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "26d7a162-9039-4825-be20-0c8df6ffaa40",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T10:20:00Z",
+      "soil_moisture": 21.7,
+      "temp_c": 15.15,
+      "battery_v": 3.99,
+      "uuid": "26d7a162-9039-4825-be20-0c8df6ffaa40",
+      "checksum_md5": "77237ec5e67fd5d31e74d385d80b0ad1",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "474d3add-d410-47e3-b218-a21328f1fc87",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T12:17:00Z",
+      "soil_moisture": 15.46,
+      "temp_c": 26.15,
+      "battery_v": 4.09,
+      "uuid": "474d3add-d410-47e3-b218-a21328f1fc87",
+      "checksum_md5": "51cdcda1a795a4078531aeabfa2e469e",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "e8105ddc-104f-4045-b448-a032366a2a15",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T12:30:00Z",
+      "soil_moisture": 36.51,
+      "temp_c": 27.52,
+      "battery_v": 3.94,
+      "uuid": "e8105ddc-104f-4045-b448-a032366a2a15",
+      "checksum_md5": "6ed23c08e16b643b920f46d300dd4f40",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "19c5aa09-3b6c-4046-8723-99d35590aa6d",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T12:43:00Z",
+      "soil_moisture": 38.36,
+      "temp_c": 10.25,
+      "battery_v": 3.7,
+      "uuid": "19c5aa09-3b6c-4046-8723-99d35590aa6d",
+      "checksum_md5": "425cc95f130ef22b5f3cb45de7b8dd0c",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "f01f3f9d-0c08-426e-8ed9-7afc85211adc",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T12:56:00Z",
+      "soil_moisture": 13.08,
+      "temp_c": 23.15,
+      "battery_v": 3.84,
+      "uuid": "f01f3f9d-0c08-426e-8ed9-7afc85211adc",
+      "checksum_md5": "9252268460ec8eebdf35dc18759a5ca6",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "571cc555-3dfc-4670-bc7d-b4fc8cff0494",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T14:14:00Z",
+      "soil_moisture": 40.26,
+      "temp_c": 16.74,
+      "battery_v": 3.58,
+      "uuid": "571cc555-3dfc-4670-bc7d-b4fc8cff0494",
+      "checksum_md5": "84816421b353103bcff6338cca659987",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "3d018603-ea48-409f-bc3e-d0cec83d871e",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T14:40:00Z",
+      "soil_moisture": 32.17,
+      "temp_c": 19.87,
+      "battery_v": 3.63,
+      "uuid": "3d018603-ea48-409f-bc3e-d0cec83d871e",
+      "checksum_md5": "e58ae0b4ec3d068532fdf41d56e26034",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "36686bf7-4df2-4006-b686-a0cd691c0873",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T15:19:00Z",
+      "soil_moisture": 26.73,
+      "temp_c": 18.08,
+      "battery_v": 3.87,
+      "uuid": "36686bf7-4df2-4006-b686-a0cd691c0873",
+      "checksum_md5": "d596d4d4c11c970501165d53c9213b2d",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "2c8d461f-040e-4520-8174-6eb2c3096693",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T16:11:00Z",
+      "soil_moisture": 16.55,
+      "temp_c": 22.26,
+      "battery_v": 3.98,
+      "uuid": "2c8d461f-040e-4520-8174-6eb2c3096693",
+      "checksum_md5": "68ae32de142f3641e7eb2989421453ac",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "c7105f8a-2fd3-4363-ab49-2efcddac5198",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T16:24:00Z",
+      "soil_moisture": 28.46,
+      "temp_c": 11.44,
+      "battery_v": 4.04,
+      "uuid": "c7105f8a-2fd3-4363-ab49-2efcddac5198",
+      "checksum_md5": "cfd54d386cda0f6d3c050cbaab74ef44",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "7076ea82-2c82-46c8-9756-b9e6d8a29bc4",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T16:50:00Z",
+      "soil_moisture": 44.69,
+      "temp_c": 22.13,
+      "battery_v": 3.92,
+      "uuid": "7076ea82-2c82-46c8-9756-b9e6d8a29bc4",
+      "checksum_md5": "f39b504e32544e8ee904d7420df9c09f",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "5b6fde99-f881-4d3b-bb52-c95c87711ddc",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T17:29:00Z",
+      "soil_moisture": 21.32,
+      "temp_c": 12.33,
+      "battery_v": 3.72,
+      "uuid": "5b6fde99-f881-4d3b-bb52-c95c87711ddc",
+      "checksum_md5": "7b63bba734ec9227b8bbff10a0173f4c",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "9d89b8cf-1854-47e3-877e-2cea74b30622",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T17:55:00Z",
+      "soil_moisture": 24.99,
+      "temp_c": 24.61,
+      "battery_v": 4.05,
+      "uuid": "9d89b8cf-1854-47e3-877e-2cea74b30622",
+      "checksum_md5": "ca34fd06997b79c7fa6eca62e2241f5a",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "c7394825-27a8-4a27-a3c5-7e411926d7af",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T18:21:00Z",
+      "soil_moisture": 15.92,
+      "temp_c": 23.08,
+      "battery_v": 3.55,
+      "uuid": "c7394825-27a8-4a27-a3c5-7e411926d7af",
+      "checksum_md5": "d232844e266b28eda1bfdbb2d7f87cd0",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "0b6342a8-426b-4f51-aa64-4c7e864a1c5b",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T18:34:00Z",
+      "soil_moisture": 32.62,
+      "temp_c": 33.16,
+      "battery_v": 4.15,
+      "uuid": "0b6342a8-426b-4f51-aa64-4c7e864a1c5b",
+      "checksum_md5": "531e0efedf4e5839dd5db02481c3d207",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "0d0a64c8-ee94-4b6c-bd49-77621e3d006e",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T18:47:00Z",
+      "soil_moisture": 44.59,
+      "temp_c": 37.76,
+      "battery_v": 3.54,
+      "uuid": "0d0a64c8-ee94-4b6c-bd49-77621e3d006e",
+      "checksum_md5": "9159c1dd6108b47b5d9c9b8a62f7ba67",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "207d04f2-92df-4c61-8272-48644241546f",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T19:13:00Z",
+      "soil_moisture": 11.59,
+      "temp_c": 14.14,
+      "battery_v": 3.77,
+      "uuid": "207d04f2-92df-4c61-8272-48644241546f",
+      "checksum_md5": "8fc31873b2363273813c91024eff3d86",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "a288a8aa-de99-4f21-a50d-25e75b6d93c5",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T19:26:00Z",
+      "soil_moisture": 20.4,
+      "temp_c": 31.52,
+      "battery_v": 3.76,
+      "uuid": "a288a8aa-de99-4f21-a50d-25e75b6d93c5",
+      "checksum_md5": "9008a60de10820f08900b2f7ec8e5170",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "046b16da-1535-4b55-9ba1-91287adb30bb",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T19:39:00Z",
+      "soil_moisture": 36.34,
+      "temp_c": 32.45,
+      "battery_v": 3.88,
+      "uuid": "046b16da-1535-4b55-9ba1-91287adb30bb",
+      "checksum_md5": "c55515b38a5d63acc48fd5ec3c878561",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "ffd11110-751c-4fd2-9227-3fee655078cd",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T20:18:00Z",
+      "soil_moisture": 39.31,
+      "temp_c": 23.64,
+      "battery_v": 3.83,
+      "uuid": "ffd11110-751c-4fd2-9227-3fee655078cd",
+      "checksum_md5": "28c476639b3f4781bebaabd6f148db82",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "af06b299-53b9-4c4f-9ab5-0b877bb95634",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T20:31:00Z",
+      "soil_moisture": 26.87,
+      "temp_c": 21.86,
+      "battery_v": 3.66,
+      "uuid": "af06b299-53b9-4c4f-9ab5-0b877bb95634",
+      "checksum_md5": "069196314848c44ae5cafedc37859d1c",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "ce19d636-43ba-429e-b5e4-93dd1f13bc23",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T20:57:00Z",
+      "soil_moisture": 40.94,
+      "temp_c": 18.22,
+      "battery_v": 3.93,
+      "uuid": "ce19d636-43ba-429e-b5e4-93dd1f13bc23",
+      "checksum_md5": "b65f7bacbd9a78bced358cf4d179a276",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "79a0cb0f-d0e1-4558-a55d-d673e82076ee",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T21:10:00Z",
+      "soil_moisture": 26.67,
+      "temp_c": 36.9,
+      "battery_v": 3.66,
+      "uuid": "79a0cb0f-d0e1-4558-a55d-d673e82076ee",
+      "checksum_md5": "0b82e14ed5c6192febc40ec00a9f437d",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "33f4143e-9d03-4a4d-8c34-161dc73593cd",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T21:49:00Z",
+      "soil_moisture": 13.52,
+      "temp_c": 36.46,
+      "battery_v": 3.96,
+      "uuid": "33f4143e-9d03-4a4d-8c34-161dc73593cd",
+      "checksum_md5": "cbf2998269bb68563bc38f9514fbb82a",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "ebc9fd01-f9d3-4563-b636-89f33cc0022a",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-01T23:20:00Z",
+      "soil_moisture": 12.37,
+      "temp_c": 22.43,
+      "battery_v": 3.58,
+      "uuid": "ebc9fd01-f9d3-4563-b636-89f33cc0022a",
+      "checksum_md5": "0a1f9da536050a6187e206e3d9ff46ad",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    }
+  ],
+  "readings_FARM-001_2025-11-01": [
+    {
+      "_id": "36b61342-f80b-4e1e-95bb-dc52626cf873",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T06:52:00Z",
+      "soil_moisture": 36.95,
+      "temp_c": 25.47,
+      "battery_v": 3.53,
+      "uuid": "36b61342-f80b-4e1e-95bb-dc52626cf873",
+      "checksum_md5": "36c64d02dc13adaa82bfe9e70fb3bbfb",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "0f7cb794-29a9-4f57-b7df-97c0541f16ba",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T07:31:00Z",
+      "soil_moisture": 11.95,
+      "temp_c": 38.63,
+      "battery_v": 3.66,
+      "uuid": "0f7cb794-29a9-4f57-b7df-97c0541f16ba",
+      "checksum_md5": "6b112465118b6c2eca43d59b7b41731c",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "d5d8876e-0565-419e-81e6-05847fff6573",
+      "farmId": "FARM-001",
+      "deviceId": 1,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T08:49:00Z",
+      "soil_moisture": 33.83,
+      "temp_c": 28.93,
+      "battery_v": 3.52,
+      "uuid": "d5d8876e-0565-419e-81e6-05847fff6573",
+      "checksum_md5": "ba772a185befa60eaf64731dd5a43b4b",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "6a39fe3b-8447-4922-a2d2-81f917b3e4ef",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T09:15:00Z",
+      "soil_moisture": 12.7,
+      "temp_c": 16.46,
+      "battery_v": 4.15,
+      "uuid": "6a39fe3b-8447-4922-a2d2-81f917b3e4ef",
+      "checksum_md5": "b3949e56198068921d18744029c38e3f",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "a369b085-4821-4d78-996c-d855e59da0b4",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T10:33:00Z",
+      "soil_moisture": 42.58,
+      "temp_c": 26.92,
+      "battery_v": 3.95,
+      "uuid": "a369b085-4821-4d78-996c-d855e59da0b4",
+      "checksum_md5": "6ef2eb709722fb96ff9e6c58e42a4b99",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "50385323-fabb-4fb8-9e54-aacceb7b6295",
+      "farmId": "FARM-001",
+      "deviceId": 1,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T10:46:00Z",
+      "soil_moisture": 11.6,
+      "temp_c": 16.95,
+      "battery_v": 3.6,
+      "uuid": "50385323-fabb-4fb8-9e54-aacceb7b6295",
+      "checksum_md5": "e5e39f231abd4001c698ff597ce7252b",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "c71d505c-28fb-43dc-9fe1-c2ac76b9067d",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T10:59:00Z",
+      "soil_moisture": 41.88,
+      "temp_c": 21.27,
+      "battery_v": 3.78,
+      "uuid": "c71d505c-28fb-43dc-9fe1-c2ac76b9067d",
+      "checksum_md5": "ab18ff1e370394c69cb9c51bc5530971",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "3e979118-63b9-4082-a29c-8efae2ff5efa",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T11:25:00Z",
+      "soil_moisture": 37.65,
+      "temp_c": 31.91,
+      "battery_v": 4.14,
+      "uuid": "3e979118-63b9-4082-a29c-8efae2ff5efa",
+      "checksum_md5": "d80c17d4f0b99882097eca89b518320b",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "b505985c-5812-4482-b142-ad7833594eb1",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T11:51:00Z",
+      "soil_moisture": 34.96,
+      "temp_c": 9.23,
+      "battery_v": 4.11,
+      "uuid": "b505985c-5812-4482-b142-ad7833594eb1",
+      "checksum_md5": "6147d6c0d405c876dec6aa02f857d1bd",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "4b5cb692-efbf-4840-8aa8-40eed6352caf",
+      "farmId": "FARM-001",
+      "deviceId": 1,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T12:04:00Z",
+      "soil_moisture": 29.4,
+      "temp_c": 24.56,
+      "battery_v": 4.02,
+      "uuid": "4b5cb692-efbf-4840-8aa8-40eed6352caf",
+      "checksum_md5": "fa0b4b26213c30e3db20bf57ec864cf9",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "2b0f9d8f-af43-46bb-bf91-c574c4c76465",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T14:01:00Z",
+      "soil_moisture": 16.97,
+      "temp_c": 21.98,
+      "battery_v": 3.7,
+      "uuid": "2b0f9d8f-af43-46bb-bf91-c574c4c76465",
+      "checksum_md5": "d087870a447b012a84900168a6f50427",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "b2043e6d-c20a-471a-a4e8-9da1c908af72",
+      "farmId": "FARM-001",
+      "deviceId": 1,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T14:53:00Z",
+      "soil_moisture": 25.76,
+      "temp_c": 32.02,
+      "battery_v": 4.17,
+      "uuid": "b2043e6d-c20a-471a-a4e8-9da1c908af72",
+      "checksum_md5": "efa57daab0f9828d74bddc27fb27937b",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "33d5c0a4-785d-49e3-846d-88b711bc77e6",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T15:32:00Z",
+      "soil_moisture": 21.82,
+      "temp_c": 27.63,
+      "battery_v": 3.64,
+      "uuid": "33d5c0a4-785d-49e3-846d-88b711bc77e6",
+      "checksum_md5": "453660237374bf41e2c8ae56e2a1f235",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "0d93b4b9-16fc-4b54-b8c1-f41392f1a688",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T15:58:00Z",
+      "soil_moisture": 34.67,
+      "temp_c": 13.31,
+      "battery_v": 3.85,
+      "uuid": "0d93b4b9-16fc-4b54-b8c1-f41392f1a688",
+      "checksum_md5": "e364bb86d65f962daa91f918cffb4eac",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "8200de4b-aa3a-4c6f-9eca-8550abd67dfa",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T17:16:00Z",
+      "soil_moisture": 42.94,
+      "temp_c": 17.01,
+      "battery_v": 3.81,
+      "uuid": "8200de4b-aa3a-4c6f-9eca-8550abd67dfa",
+      "checksum_md5": "e843edc7c29fc12d244268f4ec88ab56",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "119710d3-5e91-406b-8ce2-b2984740c280",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T17:42:00Z",
+      "soil_moisture": 44.48,
+      "temp_c": 25.95,
+      "battery_v": 3.88,
+      "uuid": "119710d3-5e91-406b-8ce2-b2984740c280",
+      "checksum_md5": "ae5dc00faf80bad51cd0f30924eea2e1",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "ad9e753d-f507-468d-9d8e-00f6d52fb716",
+      "farmId": "FARM-001",
+      "deviceId": 1,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T19:00:00Z",
+      "soil_moisture": 40.05,
+      "temp_c": 28.64,
+      "battery_v": 3.75,
+      "uuid": "ad9e753d-f507-468d-9d8e-00f6d52fb716",
+      "checksum_md5": "28b5e5839e82a4fabc5d6f33bce5a04d",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "cb4e3523-243e-4997-861a-a808c0f78bf1",
+      "farmId": "FARM-001",
+      "deviceId": 1,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T19:52:00Z",
+      "soil_moisture": 27.58,
+      "temp_c": 12.46,
+      "battery_v": 3.59,
+      "uuid": "cb4e3523-243e-4997-861a-a808c0f78bf1",
+      "checksum_md5": "d06a105cd0332ff29c9647ea2ba4db33",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "01b42798-a858-4051-b991-11f0c8a05a23",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T20:05:00Z",
+      "soil_moisture": 30.04,
+      "temp_c": 33.78,
+      "battery_v": 3.64,
+      "uuid": "01b42798-a858-4051-b991-11f0c8a05a23",
+      "checksum_md5": "1210d3feb5dafcb40972044f048a083d",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "52923262-1750-42e6-99b9-af13a6924a55",
+      "farmId": "FARM-001",
+      "deviceId": 1,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T21:23:00Z",
+      "soil_moisture": 31.49,
+      "temp_c": 35.64,
+      "battery_v": 3.59,
+      "uuid": "52923262-1750-42e6-99b9-af13a6924a55",
+      "checksum_md5": "05ee5c401224cb6eaaa9f53da9a44da4",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "89bdb334-07d7-4077-a189-a8c4625fe020",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T22:02:00Z",
+      "soil_moisture": 37.46,
+      "temp_c": 36.07,
+      "battery_v": 3.78,
+      "uuid": "89bdb334-07d7-4077-a189-a8c4625fe020",
+      "checksum_md5": "83a7b71c63abb16dcfe40bb603c5f545",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "f2b9952d-96de-4be7-846a-aef5ffcfaa24",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T22:15:00Z",
+      "soil_moisture": 33.85,
+      "temp_c": 14.88,
+      "battery_v": 3.5,
+      "uuid": "f2b9952d-96de-4be7-846a-aef5ffcfaa24",
+      "checksum_md5": "3d166e670099319231666ac6c76c1804",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "233b6a6c-73e5-4778-bdce-44e6f6a61393",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T22:28:00Z",
+      "soil_moisture": 12.67,
+      "temp_c": 11.95,
+      "battery_v": 4.03,
+      "uuid": "233b6a6c-73e5-4778-bdce-44e6f6a61393",
+      "checksum_md5": "85d638d2213703b10fea58c24b9db215",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "98bf210a-ad2c-4b65-8cd9-63d647a8ac00",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T22:54:00Z",
+      "soil_moisture": 15.52,
+      "temp_c": 12.81,
+      "battery_v": 3.52,
+      "uuid": "98bf210a-ad2c-4b65-8cd9-63d647a8ac00",
+      "checksum_md5": "6bd4594ffddfc7ae6a7301480ff91f78",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "907f0fcc-79e0-4fa9-ac75-95086861baeb",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T23:07:00Z",
+      "soil_moisture": 23.01,
+      "temp_c": 12.29,
+      "battery_v": 3.7,
+      "uuid": "907f0fcc-79e0-4fa9-ac75-95086861baeb",
+      "checksum_md5": "cc42e24d0001de53bfd21914ce86cfa8",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "0cddbddb-9715-4c64-b1de-4a8dfb442a6e",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T23:46:00Z",
+      "soil_moisture": 23.02,
+      "temp_c": 19.72,
+      "battery_v": 3.66,
+      "uuid": "0cddbddb-9715-4c64-b1de-4a8dfb442a6e",
+      "checksum_md5": "4e3b6a014a634debea5281fecef94288",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "b8139219-8b94-46a6-aac3-bed0b0ef51d0",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-01T23:59:00Z",
+      "soil_moisture": 37.93,
+      "temp_c": 27.66,
+      "battery_v": 3.81,
+      "uuid": "b8139219-8b94-46a6-aac3-bed0b0ef51d0",
+      "checksum_md5": "44228d5e7b3e772fba13f21228acb08a",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    }
+  ],
+  "readings_FARM-003_2025-11-02": [
+    {
+      "_id": "25143f35-c844-44b6-997a-5d968c8b2db8",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-02T00:12:00Z",
+      "soil_moisture": 44.82,
+      "temp_c": 9.56,
+      "battery_v": 4,
+      "uuid": "25143f35-c844-44b6-997a-5d968c8b2db8",
+      "checksum_md5": "f8c3aa380582f83053d270f8bd10a031",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "e29bc14b-bc81-43f1-80ba-de82e3defe7e",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-02T00:51:00Z",
+      "soil_moisture": 17.14,
+      "temp_c": 34.32,
+      "battery_v": 4.17,
+      "uuid": "e29bc14b-bc81-43f1-80ba-de82e3defe7e",
+      "checksum_md5": "562f7c562d90926410f513a0caae735c",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "940ae6a6-6e69-41fb-90f1-4618e09b21d3",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-02T01:17:00Z",
+      "soil_moisture": 18.58,
+      "temp_c": 21.32,
+      "battery_v": 3.89,
+      "uuid": "940ae6a6-6e69-41fb-90f1-4618e09b21d3",
+      "checksum_md5": "14221ddb1ef372d65e4588bb05feae07",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "433d4651-673e-4447-978a-00d531ea36d6",
+      "farmId": "FARM-003",
+      "deviceId": 6,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-02T01:43:00Z",
+      "soil_moisture": 24.69,
+      "temp_c": 25.65,
+      "battery_v": 3.6,
+      "uuid": "433d4651-673e-4447-978a-00d531ea36d6",
+      "checksum_md5": "9fba9db7be770685461c91039ac3f1e8",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "451bb09c-0247-4772-bae5-9695f8fb0d50",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-02T03:01:00Z",
+      "soil_moisture": 42.37,
+      "temp_c": 36.73,
+      "battery_v": 3.65,
+      "uuid": "451bb09c-0247-4772-bae5-9695f8fb0d50",
+      "checksum_md5": "df29a00d148ae61ed366f32d54daabb2",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "00601f7d-cc15-4d49-b6d9-65892267f9b2",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-02T03:27:00Z",
+      "soil_moisture": 38.69,
+      "temp_c": 18.67,
+      "battery_v": 3.62,
+      "uuid": "00601f7d-cc15-4d49-b6d9-65892267f9b2",
+      "checksum_md5": "7c606961cd10f8376092008124864582",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "8672cc0a-cb5c-443f-8594-a2bb858641a1",
+      "farmId": "FARM-003",
+      "deviceId": 3,
+      "crop": "Grape",
+      "gps": {},
+      "ts_utc": "2025-11-02T03:40:00Z",
+      "soil_moisture": 15.01,
+      "temp_c": 14.13,
+      "battery_v": 3.79,
+      "uuid": "8672cc0a-cb5c-443f-8594-a2bb858641a1",
+      "checksum_md5": "0e7621b8efb8d3e8bf325109966e2eab",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    }
+  ],
+  "readings_FARM-001_2025-11-02": [
+    {
+      "_id": "9668bf09-7fed-4a67-a88e-433130e0fecf",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-02T00:25:00Z",
+      "soil_moisture": 13.25,
+      "temp_c": 21.91,
+      "battery_v": 4.2,
+      "uuid": "9668bf09-7fed-4a67-a88e-433130e0fecf",
+      "checksum_md5": "e56da00018dd4bc69d086959fadf3040",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "2603f516-8b58-4a8c-922d-83c5f42f86a5",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-02T00:38:00Z",
+      "soil_moisture": 30.4,
+      "temp_c": 37.84,
+      "battery_v": 3.82,
+      "uuid": "2603f516-8b58-4a8c-922d-83c5f42f86a5",
+      "checksum_md5": "b9262e3f8ac660d9b9234c31579d2fd7",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "85f2f404-58a9-43cf-ad59-6561e3616697",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-02T01:04:00Z",
+      "soil_moisture": 10.35,
+      "temp_c": 34.21,
+      "battery_v": 3.64,
+      "uuid": "85f2f404-58a9-43cf-ad59-6561e3616697",
+      "checksum_md5": "514a1a91587c06ea80613d25ade83797",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "dd649783-0abd-4f71-8404-3ec52ffabd2b",
+      "farmId": "FARM-001",
+      "deviceId": 1,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-02T01:30:00Z",
+      "soil_moisture": 20.85,
+      "temp_c": 17.46,
+      "battery_v": 4.11,
+      "uuid": "dd649783-0abd-4f71-8404-3ec52ffabd2b",
+      "checksum_md5": "23cefd8ea58a1c5bf8b0caf4b1da9311",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "4bcbc0d5-3824-412d-90a1-fcce5d43d402",
+      "farmId": "FARM-001",
+      "deviceId": 4,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-02T01:56:00Z",
+      "soil_moisture": 24.67,
+      "temp_c": 9.05,
+      "battery_v": 4.11,
+      "uuid": "4bcbc0d5-3824-412d-90a1-fcce5d43d402",
+      "checksum_md5": "801923443b9a12c9c285013b65c31cbe",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "8e9800ce-70fb-4995-b97c-4a2eb9d4beb9",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-02T02:09:00Z",
+      "soil_moisture": 13.99,
+      "temp_c": 35.9,
+      "battery_v": 4.08,
+      "uuid": "8e9800ce-70fb-4995-b97c-4a2eb9d4beb9",
+      "checksum_md5": "66c9623e3f17da4e58517d0323a8bee2",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "7243b099-ac07-4d20-87be-74487da7c56e",
+      "farmId": "FARM-001",
+      "deviceId": 1,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-02T02:22:00Z",
+      "soil_moisture": 14.57,
+      "temp_c": 20,
+      "battery_v": 3.95,
+      "uuid": "7243b099-ac07-4d20-87be-74487da7c56e",
+      "checksum_md5": "20e4aac76dd734ec477aff1bc7aeb4b8",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "84d98fd4-ebcd-4b04-b8f4-8ba84f708a05",
+      "farmId": "FARM-001",
+      "deviceId": 7,
+      "crop": "Almond",
+      "gps": {},
+      "ts_utc": "2025-11-02T03:14:00Z",
+      "soil_moisture": 35.3,
+      "temp_c": 19.21,
+      "battery_v": 3.83,
+      "uuid": "84d98fd4-ebcd-4b04-b8f4-8ba84f708a05",
+      "checksum_md5": "e6c86d52c3be00c5a5554edefb78fa86",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    }
+  ],
+  "readings_FARM-002_2025-11-02": [
+    {
+      "_id": "050d6f8f-e7fa-4d2d-8610-56b20ee4ea02",
+      "farmId": "FARM-002",
+      "deviceId": 5,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-02T02:35:00Z",
+      "soil_moisture": 33.03,
+      "temp_c": 20.17,
+      "battery_v": 3.56,
+      "uuid": "050d6f8f-e7fa-4d2d-8610-56b20ee4ea02",
+      "checksum_md5": "8c74f7fa11319a91eccddc9702a46543",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    },
+    {
+      "_id": "05db9460-2cd5-45a3-b59d-6a16de5a3a64",
+      "farmId": "FARM-002",
+      "deviceId": 2,
+      "crop": "Tomato",
+      "gps": {},
+      "ts_utc": "2025-11-02T02:48:00Z",
+      "soil_moisture": 42.31,
+      "temp_c": 15.6,
+      "battery_v": 4.01,
+      "uuid": "05db9460-2cd5-45a3-b59d-6a16de5a3a64",
+      "checksum_md5": "681db15325dd03c9ae93a18474c39907",
+      "author": "Parth Shah",
+      "sync_time_utc": "2025-11-25T02:53:49.514Z",
+      "source_db": "farm_sql_db",
+      "source_tables": [
+        "Sensor",
+        "Reading"
+      ],
+      "ingest_batch_id": "batch-2025-11-25",
+      "lineage": "Sensor.sensor_id -> Reading.sensor_id -> NoSQL.readingDoc",
+      "units": {
+        "temp_c": "Celsius",
+        "soil_moisture": "percent",
+        "battery_v": "Volts"
+      },
+      "quality_flags": {
+        "missing_values": false,
+        "out_of_range": false
+      },
+      "version": 1
+    }
+  ]
+}

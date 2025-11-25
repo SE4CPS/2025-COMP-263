@@ -1,0 +1,2602 @@
+[
+  {
+    "_id": "643d1f3e-ac2f-4a06-ba1b-2c9a1e82484a",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T06:13:00.000Z",
+    "soil_moisture": 41.09,
+    "temp_c": 29.14,
+    "battery_v": 3.53,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.432Z",
+      "checksum": "c3dbc9fde736e64602f54225ba9a3b83a74011174f5e84c98367ae2bce37de90"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "10683501-c65e-422d-9168-af285b40f488",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T06:26:00.000Z",
+    "soil_moisture": 25.7,
+    "temp_c": 21.29,
+    "battery_v": 3.79,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "43bf35ca9d9a8bea378637afdf26f1dc28d1315012d14501354e2050814c5c4c"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "e9459169-c232-4db4-8117-4a34ac086b61",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T06:39:00.000Z",
+    "soil_moisture": 11.66,
+    "temp_c": 24.65,
+    "battery_v": 3.5,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "0d6e57bdefd93ae5f521d7da313b84e123f671ca06203135465851a9f50f3da7"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "e6e59fb6-02fc-4a97-bfeb-74c1b875800a",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T06:52:00.000Z",
+    "soil_moisture": 36.95,
+    "temp_c": 25.47,
+    "battery_v": 3.53,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "774cca289fb74ddee4d2b4ffabfe99535f0948323e129cadb15ea484b47c5979"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "e1c4d54d-6f6a-49fa-96cf-2c9b3771a227",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T07:05:00.000Z",
+    "soil_moisture": 28.99,
+    "temp_c": 14.49,
+    "battery_v": 3.73,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "9bed069235f566e2879faf3ef15f75b625c56f019c7659a651427cc22bc25ba5"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "f0616fd9-2df0-44b7-81ad-236d0f8cc0f2",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T07:18:00.000Z",
+    "soil_moisture": 12.36,
+    "temp_c": 18.7,
+    "battery_v": 3.82,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "619370414e1862b4cd1a0ebe669a1901fd316b30b1223327391867663f40512a"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "a42b8133-c44f-4a2d-93b2-de3a604ad31d",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T07:31:00.000Z",
+    "soil_moisture": 11.95,
+    "temp_c": 38.63,
+    "battery_v": 3.66,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "56dd833770696380a32aa404555ef63343908311f5732812bee05c8c40f7aeb4"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "031fd346-409b-4117-8130-7f7124b8d119",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T07:44:00.000Z",
+    "soil_moisture": 43.96,
+    "temp_c": 26.56,
+    "battery_v": 4.18,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "9da72df588dc8d1fc58c52fe8465719705377d3c3126cec572c91f60aa90d366"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "99ff64c1-1f06-4b26-9f7f-87ae12aaf5d8",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T07:57:00.000Z",
+    "soil_moisture": 31.15,
+    "temp_c": 28.07,
+    "battery_v": 4.1,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "d7b6d26968d7ca57e2c23fe5cfe744860c592115c67fd54c3f87a49dca6cf2dc"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "8f0c52a6-4408-447b-8dad-555e416deae0",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T08:10:00.000Z",
+    "soil_moisture": 10.68,
+    "temp_c": 8.2,
+    "battery_v": 3.51,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "41540f4370b4428cb907dec060b66ce6713e164f07f985b2ade38cd7f5b7e8b5"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "3950f55c-2f9f-48d8-be82-b6f016ca2c7b",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T08:23:00.000Z",
+    "soil_moisture": 41.57,
+    "temp_c": 30.19,
+    "battery_v": 3.96,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "eaa9781544b5e3950525540e44ca5b54a25fd674aed56d8ff4d643ef07e1e05f"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "973f9eee-daec-4610-8b49-6e038dc33861",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T08:36:00.000Z",
+    "soil_moisture": 21.03,
+    "temp_c": 27.84,
+    "battery_v": 4.06,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "072e17f6ff24a1644f66eac265d0642d5dc6e6544f663584085d188ec7b436cb"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "4615bad5-14b3-422b-bc23-1cad8c7c437f",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T08:49:00.000Z",
+    "soil_moisture": 33.83,
+    "temp_c": 28.93,
+    "battery_v": 3.52,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "1"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "d5bb76ef689b0098a5bb4be1c19e8fbdf164ec2c4fdf7e9dfbf4ef35bb3d2eb1"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "005a0eb5-bb77-4cba-8367-4ee76ff49a86",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T09:02:00.000Z",
+    "soil_moisture": 22.44,
+    "temp_c": 30.8,
+    "battery_v": 4.08,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "cd365db025e2ec42599531e94964da629f9e9689998cab48fd89517e6ace130a"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "ebff2019-f420-4015-8cfc-854996ea3d0d",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T09:15:00.000Z",
+    "soil_moisture": 12.7,
+    "temp_c": 16.46,
+    "battery_v": 4.15,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "f2a5f1c848b00f3cd14f934aa9c67b83f3f015311e357a924817e5007e60a2e9"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "a85c431c-7b22-4a04-8f06-8e16e26f6afd",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T09:28:00.000Z",
+    "soil_moisture": 11.49,
+    "temp_c": 10.86,
+    "battery_v": 4.15,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "ac880bc7ca9e96c132d4be668856b97fc2f3deed572e2c61bc69f49ee28fe8a4"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "0bb07a8c-2bf7-4969-ae3f-d9ea106d4550",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T09:41:00.000Z",
+    "soil_moisture": 25.2,
+    "temp_c": 14.2,
+    "battery_v": 4.19,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "b20591c5f760c96e58da561f407bde2624c48eee516267f77d6b8fc4216fdab7"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "9cf02aab-9c6b-429f-afc5-b6a235143206",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T09:54:00.000Z",
+    "soil_moisture": 38.9,
+    "temp_c": 32.95,
+    "battery_v": 4.16,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "7591196c0495f02cc4ce7f75da008c6b4b633dfdc7f241de4555f30fe42ff424"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "7c5071e7-bb30-4727-86fd-ed48bacc5c74",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T10:07:00.000Z",
+    "soil_moisture": 20.7,
+    "temp_c": 11.29,
+    "battery_v": 3.8,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "388a1f0ac798d64a8e83759c6e16cfc2769bbbf03e66391d1da8be0f4b03d3e1"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "e470ce6b-f25d-4a12-bf6b-ac3932b76577",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T10:20:00.000Z",
+    "soil_moisture": 21.7,
+    "temp_c": 15.15,
+    "battery_v": 3.99,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "917811c3658c66937a0ee3519a07be3e9ef6d71bcb83bbd8e35e7faf8f072e70"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "2b8d56a2-a618-4246-a8bb-c1b43a7db3c0",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T10:33:00.000Z",
+    "soil_moisture": 42.58,
+    "temp_c": 26.92,
+    "battery_v": 3.95,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "35c986fb8ab0004855310f760e3a48b3518cfa3659a1f442d4cd49755b0eff9d"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "830248a3-5778-45e8-a790-25055f1840c1",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T10:46:00.000Z",
+    "soil_moisture": 11.6,
+    "temp_c": 16.95,
+    "battery_v": 3.6,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "1"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "ff967485e447053dcac17d70344b1ecec5af442c966cf03805bda483c00bac61"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "e94c654f-8b72-41a9-a9f8-9d31387cda88",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T10:59:00.000Z",
+    "soil_moisture": 41.88,
+    "temp_c": 21.27,
+    "battery_v": 3.78,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "b3c9da713a4641382d6aa04fe295c6be327ed34131a0dd3205da49d8f687a20b"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "6bbef123-550f-46fc-bf42-65e27daff923",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T11:12:00.000Z",
+    "soil_moisture": 25.99,
+    "temp_c": 17.22,
+    "battery_v": 3.78,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "130f8d4491fed20358eaf90d42847b2bf75d55b1c8a6890031fb10f537146c8e"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "13e0e999-3e1e-4f07-ae8f-eb6330f632de",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T11:25:00.000Z",
+    "soil_moisture": 37.65,
+    "temp_c": 31.91,
+    "battery_v": 4.14,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "77b018612df42aacc230fcea0dec581223221a34057e39cf50646c50229be086"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "c8d97918-3d53-46e6-ba31-6b460a151e34",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T11:38:00.000Z",
+    "soil_moisture": 25.64,
+    "temp_c": 14.92,
+    "battery_v": 3.54,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "43544947f9d6a7d7400fd6360d90aeb41020e1725f2d10492814d7b63c08a30c"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "b7864309-a7e8-4059-81f7-68a362565c8c",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T11:51:00.000Z",
+    "soil_moisture": 34.96,
+    "temp_c": 9.23,
+    "battery_v": 4.11,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "b3e69a9c6bd740bf53b90e21bd44a824236d4ff301a07af45f87071153981091"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "31de5965-e78b-4640-bde6-9f0095028b95",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T12:04:00.000Z",
+    "soil_moisture": 29.4,
+    "temp_c": 24.56,
+    "battery_v": 4.02,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "1"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "34e463f4195084e92181101a44053c30aba47b96cf8fbb931a4ea7554f9acd3d"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "4af231fd-14b6-4439-9a93-4df4c4330123",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T12:17:00.000Z",
+    "soil_moisture": 15.46,
+    "temp_c": 26.15,
+    "battery_v": 4.09,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "3f0d18ea7ea6bda829e04bfb36ba1459bb025b41c8c9682e967e2e562f13c004"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "7adce1c7-a315-4968-a848-3f609d4ed1fb",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T12:30:00.000Z",
+    "soil_moisture": 36.51,
+    "temp_c": 27.52,
+    "battery_v": 3.94,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "a8865c3a7696a32c9f5db038a52e81a2c2822733caa94971972ca772bb8c47b4"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "67415877-6352-47c4-847c-c5eafee37eef",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T12:43:00.000Z",
+    "soil_moisture": 38.36,
+    "temp_c": 10.25,
+    "battery_v": 3.7,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "e6de49f17bbfce75d69d5e5078591cc2d6b09ef6eb7a135bcea28ba69819e010"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "3a77cee4-8d37-439d-9c33-d8bd1d79ac04",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T12:56:00.000Z",
+    "soil_moisture": 13.08,
+    "temp_c": 23.15,
+    "battery_v": 3.84,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "d17aad9882e53591f79eb830f25ae1a5f7521bf7838db26a24cadbb917802df1"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "06f815de-5800-4750-8fd0-8f779975caac",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T13:09:00.000Z",
+    "soil_moisture": 40.81,
+    "temp_c": 14.85,
+    "battery_v": 4.15,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "dfb3502a8ec99eb3d77ceca2b2213cdb2b9d901014a35ff813341f4873ebec30"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "12051e0b-d6ae-4de8-ae78-bfa459651583",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T13:22:00.000Z",
+    "soil_moisture": 32.72,
+    "temp_c": 31.27,
+    "battery_v": 3.74,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "63c11c96454d08d6b61dfffa2631c77e8bb4bdac5a882d898f75ca6a579feb33"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "f22bbcb6-8ce0-4b5e-80c2-7d562075c68f",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T13:35:00.000Z",
+    "soil_moisture": 33.67,
+    "temp_c": 22.5,
+    "battery_v": 4.15,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "9493894109a4921a4224b21be09424eac53609eec81ceba5bfa66e2be31e84b0"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "9124f984-9117-4b4a-9acd-49c8289f75d2",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T13:48:00.000Z",
+    "soil_moisture": 26.26,
+    "temp_c": 12.64,
+    "battery_v": 4.15,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "18db78a43a72550aa356997c06b1ac3efe8a0a11fd566f8d9acf88dd5affa7bb"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "93879113-b612-4542-9eca-d16804575bc4",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T14:01:00.000Z",
+    "soil_moisture": 16.97,
+    "temp_c": 21.98,
+    "battery_v": 3.7,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "5b639108c4d19eb55b5246813f1abcb38265c270f2d03e2cccaf626dc0b0d0b3"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "03d05025-4d63-4663-acd8-ae1c43ee29e3",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T14:14:00.000Z",
+    "soil_moisture": 40.26,
+    "temp_c": 16.74,
+    "battery_v": 3.58,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "71027c886cea4963d133a348f70f2c3df8b0569f7588b1c39eb33c782f50b4a7"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "ad7439cb-bd1e-4e0a-8a75-da5442f167bd",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T14:27:00.000Z",
+    "soil_moisture": 37.62,
+    "temp_c": 28.86,
+    "battery_v": 3.75,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.433Z",
+      "checksum": "c4274bd47f747519361ea4f0777574752dde57166d82d4a8cbd314893c99eda2"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "ffa34c4e-d118-4acc-bc48-8a779b734cfd",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T14:40:00.000Z",
+    "soil_moisture": 32.17,
+    "temp_c": 19.87,
+    "battery_v": 3.63,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "d17f87096d282949c2818938a1eb891db85dbb31835ced7e3ac1271ecf48aaaa"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "62355e3c-0eeb-4886-832c-beb4e036e0a4",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T14:53:00.000Z",
+    "soil_moisture": 25.76,
+    "temp_c": 32.02,
+    "battery_v": 4.17,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "1"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "7d5603006bc0f937c41e0797b6cb6f36e060f23ff4d6626cd8a323a3f32326be"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "18500aa2-1a8c-4ba7-8bcd-e9f8ab03fb96",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T15:06:00.000Z",
+    "soil_moisture": 27.46,
+    "temp_c": 18.36,
+    "battery_v": 4.07,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "f8fc3973559aa68650f9b94f699917b57f82005ef0a4a7730818855e820d1389"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "ebf3202f-5cfa-4498-8de9-c6f6bb1683e7",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T15:19:00.000Z",
+    "soil_moisture": 26.73,
+    "temp_c": 18.08,
+    "battery_v": 3.87,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "54bcd5f075d025e383012ac72aa840ce0da7d6ceba8a80fed0dcf92d9dcc4b55"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "21b9935c-8dcb-4c90-9680-c74ca364cc68",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T15:32:00.000Z",
+    "soil_moisture": 21.82,
+    "temp_c": 27.63,
+    "battery_v": 3.64,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "78383ebfaba4054fcad426c2ea2c24f0da3daefeac141cab2742d5d679deea6d"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "0555322a-0b1b-417f-9665-3665a3cfd7d6",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T15:45:00.000Z",
+    "soil_moisture": 44.38,
+    "temp_c": 32.37,
+    "battery_v": 3.95,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "71398df2ff3c1607ebf593dfa9356b4453e7a89f23598d9480142ad740c11689"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "fb416367-3037-44a1-aae7-7ffad2a8d8f1",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T15:58:00.000Z",
+    "soil_moisture": 34.67,
+    "temp_c": 13.31,
+    "battery_v": 3.85,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "d1a8310ceb9a28ef3c7f86e58b57fd6eaa044d41d7ba670904884f0aee756d10"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "7bf93f45-2e57-42ef-82ff-c36a5df63b8e",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T16:11:00.000Z",
+    "soil_moisture": 16.55,
+    "temp_c": 22.26,
+    "battery_v": 3.98,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "a23107c6b633abcf3e01694a89f18d8e5a6c6d42391a1001a01152169ddd3625"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "5b0bfdb1-b192-4155-878a-aea8aa66ae59",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T16:24:00.000Z",
+    "soil_moisture": 28.46,
+    "temp_c": 11.44,
+    "battery_v": 4.04,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "aa9521fa9a9be3771793f245e2016a55dacf6cba48944ddc524b803bfa3d2350"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "5efba432-d1b7-4d17-b29d-c8f7cac0c9da",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T16:37:00.000Z",
+    "soil_moisture": 26.54,
+    "temp_c": 27.04,
+    "battery_v": 3.56,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "86be8d7f499fd1304445130886f2a805df01ff1c21f19bfb3d33ed2621683456"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "4e1f14e5-d656-4f46-9b20-723e9ca0d610",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T16:50:00.000Z",
+    "soil_moisture": 44.69,
+    "temp_c": 22.13,
+    "battery_v": 3.92,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "0041b57f0fe896ee0515e2007962d50ac645482c13327e837f024d08e384961b"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "d8ba6e33-b52d-47e1-9784-ef3ced107da2",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T17:03:00.000Z",
+    "soil_moisture": 26.82,
+    "temp_c": 18.31,
+    "battery_v": 4,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "fbba5f61ad30994da0d79ae40ff40f3b5db3560af7a19ebbab619532b1b5e415"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "0bdd4616-f45e-4245-9eac-6652b2f4308b",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T17:16:00.000Z",
+    "soil_moisture": 42.94,
+    "temp_c": 17.01,
+    "battery_v": 3.81,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "4d0c78ec5934e1647271395002fc7387a59ffda5ad59f1d34aed6ff01b6bd1b1"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "e2035483-cb92-4198-a584-2a98df06a89e",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T17:29:00.000Z",
+    "soil_moisture": 21.32,
+    "temp_c": 12.33,
+    "battery_v": 3.72,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "7996f7c6c7bc5beb5a7a09d8164541aa915638ecc7fd977c5b27886acdc7d745"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "ff0af949-09c6-4c64-8071-9437efdf2375",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T17:42:00.000Z",
+    "soil_moisture": 44.48,
+    "temp_c": 25.95,
+    "battery_v": 3.88,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "473ba411094e1414c16da82153aee9a43df783e881e7e38cd1a4e3ab7d263a08"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "465b625f-cd77-4aa6-9c77-65a7c29e97c2",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T17:55:00.000Z",
+    "soil_moisture": 24.99,
+    "temp_c": 24.61,
+    "battery_v": 4.05,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "abd16b3fd99325d11354877912236bd5ed8ad56e7a476200b27175ac16a5cf58"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "e8decb23-168e-46f1-a4e8-4ca718b64d9a",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T18:08:00.000Z",
+    "soil_moisture": 40.3,
+    "temp_c": 8.68,
+    "battery_v": 3.69,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "b80fd39520e89cf580aa6aeca9845e0849d76f98c0dffa0b708f73f6d9aa2a31"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "6565c082-ab48-40ae-977d-d7bb294429d3",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T18:21:00.000Z",
+    "soil_moisture": 15.92,
+    "temp_c": 23.08,
+    "battery_v": 3.55,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "c4cf006a3d325776fde9e7c49a7d1591aac430965842c79b7bb1ffa35cc92643"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "8e971fc5-a9db-418d-9d42-a8580ea94e93",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T18:34:00.000Z",
+    "soil_moisture": 32.62,
+    "temp_c": 33.16,
+    "battery_v": 4.15,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "1d5da9e0e4b56ebfbf0ebdb5c1856a585bd31bdea5a42bdf1e6dac3c14f1bb9b"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "b9097236-b53e-4bf2-b351-6d60b12027e4",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T18:47:00.000Z",
+    "soil_moisture": 44.59,
+    "temp_c": 37.76,
+    "battery_v": 3.54,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "177d3eda0b70c74a37c9a838f7d2eeb660abbc03ea1edaad9eca232830511f97"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "7d033eb3-d13a-4be0-84f0-6e5442bf15e9",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T19:00:00.000Z",
+    "soil_moisture": 40.05,
+    "temp_c": 28.64,
+    "battery_v": 3.75,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "1"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "f3db3fd33598648558c69f202969e8035fd825b0862a98211a2aa4c19c93b8b1"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "78c3e916-e039-4029-8110-b5a288865bb1",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T19:13:00.000Z",
+    "soil_moisture": 11.59,
+    "temp_c": 14.14,
+    "battery_v": 3.77,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "47d885bcf038df211b79daf7447c77b19eed90011ca6f0e3f09ccf76ff68a420"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "1154b617-5d7c-40bd-9f70-7da6d940ce62",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T19:26:00.000Z",
+    "soil_moisture": 20.4,
+    "temp_c": 31.52,
+    "battery_v": 3.76,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "7ab01bda29af577b9435a770926fcdb169a3359aaf5787678aafd7a0c35beed3"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "85defc12-afd5-49ed-8e65-23a50e831996",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T19:39:00.000Z",
+    "soil_moisture": 36.34,
+    "temp_c": 32.45,
+    "battery_v": 3.88,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "6ffd015cd85c2fb99f3a65c43ab5f4c531a35a37dfd83bd33ea9387f11715871"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "96e653df-bebc-4608-9cee-90df695d097d",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T19:52:00.000Z",
+    "soil_moisture": 27.58,
+    "temp_c": 12.46,
+    "battery_v": 3.59,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "1"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "2f35326a7ffc16350a5b41c8b1fa4a91ae5714171ef9ed2a0a0ec8a7a7c03948"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "50c67877-4491-46d1-8dd8-a468f4569c9c",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T20:05:00.000Z",
+    "soil_moisture": 30.04,
+    "temp_c": 33.78,
+    "battery_v": 3.64,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "499677a1dfeca19a61c2e79594a958314bad3e2d08986f5e631134cd61c46fe4"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "a197b8ae-2c6d-4bd8-904c-34df718976fb",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T20:18:00.000Z",
+    "soil_moisture": 39.31,
+    "temp_c": 23.64,
+    "battery_v": 3.83,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "934050a21e334d9dfc380ae5556d75fa6adc7a26ed61454fd169fd8937480c1d"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "14973b9b-822a-415e-8935-246cd0bddbf2",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-01T20:31:00.000Z",
+    "soil_moisture": 26.87,
+    "temp_c": 21.86,
+    "battery_v": 3.66,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "b201e776bf8211736b3439d8e02ba6ff5eb5d446a9af9d0536d9f98fd60d9d5f"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "0492b1e0-282b-479e-b564-366619591374",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T20:44:00.000Z",
+    "soil_moisture": 36.99,
+    "temp_c": 30.79,
+    "battery_v": 4.13,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "e6042308fb0f9b80e980c993d558f425bb380461ccbb39397523bcab396af6af"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "39eb7a66-551e-4538-898f-4c00d7d7167a",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T20:57:00.000Z",
+    "soil_moisture": 40.94,
+    "temp_c": 18.22,
+    "battery_v": 3.93,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "a6f90af0ab07ac49e666810bce69ce7a2fab69b151aa5b57096da46efcd74fe5"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "783f874d-550d-418a-b762-2917600f4f6d",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T21:10:00.000Z",
+    "soil_moisture": 26.67,
+    "temp_c": 36.9,
+    "battery_v": 3.66,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "81471560321e2ee387953b51bb7765a4c2a42f53c969d06d29c9ba9cb34287d0"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "b3dfd6bc-cab8-48b4-bc70-b75baa223fdf",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-01T21:23:00.000Z",
+    "soil_moisture": 31.49,
+    "temp_c": 35.64,
+    "battery_v": 3.59,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "1"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "d01c076960a714908f24c0d5f287b54f61d8b679e5839467bc70f2a3a499b2be"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "d044247a-0659-4d60-80e5-6a74ed2bb8b2",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T21:36:00.000Z",
+    "soil_moisture": 20.8,
+    "temp_c": 17.5,
+    "battery_v": 3.62,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "2677060be667ae832e3f2312d3869c2fa3c163cbc2fed6eb77c37341898a729f"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "7df87f39-c424-47fc-ad2d-8487919dd11c",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T21:49:00.000Z",
+    "soil_moisture": 13.52,
+    "temp_c": 36.46,
+    "battery_v": 3.96,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "e6e07b46e4f9d15d653f9d5b3ef9c7127a14e7ccc8c616189470495d90839d1e"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "1d8fd1ec-1713-4ac4-93ee-7838eb4b3f3f",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T22:02:00.000Z",
+    "soil_moisture": 37.46,
+    "temp_c": 36.07,
+    "battery_v": 3.78,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "87318e0b07f283c4411d2a9000b7271c113800dc448b5fe3d91a7f5cf365ea56"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "fc98e6a9-bcc3-4971-bd04-29da720c5d59",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T22:15:00.000Z",
+    "soil_moisture": 33.85,
+    "temp_c": 14.88,
+    "battery_v": 3.5,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "d5bf89b65d1f41a2d60a7b3be09bcec5fa914be7f00f943553ffc200c73b5f56"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "3a9ac1e4-d715-4c5d-bdbd-b41d15d47e21",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T22:28:00.000Z",
+    "soil_moisture": 12.67,
+    "temp_c": 11.95,
+    "battery_v": 4.03,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "b373d5a49807129559a613bda76d59d8f236f162b3bd88ed1cfc5b21c8ea36e5"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "7038a81c-7ce3-4860-9964-f9d9593a7bdd",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-01T22:41:00.000Z",
+    "soil_moisture": 11.78,
+    "temp_c": 14.04,
+    "battery_v": 3.57,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "6d3c72d6b30ab5ec1d8c27740142371f0ab5645d05fbe6cd8e710d1ab69f92c5"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "d4bd2a10-ae7d-4b89-ab88-3f61e200e156",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T22:54:00.000Z",
+    "soil_moisture": 15.52,
+    "temp_c": 12.81,
+    "battery_v": 3.52,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "5f9b97e28371237cb1d70b46bb020f6db0564e15cb498058b42cf729686ee18b"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "25a8c2fb-dc3a-4d38-976e-68155d122efc",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-01T23:07:00.000Z",
+    "soil_moisture": 23.01,
+    "temp_c": 12.29,
+    "battery_v": 3.7,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "c4e904a5337ea9c6a37d207826a2ea1e03db6e9ef7a7c3dd748789a9ca2445bd"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "e4304960-531a-40e8-911b-b2b661156f29",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-01T23:20:00.000Z",
+    "soil_moisture": 12.37,
+    "temp_c": 22.43,
+    "battery_v": 3.58,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "d66b997c7b49d03750e773d6cac220cd429d265d5729a1597b0abf7cafe5143e"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "64ed94cc-50ea-49cf-a7c5-4abe73180250",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-01T23:33:00.000Z",
+    "soil_moisture": 31.1,
+    "temp_c": 20.16,
+    "battery_v": 3.82,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "fc5c211170019b6f960fc7b981a25b9c1a40f14e75ede70f97f2de1f6097e81e"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "4365d364-bdbb-4d22-88e0-eb4ae9cf0157",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T23:46:00.000Z",
+    "soil_moisture": 23.02,
+    "temp_c": 19.72,
+    "battery_v": 3.66,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "e78f49cab6e91c8b88f8ab0dadc0e8d206c4b13beefa8366524dd2a8e81512d2"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "944e9009-7b4c-4220-a43f-14609207b7a0",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-01T23:59:00.000Z",
+    "soil_moisture": 37.93,
+    "temp_c": 27.66,
+    "battery_v": 3.81,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "abb467a8736684a218cce9c0134eafbfe0cbce7c9065112b89e5d39643f6f254"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "d23188c7-fb15-4c89-9063-a3e58c248d32",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-02T00:12:00.000Z",
+    "soil_moisture": 44.82,
+    "temp_c": 9.56,
+    "battery_v": 4,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "9465ae690c956d0a48e5c17b83c24b2592ba5ca29f6dc87b4acee0e6d9f4cffd"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "d25022df-fb28-4d59-9de1-ff88ed00b0ad",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-02T00:25:00.000Z",
+    "soil_moisture": 13.25,
+    "temp_c": 21.91,
+    "battery_v": 4.2,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "9da51915b6798c0db23d3440944a96f628919402b7c5754d082d2c326e00f520"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "4925c648-4bbf-47f3-9ccc-89c8118a6ec1",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-02T00:38:00.000Z",
+    "soil_moisture": 30.4,
+    "temp_c": 37.84,
+    "battery_v": 3.82,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "b8cd82a1bb44254f5df5e515b016813704f833180800ad98c04da70fee950680"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "6cf9447e-2816-4d7c-855e-a9669e2134a4",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-02T00:51:00.000Z",
+    "soil_moisture": 17.14,
+    "temp_c": 34.32,
+    "battery_v": 4.17,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "d764da53920b3a0a3b696019d03db7b403d54ddbda4b959b84d2a7bbe8b7e8b5"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "6615c53f-05f9-4b51-a076-b5558213aa81",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-02T01:04:00.000Z",
+    "soil_moisture": 10.35,
+    "temp_c": 34.21,
+    "battery_v": 3.64,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "753e9e2dd1e21417a6000cc3ac3a8b1e4dcbaec17b73d231280d18eea24ad6ab"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "e013750f-7fca-49d4-846d-18bc22424705",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-02T01:17:00.000Z",
+    "soil_moisture": 18.58,
+    "temp_c": 21.32,
+    "battery_v": 3.89,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "7cd160a838233b28fbc2e8997c2c13939ed0dd096ea4dbe5b36427b534a33285"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "f3edf9fc-5326-4630-ba22-dce0d3586769",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-02T01:30:00.000Z",
+    "soil_moisture": 20.85,
+    "temp_c": 17.46,
+    "battery_v": 4.11,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "1"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "78ea1f302edfda1e262ac640f99d19dadb88ee93a3b295532dd44f9dca924d01"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "12de52a1-e237-440d-9d89-5aa8eeda5c72",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1006",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.912033,
+      "lon": -121.232221
+    },
+    "ts_utc": "2025-11-02T01:43:00.000Z",
+    "soil_moisture": 24.69,
+    "temp_c": 25.65,
+    "battery_v": 3.6,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "6"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "bf49f0fbae81a791b65082da32ef783cdae3a7c4c81390e549061be442630663"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "2b478668-ef07-4be6-b855-ddd1b8fcbf6a",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1004",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.968177,
+      "lon": -121.308711
+    },
+    "ts_utc": "2025-11-02T01:56:00.000Z",
+    "soil_moisture": 24.67,
+    "temp_c": 9.05,
+    "battery_v": 4.11,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "4"
+      },
+      "created_at": "2025-11-25T02:53:29.434Z",
+      "checksum": "76b2970acc4e669406276e9459b3adf33e2186d74126592c9662013e9ed5a87c"
+    },
+    "shard_id": 3
+  },
+  {
+    "_id": "25c09265-16b2-4ebe-82a0-363951436cfe",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-02T02:09:00.000Z",
+    "soil_moisture": 13.99,
+    "temp_c": 35.9,
+    "battery_v": 4.08,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.435Z",
+      "checksum": "57c7e1dca4e72fa97baffde2e0935b04c6257fe5d9a0c0920c578536aab2a7c0"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "b6d130c7-2c4f-4905-a6dd-0143d6e2d920",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1001",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.958883,
+      "lon": -121.305032
+    },
+    "ts_utc": "2025-11-02T02:22:00.000Z",
+    "soil_moisture": 14.57,
+    "temp_c": 20,
+    "battery_v": 3.95,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "1"
+      },
+      "created_at": "2025-11-25T02:53:29.435Z",
+      "checksum": "9f0418b8d0f80598b15e92a15edf6cc4daca8eed5b2e6ce6b07968bc1fe75493"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "459c6776-c2bf-4730-91a7-4993810855de",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1005",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.032389,
+      "lon": -121.403287
+    },
+    "ts_utc": "2025-11-02T02:35:00.000Z",
+    "soil_moisture": 33.03,
+    "temp_c": 20.17,
+    "battery_v": 3.56,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "5"
+      },
+      "created_at": "2025-11-25T02:53:29.435Z",
+      "checksum": "f1b4f9f6f8826f0296169ca987ad843b9536d3bbb622493a6b72ed06a17df577"
+    },
+    "shard_id": 4
+  },
+  {
+    "_id": "c12c41d5-ce7b-42a6-b2bb-cd76634719f7",
+    "farmId": "FARM-002",
+    "deviceId": "SNS-1002",
+    "crop": "Tomato",
+    "gps": {
+      "lat": 38.042468,
+      "lon": -121.412433
+    },
+    "ts_utc": "2025-11-02T02:48:00.000Z",
+    "soil_moisture": 42.31,
+    "temp_c": 15.6,
+    "battery_v": 4.01,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "2"
+      },
+      "created_at": "2025-11-25T02:53:29.435Z",
+      "checksum": "488154c42cda99a6e9fdfc1947ac35418fd2c1a0e1764fcb0f0f7c043c573129"
+    },
+    "shard_id": 1
+  },
+  {
+    "_id": "84334394-a3c4-453f-9e4d-5e328dd202a4",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-02T03:01:00.000Z",
+    "soil_moisture": 42.37,
+    "temp_c": 36.73,
+    "battery_v": 3.65,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.435Z",
+      "checksum": "c1f78e6e2596e97078763b49bf35bf2a226697669793bc630bf09ae2c12ca508"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "bcb065bf-dbcc-40ea-9ba1-7335cd136654",
+    "farmId": "FARM-001",
+    "deviceId": "SNS-1007",
+    "crop": "Almond",
+    "gps": {
+      "lat": 37.941821,
+      "lon": -121.305587
+    },
+    "ts_utc": "2025-11-02T03:14:00.000Z",
+    "soil_moisture": 35.3,
+    "temp_c": 19.21,
+    "battery_v": 3.83,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "7"
+      },
+      "created_at": "2025-11-25T02:53:29.435Z",
+      "checksum": "d448b72d37387ac1bd3e4b508e5a8aa97e8f07516da49ac351cbf88170eba4a6"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "40d5e2b8-24b7-48e5-ac4c-eb3a331b1419",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-02T03:27:00.000Z",
+    "soil_moisture": 38.69,
+    "temp_c": 18.67,
+    "battery_v": 3.62,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.435Z",
+      "checksum": "4585c5ef081c233fb241438519a61dedf20d5057884f30567af3e269fb37c52d"
+    },
+    "shard_id": 2
+  },
+  {
+    "_id": "a4b511d0-a293-4589-84b6-d4106be0f782",
+    "farmId": "FARM-003",
+    "deviceId": "SNS-1003",
+    "crop": "Grape",
+    "gps": {
+      "lat": 37.896825,
+      "lon": -121.258034
+    },
+    "ts_utc": "2025-11-02T03:40:00.000Z",
+    "soil_moisture": 15.01,
+    "temp_c": 14.13,
+    "battery_v": 3.79,
+    "metadata": {
+      "lineage": {
+        "source_files": [
+          "sql_readings_100rows.json",
+          "sql_sensors.json"
+        ],
+        "sensor_lookup_key": "3"
+      },
+      "created_at": "2025-11-25T02:53:29.435Z",
+      "checksum": "57b15dfe1546034a844eb773ca2b3178960a263635db0954ef03fcbbd98750e5"
+    },
+    "shard_id": 2
+  }
+]

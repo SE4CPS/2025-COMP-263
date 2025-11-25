@@ -1,0 +1,802 @@
+[
+  {
+    "reading_id": 1,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T06:13:00Z",
+    "soil_moisture": 41.09,
+    "temp_c": 29.14,
+    "battery_v": 3.53
+  },
+  {
+    "reading_id": 2,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T06:26:00Z",
+    "soil_moisture": 25.7,
+    "temp_c": 21.29,
+    "battery_v": 3.79
+  },
+  {
+    "reading_id": 3,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T06:39:00Z",
+    "soil_moisture": 11.66,
+    "temp_c": 24.65,
+    "battery_v": 3.5
+  },
+  {
+    "reading_id": 4,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-01T06:52:00Z",
+    "soil_moisture": 36.95,
+    "temp_c": 25.47,
+    "battery_v": 3.53
+  },
+  {
+    "reading_id": 5,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T07:05:00Z",
+    "soil_moisture": 28.99,
+    "temp_c": 14.49,
+    "battery_v": 3.73
+  },
+  {
+    "reading_id": 6,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T07:18:00Z",
+    "soil_moisture": 12.36,
+    "temp_c": 18.7,
+    "battery_v": 3.82
+  },
+  {
+    "reading_id": 7,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-01T07:31:00Z",
+    "soil_moisture": 11.95,
+    "temp_c": 38.63,
+    "battery_v": 3.66
+  },
+  {
+    "reading_id": 8,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T07:44:00Z",
+    "soil_moisture": 43.96,
+    "temp_c": 26.56,
+    "battery_v": 4.18
+  },
+  {
+    "reading_id": 9,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T07:57:00Z",
+    "soil_moisture": 31.15,
+    "temp_c": 28.07,
+    "battery_v": 4.1
+  },
+  {
+    "reading_id": 10,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T08:10:00Z",
+    "soil_moisture": 10.68,
+    "temp_c": 8.2,
+    "battery_v": 3.51
+  },
+  {
+    "reading_id": 11,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T08:23:00Z",
+    "soil_moisture": 41.57,
+    "temp_c": 30.19,
+    "battery_v": 3.96
+  },
+  {
+    "reading_id": 12,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T08:36:00Z",
+    "soil_moisture": 21.03,
+    "temp_c": 27.84,
+    "battery_v": 4.06
+  },
+  {
+    "reading_id": 13,
+    "sensor_id": 1,
+    "ts_utc": "2025-11-01T08:49:00Z",
+    "soil_moisture": 33.83,
+    "temp_c": 28.93,
+    "battery_v": 3.52
+  },
+  {
+    "reading_id": 14,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T09:02:00Z",
+    "soil_moisture": 22.44,
+    "temp_c": 30.8,
+    "battery_v": 4.08
+  },
+  {
+    "reading_id": 15,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-01T09:15:00Z",
+    "soil_moisture": 12.7,
+    "temp_c": 16.46,
+    "battery_v": 4.15
+  },
+  {
+    "reading_id": 16,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T09:28:00Z",
+    "soil_moisture": 11.49,
+    "temp_c": 10.86,
+    "battery_v": 4.15
+  },
+  {
+    "reading_id": 17,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T09:41:00Z",
+    "soil_moisture": 25.2,
+    "temp_c": 14.2,
+    "battery_v": 4.19
+  },
+  {
+    "reading_id": 18,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T09:54:00Z",
+    "soil_moisture": 38.9,
+    "temp_c": 32.95,
+    "battery_v": 4.16
+  },
+  {
+    "reading_id": 19,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T10:07:00Z",
+    "soil_moisture": 20.7,
+    "temp_c": 11.29,
+    "battery_v": 3.8
+  },
+  {
+    "reading_id": 20,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T10:20:00Z",
+    "soil_moisture": 21.7,
+    "temp_c": 15.15,
+    "battery_v": 3.99
+  },
+  {
+    "reading_id": 21,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-01T10:33:00Z",
+    "soil_moisture": 42.58,
+    "temp_c": 26.92,
+    "battery_v": 3.95
+  },
+  {
+    "reading_id": 22,
+    "sensor_id": 1,
+    "ts_utc": "2025-11-01T10:46:00Z",
+    "soil_moisture": 11.6,
+    "temp_c": 16.95,
+    "battery_v": 3.6
+  },
+  {
+    "reading_id": 23,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-01T10:59:00Z",
+    "soil_moisture": 41.88,
+    "temp_c": 21.27,
+    "battery_v": 3.78
+  },
+  {
+    "reading_id": 24,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T11:12:00Z",
+    "soil_moisture": 25.99,
+    "temp_c": 17.22,
+    "battery_v": 3.78
+  },
+  {
+    "reading_id": 25,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-01T11:25:00Z",
+    "soil_moisture": 37.65,
+    "temp_c": 31.91,
+    "battery_v": 4.14
+  },
+  {
+    "reading_id": 26,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T11:38:00Z",
+    "soil_moisture": 25.64,
+    "temp_c": 14.92,
+    "battery_v": 3.54
+  },
+  {
+    "reading_id": 27,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-01T11:51:00Z",
+    "soil_moisture": 34.96,
+    "temp_c": 9.23,
+    "battery_v": 4.11
+  },
+  {
+    "reading_id": 28,
+    "sensor_id": 1,
+    "ts_utc": "2025-11-01T12:04:00Z",
+    "soil_moisture": 29.4,
+    "temp_c": 24.56,
+    "battery_v": 4.02
+  },
+  {
+    "reading_id": 29,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T12:17:00Z",
+    "soil_moisture": 15.46,
+    "temp_c": 26.15,
+    "battery_v": 4.09
+  },
+  {
+    "reading_id": 30,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T12:30:00Z",
+    "soil_moisture": 36.51,
+    "temp_c": 27.52,
+    "battery_v": 3.94
+  },
+  {
+    "reading_id": 31,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T12:43:00Z",
+    "soil_moisture": 38.36,
+    "temp_c": 10.25,
+    "battery_v": 3.7
+  },
+  {
+    "reading_id": 32,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T12:56:00Z",
+    "soil_moisture": 13.08,
+    "temp_c": 23.15,
+    "battery_v": 3.84
+  },
+  {
+    "reading_id": 33,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T13:09:00Z",
+    "soil_moisture": 40.81,
+    "temp_c": 14.85,
+    "battery_v": 4.15
+  },
+  {
+    "reading_id": 34,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T13:22:00Z",
+    "soil_moisture": 32.72,
+    "temp_c": 31.27,
+    "battery_v": 3.74
+  },
+  {
+    "reading_id": 35,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T13:35:00Z",
+    "soil_moisture": 33.67,
+    "temp_c": 22.5,
+    "battery_v": 4.15
+  },
+  {
+    "reading_id": 36,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T13:48:00Z",
+    "soil_moisture": 26.26,
+    "temp_c": 12.64,
+    "battery_v": 4.15
+  },
+  {
+    "reading_id": 37,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-01T14:01:00Z",
+    "soil_moisture": 16.97,
+    "temp_c": 21.98,
+    "battery_v": 3.7
+  },
+  {
+    "reading_id": 38,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T14:14:00Z",
+    "soil_moisture": 40.26,
+    "temp_c": 16.74,
+    "battery_v": 3.58
+  },
+  {
+    "reading_id": 39,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T14:27:00Z",
+    "soil_moisture": 37.62,
+    "temp_c": 28.86,
+    "battery_v": 3.75
+  },
+  {
+    "reading_id": 40,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T14:40:00Z",
+    "soil_moisture": 32.17,
+    "temp_c": 19.87,
+    "battery_v": 3.63
+  },
+  {
+    "reading_id": 41,
+    "sensor_id": 1,
+    "ts_utc": "2025-11-01T14:53:00Z",
+    "soil_moisture": 25.76,
+    "temp_c": 32.02,
+    "battery_v": 4.17
+  },
+  {
+    "reading_id": 42,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T15:06:00Z",
+    "soil_moisture": 27.46,
+    "temp_c": 18.36,
+    "battery_v": 4.07
+  },
+  {
+    "reading_id": 43,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T15:19:00Z",
+    "soil_moisture": 26.73,
+    "temp_c": 18.08,
+    "battery_v": 3.87
+  },
+  {
+    "reading_id": 44,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-01T15:32:00Z",
+    "soil_moisture": 21.82,
+    "temp_c": 27.63,
+    "battery_v": 3.64
+  },
+  {
+    "reading_id": 45,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T15:45:00Z",
+    "soil_moisture": 44.38,
+    "temp_c": 32.37,
+    "battery_v": 3.95
+  },
+  {
+    "reading_id": 46,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-01T15:58:00Z",
+    "soil_moisture": 34.67,
+    "temp_c": 13.31,
+    "battery_v": 3.85
+  },
+  {
+    "reading_id": 47,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T16:11:00Z",
+    "soil_moisture": 16.55,
+    "temp_c": 22.26,
+    "battery_v": 3.98
+  },
+  {
+    "reading_id": 48,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T16:24:00Z",
+    "soil_moisture": 28.46,
+    "temp_c": 11.44,
+    "battery_v": 4.04
+  },
+  {
+    "reading_id": 49,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T16:37:00Z",
+    "soil_moisture": 26.54,
+    "temp_c": 27.04,
+    "battery_v": 3.56
+  },
+  {
+    "reading_id": 50,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T16:50:00Z",
+    "soil_moisture": 44.69,
+    "temp_c": 22.13,
+    "battery_v": 3.92
+  },
+  {
+    "reading_id": 51,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T17:03:00Z",
+    "soil_moisture": 26.82,
+    "temp_c": 18.31,
+    "battery_v": 4.0
+  },
+  {
+    "reading_id": 52,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-01T17:16:00Z",
+    "soil_moisture": 42.94,
+    "temp_c": 17.01,
+    "battery_v": 3.81
+  },
+  {
+    "reading_id": 53,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T17:29:00Z",
+    "soil_moisture": 21.32,
+    "temp_c": 12.33,
+    "battery_v": 3.72
+  },
+  {
+    "reading_id": 54,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-01T17:42:00Z",
+    "soil_moisture": 44.48,
+    "temp_c": 25.95,
+    "battery_v": 3.88
+  },
+  {
+    "reading_id": 55,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T17:55:00Z",
+    "soil_moisture": 24.99,
+    "temp_c": 24.61,
+    "battery_v": 4.05
+  },
+  {
+    "reading_id": 56,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T18:08:00Z",
+    "soil_moisture": 40.3,
+    "temp_c": 8.68,
+    "battery_v": 3.69
+  },
+  {
+    "reading_id": 57,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T18:21:00Z",
+    "soil_moisture": 15.92,
+    "temp_c": 23.08,
+    "battery_v": 3.55
+  },
+  {
+    "reading_id": 58,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T18:34:00Z",
+    "soil_moisture": 32.62,
+    "temp_c": 33.16,
+    "battery_v": 4.15
+  },
+  {
+    "reading_id": 59,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T18:47:00Z",
+    "soil_moisture": 44.59,
+    "temp_c": 37.76,
+    "battery_v": 3.54
+  },
+  {
+    "reading_id": 60,
+    "sensor_id": 1,
+    "ts_utc": "2025-11-01T19:00:00Z",
+    "soil_moisture": 40.05,
+    "temp_c": 28.64,
+    "battery_v": 3.75
+  },
+  {
+    "reading_id": 61,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T19:13:00Z",
+    "soil_moisture": 11.59,
+    "temp_c": 14.14,
+    "battery_v": 3.77
+  },
+  {
+    "reading_id": 62,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T19:26:00Z",
+    "soil_moisture": 20.4,
+    "temp_c": 31.52,
+    "battery_v": 3.76
+  },
+  {
+    "reading_id": 63,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T19:39:00Z",
+    "soil_moisture": 36.34,
+    "temp_c": 32.45,
+    "battery_v": 3.88
+  },
+  {
+    "reading_id": 64,
+    "sensor_id": 1,
+    "ts_utc": "2025-11-01T19:52:00Z",
+    "soil_moisture": 27.58,
+    "temp_c": 12.46,
+    "battery_v": 3.59
+  },
+  {
+    "reading_id": 65,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-01T20:05:00Z",
+    "soil_moisture": 30.04,
+    "temp_c": 33.78,
+    "battery_v": 3.64
+  },
+  {
+    "reading_id": 66,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T20:18:00Z",
+    "soil_moisture": 39.31,
+    "temp_c": 23.64,
+    "battery_v": 3.83
+  },
+  {
+    "reading_id": 67,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-01T20:31:00Z",
+    "soil_moisture": 26.87,
+    "temp_c": 21.86,
+    "battery_v": 3.66
+  },
+  {
+    "reading_id": 68,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T20:44:00Z",
+    "soil_moisture": 36.99,
+    "temp_c": 30.79,
+    "battery_v": 4.13
+  },
+  {
+    "reading_id": 69,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T20:57:00Z",
+    "soil_moisture": 40.94,
+    "temp_c": 18.22,
+    "battery_v": 3.93
+  },
+  {
+    "reading_id": 70,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T21:10:00Z",
+    "soil_moisture": 26.67,
+    "temp_c": 36.9,
+    "battery_v": 3.66
+  },
+  {
+    "reading_id": 71,
+    "sensor_id": 1,
+    "ts_utc": "2025-11-01T21:23:00Z",
+    "soil_moisture": 31.49,
+    "temp_c": 35.64,
+    "battery_v": 3.59
+  },
+  {
+    "reading_id": 72,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T21:36:00Z",
+    "soil_moisture": 20.8,
+    "temp_c": 17.5,
+    "battery_v": 3.62
+  },
+  {
+    "reading_id": 73,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T21:49:00Z",
+    "soil_moisture": 13.52,
+    "temp_c": 36.46,
+    "battery_v": 3.96
+  },
+  {
+    "reading_id": 74,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-01T22:02:00Z",
+    "soil_moisture": 37.46,
+    "temp_c": 36.07,
+    "battery_v": 3.78
+  },
+  {
+    "reading_id": 75,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-01T22:15:00Z",
+    "soil_moisture": 33.85,
+    "temp_c": 14.88,
+    "battery_v": 3.5
+  },
+  {
+    "reading_id": 76,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-01T22:28:00Z",
+    "soil_moisture": 12.67,
+    "temp_c": 11.95,
+    "battery_v": 4.03
+  },
+  {
+    "reading_id": 77,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-01T22:41:00Z",
+    "soil_moisture": 11.78,
+    "temp_c": 14.04,
+    "battery_v": 3.57
+  },
+  {
+    "reading_id": 78,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-01T22:54:00Z",
+    "soil_moisture": 15.52,
+    "temp_c": 12.81,
+    "battery_v": 3.52
+  },
+  {
+    "reading_id": 79,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-01T23:07:00Z",
+    "soil_moisture": 23.01,
+    "temp_c": 12.29,
+    "battery_v": 3.7
+  },
+  {
+    "reading_id": 80,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-01T23:20:00Z",
+    "soil_moisture": 12.37,
+    "temp_c": 22.43,
+    "battery_v": 3.58
+  },
+  {
+    "reading_id": 81,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-01T23:33:00Z",
+    "soil_moisture": 31.1,
+    "temp_c": 20.16,
+    "battery_v": 3.82
+  },
+  {
+    "reading_id": 82,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-01T23:46:00Z",
+    "soil_moisture": 23.02,
+    "temp_c": 19.72,
+    "battery_v": 3.66
+  },
+  {
+    "reading_id": 83,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-01T23:59:00Z",
+    "soil_moisture": 37.93,
+    "temp_c": 27.66,
+    "battery_v": 3.81
+  },
+  {
+    "reading_id": 84,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-02T00:12:00Z",
+    "soil_moisture": 44.82,
+    "temp_c": 9.56,
+    "battery_v": 4.0
+  },
+  {
+    "reading_id": 85,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-02T00:25:00Z",
+    "soil_moisture": 13.25,
+    "temp_c": 21.91,
+    "battery_v": 4.2
+  },
+  {
+    "reading_id": 86,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-02T00:38:00Z",
+    "soil_moisture": 30.4,
+    "temp_c": 37.84,
+    "battery_v": 3.82
+  },
+  {
+    "reading_id": 87,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-02T00:51:00Z",
+    "soil_moisture": 17.14,
+    "temp_c": 34.32,
+    "battery_v": 4.17
+  },
+  {
+    "reading_id": 88,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-02T01:04:00Z",
+    "soil_moisture": 10.35,
+    "temp_c": 34.21,
+    "battery_v": 3.64
+  },
+  {
+    "reading_id": 89,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-02T01:17:00Z",
+    "soil_moisture": 18.58,
+    "temp_c": 21.32,
+    "battery_v": 3.89
+  },
+  {
+    "reading_id": 90,
+    "sensor_id": 1,
+    "ts_utc": "2025-11-02T01:30:00Z",
+    "soil_moisture": 20.85,
+    "temp_c": 17.46,
+    "battery_v": 4.11
+  },
+  {
+    "reading_id": 91,
+    "sensor_id": 6,
+    "ts_utc": "2025-11-02T01:43:00Z",
+    "soil_moisture": 24.69,
+    "temp_c": 25.65,
+    "battery_v": 3.6
+  },
+  {
+    "reading_id": 92,
+    "sensor_id": 4,
+    "ts_utc": "2025-11-02T01:56:00Z",
+    "soil_moisture": 24.67,
+    "temp_c": 9.05,
+    "battery_v": 4.11
+  },
+  {
+    "reading_id": 93,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-02T02:09:00Z",
+    "soil_moisture": 13.99,
+    "temp_c": 35.9,
+    "battery_v": 4.08
+  },
+  {
+    "reading_id": 94,
+    "sensor_id": 1,
+    "ts_utc": "2025-11-02T02:22:00Z",
+    "soil_moisture": 14.57,
+    "temp_c": 20.0,
+    "battery_v": 3.95
+  },
+  {
+    "reading_id": 95,
+    "sensor_id": 5,
+    "ts_utc": "2025-11-02T02:35:00Z",
+    "soil_moisture": 33.03,
+    "temp_c": 20.17,
+    "battery_v": 3.56
+  },
+  {
+    "reading_id": 96,
+    "sensor_id": 2,
+    "ts_utc": "2025-11-02T02:48:00Z",
+    "soil_moisture": 42.31,
+    "temp_c": 15.6,
+    "battery_v": 4.01
+  },
+  {
+    "reading_id": 97,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-02T03:01:00Z",
+    "soil_moisture": 42.37,
+    "temp_c": 36.73,
+    "battery_v": 3.65
+  },
+  {
+    "reading_id": 98,
+    "sensor_id": 7,
+    "ts_utc": "2025-11-02T03:14:00Z",
+    "soil_moisture": 35.3,
+    "temp_c": 19.21,
+    "battery_v": 3.83
+  },
+  {
+    "reading_id": 99,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-02T03:27:00Z",
+    "soil_moisture": 38.69,
+    "temp_c": 18.67,
+    "battery_v": 3.62
+  },
+  {
+    "reading_id": 100,
+    "sensor_id": 3,
+    "ts_utc": "2025-11-02T03:40:00Z",
+    "soil_moisture": 15.01,
+    "temp_c": 14.13,
+    "battery_v": 3.79
+  }
+]

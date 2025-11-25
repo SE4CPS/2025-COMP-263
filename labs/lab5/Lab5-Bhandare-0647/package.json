@@ -1,0 +1,12 @@
+{
+  "name": "lab5-bhandare-0647",
+  "version": "1.0.0",
+  "main": "lab5_solution.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

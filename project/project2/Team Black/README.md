@@ -27,6 +27,29 @@ Team Black/
 ```
 
 
+## How to Set Up and Run Project
+
+1. Start MongoDB, ClickHouse, and Redis locally.  
+   Ensure all services are running before executing scripts.
+
+2. Load 90-day weather data into MongoDB:  
+   `python api.py`  
+   This fetches historical weather data and stores it in `enriched_observations`.
+
+3. Transfer enriched data from MongoDB to ClickHouse:  
+   `python mongo_to_clickhouse_enriched.py`
+   
+4. Generate Redis cache from ClickHouse aggregated results:  
+   `python clickhousetoreddit_agg.py`
+   
+5. Start the Flask dashboard:  
+   `python dashboard_app.py`
+
+6. Open the dashboard in a browser:  
+http://127.0.0.1:5000
+  
+Optional: Press “Sync Data” in the dashboard to reload data from ClickHouse and refresh Redis.
+
 
 ## Component Descriptions
 

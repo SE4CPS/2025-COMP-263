@@ -16,6 +16,7 @@ API
 ```
 Team Black/
 │
+├── .env
 ├── api.py
 ├── app.py
 ├── mongo_to_clickhouse_enriched.py

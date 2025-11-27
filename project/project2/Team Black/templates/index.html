@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Stockton Weather – 90-Day Trends</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <style>
+    /* Scrollbar styling */
+    ::-webkit-scrollbar {
+      height: 6px;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #38bdf8;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+
+<body class="bg-slate-950 text-slate-100 min-h-screen">
+  <div class="max-w-6xl mx-auto px-6 py-8 space-y-6">
+
+    <!-- Header -->
+    <header class="flex items-center justify-between">
+      <div>
+        <h1 class="text-3xl font-bold tracking-tight">
+          Stockton Weather — <span class="text-sky-400">90-Day Trends</span>
+        </h1>
+        <p class="text-slate-400 text-sm mt-1">
+          Powered by MongoDB → ClickHouse → Redis → Flask
+        </p>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <span id="data-source-pill"
+          class="inline-flex items-center gap-2 rounded-full bg-slate-800 px-4 py-1.5 text-xs font-medium text-slate-200 border border-slate-700">
+          <span class="w-2 h-2 rounded-full bg-slate-500" id="source-dot"></span>
+          <span id="data-source-text">Source: …</span>
+        </span>
+      <!-- ADD Sync BUTTON -->
+      <button id="sync-btn"
+        class="px-4 py-2 rounded-lg bg-sky-600 hover:bg-sky-500 text-white text-sm font-medium">
+        Sync Data
+      </button>  
+      </div>
+    </header>
+
+    <!-- Error banner -->
+    <div id="error-banner"
+      class="hidden rounded-lg border border-red-500/40 bg-red-500/10 text-red-100 px-4 py-2 text-sm">
+      Error loading data.
+    </div>
+
+    <!-- ================= SUMMARY CARDS ================= -->
+    <section class="grid md:grid-cols-2 gap-6">
+      <!-- Temperature Card -->
+      <div class="rounded-xl bg-slate-900 border border-slate-800 p-6 space-y-3">
+        <h2 class="text-lg font-semibold">Average Temperature (°C)</h2>
+        <p class="text-4xl font-bold" id="avg-temp-value">--</p>
+        <p class="text-xs text-slate-400" id="updated-label-temp">Last updated: —</p>
+      </div>
+
+      <!-- Rainfall Card -->
+      <div class="rounded-xl bg-slate-900 border border-slate-800 p-6 space-y-3">
+        <h2 class="text-lg font-semibold">Average Rainfall (mm)</h2>
+        <p class="text-4xl font-bold" id="avg-rain-value">--</p>
+        <p class="text-xs text-slate-400" id="updated-label-rain">Last updated: —</p>
+      </div>
+    </section>
+
+    <!-- ================= 90-DAY SCROLLABLE CHARTS ================= -->
+
+    <!-- Temperature Chart -->
+    <div class="rounded-xl bg-slate-900 p-6 border border-slate-800">
+      <h2 class="text-lg font-semibold">Temperature Trend</h2>
+      <div class="overflow-x-auto mt-4 pb-4">
+        <div id="temp-container" style="width:2600px;">
+          <canvas id="tempChart" height="300"></canvas>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rainfall Chart -->
+    <div class="rounded-xl bg-slate-900 p-6 border border-slate-800">
+      <h2 class="text-lg font-semibold">Rainfall Trend</h2>
+      <div class="overflow-x-auto mt-4 pb-4">
+        <div id="rain-container" style="width:2200px;">
+          <canvas id="rainChart" height="300"></canvas>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    const AVG_TEMP_EL  = document.getElementById("avg-temp-value");
+    const AVG_RAIN_EL  = document.getElementById("avg-rain-value");
+    const UPDATED_TEMP = document.getElementById("updated-label-temp");
+    const UPDATED_RAIN = document.getElementById("updated-label-rain");
+    const SOURCE_TEXT  = document.getElementById("data-source-text");
+    const SOURCE_DOT   = document.getElementById("source-dot");
+    const ERROR_BANNER = document.getElementById("error-banner");
+
+    let tempChart, rainChart;
+
+    /* ---- Load Metrics (Redis or ClickHouse) ---- */
+    async function loadMetrics() {
+      try {
+        const res = await fetch("/api/weather-metrics");
+        const data = await res.json();
+
+        AVG_TEMP_EL.textContent = data.avg_temperature_c.toFixed(1);
+        AVG_RAIN_EL.textContent = data.avg_rainfall_mm.toFixed(2);
+
+        UPDATED_TEMP.textContent = "Last updated: " + data.last_updated;
+        UPDATED_RAIN.textContent = "Last updated: " + data.last_updated;
+
+        SOURCE_TEXT.textContent =
+          data.source === "redis" ? "Source: Redis cache" : "Source: ClickHouse";
+        SOURCE_DOT.className =
+          "w-2 h-2 rounded-full " +
+          (data.source === "redis" ? "bg-emerald-400" : "bg-sky-400");
+
+      } catch (e) {
+        console.error(e);
+        ERROR_BANNER.classList.remove("hidden");
+      }
+    }
+
+    /* ---- Load Trends ---- */
+    async function loadTrends() {
+      try {
+        const res = await fetch("/api/trends");
+        const json = await res.json();
+        const data = json.data || [];
+
+        const labels = data.map(d => d.date);
+        const temps  = data.map(d => d.avg_temperature_c);
+        const rains  = data.map(d => d.avg_rainfall_mm);
+
+        // ---- Temperature Chart ----
+        const tempCtx = document.getElementById("tempChart").getContext("2d");
+        tempChart = new Chart(tempCtx, {
+          type: "line",
+          data: {
+            labels,
+            datasets: [{
+              label: "Avg Temp (°C)",
+              data: temps,
+              borderColor: "#38bdf8",
+              borderWidth: 2,
+              pointRadius: 2,
+              tension: 0.3,
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: true, labels: { color: "#cbd5f5" } }
+            },
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: "Date",
+                  color: "#9ca3af"
+                },
+                ticks: {
+                  color: "#9ca3af",
+                  autoSkip: true,
+                  maxTicksLimit: 10,
+                  maxRotation: 45,
+                  minRotation: 45
+                },
+                grid: { display: false }
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: "Temperature (°C)",
+                  color: "#9ca3af"
+                },
+                ticks: {
+                  color: "#9ca3af"
+                },
+                grid: {
+                  color: "rgba(148,163,184,0.2)"
+                }
+              }
+            }
+          }
+        });
+
+        // ---- Rainfall Chart ----
+        const rainCtx = document.getElementById("rainChart").getContext("2d");
+        rainChart = new Chart(rainCtx, {
+          type: "bar",
+          data: {
+            labels,
+            datasets: [{
+              label: "Rainfall (mm)",
+              data: rains,
+              backgroundColor: "#64748b",
+              borderRadius: 3
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: { display: true, labels: { color: "#cbd5f5" } }
+            },
+            scales: {
+              x: {
+                title: {
+                  display: true,
+                  text: "Date",
+                  color: "#9ca3af"
+                },
+                ticks: {
+                  color: "#9ca3af",
+                  autoSkip: true,
+                  maxTicksLimit: 10,
+                  maxRotation: 45,
+                  minRotation: 45
+                },
+                grid: { display: false }
+              },
+              y: {
+                title: {
+                  display: true,
+                  text: "Rainfall (mm)",
+                  color: "#9ca3af"
+                },
+                ticks: {
+                  color: "#9ca3af"
+                },
+                grid: {
+                  color: "rgba(148,163,184,0.2)"
+                }
+              }
+            }
+          }
+        });
+      } catch (e) {
+        console.error(e);
+        ERROR_BANNER.classList.remove("hidden");
+      }
+    }
+
+    // ---- Initial load on page open ----
+    loadMetrics();
+    loadTrends();
+
+    /* ---- Sync Button ---- */
+    document.getElementById("sync-btn").addEventListener("click", async () => {
+      if (!confirm("Sync will fetch new data and rebuild dashboard.\nContinue?")) return;
+
+      try {
+        const res = await fetch("/api/sync", { method: "POST" });
+        const data = await res.json();
+        alert(data.message);
+
+        // Reload dashboard after sync
+        location.reload();
+
+      } catch (err) {
+        console.error(err);
+        alert("Sync failed.");
+      }
+    });
+  </script>
+
+</body>
+</html>

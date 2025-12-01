@@ -28,7 +28,7 @@ Open-Meteo API → MongoDB → ClickHouse → Redis → Backend API → React Da
 ---
 
 ## 📁 Project Structure
-
+```
 weather_dashboard/
 ├── backend/
 │   └── server.js                  # REST API server (Express)
@@ -44,7 +44,7 @@ weather_dashboard/
 ├── sync_redis.js                  # Cache aggregation → Redis
 ├── .env.template                  # Example environment variables
 └── README.md
-
+```
 ---
 
 ## 🚀 Setup & Run Instructions

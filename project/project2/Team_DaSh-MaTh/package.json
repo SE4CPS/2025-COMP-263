@@ -1,0 +1,34 @@
+{
+  "name": "weather-database-system",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "etlToClickHouse.js",
+  "scripts": {
+    "fetch": "node fetchStocktonWeather.js",
+    "etl:clickhouse": "node etlToClickHouse.js",
+    "etl:redis": "node clickhouseToRedis.js",
+    "start": "node backend/server.js",
+    "dev": "node backend/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@clickhouse/client": "^1.14.0",
+    "cors": "^2.8.5",
+    "dotenv": "^17.2.3",
+    "express": "^4.21.2",
+    "mongodb": "^7.0.0",
+    "redis": "^4.7.1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iDarshanaPatil/Weather-Database-System.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iDarshanaPatil/Weather-Database-System/issues"
+  },
+  "homepage": "https://github.com/iDarshanaPatil/Weather-Database-System#readme"
+}

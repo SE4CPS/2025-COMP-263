@@ -137,6 +137,11 @@ Redis enables:
 
 ### 5️⃣ Backend REST API
 
+To view the dashboard run the server.js file in weather_dashboard folder:
+```
+node server.js
+```
+
 Frontend → Backend → Redis (hit)
                       ↳ ClickHouse → Redis (miss refresh)
 
@@ -145,6 +150,11 @@ Outputs formatted JSON to frontend for UI display.
 ---
 
 ### 6️⃣ Frontend (Vite + React)
+
+Now to start the frontend simply run:
+```
+npm run preview
+```
 
 Visualizer provides:
 

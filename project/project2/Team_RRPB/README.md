@@ -63,7 +63,8 @@ You must have running instances of:
 
 ### 2️⃣ Ingest Weather Data → MongoDB
 
-node populateMongodb.js
+Run:
+```node populateMongodb.js```
 
 The script automatically:
 
@@ -78,6 +79,9 @@ https://archive-api.open-meteo.com/v1/archive?{params}
 
 ### 3️⃣ ETL: MongoDB → ClickHouse
 
+First in Clickhouse SQL run:
+
+```
 CREATE TABLE IF NOT EXISTS default.weather_hourly (
   time DateTime,
   temperature Float32,
@@ -86,11 +90,18 @@ CREATE TABLE IF NOT EXISTS default.weather_hourly (
   soil_temperature Float32,
   soil_moisture Float32
 ) ENGINE = MergeTree ORDER BY time;
+```
 
+then run: 
+```
 node populateClickhouseFromMongo.js
+```
 
 #### Create Aggregation View
 
+To create the aggregation table run: 
+
+```
 CREATE VIEW daily_weather_summary AS
 SELECT
   toDate(time) AS report_date,
@@ -104,12 +115,17 @@ FROM weather_hourly
 GROUP BY report_date;
 
 SELECT * FROM daily_weather_summary;
+```
 
 ---
 
 ### 4️⃣ Aggregate Data → Redis Cache
 
+For running the caching mechanism run this code: 
+
+```
 node sync_redis.js
+```
 
 Redis enables:
 

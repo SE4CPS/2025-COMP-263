@@ -31,6 +31,7 @@ export default function WeatherDashboard() {
 
       setData(normalizedData);
 
+      // ---------- DATA SYNC CHECK ----------
       let missingFields = normalizedData.some(
         (row) =>
           row.temp_high === null ||
@@ -67,6 +68,7 @@ export default function WeatherDashboard() {
       </p>
     );
 
+  // ---------- PAGE STYLES ----------
   const containerStyle = {
     width: "98vw",
     height: "96vh",
@@ -128,13 +130,16 @@ export default function WeatherDashboard() {
 
   return (
     <div style={containerStyle}>
+      {/* HEADER */}
       <div style={headerStyle}>
         <h1 style={titleStyle}>🌤 Stockton Weather Dashboard</h1>
 
         <div style={syncIndicatorStyle}>{syncStatus}</div>
       </div>
 
+      {/* GRID */}
       <div style={gridStyle}>
+        {/* TEMP H/L */}
         <div
           style={cardStyle}
           onMouseEnter={(e) => Object.assign(e.currentTarget.style, cardHoverStyle)}
@@ -153,6 +158,7 @@ export default function WeatherDashboard() {
           </ResponsiveContainer>
         </div>
 
+        {/* RAINFALL */}
         <div
           style={cardStyle}
           onMouseEnter={(e) => Object.assign(e.currentTarget.style, cardHoverStyle)}
@@ -170,6 +176,7 @@ export default function WeatherDashboard() {
           </ResponsiveContainer>
         </div>
 
+        {/* HUMIDITY */}
         <div
           style={cardStyle}
           onMouseEnter={(e) => Object.assign(e.currentTarget.style, cardHoverStyle)}
@@ -187,6 +194,7 @@ export default function WeatherDashboard() {
           </ResponsiveContainer>
         </div>
 
+        {/* SOIL MOISTURE */}
         <div
           style={cardStyle}
           onMouseEnter={(e) => Object.assign(e.currentTarget.style, cardHoverStyle)}

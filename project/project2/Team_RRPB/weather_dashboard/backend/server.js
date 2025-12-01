@@ -18,6 +18,7 @@ async function connectRedis() {
 }
 connectRedis();
 
+// ------------------- API ROUTE -------------------
 app.get("/api/weather", async (req, res) => {
     try {
         // Get all weather:* keys
@@ -38,6 +39,7 @@ app.get("/api/weather", async (req, res) => {
         res.status(500).json({ error: "Failed to load weather data" });
     }
 });
+// --------------------------------------------------
 
 app.listen(4000, () => {
     console.log("Backend API running on http://localhost:4000");

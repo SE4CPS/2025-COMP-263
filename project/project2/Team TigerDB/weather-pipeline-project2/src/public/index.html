@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Weather Dashboard</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <header class="top">
+      <div class="brand">Stockton Weather Dashboard</div>
+      <button id="syncBtn" type="button">Sync Now</button>
+    </header>
+
+    <main class="grid">
+      <section class="panel">
+        <h2>Status</h2>
+        <div class="row">
+          <span>Sync:</span><span id="syncIndicator">–</span>
+        </div>
+        <div class="row">
+          <span>Generated:</span><span id="generatedAt">–</span>
+        </div>
+        <div class="row">
+          <span>Refresh Every:</span><span id="refreshInterval">–</span>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Avg Temperature (°C)</h2>
+        <canvas id="tempChart"></canvas>
+      </section>
+
+      <section class="panel">
+        <h2>Total Rainfall (mm)</h2>
+        <canvas id="rainChart"></canvas>
+      </section>
+    </main>
+
+    <script src="dashboard.js"></script>
+  </body>
+</html>

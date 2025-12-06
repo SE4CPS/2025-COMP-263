@@ -14,6 +14,14 @@ The pipeline spans:
 - Local dashboard  
 - Automated sync flow  
 
+## Technologies
+- Python  
+- MongoDB Atlas  
+- ClickHouse  
+- Redis  
+- Flask / Express  
+- Docker  
+
 ---
 
 ## 📌 System Architecture

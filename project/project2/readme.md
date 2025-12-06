@@ -6,7 +6,7 @@
 
 This project implements a lightweight, end-to-end data engineering pipeline that collects, stores, transforms, caches, and visualizes weather data (rainfall and temperature) for Stockton, California.
 
-The pipeline spans:
+## Pipeline:
 - API ingestion  
 - Cloud data lake (MongoDB)  
 - Data warehouse (ClickHouse)  

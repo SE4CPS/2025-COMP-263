@@ -1,4 +1,4 @@
-# 🌦️ Weather Data Pipeline — COMP 263  
+# 🌦️ Weather Data Pipeline
 
 This project implements a lightweight, end-to-end data engineering pipeline that collects, stores, transforms, caches, and visualizes weather data (rainfall and temperature) for Stockton, California.
 

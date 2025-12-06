@@ -6,7 +6,7 @@
 
 This project implements a lightweight, end-to-end data engineering pipeline that collects, stores, transforms, caches, and visualizes weather data (rainfall and temperature) for Stockton, California.
 
-## Pipeline:
+## Pipeline
 - API ingestion  
 - Cloud data lake (MongoDB)  
 - Data warehouse (ClickHouse)  
@@ -42,7 +42,11 @@ The system queries historical weather data for **Stockton, CA**, including:
 - Rainfall  
 - Humidity  
 - Wind speed  
-- Metadata such as: `source_timestamp`, `data_quality`, `api_request_id`, `etl_batch_id`
+- Metadata such as:
+  - `source_timestamp`
+  - `data_quality`
+  - `api_request_id`
+  - `etl_batch_id`
 
 This creates the raw data foundation for the pipeline.
 
@@ -75,7 +79,7 @@ Automated ingestion may run every 30 minutes or once daily.
 | ![clickhouse3](./Sample/clickhouse3.png) |
 | ![clickhouse4](./Sample/clickhouse4.png) |
 
-ClickHouse provides analytics-grade storage and processing:
+ClickHouse provides analytics-grade storage and processing.
 
 Transformations include:
 - Average rainfall (monthly, weekly, daily)

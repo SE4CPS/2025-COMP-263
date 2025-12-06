@@ -52,7 +52,7 @@ This creates the raw data foundation for the pipeline.
 
 ---
 
-# 2. ETL → MongoDB Data Lake
+# 2. ELT → MongoDB Data Lake
 
 | MongoDB View |
 |--------------|

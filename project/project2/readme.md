@@ -3,6 +3,8 @@
 ## Goal
 Build a lightweight, end-to-end data pipeline system that collects, transforms, and visualizes average rainfall and temperature data for Stockton over the last 12 months.
 
+![System Architecture](./Sample/architecture.png)
+
 ---
 
 ## 1. Source Database
@@ -18,8 +20,7 @@ Build a lightweight, end-to-end data pipeline system that collects, transforms, 
   - `api_request_id`
   - `etl_batch_id`
 
-**Example Endpoint:**
-
+**Example Endpoint:** *(Insert your chosen endpoint here.)*
 
 ---
 
@@ -31,9 +32,11 @@ Build a lightweight, end-to-end data pipeline system that collects, transforms, 
   - `record_source`
   - `transform_status`
   - `sync_type` (e.g., "full" or "partial")
-- Implement a document sync trigger interval (e.g., every 30 minutes or daily) to fetch updates automatically.
+- Implement a document sync interval (e.g., 30 minutes or daily).
 
-**Service:** [MongoDB Atlas](https://www.mongodb.com/cloud/atlas)
+**Service:** MongoDB Atlas
+
+![MongoDB Atlas View](./Sample/mongodb.png)
 
 ---
 
@@ -41,13 +44,17 @@ Build a lightweight, end-to-end data pipeline system that collects, transforms, 
 
 **Installation:** [ClickHouse Install Guide](https://clickhouse.com/docs/install)
 
-- Perform structured transformations such as average rainfall and temperature calculations.
-- Maintain derived tables for analytics.
-- Track sync metadata including:
+- Perform structured transformations like:
+  - average rainfall
+  - average temperature
+- Maintain derived analytical tables.
+- Track warehouse metadata:
   - `warehouse_load_time`
   - `rows_loaded`
   - `sync_interval_min`
-  - `load_mode` (e.g., "incremental" or "overwrite")
+  - `load_mode` ("incremental" or "overwrite")
+
+![ClickHouse Table View](./Sample/clickhouse.png)
 
 ---
 
@@ -55,25 +62,31 @@ Build a lightweight, end-to-end data pipeline system that collects, transforms, 
 
 **Installation:** [Redis Downloads](https://redis.io/downloads/)
 
-- Cache aggregated results for faster dashboard access.
-- Use a time-to-live (TTL) to automatically expire stale data.
-- Include metadata for cache management:
+- Cache aggregated results for fast dashboard access.
+- Use TTL to expire stale data.
+- Include cache metadata:
   - `cache_timestamp`
   - `data_version`
   - `refresh_interval_sec`
+
+![Redis CLI Example](./Sample/redis1.png)
 
 ---
 
 ## 5. ETL to Local Dashboard
 
-- Build a local web dashboard to visualize average rainfall and temperature.
-- Data should be fetched from Redis or ClickHouse depending on freshness.
-- Display a data sync indicator (full, partial, or out-of-sync).
-- Optionally provide a manual **"Sync Now"** trigger.
+- Visualize rainfall and temperature metrics.
+- Data source:
+  - Redis if fresh
+  - ClickHouse fallback
+- Show sync-state indicator.
+- Optional: **Manual Sync Now** button.
 
 **Framework Options:**
-- [Flask](https://flask.palletsprojects.com/)
-- [Express.js](https://expressjs.com/)
+- Flask
+- Express.js
+
+![Dashboard Example](./Sample/dashboard1.png)
 
 ---
 
@@ -81,8 +94,9 @@ Build a lightweight, end-to-end data pipeline system that collects, transforms, 
 
 | Layer | Interval | Sync Type | Notes |
 |--------|-----------|------------|--------|
-| API → MongoDB | |  | Fetches only recent updates |
+| API → MongoDB |  |  | Fetches only recent updates |
 | MongoDB → ClickHouse |  |  | Recomputes warehouse aggregates |
-| ClickHouse → Redis | |  | Refreshes cache for dashboard |
-| Redis → Dashboard | On-demand | Read-only | Serves cached visualization data |
+| ClickHouse → Redis |  |  | Refreshes cached analytics |
+| Redis → Dashboard | On-demand | Read-only | Serves visualization data |
 
+![Docker / Pipeline Overview](./Sample/docker.png)

@@ -1,102 +1,147 @@
-# Project: End-to-End Database Pipeline (Weather Data for Stockton)
+# End-to-End Database Pipeline (Weather Data for Stockton)
 
-## Goal
-Build a lightweight, end-to-end data pipeline system that collects, transforms, and visualizes average rainfall and temperature data for Stockton over the last 12 months.
+This project implements a lightweight, end-to-end data engineering pipeline that collects, stores, transforms, caches, and visualizes weather data (rainfall and temperature) for Stockton, California.
 
-![System Architecture](./Sample/architecture.png)
-
----
-
-## 1. Source Database
-
-**API:** [National Weather Service Web API](https://www.weather.gov/documentation/services-web-api)
-
-- Query historical weather data (temperature, rainfall, humidity, etc.)
-- Extract only data for **Stockton, CA**
-- Include metadata such as:
-  - `source_timestamp`
-  - `source_database`
-  - `data_quality`
-  - `api_request_id`
-  - `etl_batch_id`
-
-**Example Endpoint:** *(Insert your chosen endpoint here.)*
+The pipeline spans:
+- API ingestion  
+- Cloud data lake (MongoDB)  
+- Data warehouse (ClickHouse)  
+- In-memory cache (Redis)  
+- Local dashboard  
+- Automated sync flow  
 
 ---
 
-## 2. ETL to Cloud MongoDB Data Lake
+## 📌 System Architecture
 
-- Store raw and enriched JSON documents.
-- Include metadata fields:
-  - `ingest_time_utc`
-  - `record_source`
-  - `transform_status`
-  - `sync_type` (e.g., "full" or "partial")
-- Implement a document sync interval (e.g., 30 minutes or daily).
-
-**Service:** MongoDB Atlas
-
-![MongoDB Atlas View](./Sample/mongodb.png)
+| Architecture Diagram |
+|----------------------|
+| ![architecture](./Sample/architecture.png) |
 
 ---
 
-## 3. ETL to ClickHouse Data Warehouse
+# 1. Source Database (API Layer)
 
-**Installation:** [ClickHouse Install Guide](https://clickhouse.com/docs/install)
+**API:**  
+[National Weather Service Web API](https://www.weather.gov/documentation/services-web-api)
 
-- Perform structured transformations like:
-  - average rainfall
-  - average temperature
-- Maintain derived analytical tables.
-- Track warehouse metadata:
-  - `warehouse_load_time`
-  - `rows_loaded`
-  - `sync_interval_min`
-  - `load_mode` ("incremental" or "overwrite")
+The system queries historical weather data for **Stockton, CA**, including:
+- Temperature  
+- Rainfall  
+- Humidity  
+- Wind speed  
+- Metadata such as: `source_timestamp`, `data_quality`, `api_request_id`, `etl_batch_id`
 
-![ClickHouse Table View](./Sample/clickhouse.png)
+This creates the raw data foundation for the pipeline.
 
 ---
 
-## 4. ETL to Redis Cache
+# 2. ETL → MongoDB Data Lake
 
-**Installation:** [Redis Downloads](https://redis.io/downloads/)
+| MongoDB View |
+|--------------|
+| ![mongodb](./Sample/mongodb.png) |
 
-- Cache aggregated results for fast dashboard access.
-- Use TTL to expire stale data.
-- Include cache metadata:
-  - `cache_timestamp`
-  - `data_version`
-  - `refresh_interval_sec`
+MongoDB Atlas stores **raw and enriched JSON documents**.
 
-![Redis CLI Example](./Sample/redis1.png)
+Each record contains metadata:
+- `ingest_time_utc`
+- `record_source`
+- `transform_status`
+- `sync_type` (full or partial)
 
----
-
-## 5. ETL to Local Dashboard
-
-- Visualize rainfall and temperature metrics.
-- Data source:
-  - Redis if fresh
-  - ClickHouse fallback
-- Show sync-state indicator.
-- Optional: **Manual Sync Now** button.
-
-**Framework Options:**
-- Flask
-- Express.js
-
-![Dashboard Example](./Sample/dashboard1.png)
+Automated ingestion may run every 30 minutes or once daily.
 
 ---
 
-## 6. Sync and Automation Overview
+# 3. ETL → ClickHouse Data Warehouse
 
-| Layer | Interval | Sync Type | Notes |
-|--------|-----------|------------|--------|
-| API → MongoDB |  |  | Fetches only recent updates |
-| MongoDB → ClickHouse |  |  | Recomputes warehouse aggregates |
-| ClickHouse → Redis |  |  | Refreshes cached analytics |
-| Redis → Dashboard | On-demand | Read-only | Serves visualization data |
+| ClickHouse Screens |
+|--------------------|
+| ![clickhouse](./Sample/clickhouse.png) |
+| ![clickhouse2](./Sample/clickhouse2.png) |
+| ![clickhouse3](./Sample/clickhouse3.png) |
+| ![clickhouse4](./Sample/clickhouse4.png) |
 
-![Docker / Pipeline Overview](./Sample/docker.png)
+ClickHouse provides analytics-grade storage and processing:
+
+Transformations include:
+- Average rainfall (monthly, weekly, daily)
+- Average temperature
+- Aggregation tables for dashboard queries
+
+Metadata tracked:
+- `warehouse_load_time`
+- `rows_loaded`
+- `sync_interval_min`
+- `load_mode` (incremental or overwrite)
+
+---
+
+# 4. ETL → Redis Cache
+
+| Redis Screens |
+|---------------|
+| ![redis1](./Sample/redis1.png) |
+| ![redis2](./Sample/redis2.png) |
+| ![redis3](./Sample/redis3.png) |
+| ![redis5](./Sample/redis5.png) |
+
+Redis caches the latest computed metrics for fast dashboard rendering.
+
+Cache metadata:
+- `cache_timestamp`
+- `data_version`
+- `refresh_interval_sec`
+
+TTL ensures data expires automatically if not refreshed.
+
+---
+
+# 5. Local Dashboard (Visualization Layer)
+
+| Dashboard Screens |
+|-------------------|
+| ![dashboard1](./Sample/dashboard1.png) |
+| ![dashboard2](./Sample/dashboard2.png) |
+| ![dashboard3](./Sample/dashboard3.png) |
+| ![dashboard4](./Sample/dashboard4.jpg) |
+| ![dashboard4b](./Sample/dashboard4.png) |
+| ![dashboard5](./Sample/dashboard5.png) |
+| ![dashboard6](./Sample/dashboard6.png) |
+| ![dashboard7](./Sample/dashboard7.jpeg) |
+| ![dashboard7b](./Sample/dashboard7.png) |
+| ![dashboard8](./Sample/dashboard8.png) |
+| ![dashboard9](./Sample/dashboard9.png) |
+
+Features:
+- Displays rainfall and temperature metrics  
+- Reads from Redis (fresh data) or ClickHouse (fallback)  
+- Sync status indicator (full / partial / stale)  
+- Optional **Sync Now** button  
+
+Framework options:
+- Flask  
+- Express.js  
+
+---
+
+# 6. Sync & Automation Overview
+
+| Docker / Services |
+|-------------------|
+| ![docker](./Sample/docker.png) |
+
+### Sync Flow
+
+| Layer | Interval | Sync Type | Description |
+|-------|----------|-----------|-------------|
+| API → MongoDB | scheduled | update-only | Fetch latest weather data |
+| MongoDB → ClickHouse | scheduled | aggregate | Build warehouse tables |
+| ClickHouse → Redis | scheduled | incremental refresh | Prepare quick dashboard access |
+| Redis → Dashboard | on-demand | read-only | Serve visualizations |
+
+---
+
+# 📁 Folder Structure
+

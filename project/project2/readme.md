@@ -1,5 +1,9 @@
 # 🌦️ Weather Data Pipeline
 
+![Status](https://img.shields.io/badge/status-active-blue)
+![Language](https://img.shields.io/badge/python-3.10-green)
+![Database](https://img.shields.io/badge/databases-MongoDB%20%7C%20ClickHouse%20%7C%20Redis-orange)
+
 This project implements a lightweight, end-to-end data engineering pipeline that collects, stores, transforms, caches, and visualizes weather data (rainfall and temperature) for Stockton, California.
 
 The pipeline spans:
